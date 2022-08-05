@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi Tiền Tệ</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currenc</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="money"></td>
+            <td>
+                <select id="abc">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="bcf">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td><button onclick="changemoney()">Convert</button></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+</body>
+<script>
+    function changemoney() {
+    let abc=document.getElementById("gia_tri_1");
+    let bcf=document.getElementById("gia_tri_2");
+    let money=document.getElementById("money");
+
+    let tong;
+    if (abc == vnd && bcf == usd ){
+        tong = "result" + (money*23000) + "D"
+    }
+    else if (abc == usd && bcf == vnd){
+        tong = "result" + (money/23000) + "dollar"
+    }
+    else if (abc == vnd && bcf==vnd){
+        tong="result" + (money) + "D"
+    }
+    else tong="result" + "dollar";
+    document.getElementById("result").innerHTML="Result";
+    }
+</script>
+</html>
