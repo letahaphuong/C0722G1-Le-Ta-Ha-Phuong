@@ -15,7 +15,7 @@
     </select>
     <select id="last">
         <option id="en1">English</option>
-        <option id="vn2">vietnam</option>
+        <option id="vn1">vietnam</option>
     </select> </label>
     <input type="button" onclick="myFunction()" value="Convert">
 </form>
@@ -24,25 +24,26 @@
 
 <script>
     function myFunction() {
-        let result=document.getElementById("result")
+        console.log("abc")
+        let result=document.getElementById("result");
         let text=document.getElementById("myText");
-        let first = document.getElementById("first");
-        let last = document.getElementById("last");
+        let first=document.getElementById("first");
+        let last =document.getElementById("last");
         let en=document.getElementById("en");
         let vn=document.getElementById("vn");
         let en1=document.getElementById("en1");
         let vn1=document.getElementById("vn1");
         let change;
-        if ((first = "en") && (last = "vn1")){
-            change = (text*23000)+ "dollar"
+        if ((first = en) && (last = vn1)){
+            change = (text*23000)+ "D"
         }
-        else if ((first = "vn") && (last = "en1")){
-            change = (text/23000)+ "D"
-        }
-        else if ((first = "vn") && (last = "vn1")){
-            change = text + "d"
-        }
-        else { change = text + "dollar"}
+            if ((first = vn) && (last = en1)){
+            change = (text/23000)+ "DOLLAR"
+            }
+            if ((first = vn) && (last = vn1)){
+            change = text + "D"
+            }
+        else { change = text + "DOLLAR"}
 
         document.getElementById("result").innerText="Result:"+ change;
 
