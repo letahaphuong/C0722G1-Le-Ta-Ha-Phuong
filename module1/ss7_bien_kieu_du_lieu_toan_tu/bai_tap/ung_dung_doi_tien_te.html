@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Đổi Tiền Tệ</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>Amount</th>
-            <th>From Currenc</th>
-            <th>To Currency</th>
-            <th></th>
-        </tr>
-        <tr>
-            <td><input type="number" id="money"></td>
-            <td>
-                <select id="abc">
-                    <option value="vnd">VND</option>
-                    <option value="usd">USD</option>
-                </select>
-            </td>
-            <td>
-                <select id="bcf">
-                    <option value="vnd">VND</option>
-                    <option value="usd">USD</option>
-                </select>
-            </td>
-            <td><button onclick="changemoney()">Convert</button></td>
-        </tr>
-    </table>
-    <p id="result"></p>
-</body>
-<script>
-    function changemoney() {
-    let abc=document.getElementById("gia_tri_1");
-    let bcf=document.getElementById("gia_tri_2");
-    let money=document.getElementById("money");
 
-    let tong;
-    if (abc == vnd && bcf == usd ){
-        tong = "result" + (money*23000) + "D"
-    }
-    else if (abc == usd && bcf == vnd){
-        tong = "result" + (money/23000) + "dollar"
-    }
-    else if (abc == vnd && bcf==vnd){
-        tong="result" + (money) + "D"
-    }
-    else tong="result" + "dollar";
-    document.getElementById("result").innerHTML="Result";
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+<table>
+    <tr>
+        <th style="width: 150px">Amount</th>
+        <th style="width: 100px">Fromcurrency</th>
+        <th style="width: 70px">To Curency</th>
+    </tr>
+</table>
+<form id="form">
+    <input type="text" id="myText">
+    <label>
+        <select id="first">
+            <option value="en">English</option>
+            <option value="vn">Vietnam</option>
+        </select>
+        <select id="last">
+            <option value="DOLLAR">English</option>
+            <option value="VND">vietnam</option>
+        </select> </label>
+    <input type="button" onclick="myFunction()" value="Convert">
+</form>
+<p id="kq">Result: </p>
+</body>
+
+<script>
+    function myFunction() {
+        let result = document.getElementById("kq").value;
+        let text = parseInt(document.getElementById("myText").value);
+        let first = document.getElementById("first").value;
+        let last = document.getElementById("last").value;
+        let change;
+        var d =23000;
+        if (first == "en" &&  last == "VND"){
+            change = text * d;
+        }
+        else if (first == "vn" && last == "DOLLAR"){
+            change = text / d;
+        }
+        else if (first == "vn" && last == "VND"){
+            change = text;
+        }
+        else { change = text;}
+
+        document.getElementById("kq").innerText="Result:"+ change + last;
+
     }
 </script>
+
 </html>
