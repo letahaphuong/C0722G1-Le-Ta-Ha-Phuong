@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border: 2px solid black;
+    }
+    tr th {
+        border-collapse: collapse;
+        background: deepskyblue;
+    }
+
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currrency</th>
+            <th>To Currency</th>
+            <th id="blank"></th>
+        </tr>
+        <tr>
+            <td><input id="money" type="text"></td>
+            <td>
+                <select id="can_doi">
+                    <option value="vnd">vietnam</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="duoc_doi">
+                    <option value="vnd">vietnam</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td><button onclick="do_sth()">Convert!</button></td>
+        </tr>
+    </table>
+    <p>Kết quả:</p>
+    <p id="kq"></p>
+</body>
+<script>
+    function do_sth() {
+        let input = document.getElementById("money").value;
+        let d = document.getElementById("kq").value;
+        let a = document.getElementById("can_doi").value;
+        let b = document.getElementById("duoc_doi").value;
+        let c;
+        const e = 24000;
+        if ( input==""){
+            c = "Vui lòng nhập số tiền cần chuyển";
+        }
+        else if ( a=="vnd" && b=="vnd"){
+            c = input;
+        }
+        else if (a=="vnd" && b=="usd"){
+            c = input/e;
+        }
+        else if ( a=="usd" && b=="vnd"){
+            c = input*e;
+        }
+        else{ c = input;}
+        document.getElementById("kq").innerText=c + b;
+    }
+</script>
+</html>
