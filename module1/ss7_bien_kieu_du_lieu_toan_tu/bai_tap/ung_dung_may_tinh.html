@@ -30,15 +30,15 @@
     <h2>Máy Tính!</h2>
     <input type="text" id="so_dau"> <input type="text" id="so_hai"><br>
     <br>
-    <button class=" live" type="button" onclick="cong()">CỘNG</button>
+    <button class="live" type="button" onclick="cong()">CỘNG</button>
     <button class="orange" type="button" onclick="tru()">TRỪ</button>
     <button class="khaki" type="button" onclick="nhan()">NHÂN</button>
     <button class="late_blue" type="button" onclick="chia()">CHIA</button><br>
-    <br>
+        <br>
     <h3>Kết Quả:</h3>
     <table>
         <tr>
-            <td><p id="kq" ></p></td>
+            <td><p id="ketQua" ></p></td>
         </tr>
     </table>
 </body>
@@ -46,42 +46,42 @@
         function cong() {
             let a = parseInt(document.getElementById("so_dau").value);
             let b = parseInt(document.getElementById("so_hai").value);
-            let d = document.getElementById("kq").value;
+            // let d = document.getElementById("kq").value;
             let c;
             if (a>=0){
                 c = a + b;
             }
-            document.getElementById("kq").innerText =  c;
+            document.getElementById("ketQua").innerText =  c;
         }
         function tru() {
             let a = parseInt(document.getElementById("so_dau").value);
             let b = parseInt(document.getElementById("so_hai").value);
-            let d = document.getElementById("kq").value;
+            // let d = document.getElementById("kq").value;
             let c;
             if (a>=0){
                 c = a - b;
             }
-            document.getElementById("kq").innerText =  c;
+            document.getElementById("ketQua").innerText =  c;
         }
         function nhan() {
             let a = parseInt(document.getElementById("so_dau").value);
             let b = parseInt(document.getElementById("so_hai").value);
-            let d = document.getElementById("kq").value;
+            // let d = document.getElementById("kq").value;
             let c;
             if (a>=0){
                 c = a * b;
             }
-            document.getElementById("kq").innerText =  c;
+            document.getElementById("ketQua").innerText =  c;
         }
         function chia() {
             let a = parseInt(document.getElementById("so_dau").value);
             let b = parseInt(document.getElementById("so_hai").value);
-            let d = document.getElementById("kq").value;
+            // let d = document.getElementById("kq").value;
             let c;
             if (a>=0){
                 c = a / b;
             }
-            document.getElementById("kq").innerText =  c;
+            document.getElementById("ketQua").innerText =  c;
         }
 
     </script>

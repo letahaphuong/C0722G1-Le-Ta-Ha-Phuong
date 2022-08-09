@@ -3,6 +3,7 @@
 
 <head>
     <title>Document</title>
+    <script src="bien_kieu_du_lieu_va_thuat_toan/asd.js"></script>
 </head>
 
 <body>
@@ -17,11 +18,11 @@
     <input type="text" id="myText">
     <label>
         <select id="first">
-            <option value="en">English</option>
+            <option value="en">USD</option>
             <option value="vn">Vietnam</option>
         </select>
         <select id="last">
-            <option value="DOLLAR">English</option>
+            <option value="DOLLAR">USD</option>
             <option value="VND">vietnam</option>
         </select> </label>
     <input type="button" onclick="myFunction()" value="Convert">
@@ -31,7 +32,7 @@
 
 <script>
     function myFunction() {
-        let result = document.getElementById("kq").value;
+        // let result = document.getElementById("kq").value;
         let text = parseInt(document.getElementById("myText").value);
         let first = document.getElementById("first").value;
         let last = document.getElementById("last").value;
