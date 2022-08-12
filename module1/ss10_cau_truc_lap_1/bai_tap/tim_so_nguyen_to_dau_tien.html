@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt('nhập số lượng số nguyên tố cần iin ra:');
+    let numCheck = 2;
+    let loop = 0;
+    let text = '';
+    count=0;
+    while (count < num) {//nhập điều kiện biến đếm bắt đầu từ 0 và biến đếm nhỏ hơn số lượng số nguyên tố nhập vào.
+        loop=0;
+        for (let i = 2; i <= Math.sqrt(numCheck); i++) {
+            if (numCheck % i === 0) {
+                loop++;
+            }
+        }
+        if (loop === 0) {
+            text += numCheck + '<br>';
+            count++;
+        }
+        numCheck++;
+    }
+    document.write(text);
+</script>
+</body>
+</html>

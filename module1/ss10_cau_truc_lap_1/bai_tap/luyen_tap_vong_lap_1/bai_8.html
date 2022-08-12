@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="submit" onclick="letPlay()">Chơi!</button>
+</body>
+<script>
+
+    function letPlay() {
+        let inputMax = parseInt(prompt('Nhập số bé nhất trong khoảng bạn muốn đoán:'));
+        let inputMin = parseInt(prompt('Nhập số lớn nhất trong khoảng bạn muốn đoán:'));
+        let input;
+        let ranDom = Math.floor(Math.random() * (inputMax - inputMin + 1)) + inputMin;
+        let n = 1;
+        input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+        if (input === ranDom) {
+            alert("Chúc mừng đã đoán trúng");
+        } else {
+            do {
+                input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+                if (input < ranDom) {
+                    alert('Số bạn cần đoán lớn hơn.');
+
+                } else {
+                    alert('Số bạn cần đoán bé hơn');
+                }
+                n++;
+            } while (n <= 3) ;
+            alert('bạn đã hết lượt đoán');
+
+
+            // if (input === ranDom) {
+            //     alert('Bạn đã chiến thắng!');
+            // }
+            // for (n = 1; n <= 3; n++) {
+            //     input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+            //     if (input < ranDom) {
+            //         alert('Số bạn cần đoán lớn hơn.');
+            //     } else {
+            //         alert('số bạn cần đoán nhỏ hơn.');
+            //     }
+            // }
+            // alert('bạn đã hết lượt');
+        }
+    }
+
+</script>
+</html>
