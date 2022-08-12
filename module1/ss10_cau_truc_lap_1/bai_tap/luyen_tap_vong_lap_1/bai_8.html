@@ -15,37 +15,38 @@
         let input;
         let ranDom = Math.floor(Math.random() * (inputMax - inputMin + 1)) + inputMin;
         let n = 1;
-        input = parseInt(prompt('Nhập số bạn muốn đoán:'));
-        if (input === ranDom) {
-            alert("Chúc mừng đã đoán trúng");
-        } else {
-            do {
-                input = parseInt(prompt('Nhập số bạn muốn đoán:'));
-                if (input < ranDom) {
-                    alert('Số bạn cần đoán lớn hơn.');
+        // input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+        do {
+            input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+            let count=0;
+            if (input === ranDom) {
+                alert("Chúc mừng đã đoán trúng");
+                count++;
+            } else if (input < ranDom) {
+                alert('Số bạn cần đoán lớn hơn.');
 
-                } else {
-                    alert('Số bạn cần đoán bé hơn');
-                }
-                n++;
-            } while (n <= 3) ;
-            alert('bạn đã hết lượt đoán');
+            } else {
+                alert('Số bạn cần đoán bé hơn');
+            }
+            n++;
+        } while (input===ranDom || n <= 3 || count===0) ;
+        alert('bạn đã hết lượt đoán');
 
 
-            // if (input === ranDom) {
-            //     alert('Bạn đã chiến thắng!');
-            // }
-            // for (n = 1; n <= 3; n++) {
-            //     input = parseInt(prompt('Nhập số bạn muốn đoán:'));
-            //     if (input < ranDom) {
-            //         alert('Số bạn cần đoán lớn hơn.');
-            //     } else {
-            //         alert('số bạn cần đoán nhỏ hơn.');
-            //     }
-            // }
-            // alert('bạn đã hết lượt');
-        }
+        // if (input === ranDom) {
+        //     alert('Bạn đã chiến thắng!');
+        // }
+        // for (n = 1; n <= 3; n++) {
+        //     input = parseInt(prompt('Nhập số bạn muốn đoán:'));
+        //     if (input < ranDom) {
+        //         alert('Số bạn cần đoán lớn hơn.');
+        //     } else {
+        //         alert('số bạn cần đoán nhỏ hơn.');
+        //     }
+        // }
+        // alert('bạn đã hết lượt');
     }
+
 
 </script>
 </html>
