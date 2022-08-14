@@ -16,17 +16,18 @@
 </style>
 <body>
 <script>
-    let bang;
-    bang = "<table><tr><th colspan='10'>BANG CUU CHUONG</th></tr>"
+
+    let table;
+    table = '<table><tr><th colspan="10">Bảng cửu chương</th></tr>'
     for (let i = 1; i < 11; i++) {
-        bang = bang + "<tr>";
+        table += '<tr>';
         for (let j = 1; j < 11; j++) {
-            bang = bang + "<td>" + j + "*" + i + "= " + j*i + "</td>";
+            table = table + '<td>' + j + 'x' + i + '=' + i * j + '</td>';
         }
-        bang = bang + "</tr>";
+        table += '</tr>';
     }
-    bang = bang + "</table>";
-    document.write(bang);
+    table += '</table>';
+    document.write(table);
 </script>
 </body>
 </html>
