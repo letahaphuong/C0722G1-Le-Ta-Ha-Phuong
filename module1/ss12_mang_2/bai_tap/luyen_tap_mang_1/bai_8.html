@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    let num=parseInt(prompt('số lượng phần tử trong mảng:'));
+    let num = parseInt(prompt('số lượng phần tử trong mảng:'));
     let arrNum = [];
-    for (let j=0; j<num; j++){
-        let num1=parseInt(prompt('Nhập các phần tử trong mảng:'));
+    for (let j = 0; j < num; j++) {
+        let num1 = parseInt(prompt('Nhập các phần tử trong mảng:'));
         arrNum.push(num1)
     }
 
     for (let i = 0; i < arrNum.length; i++) {
         arrNum.sort(function (a, b) {
-            return b - a
+            return b - a;
         })
     }
     alert(arrNum.toString())
