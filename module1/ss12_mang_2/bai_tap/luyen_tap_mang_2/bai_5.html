@@ -6,11 +6,35 @@
 </head>
 <body>
 <script>
-    let chuoi1=prompt("nhập chuối 1");
-    let chuoi2=prompt("nhập chuỗi 2");
-    if (chuoi1===chuoi2){
-        alert('Chuỗi 1 bằng chuỗi 2');
-    }else {alert('chuỗi 1 khác chuỗi 2')};
+    let num1 = parseInt(prompt('Nhập số lượng phần tử trong arr1:'));
+    let arr1 = [];
+    let count = 0;
+    for (let i = 0; i < num1; i++) {
+        arr1[i] = prompt('Nhập phần tử của mảng arr1');
+    }
+    let num2 = parseInt(prompt('Nhập số lượng phần tử trong arr2'));
+    let arr2 = [];
+    for (let j = 0; j < num2; j++) {
+        arr2[j] = prompt('Nhập phần tử của mảng arr2');
+    }
+    if (arr1.length === arr2.length) {
+        for (let b = 0; b < arr1.length; b++) {
+            if (arr1[b] !== arr2[b]) {
+                count++;
+            }
+
+        }
+        if (count === 0) {
+            document.write('Giống nhau');
+        } else {
+            document.write('Không giống nhau');
+        }
+
+    } else {
+        document.write('Không giống nhau');
+    }
+
+
 </script>
 </body>
 </html>
