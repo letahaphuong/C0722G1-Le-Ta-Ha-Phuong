@@ -7,22 +7,39 @@
 <body>
 <script>
     // Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
-    let mang2Chieu=[[1,2,3,4,5],
-        [6,7,8,9,10]];
-    timLonNhat(mang2Chieu);
-    function timLonNhat(mang) {
-        let nho=0;
-        for (let i = 0; i <mang.length; i++) {
-            for (let j = 0; j <mang[i][j]; j++) {
-                let lonNhat=mang[0][0];
-                if (lonNhat>mang[i][j]){
-                    lonNhat+=mang[i][j];
+
+    // tạo 1 mảng 2 chiều với kích thước 3x3
+    // Nếu trong mảng người dùng nhập có số 5 thì hiển thị OK
+    // không thì hiển thị không có.
+    let array = [[1, 5, 2, 3, 4, 55, 6, 4],
+        [1, 4, 46, -2, 4, 7, 9,]];
+
+    function findMaxNum(arr) {
+        let max = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] >= max) {
+                    max = arr[i][j];
                 }
             }
         }
+        return max;
     }
 
+    function findMinNum(arr) {
+        let min = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] <= min) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
 
+    alert(findMaxNum(array));
+    alert(findMinNum(array));
 </script>
 </body>
 </html>
