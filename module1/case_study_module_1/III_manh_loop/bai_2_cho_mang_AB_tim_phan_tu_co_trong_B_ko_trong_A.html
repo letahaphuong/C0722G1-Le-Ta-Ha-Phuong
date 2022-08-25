@@ -6,31 +6,19 @@
 </head>
 <body>
 <script>
-    let arrayA=[7,2,5,3,5,3];
-    let arrayB=[7,2,5,4,6,3,5,3];
-    let arrayC=[];
-    for (let i = 0; i <arrayB.length ; i++) {
-        for (let j=0;j<arrayA.length;j++){
-            if(arrayB[i]===arrayA[j]){
-                arrayB.splice(i,1);
+    let arrayA = [7, 2, 5, 3, 5, 3];
+    let arrayB = [7, 2, 5, 4, 6, 3, 5, 3];
+
+    for (let i = 0; i < arrayB.length; i++) {
+        for (let j = 0; j < arrayA.length; j++) {
+            if (arrayB[i] === arrayA[j]) {
+                arrayB.splice(i, 1);
             }
         }
     }
     document.write(arrayB.toString());
 
 
-
-    // for (let i = 0; i < arrayB.length; i++) {
-    //     let count=0;
-    //     for (let j=0;j<arrayA.length;j++){
-    //
-    //         if (arrayB[i]!==arrayA[j]){
-    //             count++;
-    //         }
-    //     }if (count===arrayA.length){
-    //         arrayC.push(arrayB[i]);
-    //     }
-    // }document.write(arrayC.toString());
 </script>
 </body>
 </html>
