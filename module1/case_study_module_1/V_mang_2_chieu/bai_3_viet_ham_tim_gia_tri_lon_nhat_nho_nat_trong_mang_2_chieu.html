@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    let mang2Chieu=[[1,2,3,4,5],
+        [6,7,8,9,10]];
+    timLonNhat(mang2Chieu);
+    function timLonNhat(mang) {
+        let nho=0;
+        for (let i = 0; i <mang.length; i++) {
+            for (let j = 0; j <mang[i][j]; j++) {
+                let lonNhat=mang[0][0];
+                if (lonNhat>mang[i][j]){
+                    lonNhat+=mang[i][j];
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

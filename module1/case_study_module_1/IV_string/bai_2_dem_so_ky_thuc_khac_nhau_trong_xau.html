@@ -6,10 +6,24 @@
 </head>
 <body>
 <script>
-    let str='abcas';
-    for (let i=0;i<str.length;i++){
-        if ()
+
+    //     Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+    //     Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+    // ⇨	Có 3 kí tự khác nhau là a, b và c.
+
+
+    let arrstr = ['a', 'b', 'r', 'a', 'b'];
+    for (let i = 0; i < arrstr.length; i++) {
+
+        for (let j = i + 1; j < arrstr.length; j++) {
+            if (arrstr[i] === arrstr[j]) {
+                arrstr.splice(j, 1);
+            }
+        }
     }
+    alert(arrstr);
+    alert(arrstr.length);
+
 </script>
 </body>
 </html>
