@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+<h3>MENU MÓN</h3>
+<table>
+    <tr>
+        <th>Chọn</th>
+        <th>Món</th>
+        <th>Số Lượng</th>
+        <th>Đơn giá</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(1)"></td>
+        <td onclick="cafe()">1.cafe</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>15000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(2)"></td>
+        <td onclick="camVat()">2.cam vắt</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(3)"></td>
+        <td onclick="caRot()">3.Nước ép cà rốt</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>30000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(4)"></td>
+        <td onclick="caChua()">4.nước ép cà chua</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>30000</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(5)"></td>
+        <td onclick="nuocLoc()">5.nước lọc</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" onclick="chonMon(6)"></td>
+        <td onclick="nuocDua()">6.nước dừa</td>
+        <td><input type="text" onclick="soLuong()"></td>
+        <td>20000</td>
+    </tr>
+</table>
+<input type="button" onclick="chonMon(7)" value="Kết Thúc">
+<input type="text" id="hienThi">
+</body>
+<script>
+    let text='';
+    function chonMon(num) {
+        do {
+
+            switch (num) {
+                case 1:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '15000';
+                    break;
+                case 2:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '20000';
+                    break;
+                case 3:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '30000';
+                    break;
+                case 4:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '30000';
+                    break;
+                case 5:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '8000';
+                    break;
+                case 6:
+                    text = document.getElementById('hienThi').value;
+                    document.getElementById('hienThi').value =text+ '20000';
+                    break;
+            }
+        }while (num==7)
+    }
+
+    function soLuong() {
+        let text1;
+    text1=document.getElementById('hienThi').value;
+    document.getElementById('hienThi').value=text1+;
+    }
+
+
+
+
+</script>
+</html>

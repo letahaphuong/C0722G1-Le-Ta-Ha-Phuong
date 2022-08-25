@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let i;
+    // let j;
+    // for (i = 0; i < b; i++) {
+    //     for (j = 0; j < a; j++) {
+    //         if (i === 0 || i === b - 1 || j === 0 || j === a - 1) {
+    //             text += '*';
+    //         } else {
+    //             text += '&nbsp&nbsp';
+    //         }
+    //     }
+    //     text += '<br>';
+    // }
+    // document.write(text);
+
+    let number = prompt('Nhập số:')
+    let text = '';
+    let j;
+
+    for (let i=0;i<number;i++){
+        for (let j=0;j<=i;j++){
+            if (i===number-1||j===0||i===1||i==j){
+                text+='*';
+            }else {
+                text+='&nbsp&nbsp'
+            }
+
+        }text+='<br>';
+    }document.write(text);
+
+
+    // let chieuCao = +prompt("Nhập chiều cao của tam giác:");
+    // let text = '';
+    // for (let i = 0; i < chieuCao; i++) {
+    //     for (let j = 0; j < chieuCao; j++) {
+    //         if (i === 0||j===0) {
+    //             text += "*";
+    //         } else {
+    //             text += '&nbsp&nbsp';
+    //         }
+    //
+    //     }
+    //     text += '<br>';
+    // }document.write(text)
+
+
+</script>
+</body>
+</html>
