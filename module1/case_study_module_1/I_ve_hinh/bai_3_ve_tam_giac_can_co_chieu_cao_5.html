@@ -8,12 +8,8 @@
 <script>
     let number = prompt('Nhập số:')
     let text = '';
-    let j;
-
-
-
     for (let i = 1; i <= number; i+=2) {
-        for (j = 1; j <= number-i; j++) {
+        for (let j = 1; j <= number-i; j++) {
             text += "&nbsp";
         }
         for (let z = 1; z <= i; z++) {
