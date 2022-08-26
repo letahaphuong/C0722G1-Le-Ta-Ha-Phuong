@@ -6,18 +6,18 @@
 </head>
 <body>
 <script>
-    let chieuDai = +prompt("nhập chiều dài:");
-    let chieuRong = +prompt("Nhập chiều rộng:");
+    let chieuCao = +prompt('Nhập chiều cao H:');
     let text = '';
-    for (let i = 0; i < chieuRong; i++) {
-        for (let j = 0; j < chieuDai; j++) {
-            if (i === 0 || i === chieuRong - 1 || j === 0 || j === chieuDai/2) {
-                text+='*';
+    for (let i = 0; i < chieuCao; i++) {
+        for (let j = chieuCao; j <= chieuCao; j++) {
+            if (i === chieuCao ) {
+                text += '*';
             }else {
-                text+='&nbsp&nbsp';
+                text+='&nbsp&nbsp'
             }
-        }text+='<br>';
-    }document.write(text);
+        }
+    }
+    document.write(text)
 </script>
 </body>
 </html>
