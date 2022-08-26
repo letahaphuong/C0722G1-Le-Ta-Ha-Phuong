@@ -2,98 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Xây dựng giao diện</title>
+    <title></title>
 </head>
-<style>
-    table {
-        border-collapse: collapse;
-        border: black 1px solid;
-        width: 100%;
-        height: 700px;
-    }
-    th {
-        border-collapse: collapse;
-        border-bottom: black 1px solid;
-        height: 100px;
-    }
-    td{
-        border-collapse: collapse;
-        height: 100px;
-        border-left: black 1px solid;
-        border-right:black 1px solid;
-        text-align: center;
-    }
-</style>
 <body>
-<table>
-    <tr>
-        <th>
-            <img src="Untitled.png" height="25" width="145"/>
-        </th>
-        <th>
-            <h1>Hệ thống quản lý bài tập casestudy </h1>
-        </th>
-    </tr>
-    <tr>
-        <td>
-            <select name="baiTap" id="1">
-                <option value="baiTap1">Bài tập 1</option>
-                <option value="baiTap2">Bài tập 2</option>
-                <option value="baiTap3">Bài tập 3</option>
-                <option value="baiTap4">Bài tập 4</option>
-                <option value="baiTap5">Bài tập 5</option>
-            </select>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td width="150px">
-            <select name="baiTap" id="2">
-                <option value="baiTap1">Bài tập 1</option>
-                <option value="baiTap2">Bài tập 2</option>
-                <option value="baiTap3">Bài tập 3</option>
-                <option value="baiTap4">Bài tập 4</option>
-                <option value="baiTap5">Bài tập 5</option>
-            </select>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            <select name="baiTap" id="3">
-                <option value="baiTap1">Bài tập 1</option>
-                <option value="baiTap2">Bài tập 2</option>
-                <option value="baiTap3">Bài tập 3</option>
-                <option value="baiTap4">Bài tập 4</option>
-                <option value="baiTap5">Bài tập 5</option>
-            </select>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            <select name="baiTap" id="4">
-                <option value="baiTap1">Bài tập 1</option>
-                <option value="baiTap2">Bài tập 2</option>
-                <option value="baiTap3">Bài tập 3</option>
-                <option value="baiTap4">Bài tập 4</option>
-                <option value="baiTap5">Bài tập 5</option>
-            </select>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            <select name="baiTap" id="5">
-                <option value="baiTap1">Bài tập 1</option>
-                <option value="baiTap2">Bài tập 2</option>
-                <option value="baiTap3">Bài tập 3</option>
-                <option value="baiTap4">Bài tập 4</option>
-                <option value="baiTap5">Bài tập 5</option>
-            </select>
-        </td>
-        <td></td>
-    </tr>
-</table>
+<script>
+    let chonMon;
+    let soLuong;
+    let tinhTien=0;
+    do {
+        chonMon = +prompt("Hãy Chọn Món" + "\n"
+            + '1.Cafe\n' +
+            '2.Cam Vắt\n' +
+            '3.Nước Ép Cà Rốt\n' +
+            '4.Nước Ép Cà Chua\n' +
+            '5.Nước Lọc\n' +
+            '6.Nước Dừa\n' +
+            '7.Hoàn Thành Gọi Món!');
+        let mangDanhSach=[1,2,3,4,5,6];
+        let mon=['Cafe','Cam Vắt','Nước ép cà rốt','Nước ép cà chua','Nước lọc','Nước dừa'];
+        let donGia=[10000,20000,25000,25000,8000,15000];
+        for (let i=0;i<mangDanhSach.length;i++){
+            if (chonMon===mangDanhSach[i]){
+                soLuong=+prompt(mon[i]+'  có giá:'+donGia[i]+'\n'+'Số lượng bạn cần mua là bao nhiêu:')
+                tinhTien+=donGia[i]*soLuong;
+            }
+        }
+    }while(chonMon!==7)
+    alert('Số tiền bạn phải trả là: '+tinhTien)
+</script>
 </body>
 </html>
