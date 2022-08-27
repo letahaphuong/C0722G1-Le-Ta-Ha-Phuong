@@ -20,15 +20,33 @@
         for (let j = 0; j < arrayS2.length; j++) {
             if (arrayS1[i] === arrayS2[j]) {
                 mangS3.push(arrayS1[i]);
-                arrayS1.splice(i,1);
-                arrayS2.splice(j,1);
+                arrayS1.splice(i, 1);
+                arrayS2.splice(j, 1);
                 i--;
                 j--;
             }
 
         }
-    }alert('Có '+mangS3.length+'  kí tự chung là:  '+mangS3);
+    }
+    alert('Có ' + mangS3.length + '  kí tự chung là:  ' + mangS3);
 
+    demSoLanXuatHien(mangS3)
+
+    function demSoLanXuatHien(mang) {
+        let mangS4 = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (mangS4.indexOf(mang[i] === -1)) {
+                mangS4.push(mang[i]);
+                let dem=0;
+                for (let j = 0; j < mang.length; j++) {
+                    if (mang[i]==mang[j]){
+                        dem++;
+                    }
+                }
+            }
+
+        }
+    }
 </script>
 </body>
 </html>
