@@ -10,7 +10,12 @@
     //     , hiện thị giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3 ( phần tử có index chia hết cho 3)
     // Ví dụ: [15,2,3,5,10,15,7,8,9,10]. Kết quả sau khi thực hiện là: (15+5+10)/3) = 10
 
-    let number = +prompt('Nhập Số Nguyên n: ');
+    let number;
+    do {
+        number = +prompt('Nhập Số Nguyên n: ');
+
+    } while (number <= 0 || number >= 50);
+
     let array = [];
     if (number <= 50) {
         for (let i = 0; i < number; i++) {
@@ -19,7 +24,6 @@
     }
     document.write(array.toString());
     let array1 = [];
-    let dem = 0;
     for (let j = 0; j < array.length; j++) {
         if (j % 3 === 0) {
             array1.push(array[j]);

@@ -6,19 +6,18 @@
 </head>
 <body>
 <script>
-    let num1=+prompt("Chiều dài mảng");
-    let arrayA=[];
-    for (let i=0;i<num1;i++){
-        arrayA[i]= +prompt("Nhập số phần tử: ");
+    let num1 = +prompt("Chiều dài mảng");
+    let arrayA = [];
+    for (let i = 0; i < num1; i++) {
+        arrayA[i] = +prompt("Nhập số phần tử: ");
     }
-    let dem=0;
-    let arrayB=[];
-    for (let j=0;j<arrayA.length;j++){
-        dem+=arrayA[j];
-        arrayB[j]=dem;
-    }alert(arrayB);
-
-
+    let dem = 0;
+    let arrayB = [];
+    for (let j = 0; j < arrayA.length; j++) {
+        dem += arrayA[j];
+        arrayB[j] = dem;
+    }
+    alert(arrayB);
 
 
     // let x= [ 'c', 's', 'c','3', '2', '6', '1' ];
