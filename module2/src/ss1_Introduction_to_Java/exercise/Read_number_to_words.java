@@ -135,6 +135,7 @@ public class Read_number_to_words {
                         numberToWords1 = " ";
                         break;
                     } else {
+
                         numberToWords1 = " ";
                         break;
                     }
@@ -208,9 +209,40 @@ public class Read_number_to_words {
                 default:
                     numberToWords2 = " ";
             }
-            if (!numberToWords.equals(" ") || !numberToWords1.equals(" ")||!numberToWords2.equals(" ")){
-                System.out.printf("The number '%d' to words: %s !",number,numberToWords+" "+numberToWords1+" "+numberToWords2);
-            }else{
+            if (number<120 && number >110){
+                switch (number){
+                    case 111:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Eleven");
+                        break;
+                    case 112:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Twelve");
+                        break;
+                    case 113:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Thirteen");
+                        break;
+                    case 114:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Fourteen");
+                        break;
+                    case 115:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Fifteen");
+                        break;
+                    case 116:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Sixteen");
+                        break;
+                    case 117:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Seventeen");
+                        break;
+                    case 118:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Eighteen");
+                        break;
+                    case 119:
+                        System.out.printf("The number '%d' to words: %s !",number,"One hundred Nineteen");
+                        break;
+                }
+            }
+            else if (!numberToWords.equals(" ") || !numberToWords1.equals(" ") || !numberToWords2.equals(" ")) {
+                System.out.printf("The number '%d' to words: %s !", number, numberToWords + " " + numberToWords1 + " " + numberToWords2);
+            } else {
                 System.out.print("Invalid input!");
             }
         }
