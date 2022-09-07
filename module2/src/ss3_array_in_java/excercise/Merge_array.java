@@ -42,14 +42,15 @@ public class Merge_array {
         }
         System.out.println("Array2 list: ");
         System.out.print(Arrays.toString(array2));
-        int size3 = size1 + size2;
-        int[] array3 = new int[size3];
+
+        int[] array3 = new int[size1 + size2];
+
         for (int k = 0; k < array1.length; k++) {
             array3[k] = array1[k];
         }
-
-
-        System.out.print("array3 list: ");
-        System.out.print(Arrays.toString(array3));
+        for (int k = 0; k < array2.length; k++) {
+            array3[array1.length + k] = array2[k];
+        }
+        System.out.println(Arrays.toString(array3));
     }
 }
