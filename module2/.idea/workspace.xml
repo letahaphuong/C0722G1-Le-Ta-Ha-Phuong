@@ -23,13 +23,11 @@
       <change beforePath="$PROJECT_DIR$/../module1/case_study_module_1/I_ve_hinh/bai_1_ve_hinh_chu_nhat_rong_n_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/case_study_module_1/I_ve_hinh/bai_1_ve_hinh_chu_nhat_rong_n_m.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module1/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/test1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_Introduction_to_Java/exercise/Read_number_to_words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss1_Introduction_to_Java/exercise/Read_number_to_words.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss2_loop_in_JAVA/excercise/Show_drawing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss2_loop_in_JAVA/excercise/Show_drawing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss2_loop_in_JAVA/excercise/Show_drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss2_loop_in_JAVA/excercise/Show_drawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,15 +58,15 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Read_number_to_words">
-    <configuration name="Drawing_menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_JAVA.practice.Drawing_menu" />
+  <component name="RunManager" selected="Application.Remove_element_in_array">
+    <configuration name="Add_element_in_array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Add_element_in_array" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss2_loop_in_JAVA.practice.*" />
+          <option name="PATTERN" value="ss3_array_in_java.excercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Greate_common_factor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_JAVA.practice.Greate_common_factor" />
+    <configuration name="Find_min_in_array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.practice.Find_min_in_array" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss2_loop_in_JAVA.practice.*" />
+          <option name="PATTERN" value="ss3_array_in_java.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Read_number_to_words" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_Introduction_to_Java.exercise.Read_number_to_words" />
+    <configuration name="Merge_array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Merge_array" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_Introduction_to_Java.exercise.*" />
+          <option name="PATTERN" value="ss3_array_in_java.excercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Show_drawing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_JAVA.excercise.Show_drawing" />
+    <configuration name="Remove_element_in_array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Remove_element_in_array" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss2_loop_in_JAVA.excercise.*" />
+          <option name="PATTERN" value="ss3_array_in_java.excercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Read_number_to_words" />
+        <item itemvalue="Application.Remove_element_in_array" />
+        <item itemvalue="Application.Merge_array" />
+        <item itemvalue="Application.Add_element_in_array" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Show_drawing" />
-        <item itemvalue="Application.Drawing_menu" />
-        <item itemvalue="Application.Greate_common_factor" />
+        <item itemvalue="Application.Find_min_in_array" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +144,9 @@
       <workItem from="1662344090842" duration="3066000" />
       <workItem from="1662347776342" duration="11200000" />
       <workItem from="1662381485550" duration="12313000" />
-      <workItem from="1662424517416" duration="18310000" />
+      <workItem from="1662424517416" duration="23403000" />
+      <workItem from="1662466498039" duration="9770000" />
+      <workItem from="1662511129795" duration="19699000" />
     </task>
     <servers />
   </component>
@@ -178,45 +178,57 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="740" y="217" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1662346311043" />
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1662453056765">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1662542134420">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662453056765" />
-    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1662453056765">
+    <state width="1340" height="263" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625213" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662542134420" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1662542134420">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662453056765" />
-    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1662453056765">
+    <state width="1340" height="263" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625213" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662542134420" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1662542134420">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662453056765" />
-    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1662453056765">
+    <state width="1340" height="263" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625213" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662542134420" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1662542134420">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662453056765" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662394062935">
+    <state width="1340" height="263" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625213" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662542134420" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1662476625210">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1662476625210">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1662476625210">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
+    <state x="440" y="90" key="SettingsEditor" timestamp="1662542658634">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662394062935" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1662394062935">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662394062935" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1662394062935">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662394062935" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1662394062935">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662394062935" />
-    <state x="440" y="90" key="SettingsEditor" timestamp="1662346247402">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1662346247402" />
+    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1662542658634" />
     <state x="342" y="136" key="new project wizard" timestamp="1662346619129">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="342" y="136" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1662346619129" />
+    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1662473150927">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662473150927" />
   </component>
 </project>
