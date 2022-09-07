@@ -51,6 +51,7 @@ public class Merge_array {
         for (int k = 0; k < array2.length; k++) {
             array3[array1.length + k] = array2[k];
         }
+        System.out.println("\nArray3 list: ");
         System.out.println(Arrays.toString(array3));
     }
 }
