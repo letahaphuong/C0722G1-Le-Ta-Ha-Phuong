@@ -19,13 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="">
+    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="up bai 8">
       <change beforePath="$PROJECT_DIR$/../module1/case_study_module_1/I_ve_hinh/bai_1_ve_hinh_chu_nhat_rong_n_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/case_study_module_1/I_ve_hinh/bai_1_ve_hinh_chu_nhat_rong_n_m.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module1/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/test1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Merge_array.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Merge_array.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3_array_in_java/excercise/Array_and_method/Max_in_2_dimensional_arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_array_in_java/excercise/Array_and_method/Max_in_2_dimensional_arrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Array_and_method/Sum_diagonal_line_in_square_array.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Array_and_method/Sum_diagonal_line_in_square_array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Array_and_method/Sum_in_column.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss3_array_in_java/excercise/Array_and_method/Sum_in_column.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +59,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Count_occurrences_char_in_string">
-    <configuration name="Count_occurrences_char_in_string" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Array_and_method.Count_occurrences_char_in_string" />
+  <component name="RunManager" selected="Application.Main (4)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_in_java.excercise.Array_and_method.*" />
+          <option name="PATTERN" value="ss4_class_object.excercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +73,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Count_student" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.practice.Count_student" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.quadraticEquation1.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_in_java.practice.*" />
+          <option name="PATTERN" value="ss4_class_object.excercise.quadraticEquation1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Max_in_2_dimensional_arrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Array_and_method.Max_in_2_dimensional_arrays" />
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.stopWatch.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_in_java.excercise.Array_and_method.*" />
+          <option name="PATTERN" value="ss4_class_object.excercise.stopWatch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +99,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sum_diagonal_line_in_square_array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_in_java.excercise.Array_and_method.Sum_diagonal_line_in_square_array" />
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.fanBuild.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_in_java.excercise.Array_and_method.*" />
+          <option name="PATTERN" value="ss4_class_object.excercise.fanBuild.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.quadraticEquation.Main" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss4_class_object.excercise.quadraticEquation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_class_object.excercise.quadraticEquation.Main" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss4_class_object.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Count_occurrences_char_in_string" />
-        <item itemvalue="Application.Sum_diagonal_line_in_square_array" />
-        <item itemvalue="Application.Sum_in_column" />
-        <item itemvalue="Application.Max_in_2_dimensional_arrays" />
-        <item itemvalue="Application.Count_student" />
+        <item itemvalue="Application.Main (4)" />
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -154,8 +180,18 @@
       <workItem from="1662511129795" duration="22650000" />
       <workItem from="1662551789341" duration="3511000" />
       <workItem from="1662565950803" duration="1354000" />
-      <workItem from="1662597263818" duration="7843000" />
+      <workItem from="1662597263818" duration="16402000" />
+      <workItem from="1662639246059" duration="5786000" />
+      <workItem from="1662684879468" duration="18566000" />
     </task>
+    <task id="LOCAL-00001" summary="up bai 8">
+      <created>1662713963974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662713963974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,11 +209,20 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="up bai 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="up bai 8" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="440" y="90" key="#Project_Structure" timestamp="1662344778320">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="440" y="90" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1662344778320" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1662702562063">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662639845290" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662702562063" />
     <state x="743" y="410" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1662364415744">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -186,26 +231,26 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="740" y="217" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1662608223443" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1662611720789">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1662713972453">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662567321295" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662611720789" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1662611720789">
+    <state width="2517" height="283" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662645648137" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662713972453" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1662713972453">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662567321295" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662611720789" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1662611720788">
+    <state width="2517" height="283" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662645648137" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662713972453" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1662713972453">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662567321295" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662611720788" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1662611720789">
+    <state width="2517" height="283" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662645648137" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662713972453" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1662713972453">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662567321295" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662611720789" />
+    <state width="2517" height="283" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662645648137" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662713972453" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -242,9 +287,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1662607727983" />
-    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1662473150927">
-      <screen x="0" y="0" width="2560" height="1032" />
+    <state x="227" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1662696158040">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="303" y="228" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662473150927" />
+    <state x="227" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1662696158040" />
   </component>
 </project>
