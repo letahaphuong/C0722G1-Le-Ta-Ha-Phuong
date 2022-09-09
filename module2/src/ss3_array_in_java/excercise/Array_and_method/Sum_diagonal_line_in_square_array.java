@@ -28,10 +28,6 @@ public class Sum_diagonal_line_in_square_array {
             total += array[i][i];
         }
         System.out.print("Tổng đường chéo bắt đầu từ [0] : "+total+"\n");
-        int total1 = 0;
-        for (int i = array.length - 1; i >= 0; i--) {
-            total1 += array[i][i];
-        }
-        System.out.print("Tổng đường chéo bắt đầu từ[length -1] : "+total1);
+
     }
 }
