@@ -10,6 +10,7 @@ public class Main {
         fan1.setRunning(true);
 
         fan2.setSpeed(fan2.MEDIUM);
+
         System.out.println("Fan 1 Status"+fan1);
         System.out.println("Fan 2 Status"+fan2);
     }
