@@ -32,11 +32,11 @@ public class QuadraticEquation {
     }
 
     public double getRoot1() {//tìm nghiệm 1 của phương trình.
-        return (-this.b + Math.sqrt((Math.pow((this.b), 2) - 4 * this.a * this.c)) / (2 * this.a));
+        return (-this.b + Math.sqrt(getDiscriminant()));
     }
 
     public double getRoot2() {//tìm nghiệm 2 của phương trình.
-        return (-this.b - Math.sqrt((Math.pow((this.b), 2) - 4 * this.a * this.c)) / (2 * this.a));
+        return (-this.b - Math.sqrt(getDiscriminant()));
     }
 
 }
