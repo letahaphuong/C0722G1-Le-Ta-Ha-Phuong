@@ -10,12 +10,14 @@ public class Student {
         this.rollno = r;
         this.name = n;
     }
+
     // phương thức static để thay đổi giá trị của biến stactic.
-    static void change(){
-        college="CODEGYM";
+    static void change() {
+        college = "CODEGYM";
     }
+
     // phương thức hiển thị giá trị
-    void display(){
-        System.out.println(rollno+" "+name+" "+college);
+    void display() {
+        System.out.println(rollno + " " + name + " " + college);
     }
 }
