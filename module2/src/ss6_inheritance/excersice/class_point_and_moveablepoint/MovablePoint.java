@@ -47,10 +47,13 @@ public class MovablePoint extends Point {
 
     @Override
     public String toString() {
-        return "A MovablePoint with "
-                + "(" + getX() + getY() + ")" +
-                " Speed = "
-                + Arrays.toString(getSpeed());
+//        return "A MovablePoint with "
+//                + "(" + getX() +","+ getY() + ")" +
+//                " Speed = "
+//                + Arrays.toString(getSpeed());
+        return "Toạ độ điểm này: "+
+                String.format("(%.2f,%.2f),speed= (%.2f,%.2f)",getX(),getY(),xSpeed,ySpeed);
+
     }
 
     public MovablePoint move() {

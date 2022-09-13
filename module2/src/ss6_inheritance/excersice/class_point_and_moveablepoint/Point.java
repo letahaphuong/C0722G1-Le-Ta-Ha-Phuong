@@ -38,13 +38,14 @@ public class Point {
     public float[] getXY() {
         return new float[]{x, y};
     }
-//    @Override
-//    public String toString(){
+    @Override
+    public String toString(){
 //        return "A Point with x= "
 //                +getX()
 //                +" y= "
 //                +getY()
 //                +"and (x,y)"
 //                + Arrays.toString(getXY());
-//    }
+        return "Điểm này có toạ độ: "+ String.format("(%.2f,%.2f)",x,y);
+    }
 }

@@ -21,13 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/circle/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/circle/Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/circle/TestCircle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/circle/TestCircle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/only_note_in_java/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/only_note_in_java/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/only_note_in_java/TestStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/excersice/only_note_in_java/TestStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/practice/Static_Method/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss5_access_modifier_static_method_static_property/practice/Static_Method/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5_access_modifier_static_method_static_property/excersice/circle/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static_method_static_property/excersice/circle/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss5_access_modifier_static_method_static_property/excersice/circle/TestCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static_method_static_property/excersice/circle/TestCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +165,7 @@
       <workItem from="1662908412173" duration="1376000" />
       <workItem from="1662943919202" duration="8554000" />
       <workItem from="1662984618438" duration="7561000" />
-      <workItem from="1663030009463" duration="5936000" />
+      <workItem from="1663030009463" duration="8266000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -287,30 +283,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1663042027935">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1663044505923">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
     <state width="2517" height="276" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663042027935" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1663042027935">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505923" />
+    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1663044505922">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
     <state width="2517" height="276" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663042027935" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1663042027935">
+    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505922" />
+    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1663044505922">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
     <state width="2517" height="276" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663042027935" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1663042027935">
+    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505922" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1663044505923">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
     <state width="2517" height="276" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663042027935" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505923" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
