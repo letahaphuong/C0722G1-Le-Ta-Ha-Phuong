@@ -21,9 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss8_clean_code_and_refactoring/excercise/refactoring_tenis/TennisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss8_clean_code_and_refactoring/excercise/refactoring_tenis/TennisGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,24 +53,35 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/excersice/interface_resizeable" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.MovablePointTest">
-    <configuration name="CylinderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.excersice.class_circle_and_class_cylinder.CylinderTest" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice\interface_resizeable" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TennisGameTest">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.excersice.interface_colorable.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss6_inheritance.excersice.class_circle_and_class_cylinder.*" />
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.excersice.interface_colorable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,12 +89,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovablePointTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.excersice.class_point_and_moveablepoint.MovablePointTest" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.excersice.interface_resizeable.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss6_inheritance.excersice.class_point_and_moveablepoint.*" />
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.excersice.interface_resizeable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,52 +102,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Point2DTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.excersice.class_point2D_and_class_point3D.Point2DTest" />
+    <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss6_inheritance.excersice.class_point2D_and_class_point3D.*" />
+          <option name="PATTERN" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split" />
+      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split.CalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Point3DTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.excersice.class_point2D_and_class_point3D.Point3DTest" />
+    <configuration name="CylinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss6_inheritance.excersice.class_point2D_and_class_point3D.*" />
+          <option name="PATTERN" value="ss8_clean_code_and_refactoring.practice.split_method.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.practice.split_method" />
+      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.practice.split_method.CylinderTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PointTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.excersice.class_point_and_moveablepoint.PointTest" />
+    <configuration name="TennisGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss6_inheritance.excersice.class_point_and_moveablepoint.*" />
+          <option name="PATTERN" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis" />
+      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis.TennisGameTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MovablePointTest" />
-        <item itemvalue="Application.PointTest" />
-        <item itemvalue="Application.Point3DTest" />
-        <item itemvalue="Application.Point2DTest" />
-        <item itemvalue="Application.CylinderTest" />
+        <item itemvalue="JUnit.TennisGameTest" />
+        <item itemvalue="JUnit.CylinderTest" />
+        <item itemvalue="JUnit.CalculatorTest" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +188,11 @@
       <workItem from="1662908412173" duration="1376000" />
       <workItem from="1662943919202" duration="8554000" />
       <workItem from="1662984618438" duration="7561000" />
-      <workItem from="1663030009463" duration="8266000" />
+      <workItem from="1663030009463" duration="10974000" />
+      <workItem from="1663075494415" duration="4463000" />
+      <workItem from="1663080819387" duration="210000" />
+      <workItem from="1663117186202" duration="20471000" />
+      <workItem from="1663203576888" duration="15479000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -237,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662958029010</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="upbai">
+      <created>1663045324634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663045324634</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,16 +299,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="440" y="90" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1662344778320" />
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1662988550321">
-      <screen x="0" y="0" width="2560" height="1032" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663150301646">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662988550321" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662956201326" />
-    <state x="991" y="410" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1662900690772">
-      <screen x="0" y="0" width="2560" height="1032" />
+    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663081019168" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663150301646" />
+    <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663128696257">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="991" y="410" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662900690772" />
-    <state x="743" y="410" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1662364415744" />
+    <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1663128696257" />
+    <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1663148395658">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663148395658" />
     <state x="740" y="217" key="FileChooserDialogImpl" timestamp="1662608223443">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -283,30 +321,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1663044505923">
+    <state width="1877" height="34" key="GridCell.Tab.0.bottom" timestamp="1663216522938">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="276" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505923" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1663044505922">
+    <state width="1440" height="275" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
+    <state width="1877" height="34" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
+    <state width="1877" height="34" key="GridCell.Tab.0.center" timestamp="1663216522938">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="276" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505922" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1663044505922">
+    <state width="1440" height="275" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
+    <state width="1877" height="34" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
+    <state width="1877" height="34" key="GridCell.Tab.0.left" timestamp="1663216522938">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="276" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505922" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1663044505923">
+    <state width="1440" height="275" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
+    <state width="1877" height="34" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
+    <state width="1877" height="34" key="GridCell.Tab.0.right" timestamp="1663216522938">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="276" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662994893261" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663044505923" />
+    <state width="1440" height="275" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
+    <state width="1877" height="34" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -327,21 +365,25 @@
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
     <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state x="-1451" y="36" key="SettingsEditor" timestamp="1662908496067">
-      <screen x="-1920" y="0" width="1920" height="1032" />
+    <state x="440" y="90" key="SettingsEditor" timestamp="1663128287826">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="-1451" y="36" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662908496067" />
-    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1662542658634" />
+    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1663128287826" />
     <state x="845" y="430" key="VCS.ChangelistChooser" timestamp="1662955348224">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1662958031028">
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663045328003">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662805312111" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1662958031028" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663045328003" />
+    <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1663205433104">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1032@0.0.1920.1032" timestamp="1663205433104" />
     <state x="769" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1662714634516">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
