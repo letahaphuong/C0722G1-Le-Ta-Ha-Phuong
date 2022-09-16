@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex1_arraylist/MyArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex1_arraylist/MyArrayListTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,7 +183,7 @@
       <workItem from="1663203576888" duration="17751000" />
       <workItem from="1663252082345" duration="1882000" />
       <workItem from="1663288857010" duration="14847000" />
-      <workItem from="1663333853173" duration="9583000" />
+      <workItem from="1663333853173" duration="9882000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -272,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663230363161</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="upbai">
+      <created>1663343817398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663343817398</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,10 +384,10 @@
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663230369786">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="736" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663343820684">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662805312111" />
+    <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663343820684" />
     <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663230369786" />
     <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1663205433104">
       <screen x="0" y="0" width="1920" height="1032" />
