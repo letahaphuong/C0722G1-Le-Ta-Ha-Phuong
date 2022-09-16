@@ -55,7 +55,6 @@ public class MyArrayListTest {
 //            System.out.println(student.getId());
 //            System.out.println(student.getName());
 //        }
-
 //        System.out.println(studentMyArrayList.indexOf(s2));
 //        System.out.println(studentMyArrayList.contains(s6));
         newMyArrayList = studentMyArrayList.clone();

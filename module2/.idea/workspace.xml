@@ -21,14 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePointTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss6_inheritance/excersice/class_point_and_moveablepoint/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_circle_and_class_cylinder/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/excersice/class_point_and_moveablepoint/MovablePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss8_clean_code_and_refactoring/excercise/refactoring_tenis/TennisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss8_clean_code_and_refactoring/excercise/refactoring_tenis/TennisGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex1_arraylist/MyArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex1_arraylist/MyArrayListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/excersice/interface_resizeable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex3_from_mr_haitt_1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,17 +64,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex2_mvc_form_mr_haitt" />
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice\interface_resizeable" />
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TennisGameTest">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.excersice.interface_colorable.Main" />
+  <component name="RunManager" selected="Application.main">
+    <configuration name="MyArrayListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.excercise.ex1_arraylist.MyArrayListTest" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss7_abstract_class_and_interface.excersice.interface_colorable.*" />
+          <option name="PATTERN" value="ss10_collection_framework_1.excercise.ex1_arraylist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.excersice.interface_resizeable.Main" />
+    <configuration name="MyLinkedListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.practice.simple_linkedlist.MyLinkedListTest" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss7_abstract_class_and_interface.excersice.interface_resizeable.*" />
+          <option name="PATTERN" value="ss10_collection_framework_1.practice.simple_linkedlist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,32 +97,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.practice.simple_list.MyListTest" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split.*" />
+          <option name="PATTERN" value="ss10_collection_framework_1.practice.simple_list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split" />
-      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.practice.refactoring_change_avarrible_and_const_split.CalculatorTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CylinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.excercise.ex2_mvc_form_mr_haitt.tempalte.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss8_clean_code_and_refactoring.practice.split_method.*" />
+          <option name="PATTERN" value="ss10_collection_framework_1.excercise.ex2_mvc_form_mr_haitt.tempalte.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.practice.split_method" />
-      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.practice.split_method.CylinderTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.MyArrayListTest" />
+        <item itemvalue="Application.MyListTest" />
+        <item itemvalue="Application.MyLinkedListTest" />
         <item itemvalue="JUnit.TennisGameTest" />
-        <item itemvalue="JUnit.CylinderTest" />
-        <item itemvalue="JUnit.CalculatorTest" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +183,10 @@
       <workItem from="1663075494415" duration="4463000" />
       <workItem from="1663080819387" duration="210000" />
       <workItem from="1663117186202" duration="20471000" />
-      <workItem from="1663203576888" duration="15479000" />
+      <workItem from="1663203576888" duration="17751000" />
+      <workItem from="1663252082345" duration="1882000" />
+      <workItem from="1663288857010" duration="14847000" />
+      <workItem from="1663333853173" duration="9583000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -271,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663045324634</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="upbai">
+      <created>1663230363161</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663230363161</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,11 +300,11 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="440" y="90" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1662344778320" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663150301646">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663342553914">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663081019168" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663150301646" />
+    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342553914" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663319335263" />
     <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663128696257">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -313,6 +314,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663148395658" />
+    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1663319524981">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663319524981" />
     <state x="740" y="217" key="FileChooserDialogImpl" timestamp="1662608223443">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -321,30 +326,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="1877" height="34" key="GridCell.Tab.0.bottom" timestamp="1663216522938">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="2517" height="229" key="GridCell.Tab.0.bottom" timestamp="1663342370948">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="1440" height="275" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
-    <state width="1877" height="34" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
-    <state width="1877" height="34" key="GridCell.Tab.0.center" timestamp="1663216522938">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="2517" height="229" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
+    <state width="1877" height="229" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294885" />
+    <state width="2517" height="229" key="GridCell.Tab.0.center" timestamp="1663342370948">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="1440" height="275" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
-    <state width="1877" height="34" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
-    <state width="1877" height="34" key="GridCell.Tab.0.left" timestamp="1663216522938">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="2517" height="229" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
+    <state width="1877" height="229" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294884" />
+    <state width="2517" height="229" key="GridCell.Tab.0.left" timestamp="1663342370948">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="1440" height="275" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
-    <state width="1877" height="34" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
-    <state width="1877" height="34" key="GridCell.Tab.0.right" timestamp="1663216522938">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state width="2517" height="229" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
+    <state width="1877" height="229" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294884" />
+    <state width="2517" height="229" key="GridCell.Tab.0.right" timestamp="1663342370948">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="1440" height="275" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663080281581" />
-    <state width="1877" height="34" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663216522938" />
+    <state width="2517" height="229" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
+    <state width="1877" height="229" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294885" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -365,21 +370,21 @@
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
     <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state x="440" y="90" key="SettingsEditor" timestamp="1663128287826">
+    <state x="440" y="90" key="SettingsEditor" timestamp="1663323136951">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="-1451" y="36" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662908496067" />
-    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1663128287826" />
+    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1663323136951" />
     <state x="845" y="430" key="VCS.ChangelistChooser" timestamp="1662955348224">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663045328003">
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663230369786">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662805312111" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663045328003" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663230369786" />
     <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1663205433104">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -388,6 +393,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="769" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032@0.0.1920.1032" timestamp="1662714634516" />
+    <state x="92" y="92" width="2376" height="848" key="dock-window-1" timestamp="1663253021721">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="92" y="92" width="2376" height="848" key="dock-window-1/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663253021721" />
     <state x="758" y="277" key="extract.method.dialog" timestamp="1662867161819">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
