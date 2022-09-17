@@ -38,18 +38,35 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "SINH VIÊN{" +
-                " Mã sinh viên: " +
-                getId() +
-                ", Tên Sinh Viên: " +
-                getName() +
-                ", Ngày tháng năm sinh: " +
-                getBirthday() +
-                ", Giới tính: " +
-                getSex() +
-                ", Tên Lớp='" + nameClass + '\'' +
-                ", Điểm số=" + score +
-                '}';
+        if (getSex().equals(true)){
+            return "SINH VIÊN{" +
+                    " Mã sinh viên: " +
+                    getId() +
+                    ", Tên Sinh Viên: " +
+                    getName() +
+                    ", Ngày tháng năm sinh: " +
+                    getBirthday() +
+                    ", Giới tính: " +
+                    "Nam" +
+                    ", Tên Lớp='" + nameClass + '\'' +
+                    ", Điểm số=" + score +
+                    '}';
+        }else if (getSex().equals(false)){
+            return "SINH VIÊN{" +
+                    " Mã sinh viên: " +
+                    getId() +
+                    ", Tên Sinh Viên: " +
+                    getName() +
+                    ", Ngày tháng năm sinh: " +
+                    getBirthday() +
+                    ", Giới tính: " +
+                    getSex() +
+                    ", Tên Lớp='" + nameClass + '\'' +
+                    ", Điểm số=" + score +
+                    '}';
+        }else {
+            return "Chưa nhập giới tính";
+        }
     }
 }
 

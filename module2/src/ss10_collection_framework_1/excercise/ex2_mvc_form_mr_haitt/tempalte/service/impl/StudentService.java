@@ -8,42 +8,42 @@ import java.util.Scanner;
 
 public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
-    private static List<Student> studentList = new ArrayList<Student>();
+    private static List<Student> studentList = new ArrayList<>();
 
     @Override
     public void addStudent() {
         Student student = this.infoStudent();
         studentList.add(student);
-        System.out.println("Thêm mới thành công: ");
+        System.out.println("Thêm mới thành công! ");
     }
 
     @Override
     public void displayAllStudent() {
-    for (Student student:studentList){
-        System.out.println(student);
-    }
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
     }
 
     @Override
     public void removeStudent() {
         System.out.println("Mời bạn nhập mã Sinh Viên cần xoá: ");
-        String id=scanner.nextLine();
-        boolean flagDelete=false;
+        String id = scanner.nextLine();
+        boolean flagDelete = false;
         for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getId().equals(id)){
+            if (studentList.get(i).getId().equals(id)) {
                 System.out.println("Bạn có chắc muốn xoá Sinh Viên?" +
                         "Nhập Y để xoá" +
                         "Nhập N để không xoá");
-                String choice=scanner.nextLine();
-                if (choice.equals("Y")){
+                String choice = scanner.nextLine();
+                if (choice.equals("Y")) {
                     studentList.remove(i);
                     System.out.println("Xoá Thành Công!");
                 }
-                flagDelete=true;
+                flagDelete = true;
                 break;
             }
         }
-        if (!flagDelete){
+        if (!flagDelete) {
             System.out.println("Không tìm thấy đối tượng cần xoá.");
         }
 
@@ -67,10 +67,10 @@ public class StudentService implements IStudentService {
             sex = null;
         }
         System.out.println("Mời bạn nhập tên lớp: ");
-        String nameClass=scanner.nextLine();
+        String nameClass = scanner.nextLine();
         System.out.println("Mời bạn nhập điểm của Sinh Viên: ");
-        double score=Double.parseDouble(scanner.nextLine());
-        Student student=new Student(id,name,birthday,sex,nameClass,score);
+        double score = Double.parseDouble(scanner.nextLine());
+        Student student = new Student(id, name, birthday, sex, nameClass, score);
         return student;
     }
 }

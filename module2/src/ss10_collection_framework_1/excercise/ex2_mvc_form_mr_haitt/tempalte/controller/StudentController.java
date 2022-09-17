@@ -29,7 +29,7 @@ public class StudentController {
                 case 3:
                     iStudentServeice.removeStudent();
                     break;
-                case 5:
+                case 4:
                     return;
                 case 0:
                     System.exit(0);

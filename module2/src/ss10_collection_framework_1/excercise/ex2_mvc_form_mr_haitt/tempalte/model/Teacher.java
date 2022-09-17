@@ -23,16 +23,33 @@ public class Teacher extends Person{
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                " Mã Giáo Viên: "+
-                getId()+
-                ", Tên Giáo Viên: "+
-                getName()+
-                ", Ngày tháng năm sinh: "+
-                getBirthday()+
-                ", Giới tính: "+
-                getSex()+
-                ", Specialize='" + Specialize + '\'' +
-                '}';
+        if (getSex().equals(true)){
+            return "Teacher{" +
+                    " Mã Giáo Viên: "+
+                    getId()+
+                    ", Tên Giáo Viên: "+
+                    getName()+
+                    ", Ngày tháng năm sinh: "+
+                    getBirthday()+
+                    ", Giới tính: "+
+                    "Nam"+
+                    ", Chuyên Môn='" + Specialize + '\'' +
+                    '}';
+        }else if (getSex().equals(false)){
+            return "Teacher{" +
+                    " Mã Giáo Viên: "+
+                    getId()+
+                    ", Tên Giáo Viên: "+
+                    getName()+
+                    ", Ngày tháng năm sinh: "+
+                    getBirthday()+
+                    ", Giới tính: "+
+                    "Nữ"+
+                    ", Chuyên môn='" + Specialize + '\'' +
+                    '}';
+        }
+        else {
+            return "Chưa Nhập giới tính!";
+        }
     }
 }
