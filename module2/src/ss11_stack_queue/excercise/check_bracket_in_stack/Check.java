@@ -10,10 +10,9 @@ public class Check {
         System.out.println("nhập biểu thức: ");
         String str = scanner.nextLine();
         Stack<Character> stack = new Stack<>();
-        String[] arrString = str.split("");
-        boolean checkBracket = true;
+        boolean checkBracket = false;
 
-        for (int i = 0; i < arrString.length; i++) {
+        for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (c == '(') {
                 stack.push(c);
@@ -29,11 +28,9 @@ public class Check {
                     }
                 }
             }
-            if (i == arrString.length - 1) {
+            if (i == str.length() - 1) {
                 checkBracket = stack.isEmpty();
             }
-
-
         }
         if (checkBracket) {
             System.out.println("true");
