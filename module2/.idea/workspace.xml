@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai" />
+    <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/controller/TeacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/model/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2/ss10_collection_framework_1/excercise/ex2_mvc_form_mr_haitt/tempalte/service/impl/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_bracket_in_stack/CheckBracket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_bracket_in_stack/CheckBracket.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,14 +76,22 @@
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice\interface_resizeable" />
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ss11_stack_queue.excercise.element_count.Node" />
+      <recent name="ss10_collection_framework_1.excercise.ex3_from_mr_haitt_1.tempalte.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\A" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\B" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.main">
-    <configuration name="MyArrayListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.excercise.ex1_arraylist.MyArrayListTest" />
+  <component name="RunManager" selected="Application.Check">
+    <configuration name="Check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_bracket_in_stack.Check" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_collection_framework_1.excercise.ex1_arraylist.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.check_bracket_in_stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyLinkedListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.practice.simple_linkedlist.MyLinkedListTest" />
+    <configuration name="CheckBracket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_bracket_in_stack.CheckBracket" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_collection_framework_1.practice.simple_linkedlist.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.check_bracket_in_stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.practice.simple_list.MyListTest" />
+    <configuration name="MapTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.element_count.MapTree" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_collection_framework_1.practice.simple_list.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.element_count.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_collection_framework_1.excercise.ex2_mvc_form_mr_haitt.tempalte.view.main" />
+    <configuration name="PalindromeUseQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_palindrome_use_queue.PalindromeUseQueue" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_collection_framework_1.excercise.ex2_mvc_form_mr_haitt.tempalte.view.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.check_palindrome_use_queue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,28 +138,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TennisGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PalindromeUseQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_palindrome_use_queu.PalindromeUseQueue" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.check_palindrome_use_queu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis" />
-      <option name="MAIN_CLASS_NAME" value="ss8_clean_code_and_refactoring.excercise.refactoring_tenis.TennisGameTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="convertBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.optional_decimal_to_binary.convertBinary" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss11_stack_queue.excercise.optional_decimal_to_binary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.MyArrayListTest" />
-        <item itemvalue="Application.MyListTest" />
-        <item itemvalue="Application.MyLinkedListTest" />
-        <item itemvalue="JUnit.TennisGameTest" />
+        <item itemvalue="Application.Check" />
+        <item itemvalue="Application.CheckBracket" />
+        <item itemvalue="Application.PalindromeUseQueue" />
+        <item itemvalue="Application.convertBinary" />
+        <item itemvalue="Application.MapTree" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +212,16 @@
       <workItem from="1663203576888" duration="17751000" />
       <workItem from="1663252082345" duration="1882000" />
       <workItem from="1663288857010" duration="14847000" />
-      <workItem from="1663333853173" duration="9882000" />
+      <workItem from="1663333853173" duration="16575000" />
+      <workItem from="1663374429834" duration="6151000" />
+      <workItem from="1663381958752" duration="1102000" />
+      <workItem from="1663383652197" duration="157000" />
+      <workItem from="1663388434819" duration="5483000" />
+      <workItem from="1663407768467" duration="348000" />
+      <workItem from="1663470138094" duration="5743000" />
+      <workItem from="1663493355059" duration="5367000" />
+      <workItem from="1663549537446" duration="25593000" />
+      <workItem from="1663590586041" duration="7718000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -304,11 +342,15 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="440" y="90" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1662344778320" />
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663342553914">
+    <state x="94" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1663592216773">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342553914" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663319335263" />
+    <state x="94" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663592216773" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663573928164">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663495699417" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663573928163" />
     <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663128696257">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -318,10 +360,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663148395658" />
-    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1663319524981">
+    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1663561884639">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663319524981" />
+    <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663561884639" />
     <state x="740" y="217" key="FileChooserDialogImpl" timestamp="1662608223443">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -330,30 +372,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="2517" height="229" key="GridCell.Tab.0.bottom" timestamp="1663342370948">
+    <state width="2517" height="325" key="GridCell.Tab.0.bottom" timestamp="1663598446007">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="229" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
-    <state width="1877" height="229" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294885" />
-    <state width="2517" height="229" key="GridCell.Tab.0.center" timestamp="1663342370948">
+    <state width="2517" height="325" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598446007" />
+    <state width="1877" height="325" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663582585505" />
+    <state width="2517" height="325" key="GridCell.Tab.0.center" timestamp="1663598446006">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="229" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
-    <state width="1877" height="229" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294884" />
-    <state width="2517" height="229" key="GridCell.Tab.0.left" timestamp="1663342370948">
+    <state width="2517" height="325" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598446006" />
+    <state width="1877" height="325" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663582585504" />
+    <state width="2517" height="325" key="GridCell.Tab.0.left" timestamp="1663598446006">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="229" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
-    <state width="1877" height="229" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294884" />
-    <state width="2517" height="229" key="GridCell.Tab.0.right" timestamp="1663342370948">
+    <state width="2517" height="325" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598446006" />
+    <state width="1877" height="325" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663582585504" />
+    <state width="2517" height="325" key="GridCell.Tab.0.right" timestamp="1663598446006">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662910247150" />
-    <state width="2517" height="229" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663342370948" />
-    <state width="1877" height="229" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663323294885" />
+    <state width="2517" height="325" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598446006" />
+    <state width="1877" height="325" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663582585504" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -389,6 +431,10 @@
     </state>
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663343820684" />
     <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663230369786" />
+    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663393376653">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663393376653" />
     <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1663205433104">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
