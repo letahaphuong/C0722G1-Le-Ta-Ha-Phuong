@@ -28,7 +28,10 @@ public class TransportService implements ITransportService {
 
     @Override
     public void displayTransport() {
-
+        for (Transport transport:transportList){
+            System.out.println("mảng của bạn là");
+            System.out.println(transport.toString());
+        }
     }
 
     @Override

@@ -1,4 +1,4 @@
-package ss11_stack_queue.practice.practice2;
+package ss11_stack_queue.practice.practice2.Node;
 
 public class Node {
     public int key;
@@ -8,5 +8,5 @@ public class Node {
         this.key = key;
         this.next = null;
     }
-    public void 
+
 }
