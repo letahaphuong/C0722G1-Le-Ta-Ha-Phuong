@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_swap_use_stack/SwapElementString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_swap_use_stack/SwapElementString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/optional_decimal_to_binary/convertBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/optional_decimal_to_binary/convertBinary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +217,7 @@
       <workItem from="1663493355059" duration="5367000" />
       <workItem from="1663549537446" duration="25593000" />
       <workItem from="1663590586041" duration="9365000" />
-      <workItem from="1663634281645" duration="5436000" />
+      <workItem from="1663634281645" duration="5795000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -330,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663644372709</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="upbai">
+      <created>1663646124163</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663646124163</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,30 +400,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom" timestamp="1663645102748">
+    <state width="522" height="904" key="GridCell.Tab.0.bottom" timestamp="1663646101550">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663645102748" />
-    <state width="522" height="904" key="GridCell.Tab.0.center" timestamp="1663645102748">
+    <state width="522" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101550" />
+    <state width="522" height="904" key="GridCell.Tab.0.center" timestamp="1663646101549">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663645102748" />
-    <state width="522" height="904" key="GridCell.Tab.0.left" timestamp="1663645102748">
+    <state width="522" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101549" />
+    <state width="522" height="904" key="GridCell.Tab.0.left" timestamp="1663646101549">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120906" />
     <state width="587" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663645102748" />
-    <state width="522" height="904" key="GridCell.Tab.0.right" timestamp="1663645102748">
+    <state width="522" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101549" />
+    <state width="522" height="904" key="GridCell.Tab.0.right" timestamp="1663646101550">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663645102748" />
+    <state width="522" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101550" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -446,12 +454,12 @@
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663644374610">
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663646174251">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="-1368" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663599991964" />
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598650168" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663644374610" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663646174251" />
     <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663393376653">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
