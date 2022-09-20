@@ -1,13 +1,14 @@
 package ss11_stack_queue.excercise.check_palindrome_use_queu;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class PalindromeUseQueue {
+    static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
-        String str = "123321";
+        String str = scanner.nextLine();
         str = str.toUpperCase();
         String[] array;
         array = str.split("");

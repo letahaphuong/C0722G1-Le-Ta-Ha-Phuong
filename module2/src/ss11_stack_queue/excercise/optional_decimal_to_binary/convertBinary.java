@@ -9,7 +9,7 @@ public class convertBinary {
         Stack<Integer> array = new Stack<>();
         System.out.println("Nhập số muốn chuyển: ");
         int num = Integer.parseInt(scanner.nextLine());
-        while (num != 0) {
+        while (num > 0) {
             array.push(num%2);
             num = num / 2;
         }

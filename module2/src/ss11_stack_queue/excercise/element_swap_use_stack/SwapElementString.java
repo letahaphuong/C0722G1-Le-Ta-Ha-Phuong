@@ -14,8 +14,8 @@ public class SwapElementString {
         String str = scanner.nextLine();
         array = str.split("");
         System.out.println(Arrays.toString(array));
-        for (int i = 0; i < array.length; i++) {
-            beforeSwap.push(array[i]);
+        for (String s : array) {
+            beforeSwap.push(s);
         }
         System.out.println(beforeSwap.size());
         int size= beforeSwap.size();
@@ -23,7 +23,5 @@ public class SwapElementString {
             afterSwap.push(beforeSwap.pop());
         }
         System.out.println("Mảng sau khi đổi: " + afterSwap);
-
-
     }
 }
