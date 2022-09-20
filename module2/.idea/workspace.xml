@@ -22,8 +22,6 @@
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_swap_use_stack/SwapElementString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_swap_use_stack/SwapElementString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/optional_decimal_to_binary/convertBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/optional_decimal_to_binary/convertBinary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,7 @@
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\B" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.convertBinary">
+  <component name="RunManager" selected="Application.PalindromeUseQueue (1)">
     <configuration name="Check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_bracket_in_stack.Check" />
       <module name="module2" />
@@ -94,12 +92,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckBracket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_bracket_in_stack.CheckBracket" />
+    <configuration name="MapTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.element_count.MapTree" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.check_bracket_in_stack.*" />
+          <option name="PATTERN" value="ss11_stack_queue.excercise.element_count.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.convertBinary" />
         <item itemvalue="Application.PalindromeUseQueue (1)" />
+        <item itemvalue="Application.MapTree" />
+        <item itemvalue="Application.convertBinary" />
         <item itemvalue="Application.SwapElementString" />
         <item itemvalue="Application.Check" />
-        <item itemvalue="Application.CheckBracket" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +215,7 @@
       <workItem from="1663493355059" duration="5367000" />
       <workItem from="1663549537446" duration="25593000" />
       <workItem from="1663590586041" duration="9365000" />
-      <workItem from="1663634281645" duration="5795000" />
+      <workItem from="1663634281645" duration="7107000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -338,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663646124163</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="upbai">
+      <created>1663646433018</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663646433018</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,30 +405,30 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom" timestamp="1663646101550">
+    <state width="522" height="904" key="GridCell.Tab.0.bottom" timestamp="1663647493452">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101550" />
-    <state width="522" height="904" key="GridCell.Tab.0.center" timestamp="1663646101549">
+    <state width="522" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493452" />
+    <state width="522" height="904" key="GridCell.Tab.0.center" timestamp="1663647493451">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101549" />
-    <state width="522" height="904" key="GridCell.Tab.0.left" timestamp="1663646101549">
+    <state width="522" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493451" />
+    <state width="522" height="904" key="GridCell.Tab.0.left" timestamp="1663647493451">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120906" />
     <state width="587" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101549" />
-    <state width="522" height="904" key="GridCell.Tab.0.right" timestamp="1663646101550">
+    <state width="522" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493451" />
+    <state width="522" height="904" key="GridCell.Tab.0.right" timestamp="1663647493452">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
     <state width="587" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663646101550" />
+    <state width="522" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493452" />
     <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -454,12 +459,12 @@
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663646174251">
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663646435674">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="-1368" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663599991964" />
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598650168" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663646174251" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663646435674" />
     <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663393376653">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>

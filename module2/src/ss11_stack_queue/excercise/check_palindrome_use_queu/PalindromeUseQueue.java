@@ -8,6 +8,7 @@ import java.util.Stack;
 public class PalindromeUseQueue {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
+        System.out.println("Nhập chuỗi cần kiểm tra: ");
         String str = scanner.nextLine();
         str = str.toUpperCase();
         String[] array;
@@ -27,9 +28,9 @@ public class PalindromeUseQueue {
             isCheck = true;
         }
         if (isCheck){
-            System.out.println("Ok");
+            System.out.println(str+" : là chuỗi palindrome");
         }else {
-            System.out.println("NO");
+            System.out.println(str+" : không phải là chuỗi palindrome");
         }
     }
 }
