@@ -10,8 +10,7 @@ public class convertBinary {
         System.out.println("Nhập số muốn chuyển: ");
         int num = Integer.parseInt(scanner.nextLine());
         while (num != 0) {
-            int d = num % 2;
-            array.push(d);
+            array.push(num%2);
             num = num / 2;
         }
         System.out.println("Giá trị nhị phân là: ");
