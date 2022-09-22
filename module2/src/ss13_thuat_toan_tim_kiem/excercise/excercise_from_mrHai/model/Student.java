@@ -1,4 +1,4 @@
-package ss13_thuat_toan_tim_kiem.excercise.tempalte.model;
+package ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.model;
 
 public class Student extends Person {
     private String nameClass;

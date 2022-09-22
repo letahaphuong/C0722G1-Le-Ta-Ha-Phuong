@@ -1,7 +1,7 @@
-package ss13_thuat_toan_tim_kiem.excercise.tempalte.controller;
+package ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.controller;
 
-import ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.IStudentService;
-import ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.impl.StudentService;
+import ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.service.impl.IStudentService;
+import ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.service.impl.impl.StudentService;
 
 import java.util.Scanner;
 

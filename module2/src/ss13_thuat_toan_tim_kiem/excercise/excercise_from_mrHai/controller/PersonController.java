@@ -1,4 +1,4 @@
-package ss13_thuat_toan_tim_kiem.excercise.tempalte.controller;
+package ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.controller;
 
 import java.util.Scanner;
 

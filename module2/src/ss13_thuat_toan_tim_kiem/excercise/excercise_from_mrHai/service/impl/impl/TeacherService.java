@@ -1,8 +1,7 @@
-package ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.impl;
+package ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.service.impl.impl;
 
-import ss13_thuat_toan_tim_kiem.excercise.tempalte.model.Student;
-import ss13_thuat_toan_tim_kiem.excercise.tempalte.model.Teacher;
-import ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.ITeacherService;
+import ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.model.Teacher;
+import ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.service.impl.ITeacherService;
 
 import java.util.ArrayList;
 import java.util.List;
