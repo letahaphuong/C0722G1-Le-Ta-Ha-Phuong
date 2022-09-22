@@ -1,0 +1,97 @@
+package ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.impl;
+
+import ss13_thuat_toan_tim_kiem.excercise.tempalte.model.Student;
+import ss13_thuat_toan_tim_kiem.excercise.tempalte.model.Teacher;
+import ss13_thuat_toan_tim_kiem.excercise.tempalte.service.impl.ITeacherService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class TeacherService implements ITeacherService {
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Teacher> teacherList = new ArrayList<>();
+
+
+    @Override
+    public void addTeacher() {
+        Teacher teacher = this.infoTeacher();
+        teacherList.add(teacher);
+        System.out.println("Thêm mới thành công!");
+    }
+
+    @Override
+    public void displayAllTeacher() {
+        for (Teacher teacher : teacherList) {
+            System.out.println(teacher);
+        }
+    }
+
+    @Override
+    public void removeTeacher() {
+        System.out.println("Mời nhập mã Giáo Viên cần xoá: ");
+        String id = scanner.nextLine();
+        boolean flagDelete = false;
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getId().equals(id)) {
+                System.out.println("Bạn có chắc muốn xoá học sinh này không? Nhập Y để có,N để không.");
+                String choice = scanner.nextLine();
+                if (choice.equals("Y")) {
+                    teacherList.remove(i);
+                    System.out.println("Xoá Thành Công!");
+                }
+                flagDelete = true;
+                break;
+            }
+        }
+        if (!flagDelete) {
+            System.out.println("Không tìm thấy đối tượng cần xoá.");
+        }
+
+    }
+
+    @Override
+    public void findTeacher() {
+        System.out.println("Nhập tên giáo viên bạn cần tìm!");
+        String find=scanner.nextLine();
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getName().contains(find)){
+                System.out.println(teacherList.get(i));
+            }
+        }
+    }
+
+    public Teacher infoTeacher() {
+        System.out.println("Mời bạn nhập mã Giáo Viên: ");
+        String id = scanner.nextLine();
+        System.out.println("Mời bạn nhập tên Giáo Viên");
+        String name = scanner.nextLine();
+        System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
+        String birthday = scanner.nextLine();
+        System.out.println("Mời bạn nhập vào giới tính: ");
+        String tempSex = scanner.nextLine();
+        Boolean sex;
+        if (tempSex.equals("Nam")) {
+            sex = true;
+        } else if (tempSex.equals("Nữ")) {
+            sex = false;
+        } else {
+            sex = null;
+        }
+        System.out.println("Mời bạn nhập chuyên môn: ");
+        String specialize = scanner.nextLine();
+        Teacher teacher = new Teacher(id, name, birthday, sex, specialize);
+        return teacher;
+    }
+    public static void temp(){
+        Teacher teacher=new Teacher("1","Nguyen Thi B","7/7/1993",false,"aaaa");
+        Teacher teacher1=new Teacher("2","Trần Thi A","7/7/1996",false,"bbbb");
+        Teacher teacher2=new Teacher("3","Lê Thi B","7/7/1998",false,"cccc");
+        Teacher teacher3=new Teacher("4","Đặng Thi A","7/7/1999",false,"dddd");
+        teacherList.add(teacher);
+        teacherList.add(teacher1);
+        teacherList.add(teacher2);
+        teacherList.add(teacher3);
+    }
+
+}
