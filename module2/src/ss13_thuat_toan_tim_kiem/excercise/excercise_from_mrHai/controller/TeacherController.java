@@ -30,8 +30,10 @@ public class TeacherController {
                     break;
                 case 3:
                     iTeacherService.removeTeacher();
+                    break;
                 case 4:
                     iTeacherService.findTeacher();
+                    break;
                 case 5:
                     return;
                 case 0:

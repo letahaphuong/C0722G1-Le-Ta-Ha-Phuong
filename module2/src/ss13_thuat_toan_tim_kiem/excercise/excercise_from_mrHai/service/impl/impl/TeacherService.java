@@ -52,11 +52,16 @@ public class TeacherService implements ITeacherService {
     @Override
     public void findTeacher() {
         System.out.println("Nhập tên giáo viên bạn cần tìm!");
-        String find=scanner.nextLine();
+        String find = scanner.nextLine();
+        boolean flagFind = false;
         for (int i = 0; i < teacherList.size(); i++) {
-            if (teacherList.get(i).getName().contains(find)){
+            if (teacherList.get(i).getName().contains(find)) {
                 System.out.println(teacherList.get(i));
+                flagFind=true;
             }
+        }
+        if (!flagFind){
+            System.out.println("Không tìm thấy tên!");
         }
     }
 
@@ -82,11 +87,12 @@ public class TeacherService implements ITeacherService {
         Teacher teacher = new Teacher(id, name, birthday, sex, specialize);
         return teacher;
     }
-    public static void temp(){
-        Teacher teacher=new Teacher("1","Nguyen Thi B","7/7/1993",false,"aaaa");
-        Teacher teacher1=new Teacher("2","Trần Thi A","7/7/1996",false,"bbbb");
-        Teacher teacher2=new Teacher("3","Lê Thi B","7/7/1998",false,"cccc");
-        Teacher teacher3=new Teacher("4","Đặng Thi A","7/7/1999",false,"dddd");
+
+    public static void temp() {
+        Teacher teacher = new Teacher("1", "Nguyen Thi B", "7/7/1993", false, "aaaa");
+        Teacher teacher1 = new Teacher("2", "Trần Thi A", "7/7/1996", false, "bbbb");
+        Teacher teacher2 = new Teacher("3", "Lê Thi B", "7/7/1998", false, "cccc");
+        Teacher teacher3 = new Teacher("4", "Đặng Thi A", "7/7/1999", false, "dddd");
         teacherList.add(teacher);
         teacherList.add(teacher1);
         teacherList.add(teacher2);

@@ -54,11 +54,16 @@ public class StudentService implements IStudentService {
     @Override
     public void findStudent() {
         System.out.println("Nhập tên bạn cần tìm kím: ");
-        String find=scanner.nextLine();
+        String find = scanner.nextLine();
+        boolean flagFind=false;
         for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getName().contains(find)){
+            if (studentList.get(i).getName().contains(find)) {
                 System.out.println(studentList.get(i));
+                flagFind=true;
             }
+        }
+        if (!flagFind){
+            System.out.println("Không tìm thấy tên!");
         }
     }
 
@@ -86,12 +91,13 @@ public class StudentService implements IStudentService {
         Student student = new Student(id, name, birthday, sex, nameClass, score);
         return student;
     }
-    public static void temp(){
-        Student student = new Student("1","Nguyen van A","12/4/2022",true,"A6",10);
-        Student student1 = new Student("4","Nguyen van B","12/4/1995",false,"A7",6);
-        Student student2 = new Student("3","Nguyen van A","12/4/1823",true,"A8",2);
-        Student student3 = new Student("6","Nguyen van D","12/4/1221",false,"A1",4);
-        Student student4 = new Student("2","Nguyen van C","12/4/2033",false,"A2",3);
+
+    public static void temp() {
+        Student student = new Student("1", "Nguyen van A", "12/4/2022", true, "A6", 10);
+        Student student1 = new Student("4", "Nguyen van B", "12/4/1995", false, "A7", 6);
+        Student student2 = new Student("3", "Nguyen van A", "12/4/1823", true, "A8", 2);
+        Student student3 = new Student("6", "Nguyen van D", "12/4/1221", false, "A1", 4);
+        Student student4 = new Student("2", "Nguyen van C", "12/4/2033", false, "A2", 3);
         studentList.add(student);
         studentList.add(student1);
         studentList.add(student2);
