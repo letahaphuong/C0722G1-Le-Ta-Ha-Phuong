@@ -17,7 +17,7 @@ public class StudentController {
             System.out.println("1. Thêm mới Sinh Viên");
             System.out.println("2. Hiển thị danh sách Sinh Viên");
             System.out.println("3. Xoá Sinh Viên");
-            System.out.println("4. Tìm kiếm theo tên!");
+            System.out.println("4. Tìm kiếm theo tên or theo ID!");
             System.out.println("5. Qua về MENU chính");
             System.out.println("0. Thoát chương trình");
             int choice = Integer.parseInt(scanner.nextLine());
@@ -32,7 +32,7 @@ public class StudentController {
                     iStudentServeice.removeStudent();
                     break;
                 case 4:
-                    iStudentServeice.findStudent();
+                    iStudentServeice.findStudentNameOrID();
                     break;
                 case 5:
                     return;

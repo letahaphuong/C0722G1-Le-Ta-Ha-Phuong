@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/check_palindrome_use_queu/PalindromeUseQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_count/MapTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/excercise/element_count/MapTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/IStudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/ITeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/impl/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/excercise/excercise_from_mrHai/service/impl/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss14_sorting_algorithms/excercise/display_step_instance/StepInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss14_sorting_algorithms/excercise/display_step_instance/StepInstance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -55,36 +62,40 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss10_collection_framework_1/excercise/ex3_from_mr_haitt_1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss14_sorting_algorithms/excercise" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex2_mvc_form_mr_haitt" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice\interface_resizeable" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss7_abstract_class_and_interface\excersice" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\A" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\B" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ss14_sorting_algorithms.excercise.excercise_from_mrHai.service.impl.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ss11_stack_queue.excercise.element_count.Node" />
       <recent name="ss10_collection_framework_1.excercise.ex3_from_mr_haitt_1.tempalte.controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\A" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\B" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss14_sorting_algorithms\excercise" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss13_thuat_toan_tim_kiem\excercise" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss12_map_tree\excercise" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex4_bai_tap_them" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PalindromeUseQueue (1)">
-    <configuration name="Check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_bracket_in_stack.Check" />
+  <component name="RunManager" selected="Application.main (1)">
+    <configuration name="BubbleSortByStep" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sorting_algorithms.parctice.BubbleSortByStep" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.check_bracket_in_stack.*" />
+          <option name="PATTERN" value="ss14_sorting_algorithms.parctice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.element_count.MapTree" />
+    <configuration name="InsertionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sorting_algorithms.excercise.insertion_sort.InsertionSort" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.element_count.*" />
+          <option name="PATTERN" value="ss14_sorting_algorithms.excercise.insertion_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PalindromeUseQueue (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_palindrome_use_queu.PalindromeUseQueue" />
+    <configuration name="StepInstance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sorting_algorithms.excercise.display_step_instance.StepInstance" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.check_palindrome_use_queu.*" />
+          <option name="PATTERN" value="ss14_sorting_algorithms.excercise.display_step_instance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,12 +129,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PalindromeUseQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.check_palindrome_use_queu.PalindromeUseQueue" />
+    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sorting_algorithms.excercise.excercise_from_mrHai.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.check_palindrome_use_queu.*" />
+          <option name="PATTERN" value="ss14_sorting_algorithms.excercise.excercise_from_mrHai.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,25 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SwapElementString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.element_swap_use_stack.SwapElementString" />
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.element_swap_use_stack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="convertBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_stack_queue.excercise.optional_decimal_to_binary.convertBinary" />
-      <module name="module2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss11_stack_queue.excercise.optional_decimal_to_binary.*" />
+          <option name="PATTERN" value="ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PalindromeUseQueue (1)" />
-        <item itemvalue="Application.MapTree" />
-        <item itemvalue="Application.convertBinary" />
-        <item itemvalue="Application.SwapElementString" />
-        <item itemvalue="Application.Check" />
+        <item itemvalue="Application.main (1)" />
+        <item itemvalue="Application.InsertionSort" />
+        <item itemvalue="Application.BubbleSortByStep" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.StepInstance" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +213,15 @@
       <workItem from="1663493355059" duration="5367000" />
       <workItem from="1663549537446" duration="25593000" />
       <workItem from="1663590586041" duration="9365000" />
-      <workItem from="1663634281645" duration="7107000" />
+      <workItem from="1663634281645" duration="16005000" />
+      <workItem from="1663669191250" duration="15000" />
+      <workItem from="1663671935091" duration="1258000" />
+      <workItem from="1663733780321" duration="12571000" />
+      <workItem from="1663808240227" duration="16900000" />
+      <workItem from="1663837926961" duration="3242000" />
+      <workItem from="1663853669717" duration="7021000" />
+      <workItem from="1663860944835" duration="512000" />
+      <workItem from="1663894223117" duration="16099000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -343,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663646433018</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="upbai">
+      <created>1663647518046</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663647518046</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,16 +388,16 @@
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="94" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663592216773" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663573928164">
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1663926912708">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663495699417" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663573928163" />
-    <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663128696257">
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1663926912708" />
+    <state x="743" y="410" width="641" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663906293065">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="991" y="410" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662900690772" />
-    <state x="743" y="410" width="576" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1663128696257" />
+    <state x="743" y="410" width="641" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1663906293065" />
     <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1663148395658">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -405,66 +418,67 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom" timestamp="1663647493452">
+    <state width="709" height="874" key="GridCell.Tab.0.bottom" timestamp="1663927676632">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="587" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493452" />
-    <state width="522" height="904" key="GridCell.Tab.0.center" timestamp="1663647493451">
+    <state width="915" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861460986" />
+    <state width="709" height="874" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663927676632" />
+    <state width="709" height="874" key="GridCell.Tab.0.center" timestamp="1663927676632">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="587" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493451" />
-    <state width="522" height="904" key="GridCell.Tab.0.left" timestamp="1663647493451">
+    <state width="915" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861460986" />
+    <state width="709" height="874" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663927676632" />
+    <state width="709" height="874" key="GridCell.Tab.0.left" timestamp="1663927676632">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120906" />
-    <state width="587" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493451" />
-    <state width="522" height="904" key="GridCell.Tab.0.right" timestamp="1663647493452">
+    <state width="915" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861460986" />
+    <state width="709" height="874" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663927676632" />
+    <state width="709" height="874" key="GridCell.Tab.0.right" timestamp="1663927676632">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="587" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663599567113" />
-    <state width="522" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663647493452" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1662476625210">
-      <screen x="0" y="0" width="2560" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1662476625210">
-      <screen x="0" y="0" width="2560" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1662476625210">
-      <screen x="0" y="0" width="2560" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1662476625210">
-      <screen x="0" y="0" width="2560" height="1032" />
-    </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1662468472098" />
-    <state x="440" y="90" key="SettingsEditor" timestamp="1663323136951">
+    <state width="915" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861460986" />
+    <state width="709" height="874" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663927676632" />
+    <state width="1877" height="322" key="GridCell.Tab.1.bottom" timestamp="1663904363423">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="322" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1663904363423" />
+    <state width="1877" height="322" key="GridCell.Tab.1.center" timestamp="1663904363423">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="322" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1663904363423" />
+    <state width="1877" height="322" key="GridCell.Tab.1.left" timestamp="1663904363422">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="322" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1663904363422" />
+    <state width="1877" height="322" key="GridCell.Tab.1.right" timestamp="1663904363423">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
+    <state width="1877" height="322" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1663904363423" />
+    <state x="587" y="90" key="SettingsEditor" timestamp="1663861271199">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
     <state x="-1451" y="36" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662908496067" />
+    <state x="587" y="90" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861271199" />
     <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1663323136951" />
     <state x="845" y="430" key="VCS.ChangelistChooser" timestamp="1662955348224">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663646435674">
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663647520807">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="-1368" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663599991964" />
     <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598650168" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663646435674" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663647520807" />
     <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663393376653">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -481,18 +495,23 @@
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="92" y="92" width="2376" height="848" key="dock-window-1/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663253021721" />
-    <state x="758" y="277" key="extract.method.dialog" timestamp="1662867161819">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="1010" y="277" key="extract.method.dialog" timestamp="1663857970457">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="1010" y="277" key="extract.method.dialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662810932444" />
-    <state x="758" y="277" key="extract.method.dialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662867161819" />
+    <state x="1010" y="277" key="extract.method.dialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663857970457" />
+    <state x="758" y="277" key="extract.method.dialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663834535618" />
     <state x="342" y="136" key="new project wizard" timestamp="1662346619129">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="342" y="136" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1662346619129" />
-    <state x="616" y="238" key="run.anything.popup" timestamp="1662607727983">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="986" y="271" key="refactoring.ChangeSignatureDialog" timestamp="1663858812557">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
+    <state x="986" y="271" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663858812557" />
+    <state x="821" y="238" width="672" height="677" key="run.anything.popup" timestamp="1663855898070">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="821" y="238" width="672" height="677" key="run.anything.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663855898070" />
     <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1662607727983" />
     <state x="227" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1662696158040">
       <screen x="0" y="0" width="1920" height="1032" />

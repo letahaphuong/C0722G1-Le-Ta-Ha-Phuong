@@ -52,19 +52,50 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void findStudent() {
-        System.out.println("Nhập tên bạn cần tìm kím: ");
-        String find = scanner.nextLine();
-        boolean flagFind=false;
-        for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getName().contains(find)) {
-                System.out.println(studentList.get(i));
-                flagFind=true;
-            }
+    public void findStudentNameOrID() {
+        System.out.println("Mời bạn chọn chức năng: ");
+        System.out.println("1. Tìm theo tên: ");
+        System.out.println("2. Tìm theo ID: ");
+        System.out.println("3. Trở lại menu ");
+        System.out.println("0. Thoát chương trình! ");
+        int choice = Integer.parseInt(scanner.nextLine());
+        switch (choice) {
+            case 1:
+                System.out.println("Nhập tên bạn cần tìm: ");
+                String findName = scanner.nextLine();
+                boolean flagFind = false;
+                for (int i = 0; i < studentList.size(); i++) {
+                    if (studentList.get(i).getName().contains(findName)) {
+                        System.out.println(studentList.get(i));
+                        flagFind = true;
+                    }
+                }
+                if (!flagFind) {
+                    System.out.println("Không tìm thấy tên!");
+                }
+                break;
+            case 2:
+                System.out.println("Nhập Id bạn cần tìm: ");
+                String findID=scanner.nextLine();
+                boolean flagFind1=false;
+                for (int i = 0; i < studentList.size(); i++) {
+                    if (studentList.get(i).getId().equals(findID)){
+                        System.out.println(studentList.get(i));
+                        flagFind1=true;
+                    }
+
+                }
+                if (!flagFind1) {
+                    System.out.println("Không tìm thấy ID");
+                }
+                break;
+            case 3:
+                return;
+            case 0:
+                System.exit(0);
         }
-        if (!flagFind){
-            System.out.println("Không tìm thấy tên!");
-        }
+
+
     }
 
     public Student infoStudent() {

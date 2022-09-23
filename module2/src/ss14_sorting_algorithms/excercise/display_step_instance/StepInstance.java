@@ -12,11 +12,11 @@ public class StepInstance {
 
     public static void insertSort(int[] arr) {
         int pos, x;
-        for (int i = 1; i < arr.length; i++) {//đoạn này arr[0] đã sắp xếp
+        for (int i = 1; i < arr.length; i++) {
             x = arr[i];
             pos = i;
             while (pos > 0 && x < arr[pos - 1]) {
-                arr[pos] = arr[pos - 1];//đổi chổ
+                arr[pos] = arr[pos - 1];
                 pos--;
             }
             arr[pos] = x;
