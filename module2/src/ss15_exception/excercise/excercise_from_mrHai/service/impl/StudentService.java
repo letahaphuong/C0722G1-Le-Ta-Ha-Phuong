@@ -1,8 +1,9 @@
-package ss15_exception.excercise.excercise_from_mrHai.service.impl.impl;
+package ss15_exception.excercise.excercise_from_mrHai.service.impl;
 
 import ss15_exception.excercise.excercise_from_mrHai.model.Student;
-import ss15_exception.excercise.excercise_from_mrHai.model.util.CheckNameException;
-import ss15_exception.excercise.excercise_from_mrHai.service.impl.IStudentService;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckBirthDayException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckNameException;
+import ss15_exception.excercise.excercise_from_mrHai.service.IStudentService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +15,7 @@ public class StudentService implements IStudentService {
     private static List<Student> studentList = new ArrayList<>();
     private static double score;
     private static String name;
+    private static String birthday;
 
     @Override
     public void addStudent() {
@@ -120,9 +122,18 @@ public class StudentService implements IStudentService {
                 System.out.println(e.getMessage());
             }
         }
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
+                birthday = scanner.nextLine();
+                checkBirth(birthday);
+                break;
+            } catch (CheckBirthDayException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
-        System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
-        String birthday = scanner.nextLine();
+
         System.out.println("Mời bạn nhập giới tính Sinh Viên");
         String tempSex = scanner.nextLine();
         Boolean sex;
@@ -153,7 +164,7 @@ public class StudentService implements IStudentService {
 
     public static void check(double a) {
         if (a > 10 || a < 0) {
-            throw new NumberFormatException();
+            throw new NumberFormatException("Vui lòng nhập từ 0->10! :) ");
         }
     }
 
@@ -164,6 +175,14 @@ public class StudentService implements IStudentService {
             }
             if (name.charAt(0) == 32) {
                 throw new CheckNameException("Tên sai định dạng vui lòng nhập lại");
+            }
+        }
+    }
+
+    public static void checkBirth(String birthDay) throws CheckBirthDayException {
+        for (int i = 0; i < birthDay.length(); i++) {
+            if (birthDay.charAt(i) < 47 || birthDay.charAt(i) > 47 && birthDay.charAt(i) < 48 || birthDay.charAt(i) > 57) {
+                throw new CheckBirthDayException("Sai định dạng vui lòng nhập theo dd/mm/yyyy !");
             }
         }
     }

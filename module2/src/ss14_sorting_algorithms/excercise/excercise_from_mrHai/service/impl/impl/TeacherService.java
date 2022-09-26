@@ -50,51 +50,6 @@ public class TeacherService implements ITeacherService {
 
     }
 
-//    @Override
-//    public void findTeacherNameOrID() {
-//        System.out.println("Mời bạn chọi chức năng: ");
-//        System.out.println("1. Tìm theo tên: ");
-//        System.out.println("2. Tìm theo ID: ");
-//        System.out.println("3. Trở lại menu: ");
-//        System.out.println("0. Thoát chương trình");
-//        int choice = Integer.parseInt(scanner.nextLine());
-//        switch (choice) {
-//            case 1:
-//                System.out.println("Nhập tên giáo viên bạn cần tìm!");
-//                String findName = scanner.nextLine();
-//                boolean flagFind = false;
-//                for (int i = 0; i < teacherList.size(); i++) {
-//                    if (teacherList.get(i).getName().contains(findName)) {
-//                        System.out.println(teacherList.get(i));
-//                        flagFind = true;
-//                    }
-//                }
-//                if (!flagFind) {
-//                    System.out.println("Không tìm thấy tên!");
-//                }
-//                break;
-//            case 2:
-//                System.out.println("Nhập ID bạn cần tìm");
-//                String findID=scanner.nextLine();
-//                boolean flagFind1 =false;
-//                for (int i = 0; i < teacherList.size(); i++) {
-//                    if (teacherList.get(i).getId().equals(findID)){
-//                        System.out.println(teacherList.get(i));
-//                        flagFind1=true;
-//                    }
-//
-//                }
-//                if (!flagFind1) {
-//                    System.out.println("Không tìm thấy ID");
-//                }
-//                break;
-//            case 3:
-//                return;
-//            case 0:
-//                System.exit(0);
-//        }
-//
-//    }
 
     @Override
     public void findTeacherName() {

@@ -1,7 +1,7 @@
 package ss15_exception.excercise.excercise_from_mrHai.controller;
 
-import ss15_exception.excercise.excercise_from_mrHai.service.impl.ITeacherService;
-import ss15_exception.excercise.excercise_from_mrHai.service.impl.impl.TeacherService;
+import ss15_exception.excercise.excercise_from_mrHai.service.ITeacherService;
+import ss15_exception.excercise.excercise_from_mrHai.service.impl.TeacherService;
 
 import java.util.Scanner;
 

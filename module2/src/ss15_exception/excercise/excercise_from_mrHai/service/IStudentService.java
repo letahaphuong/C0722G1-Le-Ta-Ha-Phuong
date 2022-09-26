@@ -1,4 +1,4 @@
-package ss15_exception.excercise.excercise_from_mrHai.service.impl;
+package ss15_exception.excercise.excercise_from_mrHai.service;
 
 public interface IStudentService {
     void addStudent();

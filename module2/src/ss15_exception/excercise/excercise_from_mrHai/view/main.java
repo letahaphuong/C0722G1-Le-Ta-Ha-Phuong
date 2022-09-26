@@ -7,7 +7,6 @@ import ss15_exception.excercise.excercise_from_mrHai.controller.TeacherControlle
 public class main {
     public static void main(String[] args) {
         PersonController.menuPerson();
-        StudentController.menuStudent();
-        TeacherController.menuTeacher();
+
     }
 }

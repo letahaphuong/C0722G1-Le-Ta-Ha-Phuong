@@ -1,8 +1,8 @@
-package ss15_exception.excercise.excercise_from_mrHai.service.impl.impl;
+package ss15_exception.excercise.excercise_from_mrHai.service.impl;
 
 import ss15_exception.excercise.excercise_from_mrHai.model.Teacher;
-import ss15_exception.excercise.excercise_from_mrHai.model.util.CheckNameException;
-import ss15_exception.excercise.excercise_from_mrHai.service.impl.ITeacherService;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckNameException;
+import ss15_exception.excercise.excercise_from_mrHai.service.ITeacherService;
 
 import java.util.ArrayList;
 import java.util.List;
