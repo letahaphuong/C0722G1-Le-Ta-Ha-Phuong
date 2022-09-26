@@ -1,8 +1,11 @@
 package ss15_exception.excercise.excercise_from_mrHai.service.impl;
 
 import ss15_exception.excercise.excercise_from_mrHai.model.Teacher;
-import ss15_exception.excercise.excercise_from_mrHai.util.CheckNameException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckBirthDayException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckIDException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckStringException;
 import ss15_exception.excercise.excercise_from_mrHai.service.ITeacherService;
+import ss15_exception.excercise.excercise_from_mrHai.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,9 @@ public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Teacher> teacherList = new ArrayList<>();
     private static String name;
+    private static String id;
+    private static String birthday;
+    private static String specialize;
 
     @Override
     public void addTeacher() {
@@ -103,23 +109,43 @@ public class TeacherService implements ITeacherService {
     }
 
     public Teacher infoTeacher() {
-        System.out.println("Mời bạn nhập mã Giáo Viên: ");
-        String id = scanner.nextLine();
-
-        while (true) {
+        while (true){
             try {
-                System.out.println("Mời bạn nhập tên Giáo Viên");
-                name = scanner.nextLine();
-                checkName(name);
+                System.out.println("Mời bạn nhập mã Giáo Viên: ");
+                id = scanner.nextLine();
+                Util.checkID(id);
                 break;
-            } catch (CheckNameException e) {
+            }catch (CheckIDException e){
                 System.out.println(e.getMessage());
             }
         }
 
 
-        System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
-        String birthday = scanner.nextLine();
+
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập tên Giáo Viên");
+                name = scanner.nextLine();
+                Util.checkString(name);
+                break;
+            } catch (CheckStringException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true){
+            try {
+                System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
+                birthday = scanner.nextLine();
+                Util.checkBirth(birthday);
+                break;
+            }catch (CheckBirthDayException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+
+
         System.out.println("Mời bạn nhập vào giới tính: ");
         String tempSex = scanner.nextLine();
         Boolean sex;
@@ -130,22 +156,25 @@ public class TeacherService implements ITeacherService {
         } else {
             sex = null;
         }
-        System.out.println("Mời bạn nhập chuyên môn: ");
-        String specialize = scanner.nextLine();
+
+        while (true){
+            try {
+                System.out.println("Mời bạn nhập chuyên môn: ");
+                specialize = scanner.nextLine();
+                Util.checkString(specialize);
+                break;
+            }catch (CheckStringException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+
+
         Teacher teacher = new Teacher(id, name, birthday, sex, specialize);
         return teacher;
     }
 
-    public void checkName(String name) throws CheckNameException {
-        for (int i = 0; i < name.length(); i++) {
-            if (name.charAt(i) < 32 || name.charAt(i) > 32 && name.charAt(i) < 65 || name.charAt(i) > 90 && name.charAt(i) < 97 || name.charAt(i) > 122) {
-                throw new CheckNameException("Nhập sai định dạng,vui lòng nhập lại!");
-            }
-            if (name.charAt(0) == 32) {
-                throw new CheckNameException("Nhập sai định dạng,vui lòng nhập lại!");
-            }
-        }
-    }
+
 
     public static void temp() {
         Teacher teacher = new Teacher("1", "Nguyen Thi B", "7/7/1993", false, "aaaa");

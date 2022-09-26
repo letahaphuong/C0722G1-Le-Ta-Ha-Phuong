@@ -2,8 +2,10 @@ package ss15_exception.excercise.excercise_from_mrHai.service.impl;
 
 import ss15_exception.excercise.excercise_from_mrHai.model.Student;
 import ss15_exception.excercise.excercise_from_mrHai.util.CheckBirthDayException;
-import ss15_exception.excercise.excercise_from_mrHai.util.CheckNameException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckIDException;
+import ss15_exception.excercise.excercise_from_mrHai.util.CheckStringException;
 import ss15_exception.excercise.excercise_from_mrHai.service.IStudentService;
+import ss15_exception.excercise.excercise_from_mrHai.util.Util;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +18,7 @@ public class StudentService implements IStudentService {
     private static double score;
     private static String name;
     private static String birthday;
+    private static String id;
 
     @Override
     public void addStudent() {
@@ -109,16 +112,26 @@ public class StudentService implements IStudentService {
     }
 
     public Student infoStudent() {
-        System.out.println("Mời bạn nhập mã Sinh Viên: ");
-        String id = scanner.nextLine();
+        while (true){
+            try {
+                System.out.println("Mời bạn nhập mã Sinh Viên: ");
+                id = scanner.nextLine();
+                Util.checkID(id);
+                break;
+            }catch (CheckIDException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+
 
         while (true) {
             try {
                 System.out.println("Mời bạn nhập tên Sinh Viên: ");
                 name = scanner.nextLine();
-                checkName(name);
+                Util.checkString(name);
                 break;
-            } catch (CheckNameException e) {
+            } catch (CheckStringException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -126,7 +139,8 @@ public class StudentService implements IStudentService {
             try {
                 System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
                 birthday = scanner.nextLine();
-                checkBirth(birthday);
+                Util.checkBirth(birthday);
+
                 break;
             } catch (CheckBirthDayException e) {
                 System.out.println(e.getMessage());
@@ -151,41 +165,17 @@ public class StudentService implements IStudentService {
             try {
                 System.out.println("Mời bạn nhập điểm của Sinh Viên: ");
                 score = Double.parseDouble(scanner.nextLine());
-                check(score);
+                Util.check(score);
                 break;
             } catch (NumberFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        Student student = new Student(id, name, birthday, sex, nameClass, score);
-        return student;
+        return new Student(id, name, birthday, sex, nameClass, score);
     }
 
-    public static void check(double a) {
-        if (a > 10 || a < 0) {
-            throw new NumberFormatException("Vui lòng nhập từ 0->10! :) ");
-        }
-    }
 
-    public static void checkName(String name) throws CheckNameException {
-        for (int i = 0; i < name.length(); i++) {
-            if (name.charAt(i) < 32 || name.charAt(i) > 32 && name.charAt(i) < 65 || name.charAt(i) > 90 && name.charAt(i) < 97 || name.charAt(i) > 122) {
-                throw new CheckNameException("Tên sai định dạng vui lòng nhập lại");
-            }
-            if (name.charAt(0) == 32) {
-                throw new CheckNameException("Tên sai định dạng vui lòng nhập lại");
-            }
-        }
-    }
-
-    public static void checkBirth(String birthDay) throws CheckBirthDayException {
-        for (int i = 0; i < birthDay.length(); i++) {
-            if (birthDay.charAt(i) < 47 || birthDay.charAt(i) > 47 && birthDay.charAt(i) < 48 || birthDay.charAt(i) > 57) {
-                throw new CheckBirthDayException("Sai định dạng vui lòng nhập theo dd/mm/yyyy !");
-            }
-        }
-    }
 
 
     public static void temp() {
