@@ -104,10 +104,10 @@ public class StudentService implements IStudentService {
                 Student student2 = studentList.get(j + 1);
                 int compare = student1.compareTo(student2);
                 if (compare > 0) {
-                    Collections.swap(studentList, j, j + 1);
-//                    Student temp= studentList.get(j);
-//                    studentList.set(j,studentList.get(j+1));
-//                    studentList.set(j+1,temp);
+//                    Collections.swap(studentList, j, j + 1);
+                    Student temp= studentList.get(j);
+                    studentList.set(j,studentList.get(j+1));
+                    studentList.set(j+1,temp);
                 }
             }
         }
@@ -217,18 +217,5 @@ public class StudentService implements IStudentService {
         }
         bufferedWriter.close();
     }
-
-//    public static void temp() {
-//        Student student = new Student("3", " A", "12/4/2022", true, "A6", 10);
-//        Student student1 = new Student("4", "Nguyen van B", "12/4/1995", false, "A7", 6);
-//        Student student2 = new Student("1", "Nguyen van A", "12/4/1823", true, "A8", 2);
-//        Student student3 = new Student("6", "Nguyen van D", "12/4/1221", false, "A1", 4);
-//        Student student4 = new Student("2", "Nguyen van C", "12/4/2033", false, "A2", 3);
-//        studentList.add(student);
-//        studentList.add(student1);
-//        studentList.add(student2);
-//        studentList.add(student3);
-//        studentList.add(student4);
-//    }
 
 }

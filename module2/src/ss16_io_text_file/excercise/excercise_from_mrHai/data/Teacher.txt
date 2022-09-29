@@ -1,7 +1,6 @@
-1,Nguyen van A,06/06/1555,false,Sinh
-1,Nguyen thi G,06/06/1555,false,Hoá
-1,Nguyen thanh C,06/06/1555,false,Toán
-1,Nguyen thi D,06/06/1555,false,Tin
-1,Nguyen Tan G,06/06/1555,false,Anh
-9,Quyen,24/09/2019,false,Van
-8,Trang,28/09/2001,false,Japanese
+1,Nguyen van A,11/05/2013,false,A7
+5,Nguyen van C,01/01/1999,false,A7
+4,Nguyen van D,12/02/2000,false,A7
+3,Nguyen van B,13/01/2001,false,A7
+7,Trang,28/09/2001,false,C22
+9,Quyen,09/09/1882,false,noi that

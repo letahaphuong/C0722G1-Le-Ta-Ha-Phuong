@@ -1,4 +1,4 @@
 1,Nguyen van A,11/05/2013,Nam,A7,6
-2,Nguyen van A,01/01/1999,Nữ,A7,7
-4,Nguyen van A,12/02/2000,Nam,A7,8
-3,Nguyen van A,13/01/2001,Nam,A7,4
+5,Nguyen thị B,01/01/1999,Nữ,A7,7
+4,Nguyen van AB,12/02/2000,Nam,A7,8
+3,Nguyen van V,13/01/2001,Nam,A7,4
