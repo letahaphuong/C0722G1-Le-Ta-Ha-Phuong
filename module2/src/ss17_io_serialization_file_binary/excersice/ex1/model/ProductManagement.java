@@ -1,4 +1,4 @@
-package ss17_io_serialization_file_binary.excersice.model;
+package ss17_io_serialization_file_binary.excersice.ex1.model;
 
 public class ProductManagement {
     private  int id;

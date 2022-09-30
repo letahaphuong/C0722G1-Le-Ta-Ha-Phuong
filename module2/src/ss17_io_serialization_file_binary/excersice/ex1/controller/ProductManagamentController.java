@@ -1,8 +1,7 @@
-package ss17_io_serialization_file_binary.excersice.controller;
+package ss17_io_serialization_file_binary.excersice.ex1.controller;
 
-import ss17_io_serialization_file_binary.excersice.model.ProductManagement;
-import ss17_io_serialization_file_binary.excersice.service.IProductManagementService;
-import ss17_io_serialization_file_binary.excersice.service.impl.ProductManagementService;
+import ss17_io_serialization_file_binary.excersice.ex1.service.IProductManagementService;
+import ss17_io_serialization_file_binary.excersice.ex1.service.impl.ProductManagementService;
 
 import java.io.IOException;
 import java.util.Scanner;

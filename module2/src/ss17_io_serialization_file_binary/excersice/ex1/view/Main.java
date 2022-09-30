@@ -1,6 +1,6 @@
-package ss17_io_serialization_file_binary.excersice.view;
+package ss17_io_serialization_file_binary.excersice.ex1.view;
 
-import ss17_io_serialization_file_binary.excersice.controller.ProductManagamentController;
+import ss17_io_serialization_file_binary.excersice.ex1.controller.ProductManagamentController;
 
 import java.io.IOException;
 

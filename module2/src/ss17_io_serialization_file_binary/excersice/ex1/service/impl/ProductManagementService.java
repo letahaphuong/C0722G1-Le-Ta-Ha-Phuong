@@ -1,7 +1,7 @@
-package ss17_io_serialization_file_binary.excersice.service.impl;
+package ss17_io_serialization_file_binary.excersice.ex1.service.impl;
 
-import ss17_io_serialization_file_binary.excersice.model.ProductManagement;
-import ss17_io_serialization_file_binary.excersice.service.IProductManagementService;
+import ss17_io_serialization_file_binary.excersice.ex1.model.ProductManagement;
+import ss17_io_serialization_file_binary.excersice.ex1.service.IProductManagementService;
 
 import java.io.*;
 import java.util.ArrayList;

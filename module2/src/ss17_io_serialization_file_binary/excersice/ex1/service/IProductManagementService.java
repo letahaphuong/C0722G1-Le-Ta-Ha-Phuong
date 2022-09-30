@@ -1,4 +1,4 @@
-package ss17_io_serialization_file_binary.excersice.service;
+package ss17_io_serialization_file_binary.excersice.ex1.service;
 
 import java.io.IOException;
 
