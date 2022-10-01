@@ -2,7 +2,9 @@ package ss16_io_text_file.excercise.excercise_from_mrHai.controller;
 
 import ss16_io_text_file.excercise.excercise_from_mrHai.service.IStudentService;
 import ss16_io_text_file.excercise.excercise_from_mrHai.service.impl.StudentService;
+import ss16_io_text_file.excercise.excercise_from_mrHai.util.FormatException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ public class StudentController {
     private static IStudentService iStudentServeice = new StudentService();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void menuStudent() throws IOException {
+    public static void menuStudent() throws IOException, FormatException {
         while (true) {
             System.out.println("\n***Chào mừng đến với quản lý sinh viên***\n");
             System.out.println("Vui lòng chọn chức năng bạn cần: ");
@@ -49,7 +51,7 @@ public class StudentController {
 
 
 
-    public static void findStudentNameOrID(){
+    public static void findStudentNameOrID() throws FileNotFoundException {
         System.out.println("Mời bạn chọn chức năng: ");
         System.out.println("1. Tìm theo tên: ");
         System.out.println("2. Tìm theo ID: ");

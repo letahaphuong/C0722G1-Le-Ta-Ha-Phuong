@@ -1,6 +1,5 @@
-1,Nguyen van A,11/05/2013,false,A7
-5,Nguyen van C,01/01/1999,false,A7
-4,Nguyen van D,12/02/2000,false,A7
-3,Nguyen van B,13/01/2001,false,A7
-7,Trang,28/09/2001,false,C22
-9,Quyen,09/09/1882,false,noi that
+1,Nguyen van A,11/05/2013,false,A7,6.0
+5,Nguyen thị B,01/01/1999,false,A7,7.0
+4,Nguyen van AB,12/02/2000,false,A7,8.0
+3,Nguyen van V,13/01/2001,false,A7,4.0
+

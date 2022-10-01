@@ -109,17 +109,16 @@ public class TeacherService implements ITeacherService {
     }
 
     public Teacher infoTeacher() {
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời bạn nhập mã Giáo Viên: ");
                 id = scanner.nextLine();
                 Util.checkID(id);
                 break;
-            }catch (CheckIDException e){
+            } catch (CheckIDException e) {
                 System.out.println(e.getMessage());
             }
         }
-
 
 
         while (true) {
@@ -133,17 +132,16 @@ public class TeacherService implements ITeacherService {
             }
         }
 
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
                 birthday = scanner.nextLine();
                 Util.checkBirth(birthday);
                 break;
-            }catch (CheckBirthDayException e){
+            } catch (CheckBirthDayException e) {
                 System.out.println(e.getMessage());
             }
         }
-
 
 
         System.out.println("Mời bạn nhập vào giới tính: ");
@@ -157,23 +155,21 @@ public class TeacherService implements ITeacherService {
             sex = null;
         }
 
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời bạn nhập chuyên môn: ");
                 specialize = scanner.nextLine();
                 Util.checkString(specialize);
                 break;
-            }catch (CheckStringException e){
+            } catch (CheckStringException e) {
                 System.out.println(e.getMessage());
             }
         }
 
 
-
         Teacher teacher = new Teacher(id, name, birthday, sex, specialize);
         return teacher;
     }
-
 
 
     public static void temp() {

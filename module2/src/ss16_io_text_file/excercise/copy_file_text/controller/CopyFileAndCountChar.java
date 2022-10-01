@@ -21,6 +21,7 @@ public class CopyFileAndCountChar {
                     if (line.charAt(i) != 0) {
                         chars.add(line.charAt(i));
                     }
+
                 }
             }
             for (Character character : chars) {

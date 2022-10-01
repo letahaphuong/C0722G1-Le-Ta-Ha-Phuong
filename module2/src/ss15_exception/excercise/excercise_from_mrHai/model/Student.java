@@ -60,7 +60,7 @@ public class Student extends Person implements Comparable<Student> {
                     ", Ngày tháng năm sinh: " +
                     getBirthday() +
                     ", Giới tính: " +
-                    getSex() +
+                    "Nữ" +
                     ", Tên Lớp='" + nameClass + '\'' +
                     ", Điểm số=" + score +
                     '}';

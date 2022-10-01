@@ -1,5 +1,7 @@
 package ss16_io_text_file.excercise.excercise_from_mrHai.controller;
 
+import ss16_io_text_file.excercise.excercise_from_mrHai.util.FormatException;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -8,7 +10,7 @@ public class PersonController {
     private static StudentController studentController = new StudentController();
     private static TeacherController teacherController = new TeacherController();
 
-    public static void menuPerson() throws IOException {
+    public static void menuPerson() throws IOException, FormatException {
         while (true) {
             System.out.println("-------Chương trình quản lý Giáo viên và học sinh-------");
             System.out.println("Xin chọn chức năng!");

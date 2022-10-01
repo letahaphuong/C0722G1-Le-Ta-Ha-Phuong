@@ -31,7 +31,7 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void displayAllTeacher() throws FileNotFoundException {
+    public void displayAllTeacher() {
         for (Teacher teacher : teacherList) {
             System.out.println(teacher);
         }

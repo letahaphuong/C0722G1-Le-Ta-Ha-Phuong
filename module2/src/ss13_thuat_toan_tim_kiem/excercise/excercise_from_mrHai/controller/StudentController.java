@@ -9,7 +9,7 @@ public class StudentController {
     private static IStudentService iStudentServeice = new StudentService();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void menuStudent() {
+    public static void menuStudent(){
         StudentService.temp();
         while (true) {
             System.out.println("***Chào mừng đến với quản lý sinh viên***");

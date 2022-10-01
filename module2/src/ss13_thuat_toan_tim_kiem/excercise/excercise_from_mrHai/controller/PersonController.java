@@ -7,7 +7,7 @@ public class PersonController {
     private static StudentController studentController = new StudentController();
     private static TeacherController teacherController = new TeacherController();
 
-    public static void menuPerson() {
+    public static void menuPerson()  {
         while (true) {
             System.out.println("-------Chương trình quản lý Giáo viên và học sinh-------");
             System.out.println("Xin chọn chức năng!");

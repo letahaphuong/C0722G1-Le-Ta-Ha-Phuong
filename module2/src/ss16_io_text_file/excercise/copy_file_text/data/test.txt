@@ -1,1 +1,1 @@
-, name.
+public static void writeToFile(String path, List<Student> students) {

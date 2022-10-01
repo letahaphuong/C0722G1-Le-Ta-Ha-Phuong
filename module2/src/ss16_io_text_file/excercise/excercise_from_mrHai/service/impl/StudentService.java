@@ -2,10 +2,7 @@ package ss16_io_text_file.excercise.excercise_from_mrHai.service.impl;
 
 import ss16_io_text_file.excercise.excercise_from_mrHai.model.Student;
 import ss16_io_text_file.excercise.excercise_from_mrHai.service.IStudentService;
-import ss16_io_text_file.excercise.excercise_from_mrHai.util.CheckBirthDayException;
-import ss16_io_text_file.excercise.excercise_from_mrHai.util.CheckIDException;
-import ss16_io_text_file.excercise.excercise_from_mrHai.util.CheckStringException;
-import ss16_io_text_file.excercise.excercise_from_mrHai.util.Util;
+import ss16_io_text_file.excercise.excercise_from_mrHai.util.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,18 +24,22 @@ public class StudentService implements IStudentService {
         Student student = this.infoStudent();
         studentList.add(student);
         System.out.println("Thêm mới thành công! ");
-        writeFile();
+        writeFile(studentList);
     }
 
     @Override
-    public void displayAllStudent() {
+    public void displayAllStudent() throws FileNotFoundException {
+        studentList = readFile();
+
         for (Student student : studentList) {
             System.out.println(student);
         }
+
     }
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+        studentList=readFile();
         System.out.println("Mời bạn nhập mã Sinh Viên cần xoá: ");
         String id = scanner.nextLine();
         boolean flagDelete = false;
@@ -48,7 +49,7 @@ public class StudentService implements IStudentService {
                         "Nhập Y để xoá" +
                         "Nhập N để không xoá");
                 String choice = scanner.nextLine();
-                if (choice.equals("Y")) {
+                if (choice.equals("y")) {
                     studentList.remove(i);
                     System.out.println("Xoá Thành Công!");
                 }
@@ -59,11 +60,12 @@ public class StudentService implements IStudentService {
         if (!flagDelete) {
             System.out.println("Không tìm thấy đối tượng cần xoá.");
         }
-
+        writeFile(studentList);
     }
 
     @Override
-    public void findStudentName() {
+    public void findStudentName() throws FileNotFoundException {
+        studentList=readFile();
         System.out.println("Nhập tên bạn cần tìm: ");
         String name = scanner.nextLine();
         boolean flagFind = false;
@@ -76,11 +78,11 @@ public class StudentService implements IStudentService {
         if (!flagFind) {
             System.out.println("Không tìm thấy tên!");
         }
-
     }
 
     @Override
-    public void findStudentID() {
+    public void findStudentID() throws FileNotFoundException {
+        studentList=readFile();
         System.out.println("Nhập Id bạn cần tìm: ");
         String findID = scanner.nextLine();
         boolean flagFind1 = false;
@@ -97,7 +99,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void sortName() {
+    public void sortName() throws IOException {
+        studentList=readFile();
         for (int i = 0; i < studentList.size(); i++) {
             for (int j = 0; j < studentList.size() - 1 - i; j++) {
                 Student student1 = studentList.get(j);
@@ -111,6 +114,7 @@ public class StudentService implements IStudentService {
                 }
             }
         }
+        writeFile(studentList);
         System.out.println("\nSẮP XẾP THÀNH CÔNG! \n");
     }
 
@@ -126,17 +130,26 @@ public class StudentService implements IStudentService {
             }
         }
 
-
+        System.out.println("Nhập tên sinh viên: ");
         while (true) {
             try {
-                System.out.println("Mời bạn nhập tên Sinh Viên: ");
-                name = scanner.nextLine();
-                Util.checkString(name);
+                name=scanner.nextLine();
+                Check.checkName(name);
                 break;
-            } catch (CheckStringException e) {
+            }catch (FormatException e){
                 System.out.println(e.getMessage());
             }
         }
+//        while (true) {
+//            try {
+//                System.out.println("Mời bạn nhập tên Sinh Viên: ");
+//                name = scanner.nextLine();
+//                Util.checkString(name);
+//                break;
+//            } catch (CheckStringException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
         while (true) {
             try {
                 System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
@@ -160,8 +173,21 @@ public class StudentService implements IStudentService {
         } else {
             sex = null;
         }
-        System.out.println("Mời bạn nhập tên lớp: ");
-        String nameClass = scanner.nextLine();
+
+//        System.out.println("Mời bạn nhập tên lớp: ");
+//        String nameClass = scanner.nextLine();
+        System.out.println("Nhập tên lớp: ");
+        String nameClass;
+        while (true){
+            try {
+               nameClass = scanner.nextLine();
+               Check.checkName(nameClass);
+               break;
+            }catch (FormatException e){
+                e.getStackTrace();
+                System.out.println("Sai định dạng,Nhập lại");
+            }
+        }
 
         while (true) {
             try {
@@ -197,7 +223,7 @@ public class StudentService implements IStudentService {
                 student.setBirthday(info[2]);
                 student.setSex(Boolean.parseBoolean(info[3]));
                 student.setNameClass(info[4]);
-                student.setScore(Integer.parseInt(info[5]));
+                student.setScore(Double.parseDouble(info[5]));
                 studentList.add(student);
             }
             bufferedReader.close();
@@ -207,8 +233,8 @@ public class StudentService implements IStudentService {
         return studentList;
     }
 
-    public void writeFile() throws IOException {
-        File file = new File("src\\ss16_io_text_file\\excercise\\excercise_from_mrHai\\data\\Teacher.txt");
+    public void writeFile(List<Student> studentList ) throws IOException {
+        File file = new File("src\\ss16_io_text_file\\excercise\\excercise_from_mrHai\\data\\Student.txt");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Student student : studentList) {

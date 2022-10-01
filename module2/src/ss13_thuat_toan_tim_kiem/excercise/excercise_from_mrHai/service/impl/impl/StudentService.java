@@ -13,7 +13,7 @@ public class StudentService implements IStudentService {
 
 
     @Override
-    public void addStudent() {
+    public void addStudent(){
         Student student = this.infoStudent();
         studentList.add(student);
         System.out.println("Thêm mới thành công! ");
@@ -76,12 +76,12 @@ public class StudentService implements IStudentService {
                 break;
             case 2:
                 System.out.println("Nhập Id bạn cần tìm: ");
-                String findID=scanner.nextLine();
-                boolean flagFind1=false;
+                String findID = scanner.nextLine();
+                boolean flagFind1 = false;
                 for (int i = 0; i < studentList.size(); i++) {
-                    if (studentList.get(i).getId().equals(findID)){
+                    if (studentList.get(i).getId().equals(findID)) {
                         System.out.println(studentList.get(i));
-                        flagFind1=true;
+                        flagFind1 = true;
                     }
 
                 }
@@ -101,8 +101,12 @@ public class StudentService implements IStudentService {
     public Student infoStudent() {
         System.out.println("Mời bạn nhập mã Sinh Viên: ");
         String id = scanner.nextLine();
+
         System.out.println("Mời bạn nhập tên Sinh Viên: ");
         String name = scanner.nextLine();
+
+
+
         System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");
         String birthday = scanner.nextLine();
         System.out.println("Mời bạn nhập giới tính Sinh Viên");
