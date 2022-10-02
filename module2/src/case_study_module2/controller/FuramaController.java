@@ -1,5 +1,6 @@
 package case_study_module2.controller;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -10,7 +11,7 @@ public class FuramaController {
     private static BookingController bookingController = new BookingController();
     private static PromotionController promotionController = new PromotionController();
 
-    public static void displayMainMenu() {
+    public static void displayMainMenu() throws IOException {
         while (true) {
             System.out.println("Welcome to FURAMA RESORT");
             System.out.println("Please select option: ");

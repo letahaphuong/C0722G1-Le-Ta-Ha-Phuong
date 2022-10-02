@@ -20,16 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="685079e3-bae4-4031-a852-ca427b483e24" name="Default Changelist" comment="upbai">
+      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study_module2/model/facility/Facility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/case_study_module2/model/facility/Villa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss14_sorting_algorithms/excercise/excercise_from_mrHai/service/impl/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss14_sorting_algorithms/excercise/excercise_from_mrHai/service/impl/impl/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/model/util/CheckNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/util/CheckNameException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/ITeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/service/impl/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/view/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/excercise/excercise_from_mrHai/view/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/controller/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/model/Facility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/model/facility/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/model/facility/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/model/Villa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/IBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/IEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/IFacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/IPromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/IPromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/impl/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/impl/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/impl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/impl/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/impl/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/service/impl/PromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/service/impl/PromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/util/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/util/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/util/FormatException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/case_study_module2/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study_module2/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss16_io_text_file/excercise/excercise_from_mrHai/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss16_io_text_file/excercise/excercise_from_mrHai/service/impl/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,15 +74,17 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss15_exception/excercise" />
+    <property name="last.edited.regexp" value="02358587777" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/case_study_module2/data" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -76,6 +92,7 @@
       <recent name="ss14_sorting_algorithms.excercise.excercise_from_mrHai.service.impl.impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss16_io_text_file\excercise\excercise_from_mrHai\data" />
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\A" />
       <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss10_collection_framework_1\excercise\ex3_from_mr_haitt_1\tempalte\controller\B" />
     </key>
@@ -86,20 +103,20 @@
       <recent name="ss10_collection_framework_1.excercise.ex3_from_mr_haitt_1.tempalte.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss15_exception\excercise" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss15_exception\excercise\ex1" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\case_study_module1" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss14_sorting_algorithms\excercise" />
-      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss13_thuat_toan_tim_kiem\excercise" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\case_study_module2\data" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\case_study_module2" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss19_string_regular_exception\pracitice" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss17_io_serialization_file_binary\excersice" />
+      <recent name="E:\COdegym\C0722G1-Le-Ta-Ha-Phuong\module2\src\ss16_io_text_file\excercise\excercise_from_mrHai\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
-    <configuration name="ArrayExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception.pracitice.pra2.ArrayExample" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss12_map_tree.excercise.tempalte.view.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception.pracitice.pra2.*" />
+          <option name="PATTERN" value="ss12_map_tree.excercise.tempalte.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception.pracitice.pra3.CalculationExample" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="case_study_module2.view.Main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception.pracitice.pra3.*" />
+          <option name="PATTERN" value="case_study_module2.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,12 +137,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinearEquationResolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception.pracitice.LinearEquationResolver" />
+    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception.pracitice.*" />
+          <option name="PATTERN" value="ss13_thuat_toan_tim_kiem.excercise.excercise_from_mrHai.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,12 +150,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception.excercise.ex1.Triangle" />
+    <configuration name="main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss16_io_text_file.excercise.excercise_from_mrHai.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception.excercise.ex1.*" />
+          <option name="PATTERN" value="ss16_io_text_file.excercise.excercise_from_mrHai.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,11 +164,11 @@
       </method>
     </configuration>
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception.excercise.excercise_from_mrHai.view.main" />
+      <option name="MAIN_CLASS_NAME" value="ss19_string_regular_exception.excercise.excercise_from_mrHai.view.main" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception.excercise.excercise_from_mrHai.view.*" />
+          <option name="PATTERN" value="ss19_string_regular_exception.excercise.excercise_from_mrHai.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.main (2)" />
         <item itemvalue="Application.main" />
-        <item itemvalue="Application.Triangle" />
-        <item itemvalue="Application.LinearEquationResolver" />
-        <item itemvalue="Application.CalculationExample" />
-        <item itemvalue="Application.ArrayExample" />
+        <item itemvalue="Application.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +248,19 @@
       <workItem from="1664112598517" duration="1780000" />
       <workItem from="1664155749267" duration="20030000" />
       <workItem from="1664197878622" duration="17000" />
-      <workItem from="1664198491425" duration="1527000" />
+      <workItem from="1664198491425" duration="5254000" />
+      <workItem from="1664252363212" duration="3810000" />
+      <workItem from="1664287205786" duration="1431000" />
+      <workItem from="1664412398935" duration="21267000" />
+      <workItem from="1664452966358" duration="6465000" />
+      <workItem from="1664497544708" duration="17975000" />
+      <workItem from="1664539579324" duration="2367000" />
+      <workItem from="1664544093130" duration="8419000" />
+      <workItem from="1664584288349" duration="8574000" />
+      <workItem from="1664604656657" duration="8688000" />
+      <workItem from="1664620467619" duration="1336000" />
+      <workItem from="1664637800765" duration="4692000" />
+      <workItem from="1664685174448" duration="23554000" />
     </task>
     <task id="LOCAL-00001" summary="up bai 8">
       <created>1662713963974</created>
@@ -373,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663927889187</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="upbai">
+      <created>1664200275151</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1664200275151</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,19 +441,28 @@
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="94" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663592216773" />
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser" timestamp="1664198999719">
+    <state x="735" y="318" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1664529688453">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="735" y="318" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1664529688453" />
+    <state x="870" y="208" width="858" height="568" key="#com.intellij.ide.util.MemberChooser" timestamp="1664700402775">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="1020" y="200" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664198999719" />
-    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1664183339267" />
+    <state x="870" y="208" width="858" height="568" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664700402775" />
+    <state x="765" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1664539855218" />
     <state x="743" y="410" width="641" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1663906293065">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="991" y="410" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662900690772" />
     <state x="743" y="410" width="641" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1663906293065" />
-    <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1663148395658">
+    <state x="1029" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1664412648378">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="1029" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1664412648378" />
+    <state x="920" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1664609759666">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="920" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664609759666" />
     <state x="690" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663148395658" />
     <state x="1170" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1663561884639">
       <screen x="0" y="0" width="1920" height="1032" />
@@ -435,56 +480,56 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="784" y="418" key="Github.CreateGistDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1662714992121" />
-    <state width="1020" height="904" key="GridCell.Tab.0.bottom" timestamp="1664199891349">
+    <state width="912" height="874" key="GridCell.Tab.0.bottom" timestamp="1664709819587">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="1020" height="904" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664199891349" />
-    <state width="761" height="874" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1664187217859" />
-    <state width="1020" height="904" key="GridCell.Tab.0.center" timestamp="1664199891348">
+    <state width="912" height="874" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664709819587" />
+    <state width="645" height="904" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1664598976903" />
+    <state width="912" height="874" key="GridCell.Tab.0.center" timestamp="1664709819587">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="1020" height="904" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664199891348" />
-    <state width="761" height="874" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1664187217859" />
-    <state width="1020" height="904" key="GridCell.Tab.0.left" timestamp="1664199891347">
+    <state width="912" height="874" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664709819587" />
+    <state width="645" height="904" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1664598976903" />
+    <state width="912" height="874" key="GridCell.Tab.0.left" timestamp="1664709819587">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120906" />
-    <state width="1020" height="904" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664199891347" />
-    <state width="761" height="874" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1664187217859" />
-    <state width="1020" height="904" key="GridCell.Tab.0.right" timestamp="1664199891348">
+    <state width="912" height="874" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664709819587" />
+    <state width="645" height="904" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1664598976903" />
+    <state width="912" height="874" key="GridCell.Tab.0.right" timestamp="1664709819587">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state width="522" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663600120907" />
-    <state width="1020" height="904" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664199891348" />
-    <state width="761" height="874" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1664187217859" />
-    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1664163782585">
+    <state width="912" height="874" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664709819587" />
+    <state width="645" height="904" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1664598976903" />
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1664530750887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1664163782585" />
-    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1664163782585">
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1664530750887" />
+    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1664530750887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1664163782585" />
-    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1664163782585">
+    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1664530750887" />
+    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1664530750887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1664163782585" />
-    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1664163782585">
+    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1664530750887" />
+    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1664530750887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662476625210" />
-    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1664163782585" />
-    <state x="587" y="90" key="SettingsEditor" timestamp="1663861271199">
+    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1664530750887" />
+    <state x="587" y="90" key="SettingsEditor" timestamp="1664549410361">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="-1451" y="36" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1662908496067" />
-    <state x="587" y="90" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663861271199" />
-    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1663323136951" />
+    <state x="587" y="90" key="SettingsEditor/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664549410361" />
+    <state x="440" y="90" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1664527946419" />
     <state x="681" y="257" width="570" height="524" key="StructurePopup" timestamp="1663934661151">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -494,16 +539,16 @@
     </state>
     <state x="1127" y="430" key="VCS.ChangelistChooser/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1662566550295" />
     <state x="845" y="430" key="VCS.ChangelistChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1662955348224" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2" timestamp="1663927904114">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="-1368" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663599991964" />
-    <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663598650168" />
-    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663927904114" />
-    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663393376653">
+    <state x="736" y="236" key="Vcs.Push.Dialog.v2" timestamp="1664200277943">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663393376653" />
+    <state x="-1368" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@-1920.0.1920.1032" timestamp="1663599991964" />
+    <state x="736" y="236" key="Vcs.Push.Dialog.v2/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664200277943" />
+    <state x="552" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1663927904114" />
+    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1664709260978">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="92" y="92" width="2376" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664709260978" />
     <state x="664" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1663205433104">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -512,10 +557,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="769" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032@0.0.1920.1032" timestamp="1662714634516" />
-    <state x="92" y="92" width="2376" height="848" key="dock-window-1" timestamp="1663253021721">
-      <screen x="0" y="0" width="2560" height="1032" />
+    <state x="-1800" y="0" width="1291" height="1019" key="dock-window-1" timestamp="1664692237609">
+      <screen x="-1920" y="0" width="1920" height="1032" />
     </state>
-    <state x="92" y="92" width="2376" height="848" key="dock-window-1/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663253021721" />
+    <state x="-1800" y="0" width="1291" height="1019" key="dock-window-1/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664692237609" />
     <state x="1010" y="277" key="extract.method.dialog" timestamp="1663857970457">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
@@ -530,15 +575,15 @@
     </state>
     <state x="986" y="271" key="refactoring.ChangeSignatureDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663858812557" />
     <state x="740" y="271" key="refactoring.ChangeSignatureDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1663951236308" />
-    <state x="616" y="238" key="run.anything.popup" timestamp="1664164675460">
+    <state x="616" y="238" key="run.anything.popup" timestamp="1664517802739">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="821" y="238" width="672" height="677" key="run.anything.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1663855898070" />
-    <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1664164675460" />
-    <state x="227" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1664185388423">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1664517802739" />
+    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1664639286449">
+      <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664113251528" />
+    <state x="303" y="228" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1664639286449" />
     <state x="227" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1664185388423" />
   </component>
 </project>

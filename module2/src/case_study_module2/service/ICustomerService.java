@@ -1,4 +1,4 @@
 package case_study_module2.service;
 
-public interface ICustomerService {
+public interface ICustomerService extends IService{
 }
