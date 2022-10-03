@@ -22,10 +22,10 @@ public class EmployeeController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iEmployeeService.displayAllEmployee();
+                    iEmployeeService.display();
                     break;
                 case 2:
-                    iEmployeeService.addEmployee();
+                    iEmployeeService.add();
                     break;
                 case 3:
                     iEmployeeService.editByID();

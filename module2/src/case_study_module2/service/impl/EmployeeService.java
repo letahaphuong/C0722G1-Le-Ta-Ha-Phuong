@@ -6,8 +6,6 @@ import case_study_module2.util.Check;
 import case_study_module2.util.FormatException;
 
 import java.io.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -22,9 +20,15 @@ public class EmployeeService implements IEmployeeService {
     public Employee infoEmploy() {
         String id;
         while (true) {
-            System.out.println("Please Enter ID Employ: ");
-            id = scanner.nextLine();
-            break;
+            try {
+                System.out.println("Please Enter ID Employ: ");
+                id = scanner.nextLine();
+                Check.checkIdPerson(id);
+                break;
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
+            }
+
         }
         String name;
         while (true) {
@@ -53,15 +57,27 @@ public class EmployeeService implements IEmployeeService {
 
         String gender;
         while (true) {
-            System.out.println("Please Enter Gender(male/female/other): ");
-            gender = scanner.nextLine();
-            break;
+            try {
+                System.out.println("Please Enter Gender(male/female/other): ");
+                gender = scanner.nextLine();
+                Check.checkGender(gender);
+                break;
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
+            }
         }
+
         String idCard;
         while (true) {
-            System.out.println("Please Enter ID Card: ");
-            idCard = scanner.nextLine();
-            break;
+            try {
+                System.out.println("Please Enter ID Card: ");
+                idCard = scanner.nextLine();
+                Check.checkIDCard(idCard);
+                break;
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
+            }
+
         }
         String phoneNumber;
         while (true) {
@@ -90,17 +106,29 @@ public class EmployeeService implements IEmployeeService {
         }
         String level;
         while (true) {
-            System.out.println("Please Enter Level(University / College / Intermediate): ");
-            level = scanner.nextLine();
-            break;
+            try {
+                System.out.println("Please Enter Level(University / College / Intermediate): ");
+                level = scanner.nextLine();
+                Check.checkLevel(level);
+                break;
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
+            }
+
         }
         String position;
         while (true) {
-            System.out.println("Please Enter Position\n" +
-                    "(Receptionist, Waiter, Specialist, Supervisor, Manager, Director)" +
-                    ": ");
-            position = scanner.nextLine();
-            break;
+            try {
+                System.out.println("Please Enter Position\n" +
+                        "(Receptionist, Waiter, Specialist, Supervisor, Manager, Director)" +
+                        ": ");
+                position = scanner.nextLine();
+                Check.checkPosition(position);
+                break;
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
+            }
+
         }
         int salary;
         while (true) {
@@ -114,12 +142,12 @@ public class EmployeeService implements IEmployeeService {
             }
 
         }
-        return new Employee(id, name, birth, gender, idCard, phoneNumber, email, level, position, salary);
+        return new Employee(id,name, birth,  gender, idCard, phoneNumber, email, level, position, salary);
 
     }
 
     @Override
-    public void displayAllEmployee() throws IOException {
+    public void display() throws IOException {
         employeeList = readFile();
         for (Employee employee : employeeList) {
             System.out.println(employee);
@@ -127,7 +155,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void addEmployee() throws IOException {
+    public void add() throws IOException {
         employeeList = readFile();
         Employee employee = this.infoEmploy();
         employeeList.add(employee);
@@ -156,7 +184,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
                     employeeList.get(i).setBirth(birthEdit);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
@@ -165,7 +193,8 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String genderEdit = scanner.nextLine();
                     employeeList.get(i).setGender(genderEdit);
-                }catch (Exception e){
+                    Check.checkGender(genderEdit);
+                } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
@@ -201,7 +230,8 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String levelEdit = scanner.nextLine();
                     employeeList.get(i).setLevel(levelEdit);
-                }catch (Exception e){
+                    Check.checkLevel(levelEdit);
+                } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
@@ -210,7 +240,8 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String positionEdit = scanner.nextLine();
                     employeeList.get(i).setPosition(positionEdit);
-                }catch (Exception e){
+                    Check.checkPosition(positionEdit);
+                } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
@@ -219,7 +250,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     int salaryEdit = Integer.parseInt(scanner.nextLine());
                     employeeList.get(i).setSalary(salaryEdit);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
@@ -233,8 +264,6 @@ public class EmployeeService implements IEmployeeService {
 
 
     BufferedReader bufferedReader;
-//    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
     public List<Employee> readFile() throws IOException {
         List<Employee> employeeList1 = new ArrayList<>();
         try {
@@ -252,7 +281,7 @@ public class EmployeeService implements IEmployeeService {
                 employee = new Employee();
                 employee.setIdEmployee(info[0]);
                 employee.setName(info[1]);
-                employee.setBirth(LocalDate.parse(info[2],dateTimeFormatter));
+                employee.setBirth(LocalDate.parse(info[2], dateTimeFormatter));
                 employee.setGender(info[3]);
                 employee.setIdCard(info[4]);
                 employee.setPhoneNumber(info[5]);
@@ -261,7 +290,6 @@ public class EmployeeService implements IEmployeeService {
                 employee.setPosition(info[8]);
                 employee.setSalary(Integer.parseInt(info[9]));
                 employeeList1.add(employee);
-                break;
             }
 
         } catch (IOException e) {
@@ -277,7 +305,7 @@ public class EmployeeService implements IEmployeeService {
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Employee employee : employeeList2) {
             bufferedWriter.write(employee.getInfoEmployee());
-            System.out.println();
+            bufferedWriter.newLine();
         }
         bufferedWriter.close();
     }

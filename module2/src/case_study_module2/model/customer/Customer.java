@@ -3,12 +3,14 @@ package case_study_module2.model.customer;
 import case_study_module2.model.person.Person;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Customer extends Person {
     private String idCustomer;
     private String typeGuest;
     private String Address;
-    public Customer(){
+
+    public Customer() {
 
     }
 
@@ -51,10 +53,17 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "idCustomer='" + idCustomer + '\'' +
+        return "Customer='{'idCustomer='" + idCustomer + '\'' +
+                super.toString() +
                 ", typeGuest='" + typeGuest + '\'' +
                 ", Address='" + Address + '\'' +
                 '}';
+    }
+
+    public String getInfoCustomer() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String birth = getBirth().format(dateTimeFormatter);
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s", getIdCustomer(), getName(),
+                birth, getGender(), getAddress(), getIdCard(), getPhoneNumber(), getEmail(),getTypeGuest());
     }
 }

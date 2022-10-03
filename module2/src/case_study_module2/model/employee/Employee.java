@@ -3,15 +3,18 @@ package case_study_module2.model.employee;
 import case_study_module2.model.person.Person;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Employee extends Person {
     private String idEmployee;
     private String level;//Trình độ sẽ lưu trữ các thông tin: Trung cấp, Cao đẳng, Đại học và sau đại học
     private String position;//Vị trí sẽ lưu trữ các thông tin: Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc.
     private int salary;
-    public Employee(){
+
+    public Employee() {
 
     }
+
     public Employee(String idEmployee, String level, String position, int salary) {
         this.idEmployee = idEmployee;
         this.level = level;
@@ -19,7 +22,7 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public Employee(String idEmployee,String name, LocalDate birth, String gender, String idCard, String phoneNumber, String email,  String level, String position, int salary) {
+    public Employee(String idEmployee, String name, LocalDate birth, String gender, String idCard, String phoneNumber, String email, String level, String position, int salary) {
         super(name, birth, gender, idCard, phoneNumber, email);
         this.idEmployee = idEmployee;
         this.level = level;
@@ -62,21 +65,19 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "IdEmployee='" + idEmployee + '\'' +
-                ", Name='" + getName() + '\'' +
-                ", Birth='" + getBirth() + '\'' +
-                ", Gender='" + getGender() + '\'' +
-                ", ID Card='" + getIdCard() + '\'' +
-                ", PhoneNumber='" + getPhoneNumber() + '\'' +
-                ", Email='" + getEmail() + '\'' +
-                ", Level='" + level + '\'' +
-                ", Position='" + position + '\'' +
-                ", Salary=" + salary +
-                '}';
+        return
+                "Employee = {idEmployee='" + idEmployee + '\'' +
+                        super.toString() +
+                        ", level='" + level + '\'' +
+                        ", position='" + position + '\'' +
+                        ", salary=" + salary +
+                        '}';
     }
-    public String getInfoEmployee(){
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",getIdEmployee(),getName(),getBirth(),getGender(),
-                getIdCard(),getPhoneNumber(),getEmail(),getLevel(),getPosition(),getSalary());
+
+    public String getInfoEmployee() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String birth = getBirth().format(dateTimeFormatter);
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", getIdEmployee(), getName(), birth, getGender(),
+                getIdCard(), getPhoneNumber(), getEmail(), getLevel(), getPosition(), getSalary());
     }
 }

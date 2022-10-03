@@ -1,8 +1,10 @@
 package case_study_module2.model.person;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
-public class Person {
+public abstract class Person {
     private String name;
     private LocalDate birth;
 //    private String birth;
@@ -41,7 +43,7 @@ public class Person {
 //    public void setBirth(String birth) {
 //        this.birth = birth;
 //    }
-    public LocalDate getBirth() {
+    public LocalDate   getBirth() {
         return birth;
     }
 
@@ -83,13 +85,13 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return
                 ", name='" + name + '\'' +
-                ", birth=" + birth +
+                ", birth=" + birth.format(dateTimeFormatter) +
                 ", gender='" + gender + '\'' +
                 ", idCard=" + idCard +
                 ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email;
     }
 }
