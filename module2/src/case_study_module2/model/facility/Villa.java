@@ -2,17 +2,20 @@ package case_study_module2.model.facility;
 
 public class Villa extends Facility{
     private String roomStandard;
-    private int swimmingPoolArea;
+    private double swimmingPoolArea;
     private int numberFloors;
 
-    public Villa(String roomStandard, int swimmingPoolArea, int numberFloors) {
+    public Villa() {
+    }
+
+    public Villa(String roomStandard, double swimmingPoolArea, int numberFloors) {
         this.roomStandard = roomStandard;
         this.swimmingPoolArea = swimmingPoolArea;
         this.numberFloors = numberFloors;
     }
 
-    public Villa(String serviceName, int usableArea, double rentalCost, int maxPerson, int rentalType, String roomStandard, int swimmingPoolArea, int numberFloors) {
-        super(serviceName, usableArea, rentalCost, maxPerson, rentalType);
+    public Villa(String id, String serviceName, double usableArea, double rentalCost, int maxPerson, String rentalType, String roomStandard, double swimmingPoolArea, int numberFloors) {
+        super(id, serviceName, usableArea, rentalCost, maxPerson, rentalType);
         this.roomStandard = roomStandard;
         this.swimmingPoolArea = swimmingPoolArea;
         this.numberFloors = numberFloors;
@@ -26,11 +29,11 @@ public class Villa extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public int getSwimmingPoolArea() {
+    public double getSwimmingPoolArea() {
         return swimmingPoolArea;
     }
 
-    public void setSwimmingPoolArea(int swimmingPoolArea) {
+    public void setSwimmingPoolArea(double swimmingPoolArea) {
         this.swimmingPoolArea = swimmingPoolArea;
     }
 
@@ -44,11 +47,16 @@ public class Villa extends Facility{
 
     @Override
     public String toString() {
-        return "Villa{" +
+        return "Villa{" +super.toString()+
                 "roomStandard='" + roomStandard + '\'' +
                 ", swimmingPoolArea=" + swimmingPoolArea +
                 ", numberFloors=" + numberFloors +
                 '}';
+    }
+    public String getInfo(Villa villa){
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",getId(),getServiceName(),
+                getUsableArea(),getRentalCost(),getMaxPerson(),getRentalType(),getRoomStandard(),
+                getSwimmingPoolArea(),getNumberFloors());
     }
 
 }

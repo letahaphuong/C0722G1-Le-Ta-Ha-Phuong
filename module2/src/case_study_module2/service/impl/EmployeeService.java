@@ -2,7 +2,7 @@ package case_study_module2.service.impl;
 
 import case_study_module2.model.employee.Employee;
 import case_study_module2.service.IEmployeeService;
-import case_study_module2.util.Check;
+import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 
 import java.io.*;
@@ -23,7 +23,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter ID Employ: ");
                 id = scanner.nextLine();
-                Check.checkIdPerson(id);
+                CheckUtils.checkIdPerson(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -35,7 +35,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Name: ");
                 name = scanner.nextLine();
-                Check.checkName(name);
+                CheckUtils.checkName(name);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -60,7 +60,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Gender(male/female/other): ");
                 gender = scanner.nextLine();
-                Check.checkGender(gender);
+                CheckUtils.checkGender(gender);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -72,7 +72,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter ID Card: ");
                 idCard = scanner.nextLine();
-                Check.checkIDCard(idCard);
+                CheckUtils.checkIDCard(idCard);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -84,7 +84,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Phone Number: ");
                 phoneNumber = scanner.nextLine();
-                Check.checkPhone(phoneNumber);
+                CheckUtils.checkPhone(phoneNumber);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -97,7 +97,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Email: ");
                 email = scanner.nextLine();
-                Check.checkMail(email);
+                CheckUtils.checkMail(email);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -109,7 +109,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Level(University / College / Intermediate): ");
                 level = scanner.nextLine();
-                Check.checkLevel(level);
+                CheckUtils.checkLevel(level);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -123,7 +123,7 @@ public class EmployeeService implements IEmployeeService {
                         "(Receptionist, Waiter, Specialist, Supervisor, Manager, Director)" +
                         ": ");
                 position = scanner.nextLine();
-                Check.checkPosition(position);
+                CheckUtils.checkPosition(position);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -175,7 +175,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String nameEdit = scanner.nextLine();
                     employeeList.get(i).setName(nameEdit);
-                    Check.checkName(nameEdit);
+                    CheckUtils.checkName(nameEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -193,7 +193,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String genderEdit = scanner.nextLine();
                     employeeList.get(i).setGender(genderEdit);
-                    Check.checkGender(genderEdit);
+                    CheckUtils.checkGender(genderEdit);
                 } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
@@ -203,7 +203,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String idCardEdit = scanner.nextLine();
                     employeeList.get(i).setIdCard(idCardEdit);
-                    Check.checkIDCard(idCardEdit);
+                    CheckUtils.checkIDCard(idCardEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -212,7 +212,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String phoneNumberEdit = scanner.nextLine();
                     employeeList.get(i).setPhoneNumber(phoneNumberEdit);
-                    Check.checkPhone(phoneNumberEdit);
+                    CheckUtils.checkPhone(phoneNumberEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -221,7 +221,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String emailEdit = scanner.nextLine();
                     employeeList.get(i).setEmail(emailEdit);
-                    Check.checkMail(emailEdit);
+                    CheckUtils.checkMail(emailEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -230,7 +230,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String levelEdit = scanner.nextLine();
                     employeeList.get(i).setLevel(levelEdit);
-                    Check.checkLevel(levelEdit);
+                    CheckUtils.checkLevel(levelEdit);
                 } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
@@ -240,7 +240,7 @@ public class EmployeeService implements IEmployeeService {
                 try {
                     String positionEdit = scanner.nextLine();
                     employeeList.get(i).setPosition(positionEdit);
-                    Check.checkPosition(positionEdit);
+                    CheckUtils.checkPosition(positionEdit);
                 } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");

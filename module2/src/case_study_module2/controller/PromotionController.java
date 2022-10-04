@@ -3,9 +3,10 @@ package case_study_module2.controller;
 import java.util.Scanner;
 
 public class PromotionController {
-    private static Scanner scanner=new Scanner(System.in);
-    public static void menuPromotion(){
-        while (true){
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void menuPromotion() {
+        while (true) {
             System.out.println("Welcome to Promotion Management");
             System.out.println("Please select option: ");
             System.out.println("1. Display list customers use service");
@@ -13,7 +14,7 @@ public class PromotionController {
             System.out.println("3. Return main menu");
             System.out.println("4. Exit");
             int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            switch (choice) {
                 case 1:
                     break;
                 case 2:

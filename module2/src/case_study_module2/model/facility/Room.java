@@ -1,14 +1,17 @@
 package case_study_module2.model.facility;
 
-public class Room extends Facility{
+public class Room extends Facility {
     private String freeService;
+
+    public Room() {
+    }
 
     public Room(String freeService) {
         this.freeService = freeService;
     }
 
-    public Room(String serviceName, int usableArea, double rentalCost, int maxPerson, int rentalType, String freeService) {
-        super(serviceName, usableArea, rentalCost, maxPerson, rentalType);
+    public Room(String id, String serviceName, double usableArea, double rentalCost, int maxPerson, String rentalType, String freeService) {
+        super(id, serviceName, usableArea, rentalCost, maxPerson, rentalType);
         this.freeService = freeService;
     }
 
@@ -23,7 +26,15 @@ public class Room extends Facility{
     @Override
     public String toString() {
         return "Room{" +
+                super.toString() +
                 "freeService='" + freeService + '\'' +
                 '}';
     }
+
+    public String getInfoRoom(Room room) {
+        return String.format("%s,%s,%s,%s,%s,%s,%s", getId(), getServiceName(),
+                getUsableArea(), getRentalCost(), getMaxPerson(), getRentalType(), getFreeService());
+    }
+
+
 }

@@ -2,7 +2,7 @@ package case_study_module2.service.impl;
 
 import case_study_module2.model.customer.Customer;
 import case_study_module2.service.ICustomerService;
-import case_study_module2.util.Check;
+import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 
 import java.io.*;
@@ -23,7 +23,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter ID Customer: ");
                 id = scanner.nextLine();
-                Check.checkIdPerson(id);
+                CheckUtils.checkIdPerson(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -35,7 +35,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Name Customer: ");
                 name = scanner.nextLine();
-                Check.checkName(name);
+                CheckUtils.checkName(name);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -60,7 +60,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Address Customer: ");
                 address = scanner.nextLine();
-                Check.checkAddress(address);
+                CheckUtils.checkAddress(address);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -73,7 +73,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Gender Customer(male/female/other): ");
                 gender = scanner.nextLine();
-                Check.checkGender(gender);
+                CheckUtils.checkGender(gender);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -86,7 +86,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter IdCard Customer: ");
                 idCard = scanner.nextLine();
-                Check.checkIDCard(idCard);
+                CheckUtils.checkIDCard(idCard);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -99,7 +99,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter PhoneNumber Customer: ");
                 phoneNumber = scanner.nextLine();
-                Check.checkPhone(phoneNumber);
+                CheckUtils.checkPhone(phoneNumber);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -110,7 +110,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Email Customer: ");
                 email = scanner.nextLine();
-                Check.checkMail(email);
+                CheckUtils.checkMail(email);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -121,7 +121,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Type Guest Customer(Diamond / Platinium / Gold / Silver / Member$): ");
                 typeGuest = scanner.nextLine();
-                Check.checkTypeGuest(typeGuest);
+                CheckUtils.checkTypeGuest(typeGuest);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -143,7 +143,7 @@ public class CustomerService implements ICustomerService {
                 try {
                     System.out.println("Enter new Name: ");
                     String nameEdit = scanner.nextLine();
-                    Check.checkName(nameEdit);
+                    CheckUtils.checkName(nameEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -157,35 +157,35 @@ public class CustomerService implements ICustomerService {
                 try {
                     System.out.println("Enter new Gender: ");
                     String genderEdit = scanner.nextLine();
-                    Check.checkGender(genderEdit);
+                    CheckUtils.checkGender(genderEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
                     System.out.println("Enter new Address: ");
                     String addressEdit = scanner.nextLine();
-                    Check.checkAddress(addressEdit);
+                    CheckUtils.checkAddress(addressEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
                     System.out.println("Enter new ID Card: ");
                     String idCardEdit = scanner.nextLine();
-                    Check.checkIDCard(idCardEdit);
+                    CheckUtils.checkIDCard(idCardEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
                     System.out.println("Enter new Phone Number: ");
                     String phoneNumberEdit = scanner.nextLine();
-                    Check.checkPhone(phoneNumberEdit);
+                    CheckUtils.checkPhone(phoneNumberEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
                     System.out.println("Enter new Email: ");
                     String emailEdit = scanner.nextLine();
-                    Check.checkMail(emailEdit);
+                    CheckUtils.checkMail(emailEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
@@ -211,7 +211,7 @@ public class CustomerService implements ICustomerService {
         customerList = readFile();
         Customer customer = this.infoCustomer();
         customerList.add(customer);
-        System.out.println("Successfully added new");
+        System.out.println("Successfully added new!");
         writerFile(customerList);
     }
 

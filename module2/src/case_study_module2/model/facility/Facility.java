@@ -1,21 +1,31 @@
 package case_study_module2.model.facility;
 
 public abstract class Facility {
+    private String id;
     private String serviceName;
-    private int usableArea;
+    private double usableArea;
     private double rentalCost;
     private int maxPerson;
-    private int rentalType; //Theo năm ,theo tháng,theo ngày.
+    private String rentalType; //Theo năm ,theo tháng,theo ngày.
 
     public Facility() {
     }
 
-    public Facility(String serviceName, int usableArea, double rentalCost, int maxPerson, int rentalType) {
+    public Facility(String id, String serviceName, double usableArea, double rentalCost, int maxPerson, String rentalType) {
+        this.id = id;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCost = rentalCost;
         this.maxPerson = maxPerson;
         this.rentalType = rentalType;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getServiceName() {
@@ -26,11 +36,11 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public int getUsableArea() {
+    public double getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(int usableArea) {
+    public void setUsableArea(double usableArea) {
         this.usableArea = usableArea;
     }
 
@@ -50,25 +60,21 @@ public abstract class Facility {
         this.maxPerson = maxPerson;
     }
 
-    public int getRentalType() {
+    public String getRentalType() {
         return rentalType;
     }
 
-    public void setRentalType(int rentalType) {
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+        return "id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCost=" + rentalCost +
                 ", maxPerson=" + maxPerson +
-                ", rentalType=" + rentalType +
-                '}';
-    }
-    public String getInfo(){
-        return String.format(getServiceName(),getUsableArea(),getRentalCost(),getMaxPerson(),getRentalType());
+                ", rentalType=" + rentalType;
     }
 }

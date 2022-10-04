@@ -1,6 +1,6 @@
 package case_study_module2.util;
 
-public class Check {
+public class CheckUtils {
     public static void checkName(String name) throws FormatException {
         boolean check = name.matches("^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$");
         if (!check) {
@@ -65,6 +65,30 @@ public class Check {
         boolean check= typeGuest.matches("^Diamond|Platinium|Gold|Silver|Member$");
         if (!check){
             throw new FormatException("Format error,Enter again!");
+        }
+    }
+    public static void checkStandard(String standard) throws FormatException {
+        boolean check=standard.matches("^[A-Z][a-z]+$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+    }
+    public static void checkIdHouseFacility(String house) throws FormatException {
+        boolean check = house.matches("^SVHO-[0-9]{4}$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+    }
+    public static void checkIdVillaFacility(String villa) throws FormatException {
+        boolean check = villa.matches("^SVVL-[0-9]{4}$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+    }
+    public static void checkIdRoomFacility(String room) throws FormatException {
+        boolean check = room.matches("^SVRO-[0-9]{4}$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
         }
     }
 
