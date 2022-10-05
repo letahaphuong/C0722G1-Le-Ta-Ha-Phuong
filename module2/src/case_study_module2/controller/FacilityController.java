@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class FacilityController {
     private static Scanner scanner = new Scanner(System.in);
     private static IFacilityService iFacilityService = new FacilityService();
-    private static IHouseService iHouseService= new HouseService();
-    private static IVillaService iVillaService=new VillaService();
-    private static IRoomService iRoomService=new RoomService();
+    private static IHouseService iHouseService = new HouseService();
+    private static IVillaService iVillaService = new VillaService();
+    private static IRoomService iRoomService = new RoomService();
 
 
     public static void menuFacility() throws IOException, NumberException {
@@ -29,48 +29,55 @@ public class FacilityController {
             System.out.println("2. Add new facility");
             System.out.println("3. Display list facility maintenance");
             System.out.println("4. Return main menu");
-            System.out.println("5. Exit");
-            int choice = Integer.parseInt(scanner.nextLine());
+            System.out.println("0. Exit");
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
-                    iFacilityService.display();
+                case "1":
+                    iVillaService.display();
+                    iHouseService.display();
+                    iRoomService.display();
                     break;
-                case 2:
+                case "2":
                     facilityOption();
                     break;
-                case 3:
+                case "3":
                     iFacilityService.displayListMaintain();
                     break;
-                case 4:
+                case "4":
                     return;
-                case 5:
+                case "0":
                     System.exit(0);
+                default:
+                    System.out.println("Format Error,Try Again!");
+
             }
         }
     }
 
-    private static void facilityOption() throws NumberException {
+    private static void facilityOption() throws NumberException, IOException {
         System.out.println("Select Option Facility!");
         System.out.println("1. Add New Villa");
         System.out.println("2. Add New House");
         System.out.println("3. Add New Room");
         System.out.println("4. Return menu");
         System.out.println("0. Exit");
-        int choice = Integer.parseInt(scanner.nextLine());
+        String choice =scanner.nextLine();
         switch (choice) {
-            case 1:
+            case "1":
                 iVillaService.add();
                 break;
-            case 2:
+            case "2":
                 iHouseService.add();
                 break;
-            case 3:
+            case "3":
                 iRoomService.add();
                 break;
-            case 4:
+            case "4":
                 return;
-            case 0:
+            case "0":
                 System.exit(0);
+            default:
+                System.out.println("Format Error,Try Again!");
 
         }
     }

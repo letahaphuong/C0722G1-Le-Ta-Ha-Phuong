@@ -2,6 +2,7 @@ package case_study_module2.controller;
 
 import case_study_module2.service.IEmployeeService;
 import case_study_module2.service.impl.EmployeeService;
+import case_study_module2.util.NumberException;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public class EmployeeController {
     private static Scanner scanner = new Scanner(System.in);
     private static IEmployeeService iEmployeeService = new EmployeeService();
 
-    public static void menuEmployee() throws IOException {
+    public static void menuEmployee() throws IOException, NumberException {
         while (true) {
             System.out.println("Welcome to Employee Management ");
             System.out.println("Please select option: ");

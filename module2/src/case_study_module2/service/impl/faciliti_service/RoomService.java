@@ -1,11 +1,11 @@
 package case_study_module2.service.impl.faciliti_service;
 
-import case_study_module2.model.facility.Facility;
-import case_study_module2.model.facility.House;
 import case_study_module2.model.facility.Room;
 import case_study_module2.service.i_faciliti_service.IRoomService;
+import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
+import case_study_module2.util.NumberException;
 
 import java.io.*;
 import java.util.*;
@@ -45,9 +45,10 @@ public class RoomService implements IRoomService {
                 usableArea = Double.parseDouble(scanner.nextLine());
                 if (usableArea > 30) {
                     break;
+                }else {
+                    System.out.println("Area More Than 30,Pls Try Again");
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Enter Again!");
             }
         }
@@ -62,7 +63,6 @@ public class RoomService implements IRoomService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Enter Rental Cost: ");
             }
 
@@ -70,23 +70,49 @@ public class RoomService implements IRoomService {
 
         int maxPerson;
         while (true) {
-            System.out.println("Enter Max Person Number: ");
-            maxPerson = Integer.parseInt(scanner.nextLine());
-            if (maxPerson > 0 && maxPerson < 20) {
-                break;
+            try {
+                System.out.println("Enter Max Person Number: ");
+                maxPerson = Integer.parseInt(scanner.nextLine());
+                if (maxPerson > 0 && maxPerson < 20) {
+                    break;
+                }else {
+                    System.out.println("Person Number More Than Zero And Less Than Twenty,Pls Try Again!");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Format Error, Try Again!");
             }
+
         }
 
-        String rentalType;
+        String rentalType = null;
         while (true) {
+            System.out.println("Enter Rental Type:" +
+                    "\n 1. Rent By Year!" +
+                    "\n 2. Rent By Month!" +
+                    "\n 3. Rent By Day!" +
+                    "\n 4. Rent By Hours!");
             try {
-                System.out.println("Enter Rental Type: ");
-                rentalType = scanner.nextLine();
-                CheckUtils.checkStandard(rentalType);
+                String choice = scanner.nextLine();
+                CheckControllerUtils.checkSwitchCase(choice);
+                switch (choice) {
+                    case "1":
+                        rentalType = "Rent By Year!";
+                        break;
+                    case "2":
+                        rentalType = "Rent By Month!";
+                        break;
+                    case "3":
+                        rentalType = "Rent By Day!";
+                        break;
+                    case "4":
+                        rentalType = "Rent By Hours!";
+                        break;
+                }
                 break;
-            } catch (FormatException e) {
+            } catch (NumberException e) {
                 System.out.println(e.getMessage());
             }
+
         }
 
         String freeService;
@@ -103,6 +129,16 @@ public class RoomService implements IRoomService {
 
         return new Room(id, serviceName, usableArea, rentalCost, maxPerson, rentalType, freeService);
 
+    }
+
+    @Override
+    public void display() {
+        listRoom = readFile();
+        Set<Room> rooms;
+        rooms=listRoom.keySet();
+        for (Room room:rooms){
+            System.out.println(room);
+        }
     }
 
     @Override
@@ -137,7 +173,7 @@ public class RoomService implements IRoomService {
                 room.setRentalType(info[5]);
                 room.setFreeService(info[6]);
                 Integer value = Integer.parseInt(info[7]);
-                houseList.put(room, 0);
+                houseList.put(room, value);
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -153,7 +189,7 @@ public class RoomService implements IRoomService {
         }
 
         FileWriter fileWriter;
-        BufferedWriter bufferedWriter;
+        BufferedWriter bufferedWriter = null;
 
         try {
             fileWriter = new FileWriter(file);
@@ -162,10 +198,19 @@ public class RoomService implements IRoomService {
             rooms = roomsList.keySet();
             for (Room room : rooms) {
                 bufferedWriter.write(room.getInfoRoom(room) + "," + roomsList.get(room));
+                bufferedWriter.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

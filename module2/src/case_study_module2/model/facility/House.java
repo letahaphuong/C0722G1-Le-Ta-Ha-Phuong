@@ -3,7 +3,8 @@ package case_study_module2.model.facility;
 public class House extends Facility {
     private String roomStandard;
     private int numberFloors;
-    public House(){
+
+    public House() {
 
     }
 
@@ -36,13 +37,15 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" +super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
-                ", numberFloors=" + numberFloors +
+        return "House ={" + super.toString() +
+                "| Room Standard='" + roomStandard + '\'' +
+                "| Number Floors=" + numberFloors +
                 '}';
     }
-    public String getInfo(House house){
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s",getId(),getServiceName(),getUsableArea(),getRentalCost(),getMaxPerson(),getRentalType(),getRoomStandard(),getNumberFloors());
+
+    public String getInfo(House house) {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s", getId(), getServiceName(), getUsableArea(),
+                getRentalCost(), getMaxPerson(), getRentalType(), getRoomStandard(), getNumberFloors());
     }
 
 

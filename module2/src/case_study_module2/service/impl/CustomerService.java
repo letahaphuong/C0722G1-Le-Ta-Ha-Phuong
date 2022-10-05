@@ -47,10 +47,10 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Birth Customer(dd/MM/yyyy): ");
                 birth = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
+                CheckUtils.checkBirth(birth);
                 break;
-            } catch (Exception e) {
-                e.getStackTrace();
-                System.out.println("Format error,Enter again!");
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
             }
 
 
@@ -119,7 +119,7 @@ public class CustomerService implements ICustomerService {
         String typeGuest;
         while (true) {
             try {
-                System.out.println("Enter Type Guest Customer(Diamond / Platinium / Gold / Silver / Member$): ");
+                System.out.println("Enter Type Guest Customer(Diamond / Platinium / Gold / Silver / Member): " );
                 typeGuest = scanner.nextLine();
                 CheckUtils.checkTypeGuest(typeGuest);
                 break;

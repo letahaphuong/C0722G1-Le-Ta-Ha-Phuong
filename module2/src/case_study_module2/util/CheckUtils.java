@@ -1,5 +1,9 @@
 package case_study_module2.util;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Period;
+
 public class CheckUtils {
     public static void checkName(String name) throws FormatException {
         boolean check = name.matches("^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$");
@@ -90,6 +94,15 @@ public class CheckUtils {
         if (!check){
             throw new FormatException("Format Error,Enter Again!");
         }
+    }
+    public static void checkBirth(LocalDate inputBirth) throws FormatException {
+        LocalDate localDate=LocalDate.now();
+        Period period = Period.between(inputBirth, localDate);
+        boolean check=period.getYears()>=18;
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+
     }
 
 

@@ -28,7 +28,6 @@ public class EmployeeService implements IEmployeeService {
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
             }
-
         }
         String name;
         while (true) {
@@ -47,10 +46,10 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Birthday (dd/MM/yyyy): ");
                 birth = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
+                CheckUtils.checkBirth(birth);
                 break;
-            } catch (Exception e) {
-                e.getStackTrace();
-                System.out.println("Format error,Enter again!");
+            } catch (FormatException e) {
+                System.out.println(e.getMessage());
             }
 
         }
@@ -142,7 +141,7 @@ public class EmployeeService implements IEmployeeService {
             }
 
         }
-        return new Employee(id,name, birth,  gender, idCard, phoneNumber, email, level, position, salary);
+        return new Employee(id, name, birth, gender, idCard, phoneNumber, email, level, position, salary);
 
     }
 
@@ -264,6 +263,7 @@ public class EmployeeService implements IEmployeeService {
 
 
     BufferedReader bufferedReader;
+
     public List<Employee> readFile() throws IOException {
         List<Employee> employeeList1 = new ArrayList<>();
         try {

@@ -1,11 +1,11 @@
 package case_study_module2.service.impl.faciliti_service;
 
-import case_study_module2.model.facility.Facility;
-import case_study_module2.model.facility.House;
 import case_study_module2.model.facility.Villa;
 import case_study_module2.service.i_faciliti_service.IVillaService;
+import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
+import case_study_module2.util.NumberException;
 
 import java.io.*;
 import java.util.*;
@@ -48,7 +48,6 @@ public class VillaService implements IVillaService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
         }
@@ -62,7 +61,6 @@ public class VillaService implements IVillaService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
         }
@@ -76,21 +74,39 @@ public class VillaService implements IVillaService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
         }
 
-        String rentalType;
+        String rentalType = null;
         while (true) {
+            System.out.println("Enter Rental Type:" +
+                    "\n 1. Rent By Year!" +
+                    "\n 2. Rent By Month!" +
+                    "\n 3. Rent By Day!" +
+                    "\n 4. Rent By Hours!");
             try {
-                System.out.println("Enter Rental Type: ");
-                rentalType = scanner.nextLine();
-                CheckUtils.checkName(rentalType);
+                String choice = scanner.nextLine();
+                CheckControllerUtils.checkSwitchCase(choice);
+                switch (choice) {
+                    case "1":
+                        rentalType = "Rent By Year!";
+                        break;
+                    case "2":
+                        rentalType = "Rent By Month!";
+                        break;
+                    case "3":
+                        rentalType = "Rent By Day!";
+                        break;
+                    case "4":
+                        rentalType = "Rent By Hours!";
+                        break;
+                }
                 break;
-            } catch (FormatException e) {
+            } catch (NumberException e) {
                 System.out.println(e.getMessage());
             }
+
         }
 
         String roomStandard;
@@ -114,7 +130,6 @@ public class VillaService implements IVillaService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again");
             }
         }
@@ -128,7 +143,6 @@ public class VillaService implements IVillaService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
         }
@@ -136,6 +150,16 @@ public class VillaService implements IVillaService {
         return new Villa(id, serviceName, usableArea, rentalCost,
                 maxPerson, rentalType, roomStandard, swimmingPoolArea,
                 numberFloors);
+    }
+
+    @Override
+    public void display() {
+        listVilla = readFile();
+        Set<Villa> villas;
+        villas = listVilla.keySet();
+        for (Villa villa : villas) {
+            System.out.println(villa);
+        }
     }
 
     @Override
@@ -172,7 +196,7 @@ public class VillaService implements IVillaService {
                 villa.setSwimmingPoolArea(Double.parseDouble(info[7]));
                 villa.setNumberFloors(Integer.parseInt(info[8]));
                 Integer value = Integer.parseInt(info[9]);
-                houseList.put(villa, 0);
+                houseList.put(villa, value);
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -188,18 +212,27 @@ public class VillaService implements IVillaService {
         }
 
         FileWriter fileWriter;
-        BufferedWriter bufferedWriter;
+        BufferedWriter bufferedWriter = null;
 
         try {
             fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
-            Set<Villa> villas = new LinkedHashSet<>();
+            Set<Villa> villas;
             villas = roomsList.keySet();
             for (Villa villa : villas) {
                 bufferedWriter.write(villa.getInfo(villa) + "," + roomsList.get(villa));
+                bufferedWriter.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

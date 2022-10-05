@@ -1,6 +1,5 @@
 package case_study_module2.service.impl.faciliti_service;
 
-import case_study_module2.model.facility.Facility;
 import case_study_module2.model.facility.House;
 import case_study_module2.service.i_faciliti_service.IHouseService;
 import case_study_module2.util.CheckControllerUtils;
@@ -13,9 +12,9 @@ import java.util.*;
 
 public class HouseService implements IHouseService {
     private static Scanner scanner = new Scanner(System.in);
-    private static Map<House, Integer> linkedHashMapH = new LinkedHashMap<>();
+    private static Map<House, Integer> listHouse = new LinkedHashMap<>();
 
-    public House infoHouse() throws NumberException {
+    public House infoHouse() {
         String id;
         while (true) {
             try {
@@ -45,9 +44,10 @@ public class HouseService implements IHouseService {
                 usableArea = Double.parseDouble(scanner.nextLine());
                 if (usableArea > 30) {
                     break;
+                }else {
+                    System.out.println("Area More Than 30,Pls Try Again!");
                 }
-            }catch (NumberFormatException e){
-                e.getStackTrace();
+            } catch (NumberFormatException e) {
                 System.out.println("Format Error,Try Again!");
             }
 
@@ -61,7 +61,6 @@ public class HouseService implements IHouseService {
                     break;
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
 
@@ -73,9 +72,10 @@ public class HouseService implements IHouseService {
                 maxPerson = Integer.parseInt(scanner.nextLine());
                 if (maxPerson > 0 && maxPerson < 20) {
                     break;
+                }else {
+                    System.out.println("Person Number More Than Zero And Less Than Twenty,Pls Try Again!");
                 }
             } catch (NumberFormatException e) {
-                e.getStackTrace();
                 System.out.println("Format Error,Try Again!");
             }
 
@@ -87,8 +87,9 @@ public class HouseService implements IHouseService {
                     "\n 2. Rent By Month!" +
                     "\n 3. Rent By Day!" +
                     "\n 4. Rent By Hours!");
-            String choice = scanner.nextLine();
-            CheckControllerUtils.checkSwitchCase(choice);
+            try {
+                String choice = scanner.nextLine();
+                CheckControllerUtils.checkSwitchCase(choice);
                 switch (choice) {
                     case "1":
                         rentalType = "Rent By Year!";
@@ -102,8 +103,12 @@ public class HouseService implements IHouseService {
                     case "4":
                         rentalType = "Rent By Hours!";
                         break;
+                }
+                break;
+            } catch (NumberException e) {
+                System.out.println(e.getMessage());
             }
-            break;
+
         }
         String roomStandard;
         while (true) {
@@ -129,12 +134,23 @@ public class HouseService implements IHouseService {
     }
 
     @Override
-    public void add() throws NumberException {
-        linkedHashMapH = readFile();
+    public void display() {
+        listHouse = readFile();
+        Set<House> houses;
+        houses = listHouse.keySet();
+        for (House house : houses) {
+            System.out.println(house);
+
+        }
+    }
+
+    @Override
+    public void add() {
+        listHouse = readFile();
         House house = this.infoHouse();
-        linkedHashMapH.put(house, 0);
+        listHouse.put(house, 0);
         System.out.println("Successfully added new!");
-        writeFile(linkedHashMapH);
+        writeFile(listHouse);
 
     }
 
@@ -159,9 +175,10 @@ public class HouseService implements IHouseService {
                 house.setRentalCost(Double.parseDouble(info[3]));
                 house.setMaxPerson(Integer.parseInt(info[4]));
                 house.setRentalType(info[5]);
-                house.setNumberFloors(Integer.parseInt(info[6]));
-                Integer value = Integer.parseInt(info[7]);
-                houseList.put(house, 0);
+                house.setRoomStandard(info[6]);
+                house.setNumberFloors(Integer.parseInt(info[7]));
+                Integer value = Integer.parseInt(info[8]);
+                houseList.put(house, value);
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -177,7 +194,7 @@ public class HouseService implements IHouseService {
         }
 
         FileWriter fileWriter;
-        BufferedWriter bufferedWriter;
+        BufferedWriter bufferedWriter = null;
 
         try {
             fileWriter = new FileWriter(file);
@@ -186,10 +203,19 @@ public class HouseService implements IHouseService {
             houses = roomsList.keySet();
             for (House house : houses) {
                 bufferedWriter.write(house.getInfo(house) + "," + roomsList.get(house));
+                bufferedWriter.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

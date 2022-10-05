@@ -11,7 +11,7 @@ public class CustomerController {
     private static Scanner scanner = new Scanner(System.in);
     private static ICustomerService iCustomerService = new CustomerService();
 
-    public static void menuCustomer() throws IOException {
+    public static void menuCustomer() throws IOException, NumberException {
         while (true) {
             System.out.println("Welcome to Customer Management");
             System.out.println("Please select option: ");
