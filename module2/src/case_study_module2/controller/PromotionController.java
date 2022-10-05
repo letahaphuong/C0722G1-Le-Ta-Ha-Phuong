@@ -13,16 +13,18 @@ public class PromotionController {
             System.out.println("2. Display list customers got voucher");
             System.out.println("3. Return main menu");
             System.out.println("4. Exit");
-            int choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     break;
-                case 2:
+                case "2":
                     break;
-                case 3:
+                case "3":
                     return;
-                case 4:
+                case "4":
                     System.exit(0);
+                default:
+                    System.out.println("Format Error,Pls Try Again!");
             }
 
         }

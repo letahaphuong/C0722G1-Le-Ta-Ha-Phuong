@@ -20,21 +20,23 @@ public class EmployeeController {
             System.out.println("3. Edit employee");
             System.out.println("4. Return main menu");
             System.out.println("5. Exit");
-            int choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     iEmployeeService.display();
                     break;
-                case 2:
+                case "2":
                     iEmployeeService.add();
                     break;
-                case 3:
+                case "3":
                     iEmployeeService.editByID();
                     break;
-                case 4:
+                case "4":
                     return;
-                case 5:
+                case "5":
                     System.exit(0);
+                default:
+                    System.out.println("Format Error,Pls Try Again");
             }
         }
     }

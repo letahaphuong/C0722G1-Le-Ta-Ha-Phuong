@@ -267,7 +267,7 @@ public class EmployeeService implements IEmployeeService {
     public List<Employee> readFile() throws IOException {
         List<Employee> employeeList1 = new ArrayList<>();
         try {
-            File file = new File("src\\case_study_module2\\data\\listEmploy.csv");
+            File file = new File("src\\case_study_module2\\data\\employee\\listEmploy.csv");
             FileReader fileReader = new FileReader(file);
             if (!file.exists()) {
                 System.out.println("File not found!");
@@ -300,7 +300,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     public void writeFile(List<Employee> employeeList2) throws IOException {
-        File file = new File("src\\case_study_module2\\data\\listEmploy.csv");
+        File file = new File("src\\case_study_module2\\data\\employee\\listEmploy.csv");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Employee employee : employeeList2) {

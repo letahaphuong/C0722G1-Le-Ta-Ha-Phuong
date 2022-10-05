@@ -53,10 +53,10 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer='{'idCustomer='" + idCustomer + '\'' +
+        return "Customer ='{'Id Customer='" + idCustomer + '\'' +
                 super.toString() +
-                ", typeGuest='" + typeGuest + '\'' +
-                ", Address='" + Address + '\'' +
+                "| Type Guest='" + typeGuest + '\'' +
+                "| Address='" + Address + '\'' +
                 '}';
     }
 

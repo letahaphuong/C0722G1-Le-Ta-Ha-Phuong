@@ -112,7 +112,7 @@ public class VillaService implements IVillaService {
         String roomStandard;
         while (true) {
             try {
-                System.out.println("Enter Room Standard: ");
+                System.out.println("Enter Room Standard(Suite / Deluxe / Superior / Standard): ");
                 roomStandard = scanner.nextLine();
                 CheckUtils.checkStandard(roomStandard);
                 break;
@@ -128,6 +128,8 @@ public class VillaService implements IVillaService {
                 swimmingPoolArea = Double.parseDouble(scanner.nextLine());
                 if (swimmingPoolArea > 30) {
                     break;
+                }else {
+                    System.out.println("Area Swimming Less Than 30m2,Pls Enter Again!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Format Error,Try Again");

@@ -8,6 +8,7 @@ import case_study_module2.util.FormatException;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -223,7 +224,7 @@ public class CustomerService implements ICustomerService {
             File file = new File("src\\case_study_module2\\data\\customer\\customer.csv");
             FileReader fileReader = new FileReader(file);
             if (!file.exists()) {
-                System.out.println("File not Found");
+                System.out.println("File not Found!");
             }
             bufferedReader = new BufferedReader(fileReader);
             String line;
@@ -250,7 +251,7 @@ public class CustomerService implements ICustomerService {
         return customerList1;
     }
 
-    public void writerFile(List<Customer> customerList2) throws IOException {
+    private void writerFile(List<Customer> customerList2) throws IOException {
         File file = new File("src\\case_study_module2\\data\\customer\\customer.csv");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

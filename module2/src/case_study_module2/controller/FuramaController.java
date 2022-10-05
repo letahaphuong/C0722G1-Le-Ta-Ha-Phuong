@@ -23,25 +23,27 @@ public class FuramaController {
             System.out.println("4. Booking Management");
             System.out.println("5. Promotion Management");
             System.out.println("6. Exit");
-            int choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     employeeController.menuEmployee();
                     break;
-                case 2:
+                case "2":
                     customerController.menuCustomer();
                     break;
-                case 3:
+                case "3":
                     facilityController.menuFacility();
                     break;
-                case 4:
+                case "4":
                     bookingController.menuBooking();
                     break;
-                case 5:
+                case "5":
                     promotionController.menuPromotion();
                     break;
-                case 6:
+                case "6":
                     System.exit(0);
+                default:
+                    System.out.println("Format Error,Pls Try Again!");
             }
         }
 

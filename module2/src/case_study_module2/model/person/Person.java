@@ -36,13 +36,7 @@ public abstract class Person {
         this.name = name;
     }
 
-//    public String getBirth() {
-//        return birth;
-//    }
-//
-//    public void setBirth(String birth) {
-//        this.birth = birth;
-//    }
+
     public LocalDate   getBirth() {
         return birth;
     }
@@ -87,11 +81,11 @@ public abstract class Person {
     public String toString() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return
-                ", name='" + name + '\'' +
-                ", birth=" + birth.format(dateTimeFormatter) +
-                ", gender='" + gender + '\'' +
-                ", idCard=" + idCard +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email;
+                "| Name='" + name + '\'' +
+                "| Birth=" + birth.format(dateTimeFormatter) +
+                "| Gender='" + gender + '\'' +
+                "| Id Card=" + idCard +
+                "| Phone Number=" + phoneNumber +
+                "| Email='" + email;
     }
 }

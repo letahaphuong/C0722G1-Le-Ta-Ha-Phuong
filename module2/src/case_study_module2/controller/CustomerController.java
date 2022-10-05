@@ -20,22 +20,23 @@ public class CustomerController {
             System.out.println("3. Edit customer");
             System.out.println("4. Return menu");
             System.out.println("5. Exit");
-            int choice;
-            choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     iCustomerService.display();
                     break;
-                case 2:
+                case "2":
                     iCustomerService.add();
                     break;
-                case 3:
+                case "3":
                     iCustomerService.editCustomer();
                     break;
-                case 4:
+                case "4":
                     return;
-                case 0:
+                case "0":
                     System.exit(0);
+                default:
+                    System.out.println("Format Error, Pls Try Again!");
             }
         }
 

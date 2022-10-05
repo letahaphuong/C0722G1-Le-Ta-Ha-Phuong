@@ -46,7 +46,7 @@ public class RoomService implements IRoomService {
                 if (usableArea > 30) {
                     break;
                 }else {
-                    System.out.println("Area More Than 30,Pls Try Again");
+                    System.out.println("Area More Than 30,Pls Enter Again");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Format Error,Enter Again!");
@@ -118,9 +118,9 @@ public class RoomService implements IRoomService {
         String freeService;
         while (true) {
             try {
-                System.out.println("Enter Free Service: ");
+                System.out.println("Enter Free Service (Beer | Whisky | Drink | Juice | Water | Coffee): ");
                 freeService = scanner.nextLine();
-                CheckUtils.checkName(freeService);
+                CheckUtils.checkFreeService(freeService);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());

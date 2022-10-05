@@ -45,7 +45,7 @@ public class HouseService implements IHouseService {
                 if (usableArea > 30) {
                     break;
                 }else {
-                    System.out.println("Area More Than 30,Pls Try Again!");
+                    System.out.println("Area More Than 30,Pls Enter Again!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Format Error,Try Again!");
@@ -73,7 +73,7 @@ public class HouseService implements IHouseService {
                 if (maxPerson > 0 && maxPerson < 20) {
                     break;
                 }else {
-                    System.out.println("Person Number More Than Zero And Less Than Twenty,Pls Try Again!");
+                    System.out.println("Person Number More Than 0 And Less Than 20,Pls Try Again!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Format Error,Try Again!");
@@ -113,7 +113,7 @@ public class HouseService implements IHouseService {
         String roomStandard;
         while (true) {
             try {
-                System.out.println("Enter Room Standard");
+                System.out.println("Enter Room Standard(Suite / Deluxe / Superior / Standard): ");
                 roomStandard = scanner.nextLine();
                 CheckUtils.checkStandard(roomStandard);
                 break;

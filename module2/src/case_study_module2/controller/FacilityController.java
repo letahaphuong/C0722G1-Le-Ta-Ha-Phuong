@@ -48,7 +48,7 @@ public class FacilityController {
                 case "0":
                     System.exit(0);
                 default:
-                    System.out.println("Format Error,Try Again!");
+                    System.out.println("Format Error,Pls Try Again!");
 
             }
         }
@@ -77,7 +77,7 @@ public class FacilityController {
             case "0":
                 System.exit(0);
             default:
-                System.out.println("Format Error,Try Again!");
+                System.out.println("Format Error,Pls Try Again!");
 
         }
     }

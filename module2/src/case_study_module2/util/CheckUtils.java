@@ -72,7 +72,7 @@ public class CheckUtils {
         }
     }
     public static void checkStandard(String standard) throws FormatException {
-        boolean check=standard.matches("^[A-Z][a-z]+$");
+        boolean check=standard.matches("^Standard|Superior|Deluxe|Suite$");
         if (!check){
             throw new FormatException("Format Error,Enter Again!");
         }
@@ -103,6 +103,12 @@ public class CheckUtils {
             throw new FormatException("Format Error,Enter Again!");
         }
 
+    }
+    public static void checkFreeService(String freeService) throws FormatException {
+        boolean check = freeService.matches("^Beer|Whisky|Drink|Juice|Water|Coffee$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
     }
 
 
