@@ -2,7 +2,6 @@ package case_study_module2.service.impl.faciliti_service;
 
 import case_study_module2.model.facility.Room;
 import case_study_module2.service.i_faciliti_service.IRoomService;
-import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 import case_study_module2.util.NumberException;

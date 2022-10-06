@@ -21,9 +21,9 @@ public class EmployeeService implements IEmployeeService {
         String id;
         while (true) {
             try {
-                System.out.println("Please Enter ID Employ: ");
+                System.out.println("Please Enter ID Employ(ST-XXXX): ");
                 id = scanner.nextLine();
-                CheckUtils.checkIdPerson(id);
+                CheckUtils.checkIdStaff(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -46,7 +46,7 @@ public class EmployeeService implements IEmployeeService {
             try {
                 System.out.println("Please Enter Birthday (dd/MM/yyyy): ");
                 birth = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                CheckUtils.checkBirth(birth);
+                CheckUtils.checkBirthEmployee(birth);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -69,7 +69,7 @@ public class EmployeeService implements IEmployeeService {
         String idCard;
         while (true) {
             try {
-                System.out.println("Please Enter ID Card: ");
+                System.out.println("Please Enter ID Card(XXX XXX XXX): ");
                 idCard = scanner.nextLine();
                 CheckUtils.checkIDCard(idCard);
                 break;
@@ -81,7 +81,7 @@ public class EmployeeService implements IEmployeeService {
         String phoneNumber;
         while (true) {
             try {
-                System.out.println("Please Enter Phone Number: ");
+                System.out.println("Please Enter Phone Number(0xxx xxx xxx): ");
                 phoneNumber = scanner.nextLine();
                 CheckUtils.checkPhone(phoneNumber);
                 break;
@@ -165,7 +165,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void editByID() throws IOException {
-        System.out.println("Enter ID To Edit: ");
+        System.out.println("Enter ID To Edit(VGxxxx): ");
         String id = scanner.nextLine();
         employeeList = readFile();
         for (int i = 0; i < employeeList.size(); i++) {
@@ -179,16 +179,17 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println(e.getMessage());
                 }
 
-                System.out.println("Enter new Birthday :");
+                System.out.println("Enter new Birthday (dd/MM/yyyy):");
                 try {
                     LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
                     employeeList.get(i).setBirth(birthEdit);
+                    CheckUtils.checkBirthEmployee(birthEdit);
                 } catch (Exception e) {
                     e.getStackTrace();
                     System.out.println("Format error,Enter again!");
                 }
 
-                System.out.println("Enter new new Gender : ");
+                System.out.println("Enter new new Gender(male/female/other) : ");
                 try {
                     String genderEdit = scanner.nextLine();
                     employeeList.get(i).setGender(genderEdit);
@@ -198,7 +199,7 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println("Format error,Enter again!");
                 }
 
-                System.out.println("Enter new Id Card : ");
+                System.out.println("Enter new Id Card(XXX XXX XXX) : ");
                 try {
                     String idCardEdit = scanner.nextLine();
                     employeeList.get(i).setIdCard(idCardEdit);
@@ -207,7 +208,7 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println(e.getMessage());
                 }
 
-                System.out.println("Enter new Phone Number : ");
+                System.out.println("Enter new Phone Number(0xxx xxx xxx) : ");
                 try {
                     String phoneNumberEdit = scanner.nextLine();
                     employeeList.get(i).setPhoneNumber(phoneNumberEdit);
@@ -225,7 +226,7 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println(e.getMessage());
                 }
 
-                System.out.println("Enter new Level : ");
+                System.out.println("Enter new Level(University / College / Intermediate) : ");
                 try {
                     String levelEdit = scanner.nextLine();
                     employeeList.get(i).setLevel(levelEdit);
@@ -235,7 +236,8 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println("Format error,Enter again!");
                 }
 
-                System.out.println("Enter new Position : ");
+                System.out.println("Enter new Position" +
+                        "\n(Receptionist, Waiter, Specialist, Supervisor, Manager, Director) : ");
                 try {
                     String positionEdit = scanner.nextLine();
                     employeeList.get(i).setPosition(positionEdit);
@@ -262,9 +264,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
 
-    BufferedReader bufferedReader;
-
     public List<Employee> readFile() throws IOException {
+        BufferedReader bufferedReader = null;
         List<Employee> employeeList1 = new ArrayList<>();
         try {
             File file = new File("src\\case_study_module2\\data\\employee\\listEmploy.csv");
@@ -295,19 +296,22 @@ public class EmployeeService implements IEmployeeService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        bufferedReader.close();
+        if (bufferedReader != null) {
+            bufferedReader.close();
+        }
         return employeeList1;
     }
 
     public void writeFile(List<Employee> employeeList2) throws IOException {
         File file = new File("src\\case_study_module2\\data\\employee\\listEmploy.csv");
+        BufferedWriter bufferedWriter;
         FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter = new BufferedWriter(fileWriter);
         for (Employee employee : employeeList2) {
             bufferedWriter.write(employee.getInfoEmployee());
             bufferedWriter.newLine();
+            bufferedWriter.close();
         }
-        bufferedWriter.close();
     }
 }
 

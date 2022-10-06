@@ -2,7 +2,6 @@ package case_study_module2.service.impl.faciliti_service;
 
 import case_study_module2.model.facility.Villa;
 import case_study_module2.service.i_faciliti_service.IVillaService;
-import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 import case_study_module2.util.NumberException;
@@ -155,7 +154,7 @@ public class VillaService implements IVillaService {
     }
 
     @Override
-    public void display() {
+    public void display() throws IOException {
         listVilla = readFile();
         Set<Villa> villas;
         villas = listVilla.keySet();
@@ -165,7 +164,7 @@ public class VillaService implements IVillaService {
     }
 
     @Override
-    public void add() {
+    public void add() throws IOException {
         listVilla = readFile();
         Villa villa = this.infoVilla();
         listVilla.put(villa, 0);
@@ -173,15 +172,16 @@ public class VillaService implements IVillaService {
         writeFile(listVilla);
     }
 
-    private Map<Villa, Integer> readFile() {
+    private Map<Villa, Integer> readFile() throws IOException {
         Map<Villa, Integer> houseList = new LinkedHashMap<>();
         File file = new File("src\\case_study_module2\\data\\villa\\villa.csv");
+        BufferedReader bufferedReader = null;
         try {
             FileReader fileReader = new FileReader(file);
             if (!file.exists()) {
                 System.out.println("File Not Found!");
             }
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+             bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] info;
             Villa villa;
@@ -200,10 +200,13 @@ public class VillaService implements IVillaService {
                 Integer value = Integer.parseInt(info[9]);
                 houseList.put(villa, value);
             }
-            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if (bufferedReader != null) {
+            bufferedReader.close();
+        }
+
         return houseList;
     }
 

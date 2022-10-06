@@ -6,9 +6,9 @@ import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,9 +22,9 @@ public class CustomerService implements ICustomerService {
         String id;
         while (true) {
             try {
-                System.out.println("Enter ID Customer: ");
+                System.out.println("Enter ID Customer(CT-xxxx): ");
                 id = scanner.nextLine();
-                CheckUtils.checkIdPerson(id);
+                CheckUtils.checkIdCustomer(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -48,7 +48,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter Birth Customer(dd/MM/yyyy): ");
                 birth = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                CheckUtils.checkBirth(birth);
+                CheckUtils.checkBirthCustomer(birth);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -85,7 +85,7 @@ public class CustomerService implements ICustomerService {
         String idCard;
         while (true) {
             try {
-                System.out.println("Enter IdCard Customer: ");
+                System.out.println("Enter IdCard Customer(XXX XXX XXX): ");
                 idCard = scanner.nextLine();
                 CheckUtils.checkIDCard(idCard);
                 break;
@@ -98,7 +98,7 @@ public class CustomerService implements ICustomerService {
         String phoneNumber;
         while (true) {
             try {
-                System.out.println("Enter PhoneNumber Customer: ");
+                System.out.println("Enter PhoneNumber Customer(0xxx xxx xxx): ");
                 phoneNumber = scanner.nextLine();
                 CheckUtils.checkPhone(phoneNumber);
                 break;
@@ -149,14 +149,14 @@ public class CustomerService implements ICustomerService {
                     System.out.println(e.getMessage());
                 }
                 try {
-                    System.out.println("Enter new Birth: ");
+                    System.out.println("Enter new Birth(dd/MM/yyyy): ");
                     LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format Error,Enter again");
+                    CheckUtils.checkBirthCustomer(birthEdit);
+                } catch (FormatException e) {
+                    System.out.println(e.getMessage());
                 }
                 try {
-                    System.out.println("Enter new Gender: ");
+                    System.out.println("Enter new Gender(male/female/other): ");
                     String genderEdit = scanner.nextLine();
                     CheckUtils.checkGender(genderEdit);
                 } catch (FormatException e) {
@@ -170,14 +170,14 @@ public class CustomerService implements ICustomerService {
                     System.out.println(e.getMessage());
                 }
                 try {
-                    System.out.println("Enter new ID Card: ");
+                    System.out.println("Enter new ID Card(XXX XXX XXX): ");
                     String idCardEdit = scanner.nextLine();
                     CheckUtils.checkIDCard(idCardEdit);
                 } catch (FormatException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
-                    System.out.println("Enter new Phone Number: ");
+                    System.out.println("Enter new Phone Number(0xxx xxx xxx): ");
                     String phoneNumberEdit = scanner.nextLine();
                     CheckUtils.checkPhone(phoneNumberEdit);
                 } catch (FormatException e) {
@@ -188,6 +188,13 @@ public class CustomerService implements ICustomerService {
                     String emailEdit = scanner.nextLine();
                     CheckUtils.checkMail(emailEdit);
                 } catch (FormatException e) {
+                    System.out.println(e.getMessage());
+                }
+                try {
+                    System.out.println("Enter new Type Guest Customer(Diamond / Platinium / Gold / Silver / Member): ");
+                    String typeGuest=scanner.nextLine();
+                    CheckUtils.checkTypeGuest(typeGuest);
+                }catch (FormatException e){
                     System.out.println(e.getMessage());
                 }
 

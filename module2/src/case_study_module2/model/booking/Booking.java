@@ -2,6 +2,7 @@ package case_study_module2.model.booking;
 
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Booking {
     private String idBooking;
@@ -11,10 +12,12 @@ public class Booking {
     private String serviceName;
     private String serviceType;
 
-    public Booking(String idBooking, LocalDate beginDay, LocalDate endDay, String serviceType) {
+    public Booking(String idBooking, String idCustomer, LocalDate beginDay, LocalDate endDay, String serviceName, String serviceType) {
         this.idBooking = idBooking;
         this.beginDay = beginDay;
         this.endDay = endDay;
+        this.idCustomer = idCustomer;
+        this.serviceName = serviceName;
         this.serviceType = serviceType;
     }
 
@@ -79,6 +82,13 @@ public class Booking {
                 ", serviceName='" + serviceName + '\'' +
                 ", serviceType='" + serviceType + '\'' +
                 '}';
+    }
+
+    public String getInfoBooking(Booking booking) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String beginDay = getBeginDay().format(dateTimeFormatter);
+        String endDay=getEndDay().format(dateTimeFormatter);
+        return String.format(getIdBooking(), getIdCustomer(), beginDay,endDay,getServiceName(),getServiceType());
     }
 }
 

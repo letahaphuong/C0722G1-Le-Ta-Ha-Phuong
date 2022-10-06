@@ -5,10 +5,12 @@ import case_study_module2.model.facility.House;
 import case_study_module2.model.facility.Room;
 import case_study_module2.model.facility.Villa;
 import case_study_module2.service.IBookingService;
+import case_study_module2.service.ICustomerService;
 import case_study_module2.service.i_faciliti_service.IHouseService;
 import case_study_module2.service.i_faciliti_service.IRoomService;
 import case_study_module2.service.i_faciliti_service.IVillaService;
 import case_study_module2.service.impl.BookingService;
+import case_study_module2.service.impl.CustomerService;
 import case_study_module2.service.impl.faciliti_service.HouseService;
 import case_study_module2.service.impl.faciliti_service.RoomService;
 import case_study_module2.service.impl.faciliti_service.VillaService;
@@ -23,6 +25,7 @@ public class BookingController {
     private static IHouseService iHouseService=new HouseService();
     private static IVillaService iVillaService=new VillaService();
     private static IRoomService iRoomService=new RoomService();
+    private static ICustomerService iCustomerService=new CustomerService();
 
     public static void menuBooking() throws IOException, NumberException {
         while (true) {
@@ -41,6 +44,7 @@ public class BookingController {
                     iVillaService.display();
                     iHouseService.display();
                     iRoomService.display();
+                    iCustomerService.display();
                     iBookingService.add();
                     break;
                 case 2:

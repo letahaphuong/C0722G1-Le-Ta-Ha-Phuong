@@ -33,8 +33,14 @@ public class CheckUtils {
         }
     }
 
-    public static void checkIdPerson(String idPerson) throws FormatException {
-        boolean check = idPerson.matches("^[a-zA-Z]{2}\\d+$");
+    public static void checkIdStaff(String idStaff) throws FormatException {
+        boolean check = idStaff.matches("^ST-\\d{4}$");
+        if (!check) {
+            throw new FormatException("Format error,Enter again!");
+        }
+    }
+    public static void checkIdCustomer(String idCustomer) throws FormatException {
+        boolean check = idCustomer.matches("^CT-\\d{4}$");
         if (!check) {
             throw new FormatException("Format error,Enter again!");
         }
@@ -95,17 +101,36 @@ public class CheckUtils {
             throw new FormatException("Format Error,Enter Again!");
         }
     }
-    public static void checkBirth(LocalDate inputBirth) throws FormatException {
+    public static void checkBirthEmployee(LocalDate inputBirth) throws FormatException {
         LocalDate localDate=LocalDate.now();
         Period period = Period.between(inputBirth, localDate);
         boolean check=period.getYears()>=18;
         if (!check){
-            throw new FormatException("Format Error,Enter Again!");
+            throw new FormatException("Employee Is Not Enough Old,Pls Try Again");
         }
-
+    }
+    public static void checkBirthCustomer(LocalDate inputBirth) throws FormatException {
+        LocalDate localDate=LocalDate.now();
+        Period period = Period.between(inputBirth, localDate);
+        boolean check=period.getYears()<=100;
+        if (!check){
+            throw new FormatException("Employee Is Not Enough Old,Pls Try Again");
+        }
     }
     public static void checkFreeService(String freeService) throws FormatException {
         boolean check = freeService.matches("^Beer|Whisky|Drink|Juice|Water|Coffee$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+    }
+    public static void checkIdBooking(String idBooking) throws FormatException {
+        boolean check= idBooking.matches("^BK-\\d{4}$");
+        if (!check){
+            throw new FormatException("Format Error,Enter Again!");
+        }
+    }
+    public static void checkServiceType(String serviceType) throws FormatException {
+        boolean check=serviceType.matches("^3[ ]Stars|4[ ]Stars|5[ ]Stars");
         if (!check){
             throw new FormatException("Format Error,Enter Again!");
         }
