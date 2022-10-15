@@ -1,4 +1,5 @@
 USE furama_database;
+-- Xây dựng các TABLE và thêm khoá ngoại
 CREATE TABLE vi_tri (
     ma_vi_tri INT PRIMARY KEY,
     ten_vi_tri VARCHAR(45)
