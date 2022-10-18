@@ -18,10 +18,11 @@ WHERE `order`.customer_id IS NULL;
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
 -- (giá một hóa đơn được tính bằng tổng giá bán của từng loại 
 -- mặt hàng xuất hiện trong hóa đơn. Giá bán của từng loại được tính = odQTY*pPrice)
-SELECT order_detail.order_id,product.product_price,order_detail.order_QTY,product.product_name, `order`.order_date,order_detail.order_QTY * product.product_price
+SELECT order_detail.order_id,product.product_price,order_detail.order_QTY,
+product.product_name, `order`.order_date,order_detail.order_QTY * product.product_price AS `total`
 FROM `order` 
 JOIN order_detail ON `order`.order_id = order_detail.order_id
-JOIN product ON order_detail.product_id = product.product_id
+JOIN product ON order_detail.product_id = product.product_id;
 
 
 
