@@ -15,8 +15,7 @@ WHERE m.mark= (SELECT MAX(m.mark) FROM mark m);
 SELECT s.*, AVG(mark)
 FROM student s
 JOIN mark m ON s.student_id=m.student_id
-GROUP BY student_name;
-
+GROUP BY student_id;
 
 
 

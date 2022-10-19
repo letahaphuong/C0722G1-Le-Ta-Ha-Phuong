@@ -56,7 +56,7 @@ CREATE TABLE dich_vu (
     ma_loai_dich_vu INT,
     FOREIGN KEY (ma_loai_dich_vu)
         REFERENCES loai_dich_vu (ma_loai_dich_vu),
-    thieu_chuan_phong VARCHAR(45),
+    tieu_chuan_phong VARCHAR(45),
     mo_ta_tien_nghi_khac VARCHAR(45),
     dien_tich_ho_boi DOUBLE,
     so_tang INT,
@@ -84,7 +84,7 @@ CREATE TABLE nhan_vien (
 CREATE TABLE hop_dong (
     ma_hop_dong INT PRIMARY KEY,
     ngay_lam_hop_dong DATETIME,
-    ngay_het_thuc DATETIME,
+    ngay_ket_thuc DATETIME,
     tien_dat_coc DOUBLE,
     ma_nhan_vien INT,
     FOREIGN KEY (ma_nhan_vien)
