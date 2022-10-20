@@ -79,5 +79,15 @@ FROM nhan_vien nv
 	JOIN trinh_do td ON nv.ma_trinh_do = td.ma_trinh_do
     JOIN bo_phan bp ON nv.ma_bo_phan = bp.ma_bo_phan
     JOIN hop_dong hd ON hd.ma_nhan_vien = nv.ma_nhan_vien
+    WHERE ngay_lam_hop_dong BETWEEN '2020-01-01' AND '2021-12-31'
 GROUP BY ho_ten
-HAVING COUNT(hd.ma_hop_dong) <= 3;
+HAVING COUNT(hd.ma_hop_dong) <= 3
+
+
+
+
+
+
+
+
+

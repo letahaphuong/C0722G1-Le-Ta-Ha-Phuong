@@ -3,14 +3,14 @@ CREATE DATABASE IF NOT EXISTS demo;
 USE demo;
 
 -- b2
-CREATE TABLE products(
-id INT AUTO_INCREMENT PRIMARY KEY,
-product_code INT,
-product_name VARCHAR(50),
-product_price FLOAT,
-product_amount INT,
-product_description VARCHAR(255),
-product_status VARCHAR (255)
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_code INT,
+    product_name VARCHAR(50),
+    product_price FLOAT,
+    product_amount INT,
+    product_description VARCHAR(255),
+    product_status VARCHAR(255)
 );
 INSERT INTO products(product_code,
 product_name,
@@ -63,6 +63,7 @@ DELIMITER ;
 CALL sp_get_all_info_products();
 
 -- Tạo store procedure thêm một sản phẩm mới
+SET SQL_SAFE_UPDATES = 0;
 DELIMITER //
 	CREATE PROCEDURE sp_insert_products(IN product_code INT,product_name VARCHAR(50),product_price FLOAT ,product_amount INT,product_description VARCHAR(255),product_status VARCHAR(255))
     BEGIN
@@ -77,8 +78,9 @@ DELIMITER //
     END //
 DELIMITER ;
 	CALL sp_insert_products(101,'rượu mận',1000,10,'FFFFFFFFFF','còn hàng');
-
+SET SQL_SAFE_UPDATES = 1;
 -- Tạo store procedure sửa thông tin sản phẩm theo id
+SET SQL_SAFE_UPDATES = 0;
 DELIMITER //
 	CREATE PROCEDURE sp_edit_info_products(IN pro_duct_name VARCHAR(50),IN product_code INT)
     BEGIN
@@ -88,8 +90,10 @@ DELIMITER //
     END //
 DELIMITER ;
 	CALL sp_edit_info_products('Trà sữa',99);
+    SET SQL_SAFE_UPDATES = 1;
     
 -- Tạo store procedure xoá sản phẩm theo id
+SET SQL_SAFE_UPDATES = 0;
 DELIMITER //
 	CREATE PROCEDURE sp_delete_products(IN p_code INT)
     BEGIN
@@ -98,7 +102,7 @@ DELIMITER //
     END //
 DELIMITER ;
 	CALL sp_delete_products(2);
-
+SET SQL_SAFE_UPDATES = 1;
 
 
 
