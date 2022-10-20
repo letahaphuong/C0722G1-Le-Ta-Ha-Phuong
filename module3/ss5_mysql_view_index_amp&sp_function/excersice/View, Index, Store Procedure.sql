@@ -55,34 +55,49 @@ DROP VIEW products_view;
 -- b5
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 DELIMITER //
-	CREATE PROCEDURE get_all_info_products()
+	CREATE PROCEDURE sp_get_all_info_products()
     BEGIN
     SELECT * FROM products;
     END //
 DELIMITER ;
-CALL get_all_info_products();
+CALL sp_get_all_info_products();
 
 -- Tạo store procedure thêm một sản phẩm mới
 DELIMITER //
-	CREATE PROCEDURE get_all_info_products()
+	CREATE PROCEDURE sp_insert_products(IN product_code INT,product_name VARCHAR(50),product_price FLOAT ,product_amount INT,product_description VARCHAR(255),product_status VARCHAR(255))
     BEGIN
-    SELECT * FROM products;
+    INSERT INTO products(product_code,
+	product_name,
+	product_price ,
+	product_amount ,
+	product_description,
+	product_status)
+	VALUE
+	(product_code,product_name,product_price,product_amount,product_description,product_status);
     END //
 DELIMITER ;
-	CALL get_all_info_products();
+	CALL sp_insert_products(101,'rượu mận',1000,10,'FFFFFFFFFF','còn hàng');
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 DELIMITER //
-	CREATE PROCEDURE get_all_info_products()
+	CREATE PROCEDURE sp_edit_info_products(IN pro_duct_name VARCHAR(50),IN product_code INT)
     BEGIN
-    SELECT * FROM products WHERE id = 1;
-    SET product_name = 'aa';
+    UPDATE products 
+    SET product_name = pro_duct_name
+    WHERE product_code = product_code;
     END //
 DELIMITER ;
-	CALL get_all_info_products();
+	CALL sp_edit_info_products('Trà sữa',99);
+    
 -- Tạo store procedure xoá sản phẩm theo id
-
-
+DELIMITER //
+	CREATE PROCEDURE sp_delete_products(IN p_code INT)
+    BEGIN
+    DELETE FROM products 
+    WHERE product_code = p_code;
+    END //
+DELIMITER ;
+	CALL sp_delete_products(2);
 
 
 
