@@ -45,13 +45,13 @@ SET SQL_SAFE_UPDATES = 1;
             ma_khach_hang
             FROM v_khach_hang_diamond
             GROUP BY ma_khach_hang
-            HAVING SUM(tong_tien)
+            HAVING SUM(tong_tien)>1000000
             );
 	
             
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
 	SET SQL_SAFE_UPDATES = 0;
-	SET foreign_key_checks = 0; 
+	SET FOREIGN_KEY_CHECKS = 0;
 DELETE kh . * FROM khach_hang kh 
 WHERE
     kh.ma_khach_hang IN (SELECT 
@@ -64,9 +64,8 @@ WHERE
         
         WHERE
             YEAR(ngay_lam_hop_dong) < '2021') AS x);
-    SET foreign_key_checks = 1; 
-	SET SQL_SAFE_UPDATES = 1;
     
+    SET FOREIGN_KEY_CHECKS =1;
     -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
     
     SET SQL_SAFE_UPDATES =0;
