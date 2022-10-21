@@ -82,11 +82,11 @@ SET SQL_SAFE_UPDATES = 1;
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 SET SQL_SAFE_UPDATES = 0;
 DELIMITER //
-	CREATE PROCEDURE sp_edit_info_products(IN pro_duct_name VARCHAR(50),IN product_code INT)
+	CREATE PROCEDURE sp_edit_info_products(IN pro_duct_name VARCHAR(50),IN pro_code INT)
     BEGIN
     UPDATE products 
     SET product_name = pro_duct_name
-    WHERE product_code = product_code;
+    WHERE product_code = pro_code;
     END //
 DELIMITER ;
 	CALL sp_edit_info_products('Trà sữa',99);

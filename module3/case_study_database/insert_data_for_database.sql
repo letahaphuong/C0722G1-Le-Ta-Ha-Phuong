@@ -141,7 +141,7 @@ dich_vu_mien_phi_di_kem,
 ma_kieu_thue,
 ma_loai_dich_vu
 ) VALUE
-(1,"Villa Beach Front",25000,10000000,10,"vip",
+(1,"Villa Beach Front",25000,1000000,10,"vip",
 "Có hồ bơi",500,4,null,3,1),
 (2,"House Princess 01",14000,5000000,7,"vip",
 "Có thêm bếp nướng",null,3,null,2,2),
