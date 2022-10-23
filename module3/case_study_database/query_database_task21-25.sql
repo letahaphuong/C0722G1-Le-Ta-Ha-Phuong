@@ -6,9 +6,9 @@ CREATE VIEW v_nhan_vien AS
 SELECT nv.* 
 FROM nhan_vien nv 
 JOIN hop_dong hd ON hd.ma_nhan_vien = nv.ma_nhan_vien
-WHERE nv.dia_chi LIKE'% Đà Nẵng'
-AND MONTH(hd.ngay_lam_hop_dong) IN (4)
-AND YEAR(hd.ngay_lam_hop_dong) IN (2021);
+WHERE nv.dia_chi LIKE '% Đà Nẵng'
+AND MONTH(hd.ngay_lam_hop_dong) = 4 AND YEAR(hd.ngay_lam_hop_dong)=2021;
+DROP VIEW v_nhan_vien;
 
 -- 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu”
 --  đối với tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
@@ -57,26 +57,9 @@ WHERE
  -- hop_dong thì hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong
  -- ra giao diện console của database.
 -- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
-	DELIMITER //
-    CREATE TRIGGER tr_xoa_hop_dong
-    AFTER DELETE ON hop_dong
-    FOR EACH ROW
-    BEGIN 
-    DELETE FROM hop_dong;
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'aaaaa';
-    END //
-    DELIMITER ;
-	DROP TRIGGER tr_xoa_hop_dong;
-	
-    DELIMITER // 
-    CREATE FUNCTION f_count_record_number(pra_count INT)
-    RETURNS INT
-    BEGIN 
-    SELECT COUNT(pra_count) AS tong_so_luong_ban_ghi
-    FROM hop_dong;
-    RETURN COUNT(pra_count);
-    END // 
-    DELIMITER ;
+
+   
+    
     
     
   

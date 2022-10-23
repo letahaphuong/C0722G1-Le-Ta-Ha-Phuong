@@ -131,7 +131,7 @@ INSERT INTO dich_vu(
 ma_dich_vu,
 ten_dich_vu,
 dien_tich,
-chi_phi,
+chi_phi_thue,
 so_nguoi_toi_da,
 tieu_chuan_phong,
 mo_ta_tien_nghi_khac,
@@ -184,6 +184,7 @@ ma_dich_vu
 (10,'2021-04-12','2021-04-14',0,10,3,5),
 (11,'2021-04-25','2021-04-25',0,2,2,1),
 (12,'2021-05-25','2021-05-27',0,7,10,1);
+
 INSERT INTO hop_dong_chi_tiet(
 ma_hop_dong_chi_tiet,
 so_luong,
