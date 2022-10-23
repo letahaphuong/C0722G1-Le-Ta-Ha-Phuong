@@ -57,9 +57,36 @@ WHERE
  -- hop_dong thì hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong
  -- ra giao diện console của database.
 -- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
+CREATE TABLE `history`(ma_hop_dong INT,ngay_lam_hop_dong DATETIME,ngay_ket_thuc DATETIME,tien_dat_coc DOUBLE,ma_nhan_vien INT,ma_khach_hang INT,ma_dich_vu INT);
+DROP TABLE `history`;
+DELIMITER //
+CREATE TRIGGER tr_xoa_hop_dong
+AFTER DELETE ON hop_dong
+FOR EACH ROW
+BEGIN
+SET FOREIGN_KEY_CHECKS = 0; 
+INSERT INTO `history`(ma_hop_dong,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,ma_nhan_vien,ma_khach_hang,ma_dich_vu)
+	VALUE(old.ma_hop_dong,old.ngay_lam_hop_dong,old.ngay_ket_thuc,old.tien_dat_coc,old.ma_nhan_vien,old.ma_khach_hang,old.ma_dich_vu);
+    IF OLD.ma_hop_dong>0 then 
+    SIGNAL SQLSTATE '00'; SET MESSAGE_TEXT = 'COUNT(ma_hop_dong)'; 
+    END if;
+SET FOREIGN_KEY_CHECKS = 1; 
+END  //
+DELIMITER ;
 
-   
-    
+-- MYSQL> DELETE FROM hop_dong WHERE ma_hop_dong = 8;
+-- MYSQL> SELECT COUNT(ma_nhan_vien) FROM hop_dong ;
+DROP TRIGGER tr_xoa_hop_dong;
+SET FOREIGN_KEY_CHECKS = 0; 
+SET FOREIGN_KEY_CHECKS = 1; 
+
+
+
+
+
+
+
+
     
     
   
