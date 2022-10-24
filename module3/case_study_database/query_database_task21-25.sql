@@ -67,9 +67,6 @@ BEGIN
 SET FOREIGN_KEY_CHECKS = 0; 
 INSERT INTO `history`(ma_hop_dong,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,ma_nhan_vien,ma_khach_hang,ma_dich_vu)
 	VALUE(old.ma_hop_dong,old.ngay_lam_hop_dong,old.ngay_ket_thuc,old.tien_dat_coc,old.ma_nhan_vien,old.ma_khach_hang,old.ma_dich_vu);
-    IF OLD.ma_hop_dong>0 then 
-    SIGNAL SQLSTATE '00'; SET MESSAGE_TEXT = 'COUNT(ma_hop_dong)'; 
-    END if;
 SET FOREIGN_KEY_CHECKS = 1; 
 END  //
 DELIMITER ;
@@ -81,7 +78,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 SET FOREIGN_KEY_CHECKS = 1; 
 
 
-
+TRUNCATE hop_dong;
 
 
 

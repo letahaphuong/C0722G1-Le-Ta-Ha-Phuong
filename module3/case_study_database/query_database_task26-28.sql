@@ -40,7 +40,7 @@ HAVING tong_tien > 2000000;
 DROP  VIEW v_dem_dich_vu;
 
 DELIMITER //
-CREATE FUNCTION func_dem_dich_vu (ma_dv INT)
+CREATE FUNCTION func_dem_dich_vu ()
 RETURNS INT
 DETERMINISTIC
 BEGIN 
