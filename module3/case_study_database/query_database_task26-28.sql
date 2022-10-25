@@ -54,11 +54,15 @@ DROP FUNCTION func_dem_dich_vu;
 
 -- b.
 DELIMITER //
-CREATE FUNCTION func_tinh_thoi_gian_hop_dong(ma_hd  INT)
+CREATE FUNCTION func_tinh_thoi_gian_hop_dong(ma_kh  INT)
 RETURNS INT
 DETERMINISTIC
 BEGIN
-RETURN(SELECT max(datediff( ngay_ket_thuc,ngay_lam_hop_dong)) FROM hop_dong WHERE ma_hop_dong = ma_hd);
+DECLARE max INT;
+SET max = (SELECT MAX(DATEDIFF( hop_dong.ngay_ket_thuc,hop_dong.ngay_lam_hop_dong)) 
+FROM hop_dong JOIN khach_hang ON khach_hang.ma_khach_hang=hop_dong.ma_khach_hang
+WHERE khach_hang.ma_khach_hang = ma_kh);
+RETURN max;
 END //
 DELIMITER ;
 SET @x=func_tinh_thoi_gian_hop_dong(9);
@@ -79,7 +83,7 @@ JOIN dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
 WHERE dv.ma_loai_dich_vu = 3
 	AND YEAR(hd.ngay_lam_hop_dong) IN (2019,2020) ;
     
-    
+TRUNCATE hop_dong;
 DELIMITER //
 CREATE PROCEDURE sp_xoa_dich_vu_va_hd_room ()
 BEGIN
@@ -95,6 +99,8 @@ END //
 DELIMITER ;
 DROP PROCEDURE sp_xoa_dich_vu_va_hd_room;
 CALL sp_xoa_dich_vu_va_hd_room();
+SELECT * FROM hop_dong;
+SELECT * FROM dich_vu;
 
 
 
