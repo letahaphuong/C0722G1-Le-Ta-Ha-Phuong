@@ -165,101 +165,105 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void editByID() throws IOException {
-        System.out.println("Enter ID To Edit(VGxxxx): ");
-        String id = scanner.nextLine();
         employeeList = readFile();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (id.equals(employeeList.get(i).getIdEmployee())) {
-                System.out.println("Enter new Name : ");
-                try {
-                    String nameEdit = scanner.nextLine();
-                    employeeList.get(i).setName(nameEdit);
-                    CheckUtils.checkName(nameEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
+        if (!employeeList.isEmpty()) {
+            System.out.println("Enter ID To Edit(VGxxxx): ");
+            String id = scanner.nextLine();
+            for (int i = 0; i < employeeList.size(); i++) {
+                if (id.equals(employeeList.get(i).getIdEmployee())) {
+                    System.out.println("Enter new Name : ");
+                    try {
+                        String nameEdit = scanner.nextLine();
+                        employeeList.get(i).setName(nameEdit);
+                        CheckUtils.checkName(nameEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
 
-                System.out.println("Enter new Birthday (dd/MM/yyyy):");
-                try {
-                    LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                    employeeList.get(i).setBirth(birthEdit);
-                    CheckUtils.checkBirthEmployee(birthEdit);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format error,Enter again!");
-                }
+                    System.out.println("Enter new Birthday (dd/MM/yyyy):");
+                    try {
+                        LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
+                        employeeList.get(i).setBirth(birthEdit);
+                        CheckUtils.checkBirthEmployee(birthEdit);
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                        System.out.println("Format error,Enter again!");
+                    }
 
-                System.out.println("Enter new new Gender(male/female/other) : ");
-                try {
-                    String genderEdit = scanner.nextLine();
-                    employeeList.get(i).setGender(genderEdit);
-                    CheckUtils.checkGender(genderEdit);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format error,Enter again!");
-                }
+                    System.out.println("Enter new new Gender(male/female/other) : ");
+                    try {
+                        String genderEdit = scanner.nextLine();
+                        employeeList.get(i).setGender(genderEdit);
+                        CheckUtils.checkGender(genderEdit);
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                        System.out.println("Format error,Enter again!");
+                    }
 
-                System.out.println("Enter new Id Card(XXX XXX XXX) : ");
-                try {
-                    String idCardEdit = scanner.nextLine();
-                    employeeList.get(i).setIdCard(idCardEdit);
-                    CheckUtils.checkIDCard(idCardEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
+                    System.out.println("Enter new Id Card(XXX XXX XXX) : ");
+                    try {
+                        String idCardEdit = scanner.nextLine();
+                        employeeList.get(i).setIdCard(idCardEdit);
+                        CheckUtils.checkIDCard(idCardEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
 
-                System.out.println("Enter new Phone Number(0xxx xxx xxx) : ");
-                try {
-                    String phoneNumberEdit = scanner.nextLine();
-                    employeeList.get(i).setPhoneNumber(phoneNumberEdit);
-                    CheckUtils.checkPhone(phoneNumberEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
+                    System.out.println("Enter new Phone Number(0xxx xxx xxx) : ");
+                    try {
+                        String phoneNumberEdit = scanner.nextLine();
+                        employeeList.get(i).setPhoneNumber(phoneNumberEdit);
+                        CheckUtils.checkPhone(phoneNumberEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
 
-                System.out.println("Enter new Email : ");
-                try {
-                    String emailEdit = scanner.nextLine();
-                    employeeList.get(i).setEmail(emailEdit);
-                    CheckUtils.checkMail(emailEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
+                    System.out.println("Enter new Email : ");
+                    try {
+                        String emailEdit = scanner.nextLine();
+                        employeeList.get(i).setEmail(emailEdit);
+                        CheckUtils.checkMail(emailEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
 
-                System.out.println("Enter new Level(University / College / Intermediate) : ");
-                try {
-                    String levelEdit = scanner.nextLine();
-                    employeeList.get(i).setLevel(levelEdit);
-                    CheckUtils.checkLevel(levelEdit);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format error,Enter again!");
-                }
+                    System.out.println("Enter new Level(University / College / Intermediate) : ");
+                    try {
+                        String levelEdit = scanner.nextLine();
+                        employeeList.get(i).setLevel(levelEdit);
+                        CheckUtils.checkLevel(levelEdit);
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                        System.out.println("Format error,Enter again!");
+                    }
 
-                System.out.println("Enter new Position" +
-                        "\n(Receptionist, Waiter, Specialist, Supervisor, Manager, Director) : ");
-                try {
-                    String positionEdit = scanner.nextLine();
-                    employeeList.get(i).setPosition(positionEdit);
-                    CheckUtils.checkPosition(positionEdit);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format error,Enter again!");
-                }
+                    System.out.println("Enter new Position" +
+                            "\n(Receptionist, Waiter, Specialist, Supervisor, Manager, Director) : ");
+                    try {
+                        String positionEdit = scanner.nextLine();
+                        employeeList.get(i).setPosition(positionEdit);
+                        CheckUtils.checkPosition(positionEdit);
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                        System.out.println("Format error,Enter again!");
+                    }
 
-                System.out.println("Enter new Salary : ");
-                try {
-                    int salaryEdit = Integer.parseInt(scanner.nextLine());
-                    employeeList.get(i).setSalary(salaryEdit);
-                } catch (Exception e) {
-                    e.getStackTrace();
-                    System.out.println("Format error,Enter again!");
-                }
+                    System.out.println("Enter new Salary : ");
+                    try {
+                        int salaryEdit = Integer.parseInt(scanner.nextLine());
+                        employeeList.get(i).setSalary(salaryEdit);
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                        System.out.println("Format error,Enter again!");
+                    }
 
-                System.out.println("Edit successfully!");
-                writeFile(employeeList);
-                break;
+                    System.out.println("Edit successfully!");
+                    writeFile(employeeList);
+                    break;
+                }
             }
+        } else {
+            System.out.println("Data Is Empty, Pls Enter 1st Date!\n");
         }
     }
 

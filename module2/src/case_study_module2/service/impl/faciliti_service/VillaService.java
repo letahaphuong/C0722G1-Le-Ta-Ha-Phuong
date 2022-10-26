@@ -4,7 +4,6 @@ import case_study_module2.model.facility.Villa;
 import case_study_module2.service.i_faciliti_service.IVillaService;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
-import case_study_module2.util.NumberException;
 
 import java.io.*;
 import java.util.*;
@@ -19,7 +18,7 @@ public class VillaService implements IVillaService {
             try {
                 System.out.println("Enter ID Villa: ");
                 id = scanner.nextLine();
-                CheckUtils.checkIdVillaFacility(id);
+                CheckUtils.checkIdFacility(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -84,29 +83,25 @@ public class VillaService implements IVillaService {
                     "\n 2. Rent By Month!" +
                     "\n 3. Rent By Day!" +
                     "\n 4. Rent By Hours!");
-            try {
-                String choice = scanner.nextLine();
-                CheckControllerUtils.checkSwitchCase(choice);
-                switch (choice) {
-                    case "1":
-                        rentalType = "Rent By Year!";
-                        break;
-                    case "2":
-                        rentalType = "Rent By Month!";
-                        break;
-                    case "3":
-                        rentalType = "Rent By Day!";
-                        break;
-                    case "4":
-                        rentalType = "Rent By Hours!";
-                        break;
-                }
-                break;
-            } catch (NumberException e) {
-                System.out.println(e.getMessage());
-            }
 
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    rentalType = "Rent By Year!";
+                    break;
+                case "2":
+                    rentalType = "Rent By Month!";
+                    break;
+                case "3":
+                    rentalType = "Rent By Day!";
+                    break;
+                case "4":
+                    rentalType = "Rent By Hours!";
+                    break;
+            }
+            break;
         }
+
 
         String roomStandard;
         while (true) {
@@ -127,7 +122,7 @@ public class VillaService implements IVillaService {
                 swimmingPoolArea = Double.parseDouble(scanner.nextLine());
                 if (swimmingPoolArea > 30) {
                     break;
-                }else {
+                } else {
                     System.out.println("Area Swimming Less Than 30m2,Pls Enter Again!");
                 }
             } catch (NumberFormatException e) {
@@ -159,7 +154,7 @@ public class VillaService implements IVillaService {
         Set<Villa> villas;
         villas = listVilla.keySet();
         for (Villa villa : villas) {
-            System.out.println(villa);
+            System.out.println(villa.toString()+"Time of booking: "+listVilla.get(villa));
         }
     }
 
@@ -172,7 +167,7 @@ public class VillaService implements IVillaService {
         writeFile(listVilla);
     }
 
-    private Map<Villa, Integer> readFile() throws IOException {
+    public Map<Villa, Integer> readFile() throws IOException {
         Map<Villa, Integer> houseList = new LinkedHashMap<>();
         File file = new File("src\\case_study_module2\\data\\villa\\villa.csv");
         BufferedReader bufferedReader = null;
@@ -181,7 +176,7 @@ public class VillaService implements IVillaService {
             if (!file.exists()) {
                 System.out.println("File Not Found!");
             }
-             bufferedReader = new BufferedReader(fileReader);
+            bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] info;
             Villa villa;
@@ -210,7 +205,7 @@ public class VillaService implements IVillaService {
         return houseList;
     }
 
-    private void writeFile(Map<Villa, Integer> roomsList) {
+    public void writeFile(Map<Villa, Integer> roomsList) {
         File file = new File("src\\case_study_module2\\data\\villa\\villa.csv");
         if (!file.exists()) {
             System.out.println("File is not exist");

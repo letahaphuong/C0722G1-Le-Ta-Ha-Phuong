@@ -22,11 +22,6 @@ import java.util.Scanner;
 public class BookingController {
     private static Scanner scanner = new Scanner(System.in);
     private static IBookingService iBookingService = new BookingService();
-    private static IHouseService iHouseService=new HouseService();
-    private static IVillaService iVillaService=new VillaService();
-    private static IRoomService iRoomService=new RoomService();
-    private static ICustomerService iCustomerService=new CustomerService();
-
     public static void menuBooking() throws IOException, NumberException {
         while (true) {
             System.out.println("Welcome to Booking Management");
@@ -41,13 +36,10 @@ public class BookingController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iVillaService.display();
-                    iHouseService.display();
-                    iRoomService.display();
-                    iCustomerService.display();
                     iBookingService.add();
                     break;
                 case 2:
+                    iBookingService.display();
                     break;
                 case 3:
                     break;

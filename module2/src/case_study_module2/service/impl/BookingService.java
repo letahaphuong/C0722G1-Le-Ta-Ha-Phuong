@@ -1,8 +1,17 @@
 package case_study_module2.service.impl;
 
 import case_study_module2.model.booking.Booking;
+import case_study_module2.model.facility.House;
+import case_study_module2.model.facility.Room;
+import case_study_module2.model.facility.Villa;
 import case_study_module2.service.IBookingService;
 import case_study_module2.service.ICustomerService;
+import case_study_module2.service.i_faciliti_service.IHouseService;
+import case_study_module2.service.i_faciliti_service.IRoomService;
+import case_study_module2.service.i_faciliti_service.IVillaService;
+import case_study_module2.service.impl.faciliti_service.HouseService;
+import case_study_module2.service.impl.faciliti_service.RoomService;
+import case_study_module2.service.impl.faciliti_service.VillaService;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 
@@ -14,12 +23,18 @@ import java.util.*;
 public class BookingService implements IBookingService {
     private static Scanner scanner = new Scanner(System.in);
     private static IBookingService iBookingService = new BookingService();
+    private static BookingService bookingService = new BookingService();
     private static ICustomerService iCustomerService = new CustomerService();
+    private static HouseService houseService = new HouseService();
+    private static VillaService villaService = new VillaService();
+    private static RoomService roomService = new RoomService();
+    private static IHouseService iHouseService = new HouseService();
+    private static IVillaService iVillaService = new VillaService();
+    private static IRoomService iRoomService = new RoomService();
     private static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private static Map<Booking, Integer> listBooking = new TreeMap<>();
-    static {
-        Scanner scanner = new Scanner(System.in);
-    }
+    private static Set<Booking> listBooking = new TreeSet<>();
+    private static CustomerService customerService = new CustomerService();
+
 
     public Booking infoBooking() throws IOException {
         String idBooking;
@@ -54,7 +69,7 @@ public class BookingService implements IBookingService {
                 System.out.println("Enter Begin Day: ");
                 beginDay = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
                 break;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Format Error,Enter Again!");
             }
 
@@ -64,8 +79,12 @@ public class BookingService implements IBookingService {
             try {
                 System.out.println("Enter End Day: ");
                 endDay = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                break;
-            }catch (NumberFormatException e){
+                if (endDay.isAfter(beginDay)) {
+                    break;
+                } else {
+                    System.out.println("End Day Must Be Greater Than Start Day!");
+                }
+            } catch (NumberFormatException e) {
                 System.out.println("Format Error,Enter Again!");
             }
 
@@ -74,34 +93,49 @@ public class BookingService implements IBookingService {
         while (true) {
             try {
                 System.out.println("Enter Service Type( 3 Stars | 4 Stars | 5 Stars)");
-                serviceType = scanner.nextLine();
-                CheckUtils.checkServiceType(serviceType);
+                String choice = scanner.nextLine();
+                switch (choice) {
+                    case "3":
+                        serviceType = "3 Stars";
+                        break;
+                    case "4":
+                        serviceType = "4 Stars";
+                        break;
+                    case "5":
+                        serviceType = "5 Stars";
+                        break;
+                    default:
+                        serviceType = null;
+                        System.out.println("Format Error,Pls Try Again!");
+                }
                 break;
-            }catch (FormatException e){
-                System.out.println(e.getMessage());
+            } catch (NumberFormatException e) {
+                System.out.println("Format Error,Pls Try Again!");
             }
 
         }
-        String serviceName;
+        String serviceId;
         while (true) {
             try {
-                System.out.println("Enter Service Name: ");
-                serviceName = scanner.nextLine();
-                CheckUtils.checkName(serviceName);
+                iHouseService.display();
+                iVillaService.display();
+                iRoomService.display();
+                System.out.println("Enter Service Id: ");
+                serviceId = scanner.nextLine();
+                CheckUtils.checkIdFacility(serviceId);
                 break;
-            }catch (FormatException e){
+            } catch (FormatException e) {
                 System.out.println(e.getMessage());
             }
 
         }
-        return new Booking(idBooking, idCustomer, beginDay, endDay, serviceType, serviceName);
+        return new Booking(idBooking, idCustomer, beginDay, endDay, serviceId, serviceType);
     }
 
     @Override
     public void display() {
-        listBooking=readFile();
         Set<Booking> bookings;
-        bookings = listBooking.keySet();
+        bookings = readFile();
         for (Booking booking : bookings) {
             System.out.println(booking);
         }
@@ -110,20 +144,53 @@ public class BookingService implements IBookingService {
 
     @Override
     public void add() throws IOException {
-        listBooking=readFile();
+        listBooking = readFile();
         Booking booking = this.infoBooking();
-        listBooking.put(booking, 0);
+        listBooking.add(booking);
+        if (booking.getServiceId().contains("SVHO")) {
+            Map<House, Integer> listHouse = houseService.readFile();
+            Set<House> houses = listHouse.keySet();
+            for (House house : houses) {
+                if (booking.getServiceId().equals(house.getId())) {
+                    listHouse.replace(house, listHouse.get(house) + 1);
+                    break;
+                }
+            }
+            houseService.writeFile(listHouse);
+
+        } else if (booking.getServiceId().contains("SVVL")) {
+            Map<Villa, Integer> listVilla = villaService.readFile();
+            Set<Villa> villas = listVilla.keySet();
+            for (Villa villa : villas) {
+                if (booking.getServiceId().equals(villa.getId())) {
+                    listVilla.replace(villa, listVilla.get(villa) + 1);
+                    break;
+                }
+            }
+            villaService.writeFile(listVilla);
+        } else if (booking.getServiceId().contains("SVRO")) {
+            Map<Room, Integer> listRoom = roomService.readFile();
+            Set<Room> rooms = listRoom.keySet();
+            for (Room room : rooms) {
+                if (booking.getServiceId().equals(room.getId())) {
+                    listRoom.replace(room, listRoom.get(room) + 1);
+                    break;
+                }
+            }
+            roomService.writeFile(listRoom);
+        }
         System.out.println("Successfully added new!");
         writeFile(listBooking);
+
     }
 
-    private Map<Booking, Integer> readFile() {
-        Map<Booking, Integer> listBook = new LinkedHashMap<>();
+    private Set<Booking> readFile() {
+        Set<Booking> listBook = new LinkedHashSet<>();
         BufferedReader bufferedReader = null;
         try {
             File file = new File("src\\case_study_module2\\data\\booking\\booking.csv");
             FileReader fileReader = new FileReader(file);
-            if (file.exists()) {
+            if (!file.exists()) {
                 System.out.println("File Not Found!");
             }
             bufferedReader = new BufferedReader(fileReader);
@@ -138,11 +205,10 @@ public class BookingService implements IBookingService {
                 booking.setBeginDay(LocalDate.parse(info[2], dateTimeFormatter));
                 booking.setEndDay(LocalDate.parse(info[3], dateTimeFormatter));
                 booking.setServiceType(info[4]);
-                booking.setServiceName(info[5]);
-                Integer value = Integer.parseInt(info[6]);
-                listBook.put(booking, value);
+                booking.setServiceId(info[5]);
+                listBook.add(booking);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         try {
@@ -155,15 +221,13 @@ public class BookingService implements IBookingService {
         return listBook;
     }
 
-    private void writeFile(Map<Booking, Integer> bookingList) {
+    private void writeFile(Set<Booking> bookingList) {
         BufferedWriter bufferedWriter = null;
         try {
             File file = new File("src\\case_study_module2\\data\\booking\\booking.csv");
             FileWriter fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
-            Set<Booking> bookings;
-            bookings = bookingList.keySet();
-            for (Booking booking : bookings) {
+            for (Booking booking : bookingList) {
                 bufferedWriter.write(booking.getInfoBooking(booking));
                 bufferedWriter.newLine();
             }

@@ -140,16 +140,6 @@ public class StudentService implements IStudentService {
                 System.out.println(e.getMessage());
             }
         }
-//        while (true) {
-//            try {
-//                System.out.println("Mời bạn nhập tên Sinh Viên: ");
-//                name = scanner.nextLine();
-//                Util.checkString(name);
-//                break;
-//            } catch (CheckStringException e) {
-//                System.out.println(e.getMessage());
-//            }
-//        }
         while (true) {
             try {
                 System.out.println("Mời bạn nhập năm ngày tháng năm sinh: ");

@@ -2,9 +2,9 @@ package case_study_module2.service.impl.faciliti_service;
 
 import case_study_module2.model.facility.House;
 import case_study_module2.service.i_faciliti_service.IHouseService;
+import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
-import case_study_module2.util.NumberException;
 
 import java.io.*;
 import java.util.*;
@@ -19,7 +19,7 @@ public class HouseService implements IHouseService {
             try {
                 System.out.println("Enter ID House");
                 id = scanner.nextLine();
-                CheckUtils.checkIdHouseFacility(id);
+                CheckUtils.checkIdFacility(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -43,7 +43,7 @@ public class HouseService implements IHouseService {
                 usableArea = Double.parseDouble(scanner.nextLine());
                 if (usableArea > 30) {
                     break;
-                }else {
+                } else {
                     System.out.println("Area More Than 30,Pls Enter Again!");
                 }
             } catch (NumberFormatException e) {
@@ -71,7 +71,7 @@ public class HouseService implements IHouseService {
                 maxPerson = Integer.parseInt(scanner.nextLine());
                 if (maxPerson > 0 && maxPerson < 20) {
                     break;
-                }else {
+                } else {
                     System.out.println("Person Number More Than 0 And Less Than 20,Pls Try Again!");
                 }
             } catch (NumberFormatException e) {
@@ -86,29 +86,27 @@ public class HouseService implements IHouseService {
                     "\n 2. Rent By Month!" +
                     "\n 3. Rent By Day!" +
                     "\n 4. Rent By Hours!");
-            try {
-                String choice = scanner.nextLine();
-                CheckControllerUtils.checkSwitchCase(choice);
-                switch (choice) {
-                    case "1":
-                        rentalType = "Rent By Year!";
-                        break;
-                    case "2":
-                        rentalType = "Rent By Month!";
-                        break;
-                    case "3":
-                        rentalType = "Rent By Day!";
-                        break;
-                    case "4":
-                        rentalType = "Rent By Hours!";
-                        break;
-                }
-                break;
-            } catch (NumberException e) {
-                System.out.println(e.getMessage());
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    rentalType = "Rent By Year!";
+                    break;
+                case "2":
+                    rentalType = "Rent By Month!";
+                    break;
+                case "3":
+                    rentalType = "Rent By Day!";
+                    break;
+                case "4":
+                    rentalType = "Rent By Hours!";
+                    break;
+                default:
+                    System.out.println("Format Error, Pls Try Again!");
             }
-
+            break;
         }
+
+
         String roomStandard;
         while (true) {
             try {
@@ -121,15 +119,22 @@ public class HouseService implements IHouseService {
             }
 
         }
+
         int numberFloors;
         while (true) {
-            System.out.println("Enter Room Floors");
-            numberFloors = Integer.parseInt(scanner.nextLine());
-            if (numberFloors > 0) {
-                break;
+            try {
+                System.out.println("Enter Room Floors");
+                numberFloors = Integer.parseInt(scanner.nextLine());
+                if (numberFloors > 0) {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Format Error,Pls Try Again");
             }
+
         }
-        return new House(id, serviceName, usableArea, rentalCost, maxPerson, rentalType, roomStandard, numberFloors);
+        return new
+                House(id, serviceName, usableArea, rentalCost, maxPerson, rentalType, roomStandard, numberFloors);
     }
 
     @Override
@@ -138,7 +143,7 @@ public class HouseService implements IHouseService {
         Set<House> houses;
         houses = listHouse.keySet();
         for (House house : houses) {
-            System.out.println(house);
+            System.out.println(house.toString()+"Time used of booking: "+listHouse.get(house));
 
         }
     }
@@ -153,7 +158,7 @@ public class HouseService implements IHouseService {
 
     }
 
-    private Map<House, Integer> readFile() {
+    public Map<House, Integer> readFile() {
         Map<House, Integer> houseList = new LinkedHashMap<>();
         File file = new File("src\\case_study_module2\\data\\house\\house.csv");
         try {
@@ -186,7 +191,7 @@ public class HouseService implements IHouseService {
         return houseList;
     }
 
-    private void writeFile(Map<House, Integer> roomsList) {
+    public void writeFile(Map<House, Integer> listHouse) {
         File file = new File("src\\case_study_module2\\data\\house\\house.csv");
         if (!file.exists()) {
             System.out.println("File is not exist");
@@ -198,10 +203,10 @@ public class HouseService implements IHouseService {
         try {
             fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
-            Set<House> houses = new LinkedHashSet<>();
-            houses = roomsList.keySet();
+            Set<House> houses;
+            houses = listHouse.keySet();
             for (House house : houses) {
-                bufferedWriter.write(house.getInfo(house) + "," + roomsList.get(house));
+                bufferedWriter.write(house.getInfo(house) + "," + listHouse.get(house));
                 bufferedWriter.newLine();
             }
         } catch (IOException e) {

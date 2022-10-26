@@ -92,9 +92,9 @@ public class StudentService implements IStudentService {
             for (int j = 0; j < studentList.size() - 1 - i; j++) {
                 Student student1 = studentList.get(j);
                 Student student2 = studentList.get(j + 1);
-                int compare=student1.compareTo(student2);
-                if (compare>0){
-                    Collections.swap(studentList,j,j+1);
+                int compare = student1.compareTo(student2);
+                if (compare > 0) {
+                    Collections.swap(studentList, j, j + 1);
 //                    Student temp= studentList.get(j);
 //                    studentList.set(j,studentList.get(j+1));
 //                    studentList.set(j+1,temp);

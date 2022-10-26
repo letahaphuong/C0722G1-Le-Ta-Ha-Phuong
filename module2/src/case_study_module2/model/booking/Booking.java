@@ -4,20 +4,20 @@ package case_study_module2.model.booking;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Booking {
+public class Booking implements Comparable<Booking> {
     private String idBooking;
     private LocalDate beginDay;
     private LocalDate endDay;
     private String idCustomer;
-    private String serviceName;
+    private String serviceId;
     private String serviceType;
 
-    public Booking(String idBooking, String idCustomer, LocalDate beginDay, LocalDate endDay, String serviceName, String serviceType) {
+    public Booking(String idBooking, String idCustomer, LocalDate beginDay, LocalDate endDay, String serviceId, String serviceType) {
         this.idBooking = idBooking;
         this.beginDay = beginDay;
         this.endDay = endDay;
         this.idCustomer = idCustomer;
-        this.serviceName = serviceName;
+        this.serviceId = serviceId;
         this.serviceType = serviceType;
     }
 
@@ -56,12 +56,12 @@ public class Booking {
         this.idCustomer = idCustomer;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getServiceId() {
+        return serviceId;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getServiceType() {
@@ -79,7 +79,7 @@ public class Booking {
                 ", beginDay=" + beginDay +
                 ", endDay=" + endDay +
                 ", idCustomer='" + idCustomer + '\'' +
-                ", serviceName='" + serviceName + '\'' +
+                ", serviceId='" + serviceId + '\'' +
                 ", serviceType='" + serviceType + '\'' +
                 '}';
     }
@@ -87,8 +87,16 @@ public class Booking {
     public String getInfoBooking(Booking booking) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String beginDay = getBeginDay().format(dateTimeFormatter);
-        String endDay=getEndDay().format(dateTimeFormatter);
-        return String.format(getIdBooking(), getIdCustomer(), beginDay,endDay,getServiceName(),getServiceType());
+        String endDay = getEndDay().format(dateTimeFormatter);
+        return String.format("%s,%s,%s,%s,%s,%s", getIdBooking(), getIdCustomer(), beginDay, endDay, getServiceId(), getServiceType());
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        if (this.getBeginDay().compareTo(o.getBeginDay()) != 0) {
+            return this.getBeginDay().compareTo(o.getBeginDay());
+        }
+        return this.getEndDay().compareTo(o.getEndDay());
     }
 }
 

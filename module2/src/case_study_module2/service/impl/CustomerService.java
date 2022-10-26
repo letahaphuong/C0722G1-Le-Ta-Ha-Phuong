@@ -6,7 +6,6 @@ import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 
 import java.io.*;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
@@ -24,6 +23,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Enter ID Customer(CT-xxxx): ");
                 id = scanner.nextLine();
+
                 CheckUtils.checkIdCustomer(id);
                 break;
             } catch (FormatException e) {
@@ -137,73 +137,77 @@ public class CustomerService implements ICustomerService {
     @Override
     public void editCustomer() throws IOException {
         customerList = readFile();
-        System.out.println("Enter ID to Edit: ");
-        String idFind = scanner.nextLine();
-        for (int i = 0; i < customerList.size(); i++) {
-            if (idFind.equals(customerList.get(i).getIdCustomer())) {
-                try {
-                    System.out.println("Enter new Name: ");
-                    String nameEdit = scanner.nextLine();
-                    CheckUtils.checkName(nameEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Birth(dd/MM/yyyy): ");
-                    LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
-                    CheckUtils.checkBirthCustomer(birthEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Gender(male/female/other): ");
-                    String genderEdit = scanner.nextLine();
-                    CheckUtils.checkGender(genderEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Address: ");
-                    String addressEdit = scanner.nextLine();
-                    CheckUtils.checkAddress(addressEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new ID Card(XXX XXX XXX): ");
-                    String idCardEdit = scanner.nextLine();
-                    CheckUtils.checkIDCard(idCardEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Phone Number(0xxx xxx xxx): ");
-                    String phoneNumberEdit = scanner.nextLine();
-                    CheckUtils.checkPhone(phoneNumberEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Email: ");
-                    String emailEdit = scanner.nextLine();
-                    CheckUtils.checkMail(emailEdit);
-                } catch (FormatException e) {
-                    System.out.println(e.getMessage());
-                }
-                try {
-                    System.out.println("Enter new Type Guest Customer(Diamond / Platinium / Gold / Silver / Member): ");
-                    String typeGuest=scanner.nextLine();
-                    CheckUtils.checkTypeGuest(typeGuest);
-                }catch (FormatException e){
-                    System.out.println(e.getMessage());
-                }
+        if (!customerList.isEmpty()){
+            System.out.println("Enter ID to Edit: ");
+            String idFind = scanner.nextLine();
+            for (int i = 0; i < customerList.size(); i++) {
+                if (idFind.equals(customerList.get(i).getIdCustomer())) {
+                    try {
+                        System.out.println("Enter new Name: ");
+                        String nameEdit = scanner.nextLine();
+                        CheckUtils.checkName(nameEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Birth(dd/MM/yyyy): ");
+                        LocalDate birthEdit = LocalDate.parse(scanner.nextLine(), dateTimeFormatter);
+                        CheckUtils.checkBirthCustomer(birthEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Gender(male/female/other): ");
+                        String genderEdit = scanner.nextLine();
+                        CheckUtils.checkGender(genderEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Address: ");
+                        String addressEdit = scanner.nextLine();
+                        CheckUtils.checkAddress(addressEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new ID Card(XXX XXX XXX): ");
+                        String idCardEdit = scanner.nextLine();
+                        CheckUtils.checkIDCard(idCardEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Phone Number(0xxx xxx xxx): ");
+                        String phoneNumberEdit = scanner.nextLine();
+                        CheckUtils.checkPhone(phoneNumberEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Email: ");
+                        String emailEdit = scanner.nextLine();
+                        CheckUtils.checkMail(emailEdit);
+                    } catch (FormatException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        System.out.println("Enter new Type Guest Customer(Diamond / Platinium / Gold / Silver / Member): ");
+                        String typeGuest=scanner.nextLine();
+                        CheckUtils.checkTypeGuest(typeGuest);
+                    }catch (FormatException e){
+                        System.out.println(e.getMessage());
+                    }
 
-                System.out.println("Edit successfully!");
-                writerFile(customerList);
-                break;
+                    System.out.println("Edit successfully!");
+                    writerFile(customerList);
+                    break;
+                }
             }
         }
-
+        else {
+            System.out.println("Data Is Empty,Enter 1st Data!\n");
+        }
     }
 
     @Override
@@ -223,9 +227,9 @@ public class CustomerService implements ICustomerService {
         writerFile(customerList);
     }
 
-    BufferedReader bufferedReader;
 
     private List<Customer> readFile() throws IOException {
+        BufferedReader bufferedReader = null;
         List<Customer> customerList1 = new LinkedList<>();
         try {
             File file = new File("src\\case_study_module2\\data\\customer\\customer.csv");
@@ -254,7 +258,9 @@ public class CustomerService implements ICustomerService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        bufferedReader.close();
+        if (bufferedReader != null) {
+            bufferedReader.close();
+        }
         return customerList1;
     }
 

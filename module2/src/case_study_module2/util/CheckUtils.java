@@ -83,20 +83,8 @@ public class CheckUtils {
             throw new FormatException("Format Error,Enter Again!");
         }
     }
-    public static void checkIdHouseFacility(String house) throws FormatException {
-        boolean check = house.matches("^SVHO-[0-9]{4}$");
-        if (!check){
-            throw new FormatException("Format Error,Enter Again!");
-        }
-    }
-    public static void checkIdVillaFacility(String villa) throws FormatException {
-        boolean check = villa.matches("^SVVL-[0-9]{4}$");
-        if (!check){
-            throw new FormatException("Format Error,Enter Again!");
-        }
-    }
-    public static void checkIdRoomFacility(String room) throws FormatException {
-        boolean check = room.matches("^SVRO-[0-9]{4}$");
+    public static void checkIdFacility(String faciliti) throws FormatException {
+        boolean check = faciliti.matches("^((SVVL)|(SVHO)|(SVRO))-[0-9]{4}$");
         if (!check){
             throw new FormatException("Format Error,Enter Again!");
         }
@@ -135,6 +123,4 @@ public class CheckUtils {
             throw new FormatException("Format Error,Enter Again!");
         }
     }
-
-
 }

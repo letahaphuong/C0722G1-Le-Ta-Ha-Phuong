@@ -2,6 +2,7 @@ package case_study_module2.service.impl.faciliti_service;
 
 import case_study_module2.model.facility.Room;
 import case_study_module2.service.i_faciliti_service.IRoomService;
+import case_study_module2.util.CheckControllerUtils;
 import case_study_module2.util.CheckUtils;
 import case_study_module2.util.FormatException;
 import case_study_module2.util.NumberException;
@@ -19,7 +20,7 @@ public class RoomService implements IRoomService {
             try {
                 System.out.println("Enter ID Room: ");
                 id = scanner.nextLine();
-                CheckUtils.checkIdRoomFacility(id);
+                CheckUtils.checkIdFacility(id);
                 break;
             } catch (FormatException e) {
                 System.out.println(e.getMessage());
@@ -44,7 +45,7 @@ public class RoomService implements IRoomService {
                 usableArea = Double.parseDouble(scanner.nextLine());
                 if (usableArea > 30) {
                     break;
-                }else {
+                } else {
                     System.out.println("Area More Than 30,Pls Enter Again");
                 }
             } catch (NumberFormatException e) {
@@ -74,10 +75,10 @@ public class RoomService implements IRoomService {
                 maxPerson = Integer.parseInt(scanner.nextLine());
                 if (maxPerson > 0 && maxPerson < 20) {
                     break;
-                }else {
+                } else {
                     System.out.println("Person Number More Than Zero And Less Than Twenty,Pls Try Again!");
                 }
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Format Error, Try Again!");
             }
 
@@ -90,53 +91,55 @@ public class RoomService implements IRoomService {
                     "\n 2. Rent By Month!" +
                     "\n 3. Rent By Day!" +
                     "\n 4. Rent By Hours!");
-            try {
-                String choice = scanner.nextLine();
-                CheckControllerUtils.checkSwitchCase(choice);
-                switch (choice) {
-                    case "1":
-                        rentalType = "Rent By Year!";
-                        break;
-                    case "2":
-                        rentalType = "Rent By Month!";
-                        break;
-                    case "3":
-                        rentalType = "Rent By Day!";
-                        break;
-                    case "4":
-                        rentalType = "Rent By Hours!";
-                        break;
-                }
-                break;
-            } catch (NumberException e) {
-                System.out.println(e.getMessage());
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    rentalType = "Rent By Year!";
+                    break;
+                case "2":
+                    rentalType = "Rent By Month!";
+                    break;
+                case "3":
+                    rentalType = "Rent By Day!";
+                    break;
+                case "4":
+                    rentalType = "Rent By Hours!";
+                    break;
+                default:
+                    System.out.println("Format Error,Try Again!");
             }
-
+            break;
         }
 
-        String freeService;
-        while (true) {
-            try {
-                System.out.println("Enter Free Service (Beer | Whisky | Drink | Juice | Water | Coffee): ");
-                freeService = scanner.nextLine();
-                CheckUtils.checkFreeService(freeService);
-                break;
-            } catch (FormatException e) {
-                System.out.println(e.getMessage());
-            }
+
+
+    String freeService;
+        while(true)
+
+    {
+        try {
+            System.out.println("Enter Free Service (Beer | Whisky | Drink | Juice | Water | Coffee): ");
+            freeService = scanner.nextLine();
+            CheckUtils.checkFreeService(freeService);
+            break;
+        } catch (FormatException e) {
+            System.out.println(e.getMessage());
         }
-
-        return new Room(id, serviceName, usableArea, rentalCost, maxPerson, rentalType, freeService);
-
     }
+
+        return new
+
+    Room(id, serviceName, usableArea, rentalCost, maxPerson, rentalType, freeService);
+
+}
 
     @Override
     public void display() {
         listRoom = readFile();
         Set<Room> rooms;
-        rooms=listRoom.keySet();
-        for (Room room:rooms){
-            System.out.println(room);
+        rooms = listRoom.keySet();
+        for (Room room : rooms) {
+            System.out.println(room.toString()+"Time Of booking : "+listRoom.get(room));
         }
     }
 
@@ -149,7 +152,7 @@ public class RoomService implements IRoomService {
         writeFile(listRoom);
     }
 
-    private Map<Room, Integer> readFile() {
+    public Map<Room, Integer> readFile() {
         Map<Room, Integer> houseList = new LinkedHashMap<>();
         File file = new File("src\\case_study_module2\\data\\room\\room.csv");
         try {
@@ -181,7 +184,7 @@ public class RoomService implements IRoomService {
         return houseList;
     }
 
-    private void writeFile(Map<Room, Integer> roomsList) {
+    public void writeFile(Map<Room, Integer> roomsList) {
         File file = new File("src\\case_study_module2\\data\\room\\room.csv");
         if (!file.exists()) {
             System.out.println("File is not exist");
