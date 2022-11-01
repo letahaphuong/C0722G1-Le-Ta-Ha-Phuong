@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f5ec0fa0-6f97-4b11-b699-8b150a2e2437" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../case_study_data_base_wed/web/furama_resort_danang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_data_base_wed/web/furama_resort_danang.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2GwrKMaQgSw1zFJExzam3JuPB4L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
+    <configuration name="practice [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="sever-time" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="sever-time" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_sever-time_3" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50544" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.practice [dependencies]" />
+      <item itemvalue="Tomcat Server.Unnamed" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.practice [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5ec0fa0-6f97-4b11-b699-8b150a2e2437" name="Default Changelist" comment="" />
+      <created>1667310422109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667310422109</updated>
+      <workItem from="1667310433033" duration="931000" />
+      <workItem from="1667311530168" duration="2405000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1060" y="394" key="#TomEE_Server" timestamp="1667312209873">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="1060" y="394" key="#TomEE_Server/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667312209873" />
+    <state x="1058" y="394" key="#Tomcat_Server" timestamp="1667313619452">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="1058" y="394" key="#Tomcat_Server/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667313619452" />
+    <state x="977" y="118" key="#Unnamed" timestamp="1667312796553">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="977" y="118" key="#Unnamed/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667312796553" />
+    <state x="1083" y="302" key="#Web_Browsers" timestamp="1667312167414">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="1083" y="302" key="#Web_Browsers/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667312167414" />
+    <state x="734" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1667313719889">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="734" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667313719889" />
+    <state x="1059" y="257" key="FileChooserDialogImpl" timestamp="1667312664893">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="1059" y="257" key="FileChooserDialogImpl/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667312664893" />
+    <state width="2517" height="279" key="GridCell.Tab.0.bottom" timestamp="1667311371343">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="2517" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667311371343" />
+    <state width="2517" height="279" key="GridCell.Tab.0.center" timestamp="1667311371343">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="2517" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667311371343" />
+    <state width="2517" height="279" key="GridCell.Tab.0.left" timestamp="1667311371343">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="2517" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667311371343" />
+    <state width="2517" height="279" key="GridCell.Tab.0.right" timestamp="1667311371343">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state width="2517" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667311371343" />
+    <state x="662" y="126" key="new project wizard" timestamp="1667313952153">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="662" y="126" key="new project wizard/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667313952153" />
+    <state x="936" y="238" width="672" height="677" key="run.anything.popup" timestamp="1667310519827">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="936" y="238" width="672" height="677" key="run.anything.popup/-1920.0.1920.1032/0.0.2560.1032@0.0.2560.1032" timestamp="1667310519827" />
+  </component>
+</project>
