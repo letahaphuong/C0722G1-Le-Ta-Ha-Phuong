@@ -29,13 +29,3 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-.left-section{
-    height: 630px;
-    float: left;
-}
-.right-section{
-    height: 630px;
-    float: right;
-    top: 0;
-
-}
