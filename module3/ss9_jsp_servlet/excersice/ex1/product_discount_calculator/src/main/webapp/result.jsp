@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>ket qua la: ${result}</h1>
+<h1>luong chiet khau: ${result} $</h1>
+<h1>gia sau khi chiec khau: ${result1} $</h1>
 </body>
 </html>
