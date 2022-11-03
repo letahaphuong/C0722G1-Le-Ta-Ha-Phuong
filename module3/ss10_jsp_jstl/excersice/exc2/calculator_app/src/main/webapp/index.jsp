@@ -16,7 +16,7 @@
 </head>
 <body>
 <h1>Simple Calculator</h1>
-<c:redirect url="/caculate">
+<form action="/caculate" method="get">
   <fieldset style="border-radius: 40px;height: 130px;width: 300px">
     <legend>Calculator</legend>
     <table>
@@ -32,10 +32,10 @@
       <tr>
         <td>Operator</td>
         <td><select class="form-select" name="macth" aria-label="Default select example">
-          <option value="Addition">Addition +</option>
-          <option value="Subtraction">Subtraction -</option>
-          <option value="Multiplication">Multiplication *</option>
-          <option value="Division">Division /</option>
+          <option value="Addition">Addition</option>
+          <option value="Subtraction">Subtraction</option>
+          <option value="Multiplication">Multiplication</option>
+          <option value="Division">Division</option>
         </select></td>
       </tr>
       <tr>
@@ -50,7 +50,9 @@
     </table>
     <button type="submit" value="sumit">Caculate</button>
   </fieldset>
-</c:redirect>
+
+</form>
+
 
 
 

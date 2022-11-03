@@ -18,7 +18,7 @@ public class CaculatorServlet extends HttpServlet {
 
         Calculator calculator=new Calculator(firstOperator,secondOperator,match);
 
-        request.setAttribute("calculare",calculator);
+        request.setAttribute("calculator",calculator);
         request.getRequestDispatcher("result.jsp").forward(request,response);
     }
 }
