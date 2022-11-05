@@ -1,9 +1,12 @@
 package controller;
 
 import model.Product;
+import repository.IProductRepository;
+import repository.impl.ProductRepository;
 import service.IProductService;
 import service.impl.ProductService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +19,9 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     private IProductService productService = new ProductService();
+    private IProductRepository productRepository = new ProductRepository();
+
+    private Product product = new Product();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -27,6 +33,7 @@ public class ProductServlet extends HttpServlet {
                 save(request, response);
                 break;
             case "edit":
+                editProduct(request, response);
                 break;
             case "remove":
                 break;
@@ -37,6 +44,35 @@ public class ProductServlet extends HttpServlet {
             default:
                 break;
         }
+    }
+
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> productList=productService.displayAll();
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        Product product = productService.findById(id);
+        String name = request.getParameter("name");
+        double price = Double.parseDouble(request.getParameter("price"));
+        String productDetail = request.getParameter("productDetail");
+        String producer = request.getParameter("producer");
+
+        RequestDispatcher dispatcher;
+        product.setName(name);
+        product.setPrice(price);
+        product.setProductDetail(productDetail);
+        product.setProducer(producer);
+        this.productService.add(product);
+        request.setAttribute("productList", productList);
+        request.setAttribute("mess", "Thông tin đã được sửa");
+        dispatcher = request.getRequestDispatcher("product/edit.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
@@ -69,8 +105,10 @@ public class ProductServlet extends HttpServlet {
                 displayListProduct(request, response);
                 break;
             case "add":
+                showFormCreate(request, response);
                 break;
             case "edit":
+                showFormEdit(request, response);
                 break;
             case "remove":
                 break;
@@ -80,6 +118,45 @@ public class ProductServlet extends HttpServlet {
                 break;
             default:
                 displayListProduct(request, response);
+        }
+    }
+
+    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        Product product = this.productRepository.findById(id);
+//        RequestDispatcher dispatcher;
+//        if (product == null) {
+//            dispatcher = request.getRequestDispatcher("error-404.jsp");
+//        } else {
+//            request.setAttribute("product", product);
+//            dispatcher = request.getRequestDispatcher("product/edit.jsp");
+//            try {
+//                dispatcher.forward(request, response);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+        try {
+            request.getRequestDispatcher("product/edit.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.getRequestDispatcher("product/create.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

@@ -23,7 +23,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void edit(int id, Product product) {
-
+        productRepository.add(product);
     }
 
     @Override
@@ -38,6 +38,6 @@ public class ProductService implements IProductService {
 
     @Override
     public Product findById(int id) {
-        return null;
+        return productRepository.findById(id);
     }
 }

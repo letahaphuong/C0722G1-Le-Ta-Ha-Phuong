@@ -18,7 +18,7 @@
     <table class="table table-dark">
         <tr>
 <%--            <th>STT</th>--%>
-            <th>ID</th>
+<%--            <th>ID</th>--%>
             <th>Name</th>
             <th>Price</th>
             <th>Product Detail</th>
@@ -29,13 +29,14 @@
         <c:forEach var="product" items="${productList}" varStatus="status">
             <tr>
 <%--                <td>${status.count}</td>--%>
-                <td>${product.getId()}</td>
+<%--                <td>${product.getId()}</td>--%>
                 <td>${product.getName()}</td>
                 <td>${product.getPrice()}</td>
                 <td>${product.getProductDetail()}</td>
                 <td>${product.getProducer()}</td>
-                <td><button class="btn btn-success">Edit</button></td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td>
+                    <button class="btn btn-success" onclick="location.href='/product?action=edit';">Edit</button>
+                <td><button class="btn btn-danger"> Delete</button></td>
             </tr>
 
         </c:forEach>

@@ -60,8 +60,10 @@ public class CustomerServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
+
         Customer customer = this.customerService.findById(id);
         RequestDispatcher dispatcher;
+
         if (customer == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {

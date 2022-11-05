@@ -18,7 +18,7 @@
     <span style="color: red">${mess}</span>
 </c:if>
 <form action="/product?action=add" method="post">
-    <pre>ID :              <input type="text" name="id"></pre>
+<%--    <pre>ID :              <input type="text" name="id"></pre>--%>
     <pre>Name :            <input type="text" name="name"></pre>
     <pre>Price :           <input type="text" name="price"></pre>
     <pre>Product Detail :  <input type="text" name="productDetail"></pre>
