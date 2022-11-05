@@ -15,9 +15,11 @@
 <body>
 <h1 style="text-align: center">Product List</h1>
 <button class="btn btn-primary" onclick="location.href='/product?action=add'">Add</button>
-<form action="/product?action=findProduct&name=${product.getName()}" method="get">
-    <input type="text" value="search" name="search" placeholder="Search By Name">
-    <button onclick="location.href='product?action=findProduct&name=${product.getName()}'">Search</button>
+<form action="/product?action=findProduct" method="post">
+    <input type="text" placeholder="Search" name="name" >
+   <button class="btn btn-primary">
+        Search
+    </button>
 </form>
 
 <table class="table table-striped table-hover">

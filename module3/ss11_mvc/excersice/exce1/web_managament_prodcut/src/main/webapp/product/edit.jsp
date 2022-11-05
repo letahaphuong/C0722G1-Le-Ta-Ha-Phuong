@@ -39,28 +39,28 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <input type="text" class="form-control" name="id" value="${product.getId()}" placeholder="ID *"
-                           value=""/>
+                           >
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" value="${requestScope["product"].getName()}"
-                           placeholder="NAME *" value=""/>
+                           placeholder="NAME *" />
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" class="form-control" name="price" value="${requestScope["product"].getPrice()}"
-                           placeholder="PRICE *" value=""/>
+                           placeholder="PRICE *"/>
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" class="form-control" name="productDetail"
                            value="${requestScope["product"].getProductDetail()}" placeholder="PRODUCT DETAIL *"
-                           value=""/>
+                           />
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" class="form-control" name="producer" value="${requestScope["product"].getProducer()}"
-                           placeholder="PRODUCER *" value=""/>
+                           placeholder="PRODUCER *" />
                 </div>
                 <br>
             </div>

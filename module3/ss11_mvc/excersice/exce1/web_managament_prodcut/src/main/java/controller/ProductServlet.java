@@ -33,19 +33,26 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "remove":
                 remove(request, response);
+            case "findProduct":
+                showProductById(request,response);
+                break;
             default:
         }
     }
 
-    private void remove(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void remove(HttpServletRequest request, HttpServletResponse response)  {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = productService.findByID(id);
         productService.remove(id);
-        response.sendRedirect("/product");
+        try {
+            response.sendRedirect("/product");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void update(HttpServletRequest request, HttpServletResponse response)  {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
@@ -59,7 +66,13 @@ public class ProductServlet extends HttpServlet {
         productService.update(id, product);
         request.setAttribute("product", product);
         request.setAttribute("message", "Updated");
-        request.getRequestDispatcher("product/edit.jsp").forward(request, response);
+        try {
+            request.getRequestDispatcher("product/edit.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void save(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -89,19 +102,34 @@ public class ProductServlet extends HttpServlet {
             case "view":
                 showDetail(request, response);
                 break;
-            case "findProduct":
-                showProductById(request,response);
-                break;
+
             default:
                 showList(request, response);
         }
     }
 
-    private void showProductById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void showProductById(HttpServletRequest request, HttpServletResponse response) {
         String name =request.getParameter("name");
         Product product = productService.findByName(name);
-        request.setAttribute("product",product);
-        request.getRequestDispatcher("product/view1.jsp").forward(request,response);
+        if (product!=null){
+            request.setAttribute("product",product);
+            try {
+                request.getRequestDispatcher("product/view1.jsp").forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            request.setAttribute("mess","Name not found");
+            try {
+                request.getRequestDispatcher("product/view1.jsp").forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
