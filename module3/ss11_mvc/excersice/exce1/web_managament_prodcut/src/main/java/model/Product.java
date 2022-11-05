@@ -46,8 +46,8 @@ public class Product {
         return productDetail;
     }
 
-    public void setProductDetail(String productDetail) {
-        this.productDetail = productDetail;
+    public void setProductDetail(String description) {
+        this.productDetail = description;
     }
 
     public String getProducer() {

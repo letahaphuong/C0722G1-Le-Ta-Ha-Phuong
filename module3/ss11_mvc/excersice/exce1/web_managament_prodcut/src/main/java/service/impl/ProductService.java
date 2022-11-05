@@ -8,36 +8,35 @@ import service.IProductService;
 import java.util.List;
 
 public class ProductService implements IProductService {
-
-    private IProductRepository productRepository=new ProductRepository();
+    private IProductRepository productRepository = new ProductRepository();
 
     @Override
-    public List<Product> displayAll() {
-        return productRepository.displayAll();
+    public List<Product> findAll() {
+        return productRepository.findAll();
     }
 
     @Override
-    public void add(Product product) {
-        productRepository.add(product);
+    public void save(Product product) {
+        productRepository.save(product);
     }
 
     @Override
-    public void edit(int id, Product product) {
-        productRepository.add(product);
+    public Product findByID(int id) {
+        return productRepository.findByID(id);
+    }
+
+    @Override
+    public void update(int id, Product product) {
+        productRepository.update(id, product);
     }
 
     @Override
     public void remove(int id) {
-
+        productRepository.remove(id);
     }
 
     @Override
-    public void viewDetail(int id, Product product) {
-
-    }
-
-    @Override
-    public Product findById(int id) {
-        return productRepository.findById(id);
+    public Product findByName(String name) {
+       return productRepository.findByName(name);
     }
 }
