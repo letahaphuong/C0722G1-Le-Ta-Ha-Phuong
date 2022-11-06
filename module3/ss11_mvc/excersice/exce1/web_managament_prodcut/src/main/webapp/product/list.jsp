@@ -40,7 +40,9 @@
             <td>${product.getPrice()}</td>
             <td >${product.getProductDetail()}</td>
             <td >${product.getProducer()}</td>
-            <td><button class="btn btn-warning" onclick="location.href='product?action=edit&id=${product.getId()}'">Edit</button></td>
+            <td>
+                <button class="btn btn-warning" onclick="location.href='product?action=edit&id=${product.getId()}'">Edit</button>
+            </td>
             <td>
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct${product.getId()}">
                     Delete
