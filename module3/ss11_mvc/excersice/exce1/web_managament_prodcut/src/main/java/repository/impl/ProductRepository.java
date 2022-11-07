@@ -53,7 +53,7 @@ public class ProductRepository implements IProductRepository {
     public void remove(int id) {
         for (int i = 0; i < productList.size(); i++) {
             if (id == productList.get(i).getId()) {
-                productList.remove(productList.get(i));
+                productList.remove(i);
                 break;
             }
         }
