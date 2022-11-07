@@ -33,6 +33,7 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "remove":
                 remove(request, response);
+                break;
             case "findProduct":
                 showProductById(request,response);
                 break;
