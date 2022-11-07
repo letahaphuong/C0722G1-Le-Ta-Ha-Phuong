@@ -14,5 +14,5 @@ public interface IUserService {
     boolean remove(int id);
 
     boolean update(int id, User user);
-
+    
 }

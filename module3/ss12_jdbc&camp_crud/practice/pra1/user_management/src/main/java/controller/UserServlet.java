@@ -34,6 +34,9 @@ public class UserServlet extends HttpServlet {
             case "remove":
                 remove(request,response);
                 break;
+            case "findByCountry":
+                findByCountry(request,response);
+                break;
 
             default:
         }
