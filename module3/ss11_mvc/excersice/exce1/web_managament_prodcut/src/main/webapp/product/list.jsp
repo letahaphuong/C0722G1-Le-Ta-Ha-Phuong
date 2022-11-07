@@ -50,7 +50,6 @@
                 </button>
             </td>
         </tr>
-
     </c:forEach>
 
 </table>
@@ -65,15 +64,14 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
                 Are you sure to delete???
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
                 </button>
                 <form action="/product"
-                      method="post">
-                    
+                      method="get">
+
                     <input type="hidden" name="id" id="idInput">
                     <input type="hidden" name="action" value="remove">
                     <button class="btn btn-primary">Delete</button>
