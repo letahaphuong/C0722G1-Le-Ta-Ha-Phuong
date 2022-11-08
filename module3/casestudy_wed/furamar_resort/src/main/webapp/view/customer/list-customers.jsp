@@ -183,13 +183,15 @@
                     </tr>
                     <c:forEach var="customer" items="${customerList}">
                         <tr class="text-center">
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
+                            <th scope="row">${customer.getId}</th>
+                            <td>${customer.getCustomerType}</td>
+                            <td>${customer.getName}</td>
+                            <td>${customer.getDateOfBirth}</td>
+                            <td>${customer.isGender}</td>
+                            <td>${customer.getIdCard}</td>
+                            <td>${customer.getPhoneNumber}</td>
+                            <td>${customer.getEmail}</td>
+                            <td>${customer.getAddress}</td>
                             <td>
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
                                     <button onclick="location.href='view/customer?action=edit&id=${customer.getId()}'" class="btn btn-outline-success" type="button">Edit

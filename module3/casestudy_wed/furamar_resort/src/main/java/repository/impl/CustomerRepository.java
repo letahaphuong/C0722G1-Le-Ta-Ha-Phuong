@@ -75,7 +75,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public List<Customer> findAll() {
         Connection connection = BaseRepository.getConnectDB();
-        List<Customer> userList = new ArrayList<>();
+        List<Customer> customerList = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL_USERS);
             ResultSet resultSet = ps.executeQuery();
@@ -90,12 +90,12 @@ public class CustomerRepository implements ICustomerRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
                 Customer customer = new Customer(id, customerId, name, dateOfBirth,gender,idCard,phoneNumber,email,address);
-                userList.add(customer);
+                customerList.add(customer);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return userList;
+        return customerList;
     }
 
     @Override
