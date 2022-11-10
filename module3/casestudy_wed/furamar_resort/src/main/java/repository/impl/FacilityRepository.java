@@ -17,8 +17,7 @@ public class FacilityRepository implements IFacilityRepository {
     private static final String SELECT_USER_BY_NAME = "select * from facility where `name` =?;";
     private static final String SELECT_ALL_FACILITY = "CALL display_all_facility();";
     private static final String DELETE_USERS_SQL = "delete from facility where id = ?;";
-    private static final String UPDATE_USERS_SQL = "update facility set customer_type_id=?, name = ?,date_of_birth= ?," +
-            " gender =? ,id_card=? ,phone_number = ?,email=?,address=? where id=?;";
+    private static final String UPDATE_FACILITY = "CALL update_facility(?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?,?);";
 
     @Override
     public boolean add(Facility facility) {
@@ -89,27 +88,27 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public boolean update(int id, Facility facility) {
-//        Connection connection = BaseRepository.getConnectDB();
-//        try {
-//            PreparedStatement ps = connection.prepareStatement(UPDATE_USERS_SQL);
-//            ps.setInt(1, facility.getId());
-//            ps.setString(2, facility.getName());
-//            ps.setDouble(3, facility.getArea());
-//            ps.setDouble(4, facility.getCost());
-//            ps.setInt(5, facility.getMaxPeople());
-//            ps.setInt(6, facility.getRentTypeId());
-//            ps.setInt(7, facility.getFacilityTypeId());
-//            ps.setString(8, facility.getStandardRoom());
-//            ps.setString(9, facility.getDescriptionOtherConvenience());
-//            ps.setDouble(10, facility.getPoolArea());
-//            ps.setInt(11, facility.getNumberOfFloors());
-//            ps.setString(12, facility.getFacility());
-//            return ps.executeUpdate() > 0;
-//
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_FACILITY);
+            ps.setString(1, facility.getName());
+            ps.setDouble(2, facility.getArea());
+            ps.setDouble(3, facility.getCost());
+            ps.setInt(4, facility.getMaxPeople());
+            ps.setInt(5, facility.getRentTypeId());
+            ps.setInt(6, facility.getFacilityTypeId());
+            ps.setString(7, facility.getStandardRoom());
+            ps.setString(8, facility.getDescriptionOtherConvenience());
+            ps.setDouble(9, facility.getPoolArea());
+            ps.setInt(10, facility.getNumberOfFloors());
+            ps.setString(11, facility.getFacilityFree());
+            ps.setInt(12, facility.getId());
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
         return false;
 
     }

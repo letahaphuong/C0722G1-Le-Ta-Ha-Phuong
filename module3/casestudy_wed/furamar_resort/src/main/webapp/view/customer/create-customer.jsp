@@ -167,7 +167,7 @@
                                                 <label>Select Customer Type</label>
                                                 <select name="customerType" class="form-select" aria-label="Default select example"
                                                         style="border-radius: 30px">
-                                                    <option selected>SELECT CUSTOMER TYPE*</option>
+                                                    <option selected>SELECT CUSTOMER TYPE *</option>
                                                     <option value="1">Diamond</option>
                                                     <option value="2">Platinum</option>
                                                     <option value="3">Gold</option>

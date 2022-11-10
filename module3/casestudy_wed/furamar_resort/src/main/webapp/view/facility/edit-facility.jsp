@@ -10,7 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Furama-Danh sach dich vu</title>
-    <link rel="stylesheet" href="../../../../bootstrap-5.1.3-dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="../../view/customer/mystyle.css">
 </head>
 <body>
@@ -135,7 +137,9 @@
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+                <button class="btn btn-outline-primary" onclick="location.href='/facility'">Back</button>
+            </div>
             <div class="col-lg-10">
 
                 <div class="row m-5">
@@ -144,49 +148,62 @@
                             <div class="note align-items-center d-flex justify-content-center">
                                 <h2>EDIT FACILITY</h2>
                             </div>
-                            <form action="view/facility?action=edit" method="post">
+                            <form action="/facility?action=edit" method="post">
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
+                                            <div hidden class="form-group">
+                                                <label >Id</label>
+                                                <input type="text" class="form-control" name="id"
+                                                       placeholder="id *" value="${id}"/>
+                                            </div>
                                             <div class="form-group">
+                                                <label >Name</label>
                                                 <input type="text" class="form-control" name="name"
                                                        placeholder="name *" value="${name}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <lable>Area</lable>
                                                 <input type="text" class="form-control" name="area"
                                                        placeholder="area *" value="${area}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <lable>Cost</lable>
                                                 <input type="text" class="form-control" name="cost"
                                                        placeholder="cost *" value="${cost}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <lable>Max PeoPle</lable>
                                                 <input type="text" class="form-control" name="maxPeople"
                                                        placeholder="maxPeople *" value="${maxPeople}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <label>Rent Type</label>
                                                 <input type="text" class="form-control" name="rentTypeId"
                                                        placeholder="rentTypeId *" value="${rentTypeId}"/>
                                             </div>
                                             <br>
-
-                                        </div>
-                                        <div class="col-md-6">
                                             <div class="form-group">
+                                                <label>Facility Type</label>
                                                 <input type="text" class="form-control" name="facilityTypeId"
                                                        placeholder="facilityTypeId *" value="${facilityTypeId}"/>
                                             </div>
                                             <br>
+                                        </div>
+                                        <div class="col-md-6">
+
                                             <div class="form-group">
+                                                <label>Standard Room</label>
                                                 <input type="text" class="form-control" name="standardRoom"
                                                        placeholder="standardRoom *" value="${standardRoom}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <label>Description Other Convenience</label>
                                                 <input type="text" class="form-control"
                                                        name="descriptionOtherConvenience"
                                                        placeholder="descriptionOtherConvenience *"
@@ -194,16 +211,19 @@
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <label>Pool Area</label>
                                                 <input type="text" class="form-control" name="poolArea"
                                                        placeholder="poolArea *" value="${poolArea}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <label>Number Of Floors</label>
                                                 <input type="text" class="form-control" name="numberOfFloors"
                                                        placeholder="numberOfFloors *" value="${numberOfFloors}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                               <label> Facility Free</label>
                                                 <input type="text" class="form-control" name="facilityFree"
                                                        placeholder="facilityFree *" value="${facilityFree}"/>
                                             </div>
@@ -234,5 +254,15 @@
 </div>
 
 </body>
-<script src="../../../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}</script>
 </html>

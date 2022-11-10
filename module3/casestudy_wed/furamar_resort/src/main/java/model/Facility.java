@@ -36,7 +36,7 @@ public class Facility {
         this.facilityFree = facilityFree;
     }
 
-    public Facility(int id, String name, int area, double cost, int maxPeople, int rentTypeId, int facilityTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
+    public Facility( String name, int area, double cost, int maxPeople, int rentTypeId, int facilityTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree,int id) {
         this.id = id;
         this.name = name;
         this.area = area;
