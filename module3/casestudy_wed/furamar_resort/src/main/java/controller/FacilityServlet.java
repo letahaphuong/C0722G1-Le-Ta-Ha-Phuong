@@ -28,7 +28,7 @@ public class FacilityServlet extends HttpServlet {
                 save(request, response);
                 break;
             case "edit":
-                update(request, response);
+//                update(request, response);
                 break;
             case "remove":
 //                remove(request, response);
@@ -39,38 +39,37 @@ public class FacilityServlet extends HttpServlet {
         }
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        String name = request.getParameter("name");
-        int area = Integer.parseInt(request.getParameter("area"));
-        double cost = Double.parseDouble(request.getParameter("cost"));
-        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
-        int rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
-        int facilityTypeId = Integer.parseInt(request.getParameter("facilityTypeId"));
-        String standardRoom = request.getParameter("standardRoom");
-        String descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
-        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
-        int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
-        String facilityFree = request.getParameter("facilityFree");
-        Facility facility = new Facility(id, name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea
-                , numberOfFloors, facilityFree);
-        boolean check = facilityService.update(id, facility);
-        String mess = "Error create";
-        if (check) {
-            mess = "Added";
-        }
-        request.setAttribute("mess", "Edit well done");
-        try {
-            request.getRequestDispatcher("view/facility/edit-facility.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void update(HttpServletRequest request, HttpServletResponse response) {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        String name = request.getParameter("name");
+//        int area = Integer.parseInt(request.getParameter("area"));
+//        double cost = Double.parseDouble(request.getParameter("cost"));
+//        int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
+//        int rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
+//        int facilityTypeId = Integer.parseInt(request.getParameter("facilityTypeId"));
+//        String standardRoom = request.getParameter("standardRoom");
+//        String descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
+//        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+//        int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
+//        String facilityFree = request.getParameter("facilityFree");
+//        Facility facility = new Facility(id, name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea
+//                , numberOfFloors, facilityFree);
+//        boolean check = facilityService.update(id, facility);
+//        String mess = "Error create";
+//        if (check) {
+//            mess = "Added";
+//        }
+//        request.setAttribute("mess", "Edit well done");
+//        try {
+//            request.getRequestDispatcher("view/facility/edit-facility.jsp").forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -82,15 +81,17 @@ public class FacilityServlet extends HttpServlet {
         double poolArea = Double.parseDouble(request.getParameter("poolArea"));
         int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
         String facilityFree = request.getParameter("facilityFree");
-        Facility facility = new Facility(id, name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea
+        Facility facility = new Facility(name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea
                 , numberOfFloors, facilityFree);
         boolean check = facilityService.add(facility);
-        String mess = "Error create";
+        String mess ;
         if (check) {
             mess = "Added";
+        }else {
+            mess= "Error create";
         }
 
-        request.setAttribute("mess", "Added");
+        request.setAttribute("mess", mess);
         try {
             request.getRequestDispatcher("view/facility/create-facility.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -108,7 +109,7 @@ public class FacilityServlet extends HttpServlet {
         }
         switch (action) {
             case "add":
-//                showAddForm(request,response);
+                showAddForm(request,response);
                 break;
             case "edit":
                 showEditForm(request, response);
@@ -118,37 +119,48 @@ public class FacilityServlet extends HttpServlet {
         }
     }
 
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        List<Facility> facilityList = facilityService.findAll();
-        Facility facility = null;
-        String str = "";
-        for (Facility value : facilityList) {
-            if (value.getId() == id) {
-                facility = value;
-                break;
-            }
-        }
-        request.setAttribute("id", facility.getId());
-        request.setAttribute("name", facility.getName());
-        request.setAttribute("area", facility.getArea());
-        request.setAttribute("cost", facility.getCost());
-        request.setAttribute("maxPeople", facility.getMaxPeople());
-        request.setAttribute("rentTypeId", facility.getRentTypeId());
-        request.setAttribute("facilityTypeId", facility.getFacilityTypeId());
-        request.setAttribute("standardRoom", facility.getStandardRoom());
-        request.setAttribute("descriptionOtherConvenience", facility.getDescriptionOtherConvenience());
-        request.setAttribute("poolArea", facility.getPoolArea());
-        request.setAttribute("numberOfFloors", facility.getNumberOfFloors());
-        request.setAttribute("facilityFree", facility.getFacility());
-
+    private void showAddForm(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("view/facility/edit-facility.jsp").forward(request, response);
+            request.getRequestDispatcher("view/facility/create-facility.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        List<Facility> facilityList = facilityService.findAll();
+//        Facility facility = null;
+//        String str = "";
+//        for (Facility value : facilityList) {
+//            if (value.getId() == id) {
+//                facility = value;
+//                break;
+//            }
+//        }
+//        request.setAttribute("id", facility.getId());
+//        request.setAttribute("name", facility.getName());
+//        request.setAttribute("area", facility.getArea());
+//        request.setAttribute("cost", facility.getCost());
+//        request.setAttribute("maxPeople", facility.getMaxPeople());
+//        request.setAttribute("rentTypeId", facility.getRentTypeId());
+//        request.setAttribute("facilityTypeId", facility.getRentTypeName());
+//        request.setAttribute("standardRoom", facility.getStandardRoom());
+//        request.setAttribute("descriptionOtherConvenience", facility.getDescriptionOtherConvenience());
+//        request.setAttribute("poolArea", facility.getPoolArea());
+//        request.setAttribute("numberOfFloors", facility.getNumberOfFloors());
+//        request.setAttribute("facilityFree", facility.getFacility());
+//
+//        try {
+//            request.getRequestDispatcher("view/facility/edit-facility.jsp").forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) {

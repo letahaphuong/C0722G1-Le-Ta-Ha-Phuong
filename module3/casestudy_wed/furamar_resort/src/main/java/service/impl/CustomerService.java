@@ -17,8 +17,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public List<Customer> findByName(String str) {
-        return customerRepository.findByName(str);
+    public List<Customer> findCustomer(String str) {
+        return customerRepository.findCustomer(str);
     }
 
     @Override

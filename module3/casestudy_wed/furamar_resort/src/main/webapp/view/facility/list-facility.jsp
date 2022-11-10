@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="customer/mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
+
 
 </head>
 <body>
@@ -159,9 +161,8 @@
         <div class="col-lg-10"><h3 class="mb-4">LIST FACILITY</h3></div>
         <div class="col-lg-1">
             <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-2">
-                <button onclick="location.href='view/facility?action=add'" class="btn btn-outline-success" type="button" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalAdd">
-                    <img src="../2x/baseline_add_black_24dp.png" height="20" width="20"/> Add
+                <button onclick="location.href='/facility?action=add'" class="btn btn-outline-success" type="button">
+                     Add
                 </button>
             </form>
         </div>
@@ -170,16 +171,16 @@
     <div class="container"></div>
     <div class="row" style="height: 65%">
         <div>
-            <table class="table table-striped table-hover">
+            <table id="tableFacility" class="table table-striped table-hover table-bordered" style="width: 100%" >
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">STT</th>
                     <th scope="col">NAME</th>
                     <th scope="col">AREA</th>
                     <th scope="col">COST</th>
                     <th scope="col">MAX PEOPLE</th>
-                    <th scope="col">RENT TYPE ID</th>
-                    <th scope="col">FACILITY TYPE ID</th>
+                    <th scope="col">RENT TYPE NAME</th>
+                    <th scope="col">FACILITY TYPE NAME</th>
                     <th scope="col">STANDARD ROOM</th>
                     <th scope="col">PREDESCRIPTION OTHER CONVENIENCE</th>
                     <th scope="col">POOL AREA</th>
@@ -190,23 +191,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="facility" items="${facilityList}">
+                <c:forEach var="facility" items="${facilityList}" varStatus="status">
                     <tr class="text-center">
-                        <th>${facility.getId()}</th>
+                        <th hidden>${facility.getId()}</th>
+                        <th>${status.count}</th>
                         <td>${facility.getName()}</td>
                         <td>${facility.getArea()}</td>
                         <td>${facility.getCost()}</td>
                         <td>${facility.getMaxPeople()}</td>
-                        <td>${facility.getRentTypeId()}</td>
-                        <td>${facility.getFacilityTypeId()}</td>
+                        <td>${facility.getRentTypeName()}</td>
+                        <td>${facility.getFacilityTypeName()}</td>
                         <td>${facility.getStandardRoom()}</td>
                         <td>${facility.getDescriptionOtherConvenience()}</td>
                         <td>${facility.getPoolArea()}</td>
                         <td>${facility.getNumberOfFloors()}</td>
-                        <td>${facility.setNumberOfFloors()}</td>
+                        <td>${facility.getFacilityFree()}</td>
                         <td>
                             <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                <button onclick="location.href='view/facility?action=edit&id=${facility.getId()}'" class="btn btn-outline-success" type="button">Edit</button>
+                                <button onclick="location.href='facility?action=edit&id=${facility.getId()}'" class="btn btn-outline-success" type="button">Edit</button>
                             </form>
                         </td>
                         <td>
@@ -216,7 +218,6 @@
                         </td>
                     </tr>
                 </c:forEach>
-
                 </tbody>
             </table>
         </div>
@@ -479,15 +480,22 @@ if (toastTrigger) {
         toast.show()
     })
 }</script>
-<!--<script src="../../bootstrap-5.1.3-dist/js/bootstrap.js">-->
-<!--    var toastTrigger = document.getElementById('liveToastBtn')-->
-<!--    var toastLiveExample = document.getElementById('liveToast')-->
-<!--    if (toastTrigger) {-->
-<!--        toastTrigger.addEventListener('click', function () {-->
-<!--            var toast = new bootstrap.Toast(toastLiveExample)-->
-
-<!--            toast.show()-->
-<!--        })-->
-<!--    }-->
-<!--</script>-->
+<script>
+    function idRemove(id,name) {
+        document.getElementById("idInput").value = id;
+        document.getElementById("deleteModal").innerText=name;
+    }
+</script>
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableStudent').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        })
+    })
+</script>
 </html>

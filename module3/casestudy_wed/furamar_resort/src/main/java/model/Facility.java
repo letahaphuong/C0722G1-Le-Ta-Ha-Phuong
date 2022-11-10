@@ -7,7 +7,9 @@ public class Facility {
     private double cost;
     private int maxPeople;
     private int rentTypeId;
+    private String rentTypeName;
     private int facilityTypeId;
+    private String facilityTypeName;
     private String standardRoom;
     private String descriptionOtherConvenience;
     private double poolArea;
@@ -15,6 +17,23 @@ public class Facility {
     private String facilityFree;
 
     public Facility() {
+    }
+
+    public Facility(int id, String name, int area, double cost, int maxPeople, int rentTypeId, String rentTypeName, int facilityTypeId, String facilityTypeName, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
+        this.id = id;
+        this.name = name;
+        this.area = area;
+        this.cost = cost;
+        this.maxPeople = maxPeople;
+        this.rentTypeId = rentTypeId;
+        this.rentTypeName = rentTypeName;
+        this.facilityTypeId = facilityTypeId;
+        this.facilityTypeName = facilityTypeName;
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.facilityFree = facilityFree;
     }
 
     public Facility(int id, String name, int area, double cost, int maxPeople, int rentTypeId, int facilityTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
@@ -30,6 +49,21 @@ public class Facility {
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
         this.facilityFree = facilityFree;
+    }
+
+    public Facility(String name, int area, double cost, int maxPeople, int rentTypeId, int facilityTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
+        this.name = name;
+        this.area = area;
+        this.cost = cost;
+        this.maxPeople = maxPeople;
+        this.rentTypeId = rentTypeId;
+        this.facilityTypeId = facilityTypeId;
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.facilityFree = facilityFree;
+
     }
 
     public int getId() {
@@ -80,12 +114,28 @@ public class Facility {
         this.rentTypeId = rentTypeId;
     }
 
+    public String getRentTypeName() {
+        return rentTypeName;
+    }
+
+    public void setRentTypeName(String rentTypeName) {
+        this.rentTypeName = rentTypeName;
+    }
+
     public int getFacilityTypeId() {
         return facilityTypeId;
     }
 
     public void setFacilityTypeId(int facilityTypeId) {
         this.facilityTypeId = facilityTypeId;
+    }
+
+    public String getFacilityTypeName() {
+        return facilityTypeName;
+    }
+
+    public void setFacilityTypeName(String facilityTypeName) {
+        this.facilityTypeName = facilityTypeName;
     }
 
     public String getStandardRoom() {
@@ -120,11 +170,11 @@ public class Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public String getFacility() {
+    public String getFacilityFree() {
         return facilityFree;
     }
 
-    public void setFacility(String facility) {
-        this.facilityFree = facility;
+    public void setFacilityFree(String facilityFree) {
+        this.facilityFree = facilityFree;
     }
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -10,8 +11,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Furama-Danh sach dich vu</title>
-    <link rel="stylesheet" href="../../../../bootstrap-5.1.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../../view/customer/mystyle.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
+
 </head>
 <body>
 
@@ -135,7 +139,10 @@
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+                <button class="btn btn-outline-primary mt-5" type="submit" onclick="location.href='/facility'">Back
+                </button>
+            </div>
             <div class="col-lg-10">
 
                 <div class="row m-5">
@@ -144,71 +151,117 @@
                             <div class="note align-items-center d-flex justify-content-center">
                                 <h2>CREATE FACILITY</h2>
                             </div>
-                            <form action="view/facility?action=add" method="post">
+                            <c:if test="${mess!=null}">
+                                <h4 style="color: blue"> ${mess}</h4>
+                            </c:if>
+                            <form action="/facility?action=add" method="post">
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="id" placeholder="id *"/>
+                                            <div hidden class="form-group">
+                                                <label>Id</label>
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="id" placeholder="id *"/>
                                             </div>
-                                            <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="name"
+                                                <label>Name</label>
+
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="name"
                                                        placeholder="name *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="area"
+                                                <label>Area</label>
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="area"
                                                        placeholder="area *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="cost"
+                                                <label>Cost</label>
+
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="cost"
                                                        placeholder="cost *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="maxPeople"
-                                                       placeholder="maxPeople *"/>
+                                                <label>Select People Number</label>
+                                                <select name="maxPeople" class="form-select" aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option selected>SELECT People Number *</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="rentTypeId"
-                                                       placeholder="rentTypeId *"/>
+                                                <label>Rent Type Id</label>
+                                                <select name="rentTypeId" class="form-select" aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option selected>SELECT RENTAL TYPE *</option>
+                                                    <option value="1">year</option>
+                                                    <option value="2">month</option>
+                                                    <option value="3">day</option>
+                                                    <option value="4">hour</option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label>Facility Type Id</label>
+                                                <select name="facilityTypeId" class="form-select" aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option selected>SELECT FACILITY TYPE*</option>
+                                                    <option value="1">Villa</option>
+                                                    <option value="2">House</option>
+                                                    <option value="3">Room</option>
+                                                </select>
                                             </div>
                                             <br>
 
                                         </div>
                                         <div class="col-md-6">
+
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="facilityTypeId"
-                                                       placeholder="facilityTypeId *"/>
+                                                <label>Standard Room</label>
+                                                <select style="border-radius: 30px" class="form-select" aria-label="Default select example" name="standardRoom">
+                                                    <option value="Standard Room *" selected>SELECT STANDARD ROOM</option>
+                                                    <option value="Vip">Vip</option>
+                                                    <option value="Normal">Normal</option>
+                                                </select>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="standardRoom"
-                                                       placeholder="standardRoom *"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control"
+                                                <label>Description Other Convenience</label>
+
+                                                <input style="border-radius: 30px" type="text" class="form-control"
                                                        name="descriptionOtherConvenience"
                                                        placeholder="descriptionOtherConvenience *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="poolArea"
+                                                <label>Pool Area</label>
+
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="poolArea"
                                                        placeholder="poolArea *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="numberOfFloors"
+                                                <label>Number Of Floors</label>
+
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="numberOfFloors"
                                                        placeholder="numberOfFloors *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="facilityFree"
+                                                <label>Facility Free</label>
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="facilityFree"
                                                        placeholder="facilityFree *"/>
                                             </div>
                                         </div>
@@ -238,5 +291,33 @@
 </div>
 
 </body>
-<script src="../../../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}</script>
+<script>
+    function idRemove(id,name) {
+        document.getElementById("idInput").value = id;
+        document.getElementById("deleteModal").innerText=name;
+    }
+</script>
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 3
+        })
+    })
+</script>
 </html>

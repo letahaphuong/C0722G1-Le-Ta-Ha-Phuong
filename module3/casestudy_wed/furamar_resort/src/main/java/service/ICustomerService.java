@@ -7,7 +7,7 @@ import java.util.List;
 public interface ICustomerService {
     boolean add(Customer customer);
 
-    List<Customer> findByName(String str);
+    List<Customer> findCustomer(String str);
 
     List<Customer> findAll();
 

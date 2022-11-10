@@ -6,12 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Furama-Danh sach dich vu</title>
-    <link rel="stylesheet" href="../../../../bootstrap-5.1.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../../view/customer/mystyle.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -135,50 +138,94 @@
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+                <button class="btn btn-outline-primary mt-5" type="submit" onclick="location.href='/customer'">Back
+                </button>
+            </div>
             <div class="col-lg-10">
-
-                <div class="row m-5" >
+                <div class="row m-5">
                     <div class="container register-form">
                         <div class="form">
                             <div class="note align-items-center d-flex justify-content-center">
                                 <h2>CREATE CUSTOMER</h2>
                             </div>
-                            <form action="view/customer?action=add" method="post">
+                            <c:if test="${mess!=null}">
+                                <h4 style="color: blue">${mess}</h4>
+                            </c:if>
+                            <form action="/customer?action=add" method="post">
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="id" placeholder="ID *"/>
-                                            </div><br>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="customerType" placeholder="CUSTOMER TYPE ID *" />
-                                            </div><br>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="name" placeholder="NAME *" />
-                                            </div><br>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="birthDay" placeholder="DATE OF BIRTH *"/>
-                                            </div><br>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="gender" placeholder="GENDER *"/>
-                                            </div><br>
-
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="getIdCard" placeholder="ID CARD *" />
+                                            <div class="form-group" >
+                                                <label>Id</label>
+                                                <input type="text" style="border-radius: 30px" class="form-control" name="id" placeholder="ID *"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="phoneNumber" placeholder="PHONE NUMBER *" />
-                                            </div><br>
+<%--                                                <input type="text" class="form-control" name="customerType"--%>
+<%--                                                       placeholder="CUSTOMER TYPE ID *"/>--%>
+                                                <label>Select Customer Type</label>
+                                                <select name="customerType" class="form-select" aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option selected>SELECT CUSTOMER TYPE*</option>
+                                                    <option value="1">Diamond</option>
+                                                    <option value="2">Platinum</option>
+                                                    <option value="3">Gold</option>
+                                                    <option value="4">Silver</option>
+                                                    <option value="5">Member</option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            <div class="form-group" >
+                                                <label>Name</label>
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="name"
+                                                       placeholder="NAME *"/>
+                                            </div>
+                                            <br>
+                                            <div class="form-group" >
+<%--                                                <input type="text" class="form-control" name="birthDay"--%>
+<%--                                                       placeholder="DATE OF BIRTH *"/>--%>
+                                                <label for="birtdDateAdd">Birth Day</label>
+                                                <input style="border-radius: 30px" name="birthDay" id="birtdDateAdd" class="form-control" type="date"/>
+                                            </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="email" placeholder="EMAIL *" />
-                                            </div><br>
+                                                <br>
+                                                <label>Gender</label>
+                                                <select style="border-radius: 30px" name="gender" class="form-select" aria-label="Default select example"
+                                                        style="border-radius: 30px">
+                                                    <option selected>SELECT GENDER *</option>
+                                                    <option value="0">Male</option>
+                                                    <option value="1">Female</option>
+                                                </select>
+<%--                                                <input type="text" class="form-control" name="gender"--%>
+<%--                                                       placeholder="GENDER *"/>--%>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group" >
+                                                <label>Id Card</label>
+                                                <input type="text" style="border-radius: 30px" class="form-control" name="getIdCard"
+                                                       placeholder="ID CARD *"/>
+                                            </div>
+                                            <br>
+                                            <div class="form-group" >
+                                                <label >Phone Number</label>
+                                                <input type="text" style="border-radius: 30px" class="form-control" name="phoneNumber"
+                                                       placeholder="PHONE NUMBER *"/>
+                                            </div>
+                                            <br>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="address" placeholder="ADDRESS *" />
+                                                <label for="birtdDateAdd">E-mail</label>
+                                                <input type="text"  style="border-radius: 30px" class="form-control" name="email"
+                                                       placeholder="EMAIL *"/>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="birtdDateAdd">Address</label>
+                                                <input  style="border-radius: 30px" type="text" class="form-control" name="address"
+                                                       placeholder="ADDRESS *"/>
                                             </div>
                                         </div>
                                     </div>
@@ -195,7 +242,9 @@
                 <div></div>
 
             </div>
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+
+            </div>
         </div>
 
     </div>
@@ -207,5 +256,20 @@
 </div>
 
 </body>
-<script src="../../../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}</script>
+<script>
+    function idRemove(id) {
+        document.getElementById("idInput").value = id;
+    }
+</script>
 </html>

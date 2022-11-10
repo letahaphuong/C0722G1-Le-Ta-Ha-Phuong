@@ -6,12 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Furama-Danh sach dich vu</title>
-    <link rel="stylesheet" href="../../../../bootstrap-5.1.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../../view/customer/mystyle.css">
+    <title>Furama-Danh sach customer</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -124,7 +127,7 @@
                         </li>
                     </ul>
                     <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search name and address" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
 
@@ -135,7 +138,10 @@
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+                <button class="btn btn-outline-primary mt-5" type="submit" onclick="location.href='/customer'">Back
+                </button>
+            </div>
             <div class="col-lg-10">
 
                 <div class="row m-5" >
@@ -144,38 +150,50 @@
                             <div class="note align-items-center d-flex justify-content-center">
                                 <h2>EDIT CUSTOMER</h2>
                             </div>
-                            <form action="view/customer?action=edit" method="post">
+                            <c:if test="${mess!=null}">
+                                <h4 style="color: blue">${mess}</h4>
+                            </c:if>
+                            <form action="customer?action=edit" method="post">
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
-
-
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="customerType" placeholder="CUSTOMER TYPE ID *" value="${customerType}"/>
+                                                <label hidden>Id</label>
+                                                <input hidden type="text" class="form-control" name="id" placeholder="CUSTOMER ID *" value="${id}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label >Customer Type Id</label>
+                                                <input type="text" class="form-control" name="customerTypeId" placeholder="CUSTOMER TYPE ID *" value="${customerTypeId}"/>
                                             </div><br>
                                             <div class="form-group">
+                                                <label >Name</label>
                                                 <input type="text" class="form-control" name="name" placeholder="NAME *" value="${name}"/>
                                             </div><br>
                                             <div class="form-group">
+                                                <label >Date Of Birth</label>
                                                 <input type="text" class="form-control" name="birthDay" placeholder="DATE OF BIRTH *" value="${dateOfBirth}"/>
                                             </div><br>
                                             <div class="form-group">
+                                                <label >Gender</label>
                                                 <input type="text" class="form-control" name="gender" placeholder="GENDER *" value="${gender}"/>
                                             </div><br>
-
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
+                                                <label >Id Card</label>
                                                 <input type="text" class="form-control" name="getIdCard" placeholder="ID CARD *" value="${idCard}"/>
                                             </div>
                                             <br>
                                             <div class="form-group">
+                                                <label >Phone Number</label>
                                                 <input type="text" class="form-control" name="phoneNumber" placeholder="PHONE NUMBER *" value="${phoneNumber}"/>
                                             </div><br>
                                             <div class="form-group">
+                                                <label >Email</label>
                                                 <input type="text" class="form-control" name="email" placeholder="EMAIL *" value="${email}"/>
                                             </div><br>
                                             <div class="form-group">
+                                                <label >Address</label>
                                                 <input type="text" class="form-control" name="address" placeholder="ADDRESS *" value="${address}"/>
                                             </div>
                                         </div>
@@ -205,5 +223,20 @@
 </div>
 
 </body>
-<script src="../../../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}</script>
+<script>
+    function idRemove(id) {
+        document.getElementById("idInput").value=id;
+    }
+</script>
 </html>

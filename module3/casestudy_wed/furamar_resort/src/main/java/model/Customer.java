@@ -2,7 +2,8 @@ package model;
 
 public class Customer {
     private int id;
-    private String customerType;
+    private int customerTypeId;
+    private String nameCustomerType;
     private String name;
     private String dateOfBirth;
     private boolean gender;
@@ -14,9 +15,22 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, String customerType, String name, String dateOfBirth, boolean gender, String idCard, String phoneNumber, String email, String address) {
+    public Customer(int id, int customerTypeId, String nameCustomerType, String name, String dateOfBirth, boolean gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
-        this.customerType = customerType;
+        this.customerTypeId = customerTypeId;
+        this.nameCustomerType = nameCustomerType;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer( int customerTypeId, String name, String dateOfBirth, boolean gender, String idCard, String phoneNumber, String email, String address,int id) {
+        this.id = id;
+        this.customerTypeId = customerTypeId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -34,12 +48,20 @@ public class Customer {
         this.id = id;
     }
 
-    public String getCustomerType() {
-        return customerType;
+    public int getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomerType(String customerType) {
-        this.customerType = customerType;
+    public void setCustomerTypeId(int customerTypeId) {
+        this.customerTypeId = customerTypeId;
+    }
+
+    public String getNameCustomerType() {
+        return nameCustomerType;
+    }
+
+    public void setNameCustomerType(String nameCustomerType) {
+        this.nameCustomerType = nameCustomerType;
     }
 
     public String getName() {

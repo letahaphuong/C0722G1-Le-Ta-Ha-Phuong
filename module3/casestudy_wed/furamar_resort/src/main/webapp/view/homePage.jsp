@@ -99,16 +99,16 @@
                                        href="/customer">Diamond</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href=#">Platinium</a>
+                                       href="/customer">Platinium</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="#">Gold</a>
+                                       href="/customer">Gold</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="#">Silver</a>
+                                       href="/customer">Silver</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="#">Member</a>
+                                       href="/customer">Member</a>
                                 </li>
 
                             </ul>
@@ -120,13 +120,13 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarService">
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_facility.html?_ijt=54bbo2t15k9rpj1hh5v7cevh83">Villa</a>
+                                       href="/facility">Villa</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_facility.html?_ijt=54bbo2t15k9rpj1hh5v7cevh83">House</a>
+                                       href="/facility">House</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_facility.html?_ijt=54bbo2t15k9rpj1hh5v7cevh83">Room</a>
+                                       href="/facility">Room</a>
                                 </li>
                             </ul>
                         </li>

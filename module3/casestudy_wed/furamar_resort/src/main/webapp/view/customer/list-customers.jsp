@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
+
 
 </head>
 <body>
@@ -141,8 +143,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <form action="view/customer?action=findByName" method="post" class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="customer?action=search" method="post"
+                          class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                        <input class="form-control me-2" type="text" placeholder="Search name or address" name="search"
+                               aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
 
@@ -152,11 +156,17 @@
     </div>
 
     <div class="row text-center align-items-end" style="height: 10%">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4"><h3 class="mb-4">LIST CUSTOMER</h3></div>
+        <div class="col-lg-4">
+            <div class="container"><c:if test="${mess!=null}">
+                <h4 style="color: blue">${mess}</h4>
+            </c:if></div>
+
+        </div>
+        <div class="col-lg-4"><h3 class="mb-4">LIST CUSTOMER</h3>
+        </div>
         <div class="col-lg-4">
             <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
-                <button onclick="location.href='view/customer?action=add'" class="btn btn-outline-success" type="button" >
+                <button onclick="location.href='/customer?action=add'" class="btn btn-outline-success" type="button">
                     Add
                 </button>
             </form>
@@ -168,11 +178,11 @@
         <div class="col-lg-8" style="border-top: 2px solid black">
 
             <div>
-                <table class="table table-striped table-hover">
-
+                <table id="tableCustomer" class="table table-striped table-hover table-bordered" style="width: 100%">
+                    <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">CUSTOMER TYPE</th> <!--CUSTOMER TYPE ID-->
+                        <th scope="col">STATUS</th>
+                        <th scope="col">NAME CUSTOMER TYPE</th> <!--CUSTOMER TYPE ID-->
                         <th scope="col">NAME</th>
                         <th scope="col">DATE OF BIRTH</th>
                         <th scope="col">GENDER</th>
@@ -180,39 +190,60 @@
                         <th scope="col">PHONE NUMBER</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">ADDRESS</th>
+                        <th scope="col">EDIT</th>
+                        <th scope="col">ROMVE</th>
                     </tr>
-                    <c:forEach var="customer" items="${customerList}">
+                    </thead>
+                    <tbody>
+                    <c:forEach var="customer" items="${customerList}" varStatus="status">
                         <tr class="text-center">
-                            <th scope="row">${customer.getId}</th>
-                            <td>${customer.getCustomerType}</td>
-                            <td>${customer.getName}</td>
-                            <td>${customer.getDateOfBirth}</td>
-                            <td>${customer.isGender}</td>
-                            <td>${customer.getIdCard}</td>
-                            <td>${customer.getPhoneNumber}</td>
-                            <td>${customer.getEmail}</td>
-                            <td>${customer.getAddress}</td>
+                            <th>${status.count}</th>
+
+                            <td>${customer.getNameCustomerType()}</td>
+                            <td>${customer.getName()}</td>
+                            <td>${customer.getDateOfBirth()}</td>
+                            <c:if test="${customer.isGender()}">
+                                <td>Female</td>
+                            </c:if>
+                            <c:if test="${!customer.isGender()}">
+                                <td>Male</td>
+                            </c:if>
+                            <td>${customer.getIdCard()}</td>
+                            <td>${customer.getPhoneNumber()}</td>
+                            <td>${customer.getEmail()}</td>
+                            <td>${customer.getAddress()}</td>
                             <td>
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                    <button onclick="location.href='view/customer?action=edit&id=${customer.getId()}'" class="btn btn-outline-success" type="button">Edit
+                                    <button onclick="location.href='customer?action=edit&id=${customer.getId()}'"
+                                            class="btn btn-outline-success" type="button">
+                                        Edit
                                     </button>
                                 </form>
                             </td>
                             <td>
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                    <button onclick="location.href='view/customer?action=remove&id=${customer.getId()}'" class="btn btn-outline-success" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">
-                                    >Remove
+                                    <button onclick="idRemove('${customer.getId()}','${customer.getName()}')"
+                                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" >
+                                        Remove
                                     </button>
                                 </form>
                             </td>
                         </tr>
                     </c:forEach>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
     <div class="col-lg-2"></div>
+</div>
+
+<footer class="bg-light text-center text-lg-start position-fixed" style="height: 5%;width: 100%">
+    <div class="text-center text-white p-3" style="background-color:#046056 ;">
+        © 2022 Phuong Le Ta Ha
+    </div>
+</footer>
 </div>
 <%-- REMOVE--%>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -225,26 +256,20 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                Are you sure to delete???
+                <span>Are you sure to delete:  <span style="color: #db365d " id="deleteModal"></span></span>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
                 </button>
-                <form action="view/customer?action=remove" method="post">
-                    <input type="hidden" name="id" id="idInput">
+                <form action="/customer?action=remove" method="post">
+                    <input type="hidden" name="id"  id="idInput">
                     <button class="btn btn-primary">Delete</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<footer class="bg-light text-center text-lg-start position-fixed" style="height: 5%;width: 100%">
-    <div class="text-center text-white p-3" style="background-color:#046056 ;">
-        © 2022 Phuong Le Ta Ha
-    </div>
-</footer>
-</div>
+
 <!-- ADD -->
 <div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabelAdd" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -357,7 +382,6 @@
                                     <div class="col-md-6">
                                         <label>Select Customer</label>
                                         <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="CUSTOMER TYPE ID *" value=""/>-->
                                             <select class="form-select" aria-label="Default select example"
                                                     style="border-radius: 30px">
                                                 <option selected>SELECT CUSTOMER *</option>
@@ -373,7 +397,6 @@
                                             <input type="text" class="form-control" placeholder="NAME *" value=""/>
                                         </div>
                                         <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="DATE OF BIRTH *" value=""/>-->
                                             <label for="birtdDateEdit">Birth Day</label>
                                             <input id="birtdDateEdit" class="form-control" type="date"/>
                                         </div>
@@ -405,7 +428,6 @@
                                     </div>
                                 </div>
                                 <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                     </button>
@@ -416,42 +438,6 @@
                     </div>
 
                 </div>
-            </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--            </div>-->
-        </div>
-    </div>
-</div>
-
-<!-- Notification success-->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <img src="..." class="rounded me-2" alt="...">
-            <strong class="me-auto">Notification</strong>
-            <small>just now</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            Successful!
-        </div>
-    </div>
-</div>
-<!-- Notification LOG OUT-->
-<div class="modal fade" id="exampleModalLogOut" tabindex="-1" aria-labelledby="exampleModalLabelLogOut"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-success" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelLogOut">Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <p class="mt-2 ms-3">Are you sure to log-out?</p>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="liveToastBtnLogOut">Keep Log-Out</button>
             </div>
         </div>
     </div>
@@ -469,8 +455,21 @@ if (toastTrigger) {
     })
 }</script>
 <script>
-    function idRemove(id) {
-        document.getElementById("idInput").value=id;
+    function idRemove(id,name) {
+        document.getElementById("idInput").value = id;
+        document.getElementById("deleteModal").innerText=name;
     }
+</script>
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 3
+        })
+    })
 </script>
 </html>
