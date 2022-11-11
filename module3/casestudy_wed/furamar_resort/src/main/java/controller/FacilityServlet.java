@@ -193,7 +193,7 @@ public class FacilityServlet extends HttpServlet {
         request.setAttribute("area", facility.getArea());
         request.setAttribute("cost", facility.getCost());
         request.setAttribute("maxPeople", facility.getMaxPeople());
-        request.setAttribute("rentTypeId", facility.getFacilityTypeId());
+        request.setAttribute("rentTypeId", facility.getRentTypeId());
         request.setAttribute("facilityTypeId", facility.getFacilityTypeId());
         request.setAttribute("standardRoom", facility.getStandardRoom());
         request.setAttribute("descriptionOtherConvenience", facility.getDescriptionOtherConvenience());
