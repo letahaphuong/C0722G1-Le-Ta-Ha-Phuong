@@ -162,7 +162,7 @@
                                                 <label>Facility Type Name</label>
                                                 <select  name="facilityTypeId" class="form-select bg-success" aria-label="Default select example"
                                                          style="border-radius: 30px">
-                                                    <option value="3" selected style="color: white" >Room</option>
+                                                    <option value="2" selected style="color: white" >House</option>
                                                 </select>
                                             </div>
                                             <br>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -182,7 +183,8 @@
                                                 <br>
                                                 <div class="form-group">
                                                     <lable>Max PeoPle</lable>
-                                                    <select name="maxPeople" class="form-select" aria-label="Default select example"
+                                                    <select name="maxPeople" class="form-select"
+                                                            aria-label="Default select example"
                                                             style="border-radius: 30px">
                                                         <option value="1" ${maxPeople == 1?"selected":""}>1</option>
                                                         <option value="2"${maxPeople == 2?"selected":""}>2</option>
@@ -195,33 +197,38 @@
                                                         <option value="9"${maxPeople == 9?"selected":""}>9</option>
                                                         <option value="10"${maxPeople == 10?"selected":""}>10</option>
                                                     </select>
-<%--                                                    <input type="text" class="form-control" name="maxPeople"--%>
-<%--                                                           placeholder="maxPeople *" value="${maxPeople}"/>--%>
+                                                    <%--                                                    <input type="text" class="form-control" name="maxPeople"--%>
+                                                    <%--                                                           placeholder="maxPeople *" value="${maxPeople}"/>--%>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
                                                     <label>Rent Type</label>
-                                                    <select name="rentTypeId" class="form-select" aria-label="Default select example"
+                                                    <select name="rentTypeId" class="form-select"
+                                                            aria-label="Default select example"
                                                             style="border-radius: 30px">
-                                                        <option value="1" ${rentTypeId == 1?"selected":""}>year</option>
+                                                        <option value="1"${rentTypeId == 1?"selected":""}>year</option>
                                                         <option value="2"${rentTypeId == 2?"selected":""}>month</option>
                                                         <option value="3"${rentTypeId == 3?"selected":""}>day</option>
                                                         <option value="4"${rentTypeId == 4?"selected":""}>hour</option>
                                                     </select>
-<%--                                                    <input type="text" class="form-control" name="rentTypeId"--%>
-<%--                                                           placeholder="rentTypeId *" value="${rentTypeId}"/>--%>
+                                                    <%--                                                    <input type="text" class="form-control" name="rentTypeId"--%>
+                                                    <%--                                                           placeholder="rentTypeId *" value="${rentTypeId}"/>--%>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
                                                     <label>Facility Type</label>
-                                                    <select name="facilityTypeId" class="form-select" aria-label="Default select example"
+                                                    <select name="facilityTypeId" class="form-select"
+                                                            aria-label="Default select example"
                                                             style="border-radius: 30px">
-                                                        <option value="1" ${facilityTypeId == 1?"selected":""}>Villa</option>
-                                                        <option value="2"${facilityTypeId == 2?"selected":""}>House</option>
-                                                        <option value="3"${facilityTypeId == 3?"selected":""}>Room</option>
+                                                        <option value="1" ${facilityTypeId == 1?"selected":""}>Villa
+                                                        </option>
+                                                        <option value="2"${facilityTypeId == 2?"selected":""}>House
+                                                        </option>
+                                                        <option value="3"${facilityTypeId == 3?"selected":""}>Room
+                                                        </option>
                                                     </select>
-<%--                                                    <input type="text" class="form-control" name="facilityTypeId"--%>
-<%--                                                           placeholder="facilityTypeId *" value="${facilityTypeId}"/>--%>
+                                                    <%--                                                    <input type="text" class="form-control" name="facilityTypeId"--%>
+                                                    <%--                                                           placeholder="facilityTypeId *" value="${facilityTypeId}"/>--%>
                                                 </div>
                                                 <br>
                                             </div>
@@ -241,23 +248,63 @@
                                                            value="${descriptionOtherConvenience}"/>
                                                 </div>
                                                 <br>
-                                                <div class="form-group">
-                                                    <label>Pool Area</label>
-                                                    <input type="text" class="form-control" name="poolArea"
-                                                           placeholder="poolArea *" value="${poolArea}"/>
-                                                </div>
-                                                <br>
-                                                <div class="form-group">
-                                                    <label>Number Of Floors</label>
-                                                    <input type="text" class="form-control" name="numberOfFloors"
-                                                           placeholder="numberOfFloors *" value="${numberOfFloors}"/>
-                                                </div>
-                                                <br>
-                                                <div class="form-group">
-                                                    <label> Facility Free</label>
-                                                    <input type="text" class="form-control" name="facilityFree"
-                                                           placeholder="facilityFree *" value="${facilityFree}"/>
-                                                </div>
+                                                <c:if test="${(facilityTypeId==1)}">
+                                                    <div class="form-group">
+                                                        <label>Pool Area</label>
+                                                        <input type="text" class="form-control" name="poolArea"
+                                                               placeholder="poolArea *" value="${poolArea}"/>
+                                                    </div>
+                                                    <br>
+                                                    <div hidden class="form-group">
+                                                        <label>Number Of Floors</label>
+                                                        <input type="text" class="form-control" name="numberOfFloors"
+                                                               placeholder="numberOfFloors *" value="${0}"/>
+                                                    </div>
+                                                    <div hidden class="form-group">
+                                                        <label> Facility Free</label>
+                                                        <input type="text" class="form-control" name="facilityFree"
+                                                               placeholder="facilityFree *" value="${null}"/>
+                                                    </div>
+                                                </c:if>
+                                                <c:if test="${!(facilityTypeId==3)}">
+                                                    <div class="form-group">
+                                                        <label>Number Of Floors</label>
+                                                        <input type="text" class="form-control" name="numberOfFloors"
+                                                               placeholder="numberOfFloors *" value="${numberOfFloors}"/>
+                                                    </div>
+                                                    <br>
+                                                    <div hidden class="form-group">
+                                                        <label>Pool Area</label>
+                                                        <input type="text" class="form-control" name="poolArea"
+                                                               placeholder="poolArea *" value="${0}"/>
+                                                    </div>
+                                                    <br>
+
+                                                    <div hidden class="form-group">
+                                                        <label> Facility Free</label>
+                                                        <input type="text" class="form-control" name="facilityFree"
+                                                               placeholder="facilityFree *" value="${null}"/>
+                                                    </div>
+                                                </c:if>
+
+                                                <c:if test="${(facilityTypeId==3)}">
+                                                    <div class="form-group">
+                                                        <label> Facility Free</label>
+                                                        <input type="text" class="form-control" name="facilityFree"
+                                                               placeholder="facilityFree *" value="${facilityFree}"/>
+                                                    </div>
+                                                    <div hidden class="form-group">
+                                                        <label>Pool Area</label>
+                                                        <input type="text" class="form-control" name="poolArea"
+                                                               placeholder="poolArea *" value="${0}"/>
+                                                    </div>
+                                                    <div hidden class="form-group">
+                                                        <label>Number Of Floors</label>
+                                                        <input type="text" class="form-control" name="numberOfFloors"
+                                                               placeholder="numberOfFloors *" value="${0}"/>
+                                                    </div>
+                                                </c:if>
+
                                             </div>
                                         </div>
                                         <br>

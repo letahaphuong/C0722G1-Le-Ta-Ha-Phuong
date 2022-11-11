@@ -165,7 +165,7 @@
                                                 <label >Customer Type Name</label>
                                                 <select name="customerTypeId" class="form-select" aria-label="Default select example"
                                                         style="border-radius: 30px">
-                                                    <option value="1" ${customerTypeId == 1?"selected":""}>Diamond</option>
+                                                    <option value="1"${customerTypeId == 1?"selected":""}>Diamond</option>
                                                     <option value="2"${customerTypeId == 2?"selected":""}>Platinum</option>
                                                     <option value="3"${customerTypeId == 3?"selected":""}>Gold</option>
                                                     <option value="4"${customerTypeId == 4?"selected":""}>Silver</option>
