@@ -14,9 +14,9 @@ import java.util.List;
 
 public class FacilityRepository implements IFacilityRepository {
     private static final String INSERT_FACILITY = "CALL add_facility( ?, ?,?,?,?,?,?,?, ?,?,?);";
-    private static final String SELECT_USER_BY_NAME = "select * from facility where `name` =?;";
+    private static final String SEARCH_FACILITY = "select * from facility where `name` =?;";
     private static final String SELECT_ALL_FACILITY = "CALL display_all_facility();";
-    private static final String DELETE_USERS_SQL = "delete from facility where id = ?;";
+    private static final String DELETE_FACILITY = "call delete_facility(?);";
     private static final String UPDATE_FACILITY = "CALL update_facility(?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?,?);";
 
     @Override
@@ -45,7 +45,14 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public List<Facility> findByName(String str) {
+    public List<Facility> search(String search) {
+        Connection connection=BaseRepository.getConnectDB();
+        List<Customer> customerList=new ArrayList<>();
+        try {
+            PreparedStatement ps=connection.prepareStatement(SEARCH_FACILITY);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return null;
     }
 
@@ -83,6 +90,14 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public boolean remove(int id) {
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(DELETE_FACILITY);
+            ps.setInt(1, id);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return false;
     }
 

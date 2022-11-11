@@ -137,105 +137,138 @@
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
-            <div class="col-lg-1">
-                <button class="btn btn-outline-primary" onclick="location.href='/facility'">Back</button>
+            <div class="col-lg-1 ">
+
             </div>
+
             <div class="col-lg-10">
 
                 <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>EDIT FACILITY</h2>
-                            </div>
-                            <form action="/facility?action=edit" method="post">
-                                <div class="form-content">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div hidden class="form-group">
-                                                <label >Id</label>
-                                                <input type="text" class="form-control" name="id"
-                                                       placeholder="id *" value="${id}"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label >Name</label>
-                                                <input type="text" class="form-control" name="name"
-                                                       placeholder="name *" value="${name}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <lable>Area</lable>
-                                                <input type="text" class="form-control" name="area"
-                                                       placeholder="area *" value="${area}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <lable>Cost</lable>
-                                                <input type="text" class="form-control" name="cost"
-                                                       placeholder="cost *" value="${cost}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <lable>Max PeoPle</lable>
-                                                <input type="text" class="form-control" name="maxPeople"
-                                                       placeholder="maxPeople *" value="${maxPeople}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label>Rent Type</label>
-                                                <input type="text" class="form-control" name="rentTypeId"
-                                                       placeholder="rentTypeId *" value="${rentTypeId}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label>Facility Type</label>
-                                                <input type="text" class="form-control" name="facilityTypeId"
-                                                       placeholder="facilityTypeId *" value="${facilityTypeId}"/>
-                                            </div>
-                                            <br>
-                                        </div>
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label>Standard Room</label>
-                                                <input type="text" class="form-control" name="standardRoom"
-                                                       placeholder="standardRoom *" value="${standardRoom}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label>Description Other Convenience</label>
-                                                <input type="text" class="form-control"
-                                                       name="descriptionOtherConvenience"
-                                                       placeholder="descriptionOtherConvenience *"
-                                                       value="${descriptionOtherConvenience}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label>Pool Area</label>
-                                                <input type="text" class="form-control" name="poolArea"
-                                                       placeholder="poolArea *" value="${poolArea}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label>Number Of Floors</label>
-                                                <input type="text" class="form-control" name="numberOfFloors"
-                                                       placeholder="numberOfFloors *" value="${numberOfFloors}"/>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                               <label> Facility Free</label>
-                                                <input type="text" class="form-control" name="facilityFree"
-                                                       placeholder="facilityFree *" value="${facilityFree}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <button type="submit" class="btn btn-outline-success">Submit</button>
+                    <div class="col-lg-1">
+                        <button class="btn btn-outline-primary" onclick="location.href='/facility'">Back</button>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="container register-form">
+                            <div class="form">
+                                <div class="note align-items-center d-flex justify-content-center">
+                                    <h2>EDIT FACILITY</h2>
                                 </div>
-                            </form>
+                                <form action="/facility?action=edit" method="post">
+                                    <div class="form-content">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div hidden class="form-group">
+                                                    <label>Id</label>
+                                                    <input type="text" class="form-control" name="id"
+                                                           placeholder="id *" value="${id}"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" name="name"
+                                                           placeholder="name *" value="${name}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <lable>Area</lable>
+                                                    <input type="text" class="form-control" name="area"
+                                                           placeholder="area *" value="${area}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <lable>Cost</lable>
+                                                    <input type="text" class="form-control" name="cost"
+                                                           placeholder="cost *" value="${cost}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <lable>Max PeoPle</lable>
+                                                    <select name="maxPeople" class="form-select" aria-label="Default select example"
+                                                            style="border-radius: 30px">
+                                                        <option value="1" ${maxPeople == 1?"selected":""}>1</option>
+                                                        <option value="2"${maxPeople == 2?"selected":""}>2</option>
+                                                        <option value="3"${maxPeople == 3?"selected":""}>3</option>
+                                                        <option value="4"${maxPeople == 4?"selected":""}>4</option>
+                                                        <option value="5"${maxPeople == 5?"selected":""}>5</option>
+                                                        <option value="6"${maxPeople == 6?"selected":""}>6</option>
+                                                        <option value="7"${maxPeople == 7?"selected":""}>7</option>
+                                                        <option value="8"${maxPeople == 8?"selected":""}>8</option>
+                                                        <option value="9"${maxPeople == 9?"selected":""}>9</option>
+                                                        <option value="10"${maxPeople == 10?"selected":""}>10</option>
+                                                    </select>
+<%--                                                    <input type="text" class="form-control" name="maxPeople"--%>
+<%--                                                           placeholder="maxPeople *" value="${maxPeople}"/>--%>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Rent Type</label>
+                                                    <select name="rentTypeId" class="form-select" aria-label="Default select example"
+                                                            style="border-radius: 30px">
+                                                        <option value="1" ${rentTypeId == 1?"selected":""}>year</option>
+                                                        <option value="2"${rentTypeId == 2?"selected":""}>month</option>
+                                                        <option value="3"${rentTypeId == 3?"selected":""}>day</option>
+                                                        <option value="4"${rentTypeId == 4?"selected":""}>hour</option>
+                                                    </select>
+<%--                                                    <input type="text" class="form-control" name="rentTypeId"--%>
+<%--                                                           placeholder="rentTypeId *" value="${rentTypeId}"/>--%>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Facility Type</label>
+                                                    <select name="facilityTypeId" class="form-select" aria-label="Default select example"
+                                                            style="border-radius: 30px">
+                                                        <option value="1" ${facilityTypeId == 1?"selected":""}>Villa</option>
+                                                        <option value="2"${facilityTypeId == 2?"selected":""}>House</option>
+                                                        <option value="3"${facilityTypeId == 3?"selected":""}>Room</option>
+                                                    </select>
+<%--                                                    <input type="text" class="form-control" name="facilityTypeId"--%>
+<%--                                                           placeholder="facilityTypeId *" value="${facilityTypeId}"/>--%>
+                                                </div>
+                                                <br>
+                                            </div>
+                                            <div class="col-md-6">
 
+                                                <div class="form-group">
+                                                    <label>Standard Room</label>
+                                                    <input type="text" class="form-control" name="standardRoom"
+                                                           placeholder="standardRoom *" value="${standardRoom}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Description Other Convenience</label>
+                                                    <input type="text" class="form-control"
+                                                           name="descriptionOtherConvenience"
+                                                           placeholder="descriptionOtherConvenience *"
+                                                           value="${descriptionOtherConvenience}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Pool Area</label>
+                                                    <input type="text" class="form-control" name="poolArea"
+                                                           placeholder="poolArea *" value="${poolArea}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label>Number Of Floors</label>
+                                                    <input type="text" class="form-control" name="numberOfFloors"
+                                                           placeholder="numberOfFloors *" value="${numberOfFloors}"/>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label> Facility Free</label>
+                                                    <input type="text" class="form-control" name="facilityFree"
+                                                           placeholder="facilityFree *" value="${facilityFree}"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-outline-success">Submit</button>
+                                    </div>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-1"></div>
 
                 </div>
 

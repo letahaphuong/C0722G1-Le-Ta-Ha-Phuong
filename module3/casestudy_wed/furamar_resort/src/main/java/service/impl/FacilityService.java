@@ -16,8 +16,8 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public List<Facility> findByName(String str) {
-        return null;
+    public List<Facility> search(String search) {
+        return facilityRepository.search(search);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public boolean remove(int id) {
-        return false;
+        return facilityRepository.remove(id);
     }
 
     @Override

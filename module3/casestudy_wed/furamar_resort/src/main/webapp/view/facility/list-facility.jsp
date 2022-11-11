@@ -11,9 +11,9 @@
 <head>
     <title>Furama List facility</title>
     <link rel="stylesheet" href="customer/mystyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="datatables/scc/dataTables.bootstrap5.min.css">
 
 
 </head>
@@ -146,8 +146,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3" action="/facility?action=search"
+                          method="post">
+                        <input name="search" class="form-control me-2" type="search" placeholder="Search"
+                               aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
 
@@ -162,65 +164,75 @@
         <div class="col-lg-1">
             <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-2">
                 <button onclick="location.href='/facility?action=add'" class="btn btn-outline-success" type="button">
-                     Add
+                    Add
                 </button>
             </form>
         </div>
 
     </div>
-    <div class="container"></div>
     <div class="row" style="height: 65%">
-        <div>
-            <table id="tableFacility" class="table table-striped table-hover table-bordered" style="width: 100%" >
-                <thead>
-                <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">NAME</th>
-                    <th scope="col">AREA</th>
-                    <th scope="col">COST</th>
-                    <th scope="col">MAX PEOPLE</th>
-                    <th scope="col">RENT TYPE NAME</th>
-                    <th scope="col">FACILITY TYPE NAME</th>
-                    <th scope="col">STANDARD ROOM</th>
-                    <th scope="col">PREDESCRIPTION OTHER CONVENIENCE</th>
-                    <th scope="col">POOL AREA</th>
-                    <th scope="col">NUMBER OF FLOORS</th>
-                    <th scope="col">FACILITY FREE</th>
-                    <th scope="col">EDIT</th>
-                    <th scope="col">REMOVE</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="facility" items="${facilityList}" varStatus="status">
-                    <tr class="text-center">
-                        <th hidden>${facility.getId()}</th>
-                        <th>${status.count}</th>
-                        <td>${facility.getName()}</td>
-                        <td>${facility.getArea()}</td>
-                        <td>${facility.getCost()}</td>
-                        <td>${facility.getMaxPeople()}</td>
-                        <td>${facility.getRentTypeName()}</td>
-                        <td>${facility.getFacilityTypeName()}</td>
-                        <td>${facility.getStandardRoom()}</td>
-                        <td>${facility.getDescriptionOtherConvenience()}</td>
-                        <td>${facility.getPoolArea()}</td>
-                        <td>${facility.getNumberOfFloors()}</td>
-                        <td>${facility.getFacilityFree()}</td>
-                        <td>
-                            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                <button onclick="location.href='facility?action=edit&id=${facility.getId()}'" class="btn btn-outline-success" type="button">Edit</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                <button onclick="location.href='view/facility?action=remove&id=${facility.getId()}'" class="btn btn-outline-success">Remove</button>
-                            </form>
-                        </td>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div>
+                <table id="tableFacility" class="table table-striped table-hover table-bordered" style="width: 100%">
+                    <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th hidden scope="col">ID CLASS</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">AREA</th>
+                        <th scope="col">COST</th>
+                        <th scope="col">MAX PEOPLE</th>
+                        <th scope="col">RENT TYPE NAME</th>
+                        <th scope="col">FACILITY TYPE NAME</th>
+                        <th scope="col">STANDARD ROOM</th>
+                        <th scope="col">PREDESCRIPTION OTHER CONVENIENCE</th>
+                        <th scope="col">POOL AREA</th>
+                        <th scope="col">NUMBER OF FLOORS</th>
+                        <th scope="col">FACILITY FREE</th>
+                        <th scope="col">EDIT</th>
+                        <th scope="col">REMOVE</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="facility" items="${facilityList}" varStatus="status">
+                        <tr class="text-center">
+                            <th hidden>${facility.getId()}</th>
+                            <th>${status.count}</th>
+                            <td>${facility.getName()}</td>
+                            <td>${facility.getArea()}</td>
+                            <td>${facility.getCost()}</td>
+                            <td>${facility.getMaxPeople()}</td>
+                            <td>${facility.getRentTypeName()}</td>
+                            <td>${facility.getFacilityTypeName()}</td>
+                            <td>${facility.getStandardRoom()}</td>
+                            <td>${facility.getDescriptionOtherConvenience()}</td>
+                            <td>${facility.getPoolArea()}</td>
+                            <td>${facility.getNumberOfFloors()}</td>
+                            <td>${facility.getFacilityFree()}</td>
+                            <td>
+                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                                    <button onclick="location.href='facility?action=edit&id=${facility.getId()}'"
+                                            class="btn btn-outline-success" type="button">Edit
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                                    <button onclick="idRemove('${facility.getId()}','${facility.getName()}')"
+                                            class="btn btn-outline-success" data-bs-toggle="modal"
+                                            type="button" data-bs-target="#exampleModalRemove">Remove
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
+        <div class="col-lg-1"></div>
     </div>
     <footer class="bg-light text-center text-lg-start position-fixed" style="height: 5%;width: 100%">
         <div class="text-center text-white p-3" style="background-color:#046056 ;">
@@ -228,198 +240,7 @@
         </div>
     </footer>
 </div>
-<!-- ADD -->
-<div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabelAdd" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelAdd">Facility</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>ADD FACILITY</h2>
-                            </div>
 
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="ID *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Area *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Cost *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Max People *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Rent Type Id *"
-                                                   value=""/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Facility Type ID *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Standard Room Id *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"
-                                                   placeholder="Description Other Convenience *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Pool Area *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Number Of Floors *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Facility Free *"
-                                                   value=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Summit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--            </div>-->
-        </div>
-    </div>
-</div>
-<!-- EDIT -->
-<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabelEdit" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelEdit">Facility</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>EDIT FACILITY</h2>
-                            </div>
-
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Area *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Cost *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Max People *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Rent Type Id *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Facility Type ID *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Standard Room Id *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"
-                                                   placeholder="Description Other Convenience *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Pool Area *" value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Number Of Floors *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Facility Free *"
-                                                   value=""/>
-                                        </div>
-                                        <br>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--            </div>-->
-        </div>
-    </div>
-</div>
 <!-- REMOVE -->
 <div class="modal fade" id="exampleModalRemove" tabindex="-1" aria-labelledby="exampleModalLabelRemove"
      aria-hidden="true">
@@ -429,45 +250,21 @@
                 <h5 class="modal-title text-white" id="exampleModalLabelRemove">Facility</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <p class="mt-2 ms-3">Are you sure to delete?</p>
+            <div class="modal-body">
+                <span class="mt-2 ms-3">Are you sure to delete: </span><span style="color: #db365d"
+                                                                             id="deleteModal"></span>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="liveToastBtnRemove">DELETE</button>
+                <form action="/facility?action=remove" method="post">
+                    <input type="hidden" hidden name="id" id="idInput">
+                    <button class="btn btn-success">DELETE</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<!-- Notification success-->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <img src="..." class="rounded me-2" alt="...">
-            <strong class="me-auto">Notification</strong>
-            <small>just now</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            Successful!
-        </div>
-    </div>
-</div>
-<!-- Notification LOG OUT-->
-<div class="modal fade" id="exampleModalLogOut" tabindex="-1" aria-labelledby="exampleModalLabelLogOut"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-success" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelLogOut">Facility</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <p class="mt-2 ms-3">Are you sure to log-out?</p>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="liveToastBtnLogOut">Keep Log-Out</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -476,14 +273,13 @@ var toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
     toastTrigger.addEventListener('click', function () {
         var toast = new bootstrap.Toast(toastLiveExample)
-
         toast.show()
     })
 }</script>
 <script>
-    function idRemove(id,name) {
+    function idRemove(id, name) {
         document.getElementById("idInput").value = id;
-        document.getElementById("deleteModal").innerText=name;
+        document.getElementById("deleteModal").innerText = name;
     }
 </script>
 <script src="/jquery/jquery-3.5.1.min.js"></script>
@@ -491,10 +287,12 @@ if (toastTrigger) {
 <script src="/datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#tableStudent').dataTable({
+        debugger
+        $('#tableFacility').dataTable({
+
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 5
+            "pageLength": 4
         })
     })
 </script>

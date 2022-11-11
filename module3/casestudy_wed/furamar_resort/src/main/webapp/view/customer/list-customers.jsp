@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
 
 
@@ -259,11 +260,11 @@
                 <span>Are you sure to delete:  <span style="color: #db365d " id="deleteModal"></span></span>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                 </button>
                 <form action="/customer?action=remove" method="post">
                     <input type="hidden" name="id"  id="idInput">
-                    <button class="btn btn-primary">Delete</button>
+                    <button class="btn btn-primary">DELETE</button>
                 </form>
             </div>
         </div>
@@ -445,7 +446,8 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous">var toastTrigger = document.getElementById('liveToastBtn')
+        crossorigin="anonymous">
+    var toastTrigger = document.getElementById('liveToastBtn')
 var toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
     toastTrigger.addEventListener('click', function () {

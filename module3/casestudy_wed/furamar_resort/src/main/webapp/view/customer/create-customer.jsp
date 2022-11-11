@@ -186,7 +186,8 @@
 <%--                                                <input type="text" class="form-control" name="birthDay"--%>
 <%--                                                       placeholder="DATE OF BIRTH *"/>--%>
                                                 <label for="birtdDateAdd">Birth Day</label>
-                                                <input style="border-radius: 30px" name="birthDay" id="birtdDateAdd" class="form-control" type="date"/>
+                                                <input style="border-radius: 30px" value="${customer.getDateOfBirth()}" name="birthDay" id="birtdDateAdd" class="form-control" type="date"/>
+
                                             </div>
                                             <div class="form-group">
                                                 <br>

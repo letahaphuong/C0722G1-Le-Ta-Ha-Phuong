@@ -8,7 +8,7 @@ import java.util.List;
 public interface IFacilityService {
     boolean add(Facility facility);
 
-    List<Facility> findByName(String str);
+    List<Facility> search(String search);
 
     List<Facility> findAll();
 

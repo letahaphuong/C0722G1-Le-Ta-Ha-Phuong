@@ -31,12 +31,30 @@ public class FacilityServlet extends HttpServlet {
                 update(request, response);
                 break;
             case "remove":
-//                remove(request, response);
-            case "findByName":
-//                showfindByName(request,response);
+                remove(request, response);
+            case "search":
+                searchFacility(request,response);
                 break;
             default:
         }
+    }
+
+    private void searchFacility(HttpServletRequest request, HttpServletResponse response) {
+        String search=request.getParameter("search");
+    }
+
+    private void remove(HttpServletRequest request, HttpServletResponse response) {
+        int id =Integer.parseInt(request.getParameter("id"));
+        boolean check = facilityService.remove(id);
+
+        String mess;
+        if (check){
+            mess="DELETE WELL DONE";
+        }else {
+            mess= "DELETE ERROR";
+        }
+        request.setAttribute("mess",mess);
+        showList(request,response);
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) {
