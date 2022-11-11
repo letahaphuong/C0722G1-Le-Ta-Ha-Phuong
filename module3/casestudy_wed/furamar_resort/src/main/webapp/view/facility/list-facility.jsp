@@ -160,14 +160,27 @@
 
     <div class="row text-center align-items-end" style="height: 10%;border-bottom: 2px solid black">
         <div class="col-lg-1"></div>
-        <div class="col-lg-10"><h3 class="mb-4">LIST FACILITY</h3></div>
-        <div class="col-lg-1">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6"><h3 class="mb-4">LIST FACILITY</h3></div>
+        <div class="col-lg-2 d-flex justify-content-around">
             <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-2">
-                <button onclick="location.href='/facility?action=add'" class="btn btn-outline-success" type="button">
-                    Add
+                <button onclick="location.href='/facility?action=addVilla'" class="btn btn-outline-success" type="button">
+                    +Villa
+                </button>
+            </form>
+            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-2">
+                <button onclick="location.href='/facility?action=addHouse'" class="btn btn-outline-success" type="button">
+                    +House
+                </button>
+            </form>
+            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-2">
+                <button onclick="location.href='/facility?action=addRoom'" class="btn btn-outline-success"
+                        type="button">
+                    +Room
                 </button>
             </form>
         </div>
+        <div class="col-lg-1"></div>
 
     </div>
     <div class="row" style="height: 65%">

@@ -158,11 +158,11 @@
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group ">
-                                                <label>Facility Type Name</label>
+                                            <div class="form-group">
+                                                <label>Facility Type Id</label>
                                                 <select  name="facilityTypeId" class="form-select bg-success" aria-label="Default select example"
                                                          style="border-radius: 30px">
-                                                    <option value="3" selected style="color: white" >Room</option>
+                                                    <option value="1" selected >Villa</option>
                                                 </select>
                                             </div>
                                             <br>
@@ -208,9 +208,6 @@
                                                 </select>
                                             </div>
                                             <br>
-
-                                        </div>
-                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Rent Type Id</label>
                                                 <select name="rentTypeId" class="form-select" aria-label="Default select example"
@@ -223,6 +220,11 @@
                                                 </select>
                                             </div>
                                             <br>
+
+
+                                        </div>
+                                        <div class="col-md-6">
+
                                             <div class="form-group">
                                                 <label>Standard Room</label>
                                                 <select style="border-radius: 30px" class="form-select" aria-label="Default select example" name="standardRoom">
@@ -239,21 +241,21 @@
                                                        name="descriptionOtherConvenience"
                                                        placeholder="descriptionOtherConvenience *"/>
                                             </div>
-                                            <br >
-                                            <div hidden class="form-group">
+                                            <br>
+                                            <div class="form-group">
                                                 <label>Pool Area</label>
 
-                                                <input style="border-radius: 30px" type="text" class="form-control" value="${0}" name="poolArea"
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="poolArea"
                                                        placeholder="poolArea *"/>
                                             </div>
-                                            <br hidden>
-                                            <div  hidden class="form-group">
+                                            <br>
+                                            <div class="form-group">
                                                 <label>Number Of Floors</label>
 
-                                                <input style="border-radius: 30px" type="text" class="form-control" value="${0}" name="numberOfFloors"
+                                                <input style="border-radius: 30px" type="text" class="form-control" name="numberOfFloors"
                                                        placeholder="numberOfFloors *"/>
                                             </div>
-
+                                            <br>
                                             <div class="form-group">
                                                 <label>Facility Free</label>
                                                 <input style="border-radius: 30px" type="text" class="form-control" name="facilityFree"

@@ -33,28 +33,28 @@ public class FacilityServlet extends HttpServlet {
             case "remove":
                 remove(request, response);
             case "search":
-                searchFacility(request,response);
+                searchFacility(request, response);
                 break;
             default:
         }
     }
 
     private void searchFacility(HttpServletRequest request, HttpServletResponse response) {
-        String search=request.getParameter("search");
+        String search = request.getParameter("search");
     }
 
     private void remove(HttpServletRequest request, HttpServletResponse response) {
-        int id =Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         boolean check = facilityService.remove(id);
 
         String mess;
-        if (check){
-            mess="DELETE WELL DONE";
-        }else {
-            mess= "DELETE ERROR";
+        if (check) {
+            mess = "DELETE WELL DONE";
+        } else {
+            mess = "DELETE ERROR";
         }
-        request.setAttribute("mess",mess);
-        showList(request,response);
+        request.setAttribute("mess", mess);
+        showList(request, response);
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) {
@@ -71,10 +71,10 @@ public class FacilityServlet extends HttpServlet {
         int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
         String facilityFree = request.getParameter("facilityFree");
         int id = Integer.parseInt(request.getParameter("id"));
-        Facility facility = new Facility( name, area, cost, maxPeople, rentTypeId, facilityTypeId,
+        Facility facility = new Facility(name, area, cost, maxPeople, rentTypeId, facilityTypeId,
                 standardRoom, descriptionOtherConvenience, poolArea
-                , numberOfFloors, facilityFree,id);
-        facilityService.update(id,facility);
+                , numberOfFloors, facilityFree, id);
+        facilityService.update(id, facility);
         boolean check = facilityService.update(id, facility);
         String mess = "Error create";
         if (check) {
@@ -105,16 +105,16 @@ public class FacilityServlet extends HttpServlet {
         Facility facility = new Facility(name, area, cost, maxPeople, rentTypeId, facilityTypeId, standardRoom, descriptionOtherConvenience, poolArea
                 , numberOfFloors, facilityFree);
         boolean check = facilityService.add(facility);
-        String mess ;
+        String mess = null;
         if (check) {
             mess = "Added";
-        }else {
-            mess= "Error create";
+        } else {
+            mess = "Error create";
         }
 
         request.setAttribute("mess", mess);
         try {
-            request.getRequestDispatcher("view/facility/create-facility.jsp").forward(request, response);
+            request.getRequestDispatcher("view/facility/create-villa.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -129,8 +129,14 @@ public class FacilityServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "add":
-                showAddForm(request,response);
+            case "addVilla":
+                showAddFormVilla(request, response);
+                break;
+            case "addHouse":
+                showAddFormHouse(request, response);
+                break;
+            case "addRoom":
+                showAddFormRoom(request, response);
                 break;
             case "edit":
                 showEditForm(request, response);
@@ -140,9 +146,29 @@ public class FacilityServlet extends HttpServlet {
         }
     }
 
-    private void showAddForm(HttpServletRequest request, HttpServletResponse response) {
+    private void showAddFormRoom(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("view/facility/create-facility.jsp").forward(request, response);
+            request.getRequestDispatcher("view/facility/create-room.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showAddFormHouse(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.getRequestDispatcher("view/facility/create-house.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showAddFormVilla(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.getRequestDispatcher("view/facility/create-villa.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
