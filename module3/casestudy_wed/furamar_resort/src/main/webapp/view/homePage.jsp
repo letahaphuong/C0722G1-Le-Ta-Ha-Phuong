@@ -79,13 +79,13 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarEmployee">
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_employee.html?_ijt=r18j13pltmd37669566c41v116">Management</a>
+                                       href="#">Management</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_employee.html?_ijt=r18j13pltmd37669566c41v116">Staff</a>
+                                       href="#">Staff</a>
                                 </li>
                                 <li><a class="dropdown-item"
-                                       href="http://localhost:63342/COdegym/C0722G1-Le-Ta-Ha-Phuong/module3/case_study_data_base_wed/web/list_employee.html?_ijt=r18j13pltmd37669566c41v116">Show
+                                       href="/employee">Show
                                     All</a></li>
                             </ul>
                         </li>

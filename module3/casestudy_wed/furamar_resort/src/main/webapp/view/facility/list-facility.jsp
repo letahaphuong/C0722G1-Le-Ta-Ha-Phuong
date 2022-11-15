@@ -179,6 +179,7 @@
                     +Room
                 </button>
             </form>
+
         </div>
         <div class="col-lg-1"></div>
 
@@ -309,4 +310,5 @@ if (toastTrigger) {
         })
     })
 </script>
+
 </html>
