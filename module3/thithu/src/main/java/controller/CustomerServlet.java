@@ -56,14 +56,14 @@ public class CustomerServlet extends HttpServlet {
         boolean check = customerService.edit(id, customer);
 
         String mess;
-        if (!check) {
-            mess = "Edit well done";
+        if (check) {
+            mess = "Sửa thành công";
         } else {
-            mess = "Error Edit";
+            mess = "Sửa Không thành công";
         }
         request.setAttribute("mess", mess);
         try {
-            request.getRequestDispatcher("view/customer/edit-customer.jsp").forward(request, response);
+            request.getRequestDispatcher("view/customer/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -136,8 +136,7 @@ public class CustomerRepository implements ICustomerRepository {
             ps.setInt(4, customer.getRentTypeId());
             ps.setString(5, customer.getNote());
             ps.setInt(6, customer.getId());
-            ps.executeUpdate();
-            return true;
+            return ps.executeUpdate()>0;
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
