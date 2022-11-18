@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class TranslateRepository implements ITranslateRepository {
 
-    private String[] list={"Hello", "World"};
     @Override
     public String show(String word) {
         String result="";
