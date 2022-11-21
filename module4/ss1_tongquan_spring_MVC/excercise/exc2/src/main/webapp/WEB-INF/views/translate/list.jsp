@@ -13,7 +13,7 @@
 <body>
 <form method="post" action="/search">
     <input type="text" name="text" placeholder="Nhập từ cần tra">
-    <button type="submit">Search</button>
+    <button type="submit">TÌm</button>
 </form>
 <p>${result}</p>
 </body>
