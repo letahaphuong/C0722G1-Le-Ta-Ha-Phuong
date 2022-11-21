@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class CondimentController {
 
@@ -16,16 +18,17 @@ public class CondimentController {
 
     @GetMapping("")
     public String showCondiments(){
-        return "/list";
+        return "/condiment/list";
     }
 
-    @PostMapping("/condiments")
-    public String showResult(@RequestParam("Lettuce") String lettuce,
-                             @RequestParam("Tomato") String tomato,
-                             @RequestParam("Mustard") String mustard,
-                             @RequestParam("Sprouts") String sprouts,
+    @PostMapping("/condiment")
+    public String showResult(@RequestParam(value = "Lettuce",required = false) String lettuce,
+                             @RequestParam(value = "Tomato",required = false) String tomato,
+                             @RequestParam(value = "Mustard",required = false) String mustard,
+                             @RequestParam(value = "Sprouts",required = false) String sprouts,
                              Model model){
-        
-
+        List<String> result =condimentsService.showList(lettuce,tomato,mustard,sprouts);
+        model.addAttribute("result",result);
+        return "/condiment/list";
     }
 }
