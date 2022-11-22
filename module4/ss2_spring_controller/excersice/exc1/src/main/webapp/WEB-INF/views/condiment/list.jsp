@@ -16,19 +16,19 @@
 <h1>Sandwich Condiments</h1>
 <form action="/condiment" method="post">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inlineCheckbox1" name="Lettuce" value="Lettuce">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="Lettuce" value="Lettuce">
         <label class="form-check-label" for="inlineCheckbox1">Lettuce</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inlineCheckbox2" name="Tomato" value="Tomato">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="Tomato" value="Tomato">
         <label class="form-check-label" for="inlineCheckbox2">Tomato</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inlineCheckbox3" name="Mustard" value="Mustard">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="Mustard" value="Mustard">
         <label class="form-check-label" for="inlineCheckbox1">Mustard</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inlineCheckbox4" name="Sprouts" value="Sprouts">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="Sprouts" value="Sprouts">
         <label class="form-check-label" for="inlineCheckbox2">Sprouts</label>
     </div>
     <hr>
