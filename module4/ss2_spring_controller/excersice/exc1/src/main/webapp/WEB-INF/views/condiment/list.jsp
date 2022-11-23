@@ -14,28 +14,48 @@
 </head>
 <body>
 <h1>Sandwich Condiments</h1>
+<%--<form action="/condiment" method="post">--%>
+<%--    <div class="form-check form-check-inline">--%>
+<%--        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="Lettuce" value="Lettuce">--%>
+<%--        <label class="form-check-label" for="inlineCheckbox1">Lettuce</label>--%>
+<%--    </div>--%>
+<%--    <div class="form-check form-check-inline">--%>
+<%--        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="Tomato" value="Tomato">--%>
+<%--        <label class="form-check-label" for="inlineCheckbox2">Tomato</label>--%>
+<%--    </div>--%>
+<%--    <div class="form-check form-check-inline">--%>
+<%--        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="Mustard" value="Mustard">--%>
+<%--        <label class="form-check-label" for="inlineCheckbox1">Mustard</label>--%>
+<%--    </div>--%>
+<%--    <div class="form-check form-check-inline">--%>
+<%--        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="Sprouts" value="Sprouts">--%>
+<%--        <label class="form-check-label" for="inlineCheckbox2">Sprouts</label>--%>
+<%--    </div>--%>
+<%--    <hr>--%>
+<%--    <button type="submit" class="btn btn-outline-success">Save</button>--%>
+<%--</form>--%>
 <form action="/condiment" method="post">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="Lettuce" value="Lettuce">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="spice" value="Lettuce">
         <label class="form-check-label" for="inlineCheckbox1">Lettuce</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="Tomato" value="Tomato">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="spice" value="Tomato">
         <label class="form-check-label" for="inlineCheckbox2">Tomato</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="Mustard" value="Mustard">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="spice" value="Mustard">
         <label class="form-check-label" for="inlineCheckbox1">Mustard</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="Sprouts" value="Sprouts">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="spice" value="Sprouts">
         <label class="form-check-label" for="inlineCheckbox2">Sprouts</label>
     </div>
     <hr>
     <button type="submit" class="btn btn-outline-success">Save</button>
 </form>
 <c:if test="${result!=null}">
-    <c:forEach var="list" items="${result}">
+    <c:forEach var="list" items="${listSpice}">
         <p>${list}</p>
     </c:forEach>
 </c:if>
