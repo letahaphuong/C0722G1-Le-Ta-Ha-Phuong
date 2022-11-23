@@ -47,7 +47,7 @@
     <span>Signature</span><form:textarea path="signature"/>
     <br>
     <form:button type="submit"> Update</form:button>
-    <form:button type="submit"> Cancel</form:button>
+    <form:button type="reset"> Cancel</form:button>
 </form:form>
 
 
