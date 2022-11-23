@@ -34,6 +34,6 @@ public class CondimentController {
 //                             Model model){
 //        List<String> result =condimentsService.showList(lettuce,tomato,mustard,sprouts);
 //        model.addAttribute("result",result);
-        return "/condiment/list";
+        return "redirect:/list";
     }
 }
