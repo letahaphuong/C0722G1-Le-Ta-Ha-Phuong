@@ -97,7 +97,6 @@ public class ProductRepository implements IProductRepository {
     public List<Product> findByName(String name) {
         List<Product> productList=null;
         Session session=null;
-        Product product=null;
         try{
             session=ConnectionUtil.sessionFactory.openSession();
             productList = session.createQuery("from Product p where p.name like:searchName ").setParameter("searchName",'%'+name+'%').getResultList();
