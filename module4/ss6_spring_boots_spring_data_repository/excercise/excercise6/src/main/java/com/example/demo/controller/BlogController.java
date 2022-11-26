@@ -20,8 +20,8 @@ public class BlogController {
     IBlogService blogService;
 
     @GetMapping("")
-    public String showListBlog(Model model) {
-        List<Blog> blogList = blogService.findAll();
+    public String showListBlog(@RequestParam(defaultValue = "") String search, Model model) {
+        List<Blog> blogList = blogService.searchNameContentAndProducerBlog(search);
         model.addAttribute("blogList", blogList);
         return "blog/list";
     }
@@ -39,35 +39,46 @@ public class BlogController {
         return "redirect:/blog/show-list-create";
     }
 
+//    @GetMapping("/edit/{id}")
+//    public ModelAndView showFormEdit(@PathVariable("id") Long id) {
+//        Optional<Blog> blog = blogService.findById(id);
+//            ModelAndView modelAndView = new ModelAndView("/blog/edit");
+//            modelAndView.addObject("blog", blog.get());
+//            return modelAndView;
+//    }
+
     @GetMapping("/edit/{id}")
-    public ModelAndView showFormEdit(@PathVariable("id") Long id) {
-        Optional<Blog> blog = blogService.findById(id);
-            ModelAndView modelAndView = new ModelAndView("/blog/edit");
-            modelAndView.addObject("blog", blog.get());
-            return modelAndView;
+    public String showFormEdit(@PathVariable("id") Long id,Model model) {
+        model.addAttribute("blog",blogService.findById(id));
+        return "/blog/edit";
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute("blog") Blog blog,RedirectAttributes redirectAttributes){
+    public String update(@ModelAttribute("blog") Blog blog, RedirectAttributes redirectAttributes) {
         blogService.save(blog);
-        redirectAttributes.addFlashAttribute("mess","Updated");
+        redirectAttributes.addFlashAttribute("mess", "Updated");
         return "redirect:/blog";
     }
 
     @PostMapping("/delete")
-    public String delete( Long id,RedirectAttributes redirectAttributes){
+    public String delete(Long id, RedirectAttributes redirectAttributes) {
         blogService.remove(id);
-        redirectAttributes.addFlashAttribute("mess","deleted");
+        redirectAttributes.addFlashAttribute("mess", "deleted");
         return "redirect:/blog";
     }
 
-    @GetMapping("/view/{id}")
-    public ModelAndView viewAllBlog(@PathVariable("id") Long id) {
-        Optional<Blog> blog = blogService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("/blog/view`");
-        modelAndView.addObject("blog", blog.get());
-        return modelAndView;
-    }
+//    @GetMapping("/view/{id}")
+//    public ModelAndView viewAllBlog(@PathVariable("id") Long id) {
+//        Optional<Blog> blog = blogService.findById(id);
+//        ModelAndView modelAndView = new ModelAndView("/blog/view");
+//        modelAndView.addObject("blog", blog.get());
+//        return modelAndView;
+//    }
 
+    @GetMapping("/view/{id}")
+    public String viewAllBlog(@PathVariable("id") Long id,Model model) {
+        model.addAttribute("blog",blogService.findById(id));
+        return "blog/view";
+    }
 
 }
