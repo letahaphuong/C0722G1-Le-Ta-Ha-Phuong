@@ -9,7 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,13 +40,8 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public Page<Blog> findAll(Pageable pageable) {
-        return blogRepository.findAll(pageable);
-    }
-
-    @Override
-    public List<Blog> searchNameContentAndProducerBlog(String search) {
-        return blogRepository.searchNameContentAndProducerBlog(search,search);
+    public Page<Blog> searchNameProducerBlog(String search,Pageable pageable) {
+        return blogRepository.searchNameProducerBlog(search,search,pageable);
     }
 
 }

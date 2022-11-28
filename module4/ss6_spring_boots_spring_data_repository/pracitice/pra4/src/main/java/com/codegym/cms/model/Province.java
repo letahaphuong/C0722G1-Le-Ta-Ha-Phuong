@@ -7,17 +7,21 @@ import java.util.List;
 public class Province {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "province_id")
     private Long id;
 
     private String name;
 
-    @OneToMany(targetEntity = Customer.class)
+    @OneToMany(mappedBy = "province",cascade = CascadeType.ALL)
     private List<Customer> customers;
+
+
 
     public Province() {
     }
 
-    public Province(String name) {
+    public Province(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
@@ -35,13 +39,5 @@ public class Province {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
     }
 }

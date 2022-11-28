@@ -36,6 +36,13 @@
             <label>Date Create</label>
             <input type="date" th:field="*{dateCreate}"/>
         </div>
+        <div>
+            <label>Category</label>
+            <select th:field="*{category.id}">
+                <option th:value="1" th:text="'Truyện Ngắn'"></option>
+                <option th:value="2" th:text="'Tiểu Thuyết'"></option>
+                <option th:value="3" th:text="'Truyện Dài'"></option>
+            </select>div>
         <input type="submit" value="Save"/>
     </form>
 </div>

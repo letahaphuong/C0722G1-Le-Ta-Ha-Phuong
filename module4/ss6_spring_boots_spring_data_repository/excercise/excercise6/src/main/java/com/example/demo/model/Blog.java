@@ -21,8 +21,21 @@ public class Blog {
     @Column(columnDefinition = "date")
     private String dateCreate;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id",nullable = false,referencedColumnName = "category_id")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Blog() {
     }
+
 
     public Blog(Long id, String name, String contentBlog, String producerBlog, String dateCreate) {
         this.id = id;

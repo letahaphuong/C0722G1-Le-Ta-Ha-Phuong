@@ -10,7 +10,7 @@
 <div th:insert="~{layout::header}"></div>
 <h3>Products</h3>
 <div class="row">
-    <form th:action="@{/product/search}" th:method="post" class="d-flex">
+    <form class="d-flex">
         <input class="form-control me-2" name="search" type="search" placeholder="Search By Name"
                aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -18,11 +18,11 @@
 </div>
 
 <p>
-    <a th:href="@{/product/create}">
+    <a th:href="@{/room/create}">
         Add new product
     </a>
 </p>
-<a th:href="@{/product}">
+<a th:href="@{/room}">
     Back to product list
 </a>
 <p th:if="${mess}" style="color: crimson">
@@ -30,32 +30,38 @@
 <table class="table table-hover">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Describe</th>
-        <th>Producer</th>
+        <th>STT</th>
+        <th>Mã phòng trọ</th>
+        <th>Tên người thuê trọ</th>
+        <th>Số điện thoại</th>
+        <th>Ngày bắt đầu thuê</th>
+        <th>Hình thức thanh toán</th>
+        <th>Ghi chú</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="prod :${productList}">
-        <td th:text="${prod.getName()}"></td>
-        <td th:text="${prod.getPrice()}"></td>
-        <td th:text="${prod.getDescribe()}"></td>
-        <td th:text="${prod.getProducer()}"></td>
-        <td><a th:href="@{/product/{id}/edit(id=${prod.getId()})}">Edit</a></td>
+    <tr th:each="room,var :${roomList}">
+        <td th:text="${var.count}"></td>
+        <td th:text="${room.getRoomId()}"></td>
+        <td th:text="${room.getCustomerName()}"></td>
+        <td th:text="${room.getPhoneNumber()}"></td>
+        <td th:text="${room.getStartDate()}"></td>
+        <td th:text="${room.getPayment().getName()}"></td>
+        <td th:text="${room.getNote()}"></td>
+        <td><a th:href="@{/room/edit/__${room.roomId}__ }" class="btn bg-primary">Sửa</a></td>
         <td>
             <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                <button th:onclick="'javascript:idRemove(\''+${prod.id}+'\',\''+${prod.name}+'\');'"
+                <button th:onclick="|idRemove('__${room.roomId}__', '__${room.customerName}__')|"
                         class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
-                    delete
+                    Xoá
                 </button>
             </form>
         </td>
-        <td><a th:href="@{/product/{id}/view(id=${prod.getId()})}">View</a></td>
+        <td><a th:href="@{/roomv/{id}/view(id=${room.getRoomId()})}">Xem</a></td>
     </tr>
     </tbody>
 
@@ -76,7 +82,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                 </button>
-                <form th:action="@{/product/delete}" method="post">
+                <form th:action="@{/room/delete}" method="post">
                     <input type="hidden" name="id" id="idInput">
                     <button class="btn btn-primary">DELETE</button>
                 </form>

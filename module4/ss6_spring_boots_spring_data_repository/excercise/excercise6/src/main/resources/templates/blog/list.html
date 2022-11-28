@@ -29,65 +29,67 @@
 <table class="table table-hover">
     <thead>
     <tr>
+        <th>STT</th>
         <th>Blog Name</th>
         <th>Producer Blog</th>
         <th hidden>Block Content</th>
         <th>Date Create</th>
+        <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="blog : ${blogList}">
-        <td th:text="${blog.getName()}"></td>
-        <td hidden th:text="${blog.getContentBlog()}"></td>
-        <td th:text="${blog.getProducerBlog()}"></td>
-        <td th:text="${blog.getDateCreate()}"></td>
-        <td><a th:href="@{/blog/edit/__${blog.id}__ }" class="btn bg-primary">Edit</a></td>
+    <th:block th:each="blog,stt : ${blogList}">
+        <tr>
+            <td th:text="${stt.count} + ${blogList.number} * ${blogList.size}"></td>
+            <td th:text="${blog.getName()}"></td>
+            <td hidden th:text="${blog.getContentBlog()}"></td>
+            <td th:text="${blog.getProducerBlog()}"></td>
+            <td th:text="${blog.getDateCreate()}"></td>
+            <td th:text="${blog.category.name}"></td>
+            <td><a th:href="@{/blog/edit/__${blog.id}__ }" class="btn bg-primary">Edit</a></td>
 
-<!--        <td th:disabled="">-->
-<!--            &lt;!&ndash;            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">&ndash;&gt;-->
-<!--            &lt;!&ndash;                <button th:onclick="|editModalContent('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"&ndash;&gt;-->
-<!--            &lt;!&ndash;                        class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"&ndash;&gt;-->
-<!--            &lt;!&ndash;                        data-bs-target="#editUserModal" >&ndash;&gt;-->
-<!--            &lt;!&ndash;                    Edit&ndash;&gt;-->
-<!--            &lt;!&ndash;                </button>&ndash;&gt;-->
-<!--            &lt;!&ndash;            </form>&ndash;&gt;-->
-<!--            <button type="button" data-toggle="modal" data-target="#editUserModal" th:blog-id="${blog.id}"-->
-<!--                    th:blog-name="${blog.name}" th:blog-producerBlog="${blog.producerBlog}"-->
-<!--                    th:blog-contentBlog="${blog.contentBlog}" th:blog-dateCreate="${blog.dateCreate}"-->
-<!--                    th:onclick="editModalContent(this, this.getAttribute('blog-name'), this.getAttribute('blog-contentBlog'), this.getAttribute('blog-producerBlog'),this.getAttribute('blog-dateCreate'))">-->
-<!--                Edit-->
-<!--            </button>-->
-<!--        </td>-->
+            <!--        <td>-->
+            <!--            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
+            <!--                <button th:onclick="|idEdit('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"-->
+            <!--                        class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"-->
+            <!--                        data-bs-target="#editUserModal">-->
+            <!--                    Edit-->
+            <!--                </button>-->
+            <!--            </form>-->
+            <!--        </td>-->
 
-        <td>
-            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                <button th:onclick="|idRemove('__${blog.id}__', '__${blog.name}__')|"
-                        class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
-                        data-bs-target="#remove">
-                    delete
-                </button>
-            </form>
-        </td>
-        <td>
-            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                <button th:onclick="|idView('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"
-                        class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
-                        data-bs-target="#view">
-                    View Modal
-                </button>
-                <a th:href="@{/blog/view/__${blog.id}__ }" class="btn btn-dark">View Page</a>
-            </form>
-        </td>
-    </tr>
+            <td>
+                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                    <button th:onclick="|idRemove('__${blog.id}__', '__${blog.name}__')|"
+                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#remove">
+                        delete
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                    <button th:onclick="|idView('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"
+                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#view">
+                        View Modal
+                    </button>
+                    <a th:href="@{/blog/view/__${blog.id}__ }" class="btn btn-dark">View Page</a>
+                </form>
+            </td>
+        </tr>
+    </th:block>
     </tbody>
 
 </table>
 
 <!--    Phân trang-->
-
+<a th:href="@{/blog(page=${blogList.number - 1})}" th:if="${blogList.hasPrevious()}">Previous</a>
+<span th:text="${blogList.number + 1}+'/'+${blogList.totalPages}"></span>
+<a th:href="@{/blog(page=${blogList.number + 1})}" th:if="${blogList.hasNext()}">Next</a>
 
 <!--REMOVE-->
 <div class="modal fade" id="remove" tabindex="-1" aria-labelledby="removeModal"
@@ -280,10 +282,19 @@
     function idView(id, name, contentBlog, producerBlog, dateCreate) {
         debugger
         document.getElementById("viewId").value = id;
-        document.getElementById("viewName").innerText = name;
-        document.getElementById("viewContentBlog").innerText = contentBlog;
-        document.getElementById("viewProducerBlog").innerText = producerBlog;
-        document.getElementById("viewPateCreate").innerText = dateCreate;
+        document.getElementById("viewName").value = name;
+        document.getElementById("viewContentBlog").value = contentBlog;
+        document.getElementById("viewProducerBlog").value = producerBlog;
+        document.getElementById("viewPateCreate").value = dateCreate;
+    }
+
+    function idEdit(id, name, contentBlog, producerBlog, dateCreate) {
+        debugger
+        document.getElementById("editId").value = id;
+        document.getElementById("editName").value = name;
+        document.getElementById("editContentBlog").value = contentBlog;
+        document.getElementById("editProducerBlog").value = producerBlog;
+        document.getElementById("editPateCreate").value = dateCreate;
     }
 </script>
 

@@ -3,6 +3,9 @@ package com.example.demo.controller;
 import com.example.demo.model.Blog;
 import com.example.demo.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +23,8 @@ public class BlogController {
     IBlogService blogService;
 
     @GetMapping("")
-    public String showListBlog(@RequestParam(defaultValue = "") String search, Model model) {
-        List<Blog> blogList = blogService.searchNameContentAndProducerBlog(search);
+    public String showListBlog(@RequestParam(defaultValue = "") String search, Model model,@PageableDefault(page = 0,size = 3) Pageable pageable) {
+        Page<Blog> blogList = blogService.searchNameProducerBlog(search,pageable);
         model.addAttribute("blogList", blogList);
         return "blog/list";
     }

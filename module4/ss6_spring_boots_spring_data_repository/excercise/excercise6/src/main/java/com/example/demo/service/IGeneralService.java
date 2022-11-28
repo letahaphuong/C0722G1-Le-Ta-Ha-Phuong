@@ -16,9 +16,7 @@ public interface IGeneralService<T> {
 
     void remove(Long id);
 
-    Page<Blog> findAll(Pageable pageable);
-
-    List<Blog> searchNameContentAndProducerBlog(String search);
+    Page<Blog> searchNameProducerBlog(String search,Pageable pageable);
 
 
 }
