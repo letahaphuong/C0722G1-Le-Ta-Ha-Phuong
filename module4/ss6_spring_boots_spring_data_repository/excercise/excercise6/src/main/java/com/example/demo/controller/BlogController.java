@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Blog;
 import com.example.demo.service.IBlogService;
+import com.example.demo.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,11 +10,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-import java.util.Optional;
+
 
 @Controller
 @RequestMapping("blog")
@@ -21,6 +20,9 @@ public class BlogController {
 
     @Autowired
     IBlogService blogService;
+
+    @Autowired
+    ICategoryService categoryService;
 
     @GetMapping("")
     public String showListBlog(@RequestParam(defaultValue = "") String search, Model model,@PageableDefault(page = 0,size = 3) Pageable pageable) {
@@ -32,6 +34,7 @@ public class BlogController {
     @GetMapping("/show-list-create")
     public String showListCreate(Model model) {
         model.addAttribute("blog", new Blog());
+        model.addAttribute("categoryList",categoryService.findAll());
         return "blog/create";
     }
 
@@ -53,6 +56,7 @@ public class BlogController {
     @GetMapping("/edit/{id}")
     public String showFormEdit(@PathVariable("id") Long id,Model model) {
         model.addAttribute("blog",blogService.findById(id));
+        model.addAttribute("categoryList",categoryService.findAll());
         return "/blog/edit";
     }
 
@@ -64,7 +68,7 @@ public class BlogController {
     }
 
     @PostMapping("/delete")
-    public String delete(Long id, RedirectAttributes redirectAttributes) {
+    public String delete(@RequestParam Long id, RedirectAttributes redirectAttributes) {
         blogService.remove(id);
         redirectAttributes.addFlashAttribute("mess", "deleted");
         return "redirect:/blog";

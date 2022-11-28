@@ -37,13 +37,7 @@ public class Blog {
     }
 
 
-    public Blog(Long id, String name, String contentBlog, String producerBlog, String dateCreate) {
-        this.id = id;
-        this.name = name;
-        this.contentBlog = contentBlog;
-        this.producerBlog = producerBlog;
-        this.dateCreate = dateCreate;
-    }
+
 
     public Long getId() {
         return id;
