@@ -34,8 +34,7 @@
         <th>Nghệ Sỹ Biểu Diễn</th>
         <th>Thể loại nhạc </th>
         <th>Edit</th>
-        <th>Delete</th>
-        <th>View</th>
+
     </tr>
     </thead>
     <tbody>
@@ -57,25 +56,6 @@
             <!--            </form>-->
             <!--        </td>-->
 
-            <td>
-                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                    <button th:onclick="|idRemove('__${song.id}__', '__${song.name}__')|"
-                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
-                            data-bs-target="#remove">
-                        Xoá
-                    </button>
-                </form>
-            </td>
-            <td>
-                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-<!--                    <button th:onclick="|idView('__${song.id}__', '__${song.name}__','__${song.contentBlog}__','__${song.producerBlog}__','__${blog.dateCreate}__')|"-->
-<!--                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"-->
-<!--                            data-bs-target="#view">-->
-<!--                        View Modal-->
-<!--                    </button>-->
-                    <a th:href="@{/song/view/__${song.id}__ }" class="btn btn-dark">View Page</a>
-                </form>
-            </td>
         </tr>
     </th:block>
     </tbody>

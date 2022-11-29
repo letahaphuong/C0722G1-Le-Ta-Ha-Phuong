@@ -11,37 +11,23 @@
 <p th:if="${mess}" style="color: blue">
 </p>
 <div id="form">
-    <form th:action="@{/blog/update}" th:object="${blog}"
+    <form th:action="@{/song/update}" th:object="${song}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
-            <label>Blog Name</label>
-            <input type="text" th:field="*{name}"/>
+            <label>Tên Bài Hát</label>
+            <input type="text" th:field="*{songName}"/>
+            <p th:errors="*{songName}" style="color: red"></p>
         </div>
         <div>
-            <label>Blog Content</label>
-            <input type="email" th:field="*{contentBlog}"/>
+            <label>Ca Sỹ</label>
+            <input  type="text" th:field="*{singer}"/>
+            <p th:errors="*{singer}" style="color: red"></p>
         </div>
         <div>
-            <label>Producer Blog</label>
-            <input type="text" th:field="*{producerBlog}"/>
-        </div>
-        <div>
-            <label>Date Create</label>
-            <input type="date" th:field="*{dateCreate}"/>
-        </div>
-        <div>
-            <label for="category">Category</label>
-            <select id="category" th:field="*{category}">
-                <option th:each="category : ${categoryList}"
-                        th:value="${category.id}"
-                        th:text="${category.name}"></option>
-            </select>
-<!--            <select th:field="*{category.id}">-->
-<!--                <option th:value="1" th:text="'Truyện Ngắn'"></option>-->
-<!--                <option th:value="2" th:text="'Tiểu Thuyết'"></option>-->
-<!--                <option th:value="3" th:text="'Truyện Dài'"></option>-->
-<!--            </select>-->
+            <label>Thể Loại</label>
+            <input type="text" th:field="*{category}"/>
+            <p th:errors="*{category}" style="color: red"></p>
         </div>
         <input type="submit" value="Edit"/>
     </form>
