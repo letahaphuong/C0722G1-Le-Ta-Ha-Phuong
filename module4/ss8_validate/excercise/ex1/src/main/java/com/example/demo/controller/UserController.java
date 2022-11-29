@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("user")
 public class UserController {
@@ -38,9 +40,12 @@ public class UserController {
         if (bindingResult.hasFieldErrors()) {
             return "user/create";
         }
+
         userService.save(user);
         redirectAttributes.addFlashAttribute("mess", "Added");
         return "redirect:/user/show-list-create";
+
+
 
     }
 

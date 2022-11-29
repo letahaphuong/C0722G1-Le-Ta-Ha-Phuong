@@ -20,12 +20,12 @@ public class Song implements Validator{
 
     @NotEmpty(message = "{NotEmpty}")
     @Size(min = 0,max = 800,message = "{SizeSongName}")
-    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "PatternSongName")
+    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "{PatternSongName}")
     private String songName;
 
     @NotEmpty(message = "{NotEmpty}")
     @Size(min = 0,max = 300,message = "{SizeSinger}")
-    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "PatternSinger")
+    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "{PatternSinger}")
     private String singer;
 
     @NotEmpty(message = "{NotEmpty}")
@@ -82,7 +82,7 @@ public class Song implements Validator{
     @Override
     public void validate(Object target, Errors errors) {
         Song song= (Song) target;
-        if (song.getCategory().matches(",")){
+        if (!song.getCategory().matches("^[a-zA-Z0-9,]+$")){
             errors.rejectValue("category","PatternCategory","Mặc định");
         }
     }

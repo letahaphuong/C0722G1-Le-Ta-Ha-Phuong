@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import com.example.demo.service.IUserService;
+import com.example.demo.service.impl.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -9,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
+
 
 @Entity
 public class User implements Validator {
@@ -34,6 +38,7 @@ public class User implements Validator {
 
     @Pattern(regexp = "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$",message = "{Email}")
     private String email;
+
 
 
     public User() {
@@ -111,4 +116,5 @@ public class User implements Validator {
         }
 
     }
+
 }
