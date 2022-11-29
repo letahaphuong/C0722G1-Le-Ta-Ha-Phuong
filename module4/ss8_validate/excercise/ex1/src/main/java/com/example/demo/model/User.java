@@ -23,7 +23,7 @@ public class User implements Validator {
 
     @NotEmpty(message = "{NotEmpty}")
     @Size(min = 5,max = 45,message = "{Size}")
-    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$ ",message = "{PatternFirstName}")
+    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "{PatternFirstName}")
     private String firstName;
 
     @NotEmpty(message = "{NotEmpty}")

@@ -38,8 +38,6 @@
         <th>Age</th>
         <th>Email</th>
         <th>Edit</th>
-        <th>Delete</th>
-        <th>View</th>
     </tr>
     </thead>
     <tbody>
@@ -54,35 +52,6 @@
             <td th:text="${user.getEmail()}"></td>
             <td><a th:href="@{/user/edit/__${user.id}__ }" class="btn bg-primary">Edit</a></td>
 
-            <!--        <td>-->
-            <!--            <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
-            <!--                <button th:onclick="|idEdit('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"-->
-            <!--                        class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"-->
-            <!--                        data-bs-target="#editUserModal">-->
-            <!--                    Edit-->
-            <!--                </button>-->
-            <!--            </form>-->
-            <!--        </td>-->
-
-            <td>
-                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                    <button th:onclick="|idRemove('__${user.id}__', '__${user.name}__')|"
-                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
-                            data-bs-target="#remove">
-                        delete
-                    </button>
-                </form>
-            </td>
-            <td>
-                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-<!--                    <button th:onclick="|idView('__${blog.id}__', '__${blog.name}__','__${blog.contentBlog}__','__${blog.producerBlog}__','__${blog.dateCreate}__')|"-->
-<!--                            class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"-->
-<!--                            data-bs-target="#view">-->
-<!--                        View Modal-->
-<!--                    </button>-->
-                    <a th:href="@{/user/view/__${user.id}__ }" class="btn btn-dark">View Page</a>
-                </form>
-            </td>
         </tr>
     </th:block>
     </tbody>

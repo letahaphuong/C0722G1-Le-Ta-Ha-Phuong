@@ -13,4 +13,6 @@ public interface IUserService {
     void save(User user);
 
     void remove(Long id);
+
+//    List<User> findByEmail();
 }
