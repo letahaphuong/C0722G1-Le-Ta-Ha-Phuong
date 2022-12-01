@@ -16,12 +16,6 @@ public class OrderBook {
     public OrderBook() {
     }
 
-    public OrderBook(long code, boolean status, Set<Book> bookList) {
-        this.code = code;
-        this.status = status;
-        this.bookList = bookList;
-    }
-
     public OrderBook(Integer id, long code, boolean status, Set<Book> bookList) {
         this.id = id;
         this.code = code;
@@ -45,19 +39,19 @@ public class OrderBook {
         this.code = code;
     }
 
-    public Set<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(Set<Book> bookList) {
-        this.bookList = bookList;
-    }
-
     public boolean isStatus() {
         return status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Set<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(Set<Book> bookList) {
+        this.bookList = bookList;
     }
 }

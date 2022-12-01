@@ -24,9 +24,9 @@
     <tr th:each="orderBook, status : ${orderBookList}">
         <td th:text="${status.count}"></td>
         <td th:text="${orderBook.code}"></td>
-        <td th:text="${orderBook.status}"></td>
-<!--        <td th:if="${orderBook.status}==true" th:text="Đã Trả"></td>-->
-<!--        <td th:if="${orderBook.status}==false" th:text="Chưa trả"></td>-->
+        <td th:text="${orderBook.isStatus()}"></td>
+        <td th:if="${orderBook.isStatus()==true}" th:text="'Đang Thuê'"></td>
+        <td th:if="${orderBook.isStatus()==false}" th:text="'Chưa trả'"></td>
         <td><a th:href="@{/order/detail/__${orderBook.id}__}">Chi tiết</a></td>
     </tr>
 </table>
