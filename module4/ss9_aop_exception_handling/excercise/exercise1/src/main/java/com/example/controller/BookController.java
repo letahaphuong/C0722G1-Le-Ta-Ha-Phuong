@@ -1,16 +1,15 @@
 package com.example.controller;
 
 import com.example.model.Book;
-import com.example.model.BorrowedBook;
+import com.example.model.OrderBook;
 import com.example.service.IBookService;
-import com.example.service.IBorrowedBookService;
+import com.example.service.IOrderBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.swing.text.html.Option;
 import java.util.*;
 
 @Controller
@@ -18,7 +17,7 @@ public class BookController {
     @Autowired
     IBookService bookService;
     @Autowired
-    IBorrowedBookService borrowedBookService;
+    IOrderBookService orderBookService;
 
     @GetMapping("create")
     public String showCreateForm(Model model) {
@@ -31,7 +30,7 @@ public class BookController {
     public String save(@ModelAttribute("book") Book book, Model model) {
         book.setQuantityAvailable(book.getTotalQuantity());
         bookService.save(book);
-        model.addAttribute("mess", "Book added new successfully");
+        model.addAttribute("mess", "Thêm mới thành công");
         return "/book/create";
     }
 
@@ -42,28 +41,28 @@ public class BookController {
         return "/book/list";
     }
 
-    @GetMapping("borrow/{id}")
+    @GetMapping("order/{id}")
     public String borrow(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
-        BorrowedBook borrowedBook = new BorrowedBook();
+        OrderBook orderBook = new OrderBook();
         Optional<Book> book = bookService.findById(id);
         if (book.isPresent() && book.get().getQuantityAvailable() != 0) {
             long code;
             do {
                 code = (long) (Math.random() * (99999 - 10000) + 10000);
-            } while (borrowedBookService.exist(code));
+            } while (orderBookService.exist(code));
             Set<Book> bookSet;
-            if (borrowedBook.getBookList() != null) {
-                bookSet = borrowedBook.getBookList();
+            if (orderBook.getBookList() != null) {
+                bookSet = orderBook.getBookList();
             } else {
                 bookSet = new LinkedHashSet<>();
             }
             bookSet.add(book.get());
-            borrowedBook.setBookList(bookSet);
-            borrowedBook.setCode(code);
-            borrowedBookService.save(borrowedBook);
+            orderBook.setBookList(bookSet);
+            orderBook.setCode(code);
+            orderBookService.save(orderBook);
             book.get().setQuantityAvailable(book.get().getQuantityAvailable() - 1);
             bookService.save(book.get());
-            redirectAttributes.addFlashAttribute("mess", "Book is borrowed successfully");
+            redirectAttributes.addFlashAttribute("mess", "Thuê thành công");
             redirectAttributes.addFlashAttribute("code", code);
             return "redirect:/";
         }
@@ -72,23 +71,23 @@ public class BookController {
 
     @GetMapping("give-book-back")
     public String giveBookBack(@RequestParam long code, RedirectAttributes redirectAttributes) {
-        Optional<BorrowedBook> borrowedBook = borrowedBookService.findByCode(code);
-        if (borrowedBook.isPresent() && borrowedBook.get().isStatus()) {
-            borrowedBook.get().setStatus(false);
-            Set<Book> bookList = borrowedBook.get().getBookList();
+        Optional<OrderBook> orderBook = orderBookService.findByCode(code);
+        if (orderBook.isPresent() && orderBook.get().isStatus()) {
+            orderBook.get().setStatus(false);
+            Set<Book> bookList = orderBook.get().getBookList();
             for (Book book : bookList) {
                 book.setQuantityAvailable(book.getQuantityAvailable() + 1);
                 bookService.save(book);
             }
-            borrowedBookService.save(borrowedBook.get());
-            redirectAttributes.addFlashAttribute("mess", "Give book back successfully");
+            orderBookService.save(orderBook.get());
+            redirectAttributes.addFlashAttribute("mess", "Trả thành công");
             return "redirect:/";
         }
-        if (borrowedBook.isPresent() && !borrowedBook.get().isStatus()) {
-            redirectAttributes.addFlashAttribute("mess", "This borrow code given back before");
+        if (orderBook.isPresent() && !orderBook.get().isStatus()) {
+            redirectAttributes.addFlashAttribute("mess", "mã mượn đã được trả trước đó");
             return "redirect:/";
         }
-        redirectAttributes.addFlashAttribute("mess", "This borrow code is wrong");
+        redirectAttributes.addFlashAttribute("mess", "Mã này không đúng");
         return "redirect:/";
     }
 
@@ -115,19 +114,20 @@ public class BookController {
     @PostMapping("edit")
     public String saveEdit(@ModelAttribute("book") Book book, RedirectAttributes redirectAttributes) {
 
-        book.setQuantityAvailable(book.getTotalQuantity() - book.getBorrowedBookList().size());
+        book.setQuantityAvailable(book.getTotalQuantity() - book.getOrderBookList().size());
         if (book.getQuantityAvailable()>=0) {
             bookService.save(book);
-            redirectAttributes.addFlashAttribute("mess", "Book is edited successfully");
+            redirectAttributes.addFlashAttribute("mess", "Sửa thành công");
             return "redirect:/";
         }
-        redirectAttributes.addFlashAttribute("mess", "Total Quantity is not correct");
+        redirectAttributes.addFlashAttribute("mess", "Số lượng không đúng");
         return "redirect:/";
     }
+
     @GetMapping("remove/{id}")
     public String removeBook(@PathVariable("id")Integer id, Model model){
         bookService.removeById(id);
-        model.addAttribute("mess", "This book is removed successfully");
+        model.addAttribute("mess", "Xoá thành công");
         return showList(model);
     }
 }

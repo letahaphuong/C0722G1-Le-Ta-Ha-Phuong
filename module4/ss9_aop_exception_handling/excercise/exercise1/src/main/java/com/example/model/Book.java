@@ -12,17 +12,17 @@ public class Book {
     private int quantityAvailable;
     private int totalQuantity;
     @ManyToMany(mappedBy = "bookList", cascade = CascadeType.ALL)
-    private Set<BorrowedBook> borrowedBookList;
+    private Set<OrderBook> orderBookList;
 
     public Book() {
     }
 
-    public Book(Integer id, String name, int totalQuantity, Set<BorrowedBook> borrowedBookList) {
+    public Book(Integer id, String name, int totalQuantity, Set<OrderBook> orderBookList) {
         this.id = id;
         this.name = name;
         this.quantityAvailable = totalQuantity;
         this.totalQuantity = totalQuantity;
-        this.borrowedBookList = borrowedBookList;
+        this.orderBookList = orderBookList;
     }
 
     public Integer getId() {
@@ -57,11 +57,11 @@ public class Book {
         this.totalQuantity = totalQuantity;
     }
 
-    public Set<BorrowedBook> getBorrowedBookList() {
-        return borrowedBookList;
+    public Set<OrderBook> getOrderBookList() {
+        return orderBookList;
     }
 
-    public void setBorrowedBookList(Set<BorrowedBook> borrowedBookList) {
-        this.borrowedBookList = borrowedBookList;
+    public void setOrderBookList(Set<OrderBook> orderBookList) {
+        this.orderBookList = orderBookList;
     }
 }

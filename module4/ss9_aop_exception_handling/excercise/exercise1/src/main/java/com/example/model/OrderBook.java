@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class BorrowedBook {
+public class OrderBook {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -13,16 +13,16 @@ public class BorrowedBook {
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Book> bookList;
 
-    public BorrowedBook() {
+    public OrderBook() {
     }
 
-    public BorrowedBook(long code, boolean status, Set<Book> bookList) {
+    public OrderBook(long code, boolean status, Set<Book> bookList) {
         this.code = code;
         this.status = status;
         this.bookList = bookList;
     }
 
-    public BorrowedBook(Integer id, long code, boolean status, Set<Book> bookList) {
+    public OrderBook(Integer id, long code, boolean status, Set<Book> bookList) {
         this.id = id;
         this.code = code;
         this.status = status;

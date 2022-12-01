@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/borrow">Back</a>
+<a href="/order">Back</a>
 <p>Mã mượn</p>
-<p th:text="${borrowedBook.code}"></p>
+<p th:text="${orderBook.code}"></p>
 <p>Những quyển sách đang mượn</p>
-<p th:each="book:${borrowedBook.getBookList()}" th:text="${book.getName()}"></p>
+<p th:each="book:${orderBook.getBookList()}" th:text="${book.getName()}"></p>
 </body>
 </html>
