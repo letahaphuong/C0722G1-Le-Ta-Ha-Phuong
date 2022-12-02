@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.model.Product;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -22,6 +24,8 @@ public class CartDto {
         this.productMap = productMap;
     }
 
+
+
     public void addProduct(ProductDto productDto) {
         if (productMap.containsKey(productDto)) {
             // update value + 1
@@ -30,6 +34,25 @@ public class CartDto {
         } else {
             productMap.put(productDto, 1);
         }
+    }
+    public Integer countProductQuantity(){
+        Integer productQuantity = 0;
+        for (Map.Entry<ProductDto, Integer> entry : productMap.entrySet()) {
+            productQuantity += entry.getValue();
+        }
+        return productQuantity;
+    }
+
+    public Integer countItemQuantity(){
+        return productMap.size();
+    }
+
+    public Float countTotalPayment(){
+        float payment = 0;
+        for (Map.Entry<ProductDto, Integer> entry : productMap.entrySet()) {
+            payment += entry.getKey().getPrice() * (float) entry.getValue();
+        }
+        return payment;
     }
 
     public void removeProduct(ProductDto productDto) {

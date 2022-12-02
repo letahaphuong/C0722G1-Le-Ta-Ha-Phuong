@@ -30,11 +30,25 @@ public class ProductController {
 
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable("id") Long id, @SessionAttribute("cart") CartDto cartDto) {
+    public String addToCart(@PathVariable("id") Long id, @SessionAttribute("cart") CartDto cartDto
+                        ) {
         Optional<Product> product = productService.findById(id);
+
         ProductDto productDto = new ProductDto();
         BeanUtils.copyProperties(product.get(), productDto);
         cartDto.addProduct(productDto);
+        return "redirect:/cart";
+
+    }
+
+    @GetMapping("/sub/{id}")
+    public String subToCart(@PathVariable("id") Long id, @SessionAttribute("cart") CartDto cartDto
+    ) {
+        Optional<Product> product = productService.findById(id);
+
+        ProductDto productDto = new ProductDto();
+        BeanUtils.copyProperties(product.get(), productDto);
+        cartDto.removeProduct(productDto);
         return "redirect:/cart";
 
     }
