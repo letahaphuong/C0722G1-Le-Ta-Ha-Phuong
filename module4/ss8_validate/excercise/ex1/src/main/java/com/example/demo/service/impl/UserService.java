@@ -1,5 +1,7 @@
 package com.example.demo.service.impl;
 
+
+import com.example.demo.dto.UserDto;
 import com.example.demo.model.User;
 import com.example.demo.repository.IUserRepository;
 import com.example.demo.service.IUserService;
@@ -20,6 +22,7 @@ public class UserService implements IUserService {
         return repository.findAll();
     }
 
+
     @Override
     public Optional<User> findById(Long id) {
         return repository.findById(id);
@@ -27,7 +30,7 @@ public class UserService implements IUserService {
 
     @Override
     public void save(User user) {
-        repository.save(user);
+            repository.save(user);
     }
 
     @Override

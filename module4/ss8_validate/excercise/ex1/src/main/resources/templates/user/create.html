@@ -17,7 +17,7 @@
     <p style="color: blue" th:text="${mess}"></p>
 </div>
 <div id="form">
-    <form th:action="@{/user/save}" th:object="${user}"
+    <form th:action="@{/user/save}" th:object="${userDto}"
           method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>

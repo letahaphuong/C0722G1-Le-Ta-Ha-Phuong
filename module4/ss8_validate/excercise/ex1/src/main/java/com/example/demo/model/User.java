@@ -1,42 +1,26 @@
 package com.example.demo.model;
 
-import com.example.demo.service.IUserService;
-import com.example.demo.service.impl.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
-
 @Entity
-public class User implements Validator {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "{NotEmpty}")
-    @Size(min = 5,max = 45,message = "{Size}")
-    @Pattern(regexp = "^([A-Z][a-z]+[ ])+([A-Z][a-z]+)$",message = "{PatternFirstName}")
     private String firstName;
 
-    @NotEmpty(message = "{NotEmpty}")
-    @Size(min = 5,max = 45,message = "{Size}")
-    @Pattern(regexp = "^[A-Z][a-z]+$",message = "{PatternFirstName}")
     private String lastName;
 
     private int age;
 
-    @Pattern(regexp = "^[0][0-9]{9,10}$",message = "{Phone}")
     private String phoneNumber;
 
-    @Pattern(regexp = "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$",message = "{Email}")
     private String email;
 
 
@@ -101,20 +85,20 @@ public class User implements Validator {
         this.email = email;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return User.class.isAssignableFrom(clazz);
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        User user=(User) target;
-        int age =user.getAge();
-
-        if (age<18){
-            errors.rejectValue("age","Age","");
-        }
-
-    }
+//    @Override
+//    public boolean supports(Class<?> clazz) {
+//        return User.class.isAssignableFrom(clazz);
+//    }
+//
+//    @Override
+//    public void validate(Object target, Errors errors) {
+//        User user=(User) target;
+//        int age =user.getAge();
+//
+//        if (age<18){
+//            errors.rejectValue("age","Age","");
+//        }
+//
+//    }
 
 }

@@ -11,7 +11,7 @@
 <p th:if="${mess}" style="color: blue">
 </p>
 <div id="form">
-    <form th:action="@{/song/update}" th:object="${song}"
+    <form th:action="@{/song/update}" th:object="${songDto}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
