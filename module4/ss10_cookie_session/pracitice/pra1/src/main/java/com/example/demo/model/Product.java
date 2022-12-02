@@ -1,0 +1,78 @@
+package com.example.demo.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "product")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
+    private String img;
+    private String description;
+    private long price;
+    private short discount;
+
+
+    public Product() {
+    }
+
+    public Product(long id, String name, String img, String description, long price, short discount) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.description = description;
+        this.price = price;
+        this.discount = discount;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public short getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(short discount) {
+        this.discount = discount;
+    }
+}

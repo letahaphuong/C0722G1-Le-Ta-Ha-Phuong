@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/js/bootstrap.bundle.min.js">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <a href="/shop" class="btn btn-success">Back Home</a>
+        <div>
+            <a class="btn btn-success" role="button" th:href="@{/cart/pay}">Thanh toán</a>
+        </div>
+        <table class="table " th:if="${cart != null && cart.getProductMap().size() > 0}">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="productMap : ${cart.productMap}">
+                <td th:text="${productMap.key.name}"></td>
+                <td>
+                    <img th:src="${productMap.key.img}" style="width: 100%">
+                </td>
+                <td th:text="${productMap.key.price}"></td>
+                <td th:text="${productMap.value}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="alert alert-warning" role="alert" th:if="${cart==null || cart.getProductMap().size()==0}">
+            Cart Empty
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
