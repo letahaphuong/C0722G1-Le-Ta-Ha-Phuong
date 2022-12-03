@@ -1,5 +1,6 @@
 package com.example.case_study.repository.customer;
 
+import com.example.case_study.dto.customer.CustomerView;
 import com.example.case_study.model.customer.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,4 +13,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Long> {
             countQuery ="select * from customer c where c.name like concat('%',:name,'%') order by c.name"
             ,nativeQuery = true)
     Page<Customer> searchName(@Param("name") String name, Pageable pageable);
+
+    @Query(value="select c.id as id, c.customer_type_id as customerType, c.name as name,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.gender,c.address from customer as c;",nativeQuery = true)
+    Page<CustomerView> searchView(Pageable pageable);
 }

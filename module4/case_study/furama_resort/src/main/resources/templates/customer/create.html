@@ -101,13 +101,14 @@
                     <div class="container register-form">
                         <div class="form">
                             <div class="note align-items-center d-flex justify-content-center">
-                                <h2>EDIT CUSTOMER</h2>
+                                <h2>CREATE CUSTOMER</h2>
                             </div>
-                            <form th:action="@{/customer/update}" th:object="${customer}" method="post">
+                            <p th:if="${mess != null}" th:text="${mess}" style="color: blue">
+                            <form th:action="@{/customer/save}" th:object="${customer}" method="post">
                                 <div class="form-content">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group">
+                                            <div hidden class="form-group">
                                                 <label hidden>Id</label>
                                                 <input hidden class="form-control" name="id" placeholder="CUSTOMER ID *"
                                                        th:field="*{id}"/>
@@ -141,9 +142,9 @@
                                                 <select name="gender" class="form-control form-select"
                                                         aria-label="Default select example"
                                                         style="border-radius: 30px" th:field="*{gender}">
-                                                    <option th:value="0" th:text="Female"></option>
+                                                    <option th:value="0" >Female</option>
 
-                                                    <option th:value="1" th:text="Male"></option>
+                                                    <option th:value="1" >Male</option>
                                                 </select>
                                             </div>
                                             <br>

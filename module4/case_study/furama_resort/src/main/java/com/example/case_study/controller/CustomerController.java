@@ -39,7 +39,28 @@ public class CustomerController {
     @PostMapping("/update")
     public String update(@ModelAttribute("customer") Customer customer,RedirectAttributes redirectAttributes){
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("mess","Edit Susses Fully");
+        redirectAttributes.addFlashAttribute("mess","Edit SussesFully");
+        return "redirect:/customer";
+    }
+
+    @GetMapping("/show-list-create")
+    public String showFormCreate(Model model){
+        model.addAttribute("customer",new Customer());
+        model.addAttribute("customerTypes",customerTypeService.findAll());
+        return "/customer/create";
+    }
+
+    @PostMapping("/save")
+    public String save(@ModelAttribute("customer")Customer customer,RedirectAttributes redirectAttributes){
+        customerService.save(customer);
+        redirectAttributes.addFlashAttribute("mess","Create new customer SussesFully");
+        return "redirect:/customer";
+    }
+
+    @PostMapping("/delete")
+    public String delete(@ModelAttribute Long id,RedirectAttributes redirectAttributes){
+        customerService.remove(id);
+        redirectAttributes.addFlashAttribute("mess","Delete is finned");
         return "redirect:/customer";
     }
 }
