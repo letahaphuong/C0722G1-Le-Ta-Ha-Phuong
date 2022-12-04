@@ -15,4 +15,37 @@ public class RentType {
 
     @OneToMany(mappedBy = "rentType")
     private Set<Facility> facilities;
+
+    public RentType() {
+    }
+
+    public RentType(Long id, String name, Set<Facility> facilities) {
+        this.id = id;
+        this.name = name;
+        this.facilities = facilities;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Facility> getFacilities() {
+        return facilities;
+    }
+
+    public void setFacilities(Set<Facility> facilities) {
+        this.facilities = facilities;
+    }
 }

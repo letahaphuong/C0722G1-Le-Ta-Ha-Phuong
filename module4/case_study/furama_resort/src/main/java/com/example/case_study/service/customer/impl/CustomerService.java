@@ -1,5 +1,6 @@
 package com.example.case_study.service.customer.impl;
 
+import com.example.case_study.dto.customer.CustomerView;
 import com.example.case_study.model.customer.Customer;
 import com.example.case_study.repository.customer.ICustomerRepository;
 import com.example.case_study.service.customer.ICustomerService;
@@ -42,4 +43,8 @@ public class CustomerService implements ICustomerService {
     }
 
 
+    @Override
+    public Page<CustomerView> searchView(Pageable pageable) {
+        return customerRepository.searchView(pageable);
+    }
 }

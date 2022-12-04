@@ -14,6 +14,9 @@ public interface ICustomerRepository extends JpaRepository<Customer,Long> {
             ,nativeQuery = true)
     Page<Customer> searchName(@Param("name") String name, Pageable pageable);
 
-    @Query(value="select c.id as id, c.customer_type_id as customerType, c.name as name,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.gender,c.address from customer as c;",nativeQuery = true)
+//    @Query(value="select c.id as id, c.customer_type_id as customerType, c.name as name,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.gender,c.address from customer as c;",nativeQuery = true)
+    @Query(value="select c.id, c.customer_type_id as customerTypeId, c.name ,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.gender from customer as c"
+            ,countQuery="select c.id, c.customer_type_id , c.name ,c.date_of_birth,c.phone_number,c.gender,c.address from customer as c"
+            ,nativeQuery = true)
     Page<CustomerView> searchView(Pageable pageable);
 }

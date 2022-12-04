@@ -13,6 +13,12 @@ public class AttachFacility {
 
     private String name;
 
+    private double cost;
+
+    private String unit;
+
+    private String status;
+
     @OneToMany(mappedBy = "attachFacility")
     private Set<ContractDetail> contractDetails;
 }

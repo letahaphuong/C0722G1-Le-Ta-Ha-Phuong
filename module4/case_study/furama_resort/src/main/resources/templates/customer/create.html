@@ -114,8 +114,8 @@
                                                        th:field="*{id}"/>
                                             </div>
                                             <div class="form-group">
-                                                <label>Customer Type Name</label>
-                                                <select th:field="*{customerType}" class="form-select"
+                                                <label for="customerType">Customer Type Name</label>
+                                                <select required id="customerType" th:field="*{customerType}" class="form-select"
                                                         aria-label="Default select example"
                                                         style="border-radius: 30px">
                                                     <option th:each="customerType : ${customerTypes}"
@@ -123,58 +123,64 @@
                                                             th:text="${customerType.name}">
                                                     </option>
                                                 </select>
+                                                <p th:errors = "*{customerType}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Name</label>
-                                                <input style="border-radius: 30px" class="form-control" type="text"
+                                                <label for="name">Name</label>
+                                                <input required id="name" style="border-radius: 30px" class="form-control" type="text"
                                                        th:field="*{name}"/>
+                                                <p th:errors = "*{name}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Date Of Birth</label>
-                                                <input style="border-radius: 30px" class="form-control" type="date"
+                                                <label for="dateOfBirth">Date Of Birth</label>
+                                                <input required id="dateOfBirth" style="border-radius: 30px" class="form-control" type="date"
                                                        th:field="*{dateOfBirth}"/>
+                                                <p th:errors = "*{dateOfBirth}" style="color: red"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Gender</label>
-                                                <select name="gender" class="form-control form-select"
+                                                <label for="gender">Gender</label>
+                                                <select required id="gender" class="form-control form-select"
                                                         aria-label="Default select example"
                                                         style="border-radius: 30px" th:field="*{gender}">
                                                     <option th:value="0" >Female</option>
-
                                                     <option th:value="1" >Male</option>
                                                 </select>
+                                                <p th:errors = "*{gender}" style="color: red"></p>
+
                                             </div>
                                             <br>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Id Card</label>
-                                                <input style="border-radius: 30px" class="form-control" type="text"
+                                                <label for="idCard">Id Card</label>
+                                                <input required id="idCard" style="border-radius: 30px" class="form-control" type="text"
                                                        th:field="*{idCard}"/>
-
+                                                <p th:errors = "*{idCard}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Phone Number</label>
-                                                <input style="border-radius: 30px" class="form-control" type="text"
+                                                <label for="phoneNumber">Phone Number</label>
+                                                <input required id="phoneNumber" style="border-radius: 30px" class="form-control" type="text"
                                                        th:field="*{phoneNumber}"/>
+                                                <p th:errors = "*{phoneNumber}" class="text-danger"></p>
 
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Email</label>
-                                                <input style="border-radius: 30px" class="form-control" type="email"
+                                                <label for="email">Email</label>
+                                                <input required id="email" style="border-radius: 30px" class="form-control" type="email"
                                                        th:field="*{email}"/>
+                                                <p th:errors = "*{email}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <input style="border-radius: 30px" class="form-control" type="text"
+                                                <label for="address">Address</label>
+                                                <input required id="address" style="border-radius: 30px" class="form-control" type="text"
                                                        th:field="*{address}"/>
-
+                                                <p th:errors = "*{address}" class="text-danger" ></p>
                                             </div>
                                         </div>
                                     </div>
