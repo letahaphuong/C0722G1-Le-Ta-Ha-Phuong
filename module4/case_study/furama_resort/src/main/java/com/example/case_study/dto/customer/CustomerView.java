@@ -20,5 +20,4 @@ public interface CustomerView {
 
     String getAddress();
 
-
 }
