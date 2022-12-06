@@ -40,4 +40,9 @@ public class FacilityTypeService implements IFacilityTypeService {
     public Page<FacilityType> searchName(String search, Pageable pageable) {
         return null;
     }
+
+    @Override
+    public void removeFlag(Long id) {
+
+    }
 }

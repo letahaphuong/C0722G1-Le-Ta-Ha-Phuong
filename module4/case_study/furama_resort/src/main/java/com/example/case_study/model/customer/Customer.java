@@ -10,11 +10,11 @@ import java.util.Set;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
+    @JoinColumn(name = "customer_type_id")
     private CustomerType customerType;
 
     private String name;
@@ -32,13 +32,16 @@ public class Customer {
 
     private String address;
 
+    @Column(columnDefinition = "bit default true")
+    private boolean flagDelete;
+
     @OneToMany(mappedBy = "customer")
     private Set<Contract>contracts;
 
     public Customer() {
     }
 
-    public Customer(Long id, CustomerType customerType, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, Set<Contract> contracts) {
+    public Customer(Long id, CustomerType customerType, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete, Set<Contract> contracts) {
         this.id = id;
         this.customerType = customerType;
         this.name = name;
@@ -48,7 +51,29 @@ public class Customer {
         this.gender = gender;
         this.email = email;
         this.address = address;
+        this.flagDelete = flagDelete;
         this.contracts = contracts;
+    }
+
+    public Customer(Long id, CustomerType customerType, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete) {
+        this.id = id;
+        this.customerType = customerType;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.email = email;
+        this.address = address;
+        this.flagDelete = flagDelete;
+    }
+
+    public boolean isFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(boolean flagDelete) {
+        this.flagDelete = flagDelete;
     }
 
     public Long getId() {

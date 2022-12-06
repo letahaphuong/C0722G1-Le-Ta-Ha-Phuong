@@ -42,4 +42,9 @@ public class FacilityService implements IFacilityService {
     public Page<Facility> searchName(String search, Pageable pageable) {
         return facilityRepository.searchName(search,pageable);
     }
+
+    @Override
+    public void removeFlag(Long id) {
+
+    }
 }

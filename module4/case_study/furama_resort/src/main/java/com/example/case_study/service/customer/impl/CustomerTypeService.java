@@ -45,5 +45,10 @@ public class CustomerTypeService implements ICustomerTypeService {
         return customerTypeRepository.searchName(search,pageable);
     }
 
+    @Override
+    public void removeFlag(Long id) {
+
+    }
+
 
 }

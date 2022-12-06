@@ -107,8 +107,8 @@ public class CustomerController {
 //    }
 
     @PostMapping("/delete")
-    public String delete(@ModelAttribute Long id,RedirectAttributes redirectAttributes){
-        customerService.remove(id);
+    public String delete(@RequestParam Long id,RedirectAttributes redirectAttributes){
+        customerService.removeFlag(id);
         redirectAttributes.addFlashAttribute("mess","Delete is finned");
         return "redirect:/customer";
     }
