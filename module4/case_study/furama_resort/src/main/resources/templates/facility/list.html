@@ -106,11 +106,11 @@
         <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
         <div class="col-lg-4"><h3 class="mb-4">LIST FACILITY</h3></div>
         <div class="col-lg-4">
-            <form   class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
-<!--                <button class="btn btn-outline-success" type="button" >-->
-<!--                    + Add-->
-<!--                </button>-->
-                <a th:href="@{/facility/show-list-create }" class="btn bg-success">+ Add</a>
+            <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+                <!--                <button class="btn btn-outline-success" type="button" >-->
+                <!--                    + Add-->
+                <!--                </button>-->
+                <a th:href="@{/facility/show-list-create}" class="btn bg-success">+ Add</a>
             </form>
 
         </div>
@@ -145,7 +145,7 @@
                     <th:block th:each="fac,stt : ${facilityList}">
                         <tr>
                             <td th:text="${stt.count} + ${facilityList.number} * ${facilityList.size}"></td>
-<!--                            <td th:text="${stt.count}"></td>-->
+                            <!--                            <td th:text="${stt.count}"></td>-->
                             <td th:text="${fac.getName()}"></td>
                             <td th:text="${fac.getAre()}"></td>
                             <td th:text="${fac.getCost()}"></td>
@@ -154,17 +154,19 @@
                             <td th:text="${fac.getStandardRoom()}"></td>
                             <td th:text="${fac.getDescriptionOtherConvenience()}"></td>
                             <td th:text="${fac.getPoolArea()}"></td>
-                            <td th:text="${fac.getNumberOfFloors()}"></td>
+                            <!--                            <td th:text="${fac.getNumberOfFloors()}"></td>-->
+                            <td th:if="${fac.getNumberOfFloors()=='null'}" th:text="'0'"></td>
+                            <td th:if="${fac.getNumberOfFloors()!='null'}" th:text="${fac.getNumberOfFloors()}"></td>
                             <td th:text="${fac.getFacilityFree()}"></td>
                             <td><a th:href="@{/facility/edit/__${fac.id}__ }" class="btn bg-primary">EDIT</a></td>
                             <td>
-<!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
-<!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
-<!--                                            class="btn bg-danger" type="button" data-bs-toggle="modal"-->
-<!--                                            data-bs-target="#remove">-->
-<!--                                        DELETE-->
-<!--                                    </button>-->
-<!--                                </form>-->
+                                <!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
+                                <!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
+                                <!--                                            class="btn bg-danger" type="button" data-bs-toggle="modal"-->
+                                <!--                                            data-bs-target="#remove">-->
+                                <!--                                        DELETE-->
+                                <!--                                    </button>-->
+                                <!--                                </form>-->
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
                                     <button th:onclick="|idRemove('__${fac.id}__', '__${fac.name}__')|"
                                             class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
@@ -389,7 +391,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <form th:action="@{/customer/delete}" method="post">
-                    <input type="hidden"  name="id" id="idInput">
+                    <input type="hidden" name="id" id="idInput">
                     <button class="btn btn-primary">DELETE</button>
                 </form>
             </div>

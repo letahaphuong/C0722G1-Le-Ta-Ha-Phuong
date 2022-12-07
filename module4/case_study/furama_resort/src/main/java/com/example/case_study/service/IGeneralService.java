@@ -22,5 +22,4 @@ public interface IGeneralService<T>  {
 
     void removeFlag(Long id);
 
-    Page<Customer> findByFlagDelete(Pageable pageable);
 }

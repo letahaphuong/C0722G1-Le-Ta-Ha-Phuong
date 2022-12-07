@@ -131,6 +131,7 @@
                         <th scope="col">GENDER</th>
 <!--                        <th scope="col">ID CARD</th>-->
                         <th scope="col">PHONE NUMBER</th>
+                        <th scope="col">EMAIL</th>
 <!--                        <th scope="col">EMAIL</th>-->
 <!--                        <th scope="col">ADDRESS</th>-->
                         <th scope="col">EDIT</th>
@@ -145,10 +146,11 @@
 <!--                            <td th:text="${cus.getCustomerType()}"></td>-->
                             <td th:text="${cus.getName()}"></td>
                             <td th:text="${cus.getDateOfBirth()}"></td>
-                            <td th:if="${cus.isGender()==true}" th:text="Nam"></td>
+                            <td th:if="${cus.isGender()}" th:text="Nam"></td>
                             <td th:if="${cus.isGender()==false}" th:text="Nữ"></td>
 <!--                            <td th:text="${cus.getIdCard()}"></td>-->
                             <td th:text="${cus.getPhoneNumber()}"></td>
+                            <td th:text="${cus.getEmail()}"></td>
 <!--                            <td th:text="${cus.getEmail()}"></td>-->
 <!--                            <td th:text="${cus.getAddress()}"></td>-->
                             <td><a th:href="@{/customer/edit/__${cus.id}__ }" class="btn bg-primary">EDIT</a></td>

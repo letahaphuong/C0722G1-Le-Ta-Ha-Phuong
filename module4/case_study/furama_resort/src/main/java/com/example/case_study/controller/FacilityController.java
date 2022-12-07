@@ -39,4 +39,12 @@ public class FacilityController {
         model.addAttribute("facilityList",facilities);
         return "facility/list";
     }
+
+    @GetMapping("/show-list-create")
+    public String showFormCreate( Model model){
+        model.addAttribute("facility",new Facility());
+        model.addAttribute("facilityTypeList",facilityTypeService.findAll());
+        model.addAttribute("rentTypeList",rentTypeService.findAll());
+        return "facility/create";
+    }
 }

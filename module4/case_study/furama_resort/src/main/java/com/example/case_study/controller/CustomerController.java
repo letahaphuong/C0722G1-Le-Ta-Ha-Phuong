@@ -35,8 +35,8 @@ public class CustomerController {
 //    }
 
     @GetMapping("")
-    public String showViewDto(Model model,@PageableDefault(page = 0,size = 3)Pageable pageable){
-        Page<CustomerView> customerViews = customerService.searchView(pageable);
+    public String showViewDto(@RequestParam(defaultValue = "") String search,Model model,@PageableDefault(page = 0,size = 3)Pageable pageable){
+        Page<CustomerView> customerViews = customerService.searchView(search,pageable);
         model.addAttribute("customerList",customerViews);
         return "customer/list";
     }

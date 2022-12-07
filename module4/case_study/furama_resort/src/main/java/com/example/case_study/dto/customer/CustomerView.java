@@ -18,4 +18,5 @@ public interface CustomerView {
 
     String getAddress();
 
+    String getEmail();
 }

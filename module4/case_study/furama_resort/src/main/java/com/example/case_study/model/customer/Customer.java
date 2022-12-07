@@ -14,7 +14,7 @@ public class Customer {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_type_id")
+    @JoinColumn(name = "customer_type_id",referencedColumnName = "id")
     private CustomerType customerType;
 
     private String name;

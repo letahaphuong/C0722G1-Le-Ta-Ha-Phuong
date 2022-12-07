@@ -50,7 +50,7 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public Page<CustomerView> searchView(Pageable pageable) {
-        return customerRepository.searchView(pageable);
+    public Page<CustomerView> searchView(String search,Pageable pageable) {
+        return customerRepository.searchView(search,search,search,pageable);
     }
 }

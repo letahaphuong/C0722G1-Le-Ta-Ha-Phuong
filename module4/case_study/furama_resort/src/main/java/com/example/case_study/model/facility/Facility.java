@@ -44,10 +44,13 @@ public class Facility {
     @Column(columnDefinition = "text")
     private String facilityFree;
 
+    @Column(columnDefinition = "bit default true")
+    private boolean flagDelete;
+
     public Facility() {
     }
 
-    public Facility(Long id, String name, int are, double cost, int maxPeoPel, FacilityType facilityType, RentType rentType, Set<Contract> contracts, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
+    public Facility(Long id, String name, int are, double cost, int maxPeoPel, FacilityType facilityType, RentType rentType, Set<Contract> contracts, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree, boolean flagDelete) {
         this.id = id;
         this.name = name;
         this.are = are;
@@ -61,6 +64,7 @@ public class Facility {
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
         this.facilityFree = facilityFree;
+        this.flagDelete = flagDelete;
     }
 
     public Long getId() {
@@ -165,6 +169,14 @@ public class Facility {
 
     public void setFacilityFree(String facilityFree) {
         this.facilityFree = facilityFree;
+    }
+
+    public boolean isFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(boolean flagDelete) {
+        this.flagDelete = flagDelete;
     }
 }
 

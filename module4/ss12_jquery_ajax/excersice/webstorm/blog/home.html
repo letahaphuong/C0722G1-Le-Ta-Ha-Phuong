@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,19 +9,19 @@
 <body>
 <table class="table">
     <form class="d-flex">
-        <input class="form-control me-2"  placeholder="Search" id="searchName">
-        <button class="btn btn-outline-success" id="search" type="submit" >Search
+        <input class="form-control me-2" placeholder="Search" id="searchName">
+        <button class="btn btn-outline-success" id="search" type="submit">Search
         </button>
     </form>
     <thead>
     <!-- Button more modal -->
-<!--    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--        Search-->
-<!--    </button>-->
-<!--    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
-<!--    <button type="button" class="btn btn-primary" id="idMore">-->
-<!--        more-->
-<!--    </button>-->
+    <!--    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+    <!--        Search-->
+    <!--    </button>-->
+    <!--    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+    <!--    <button type="button" class="btn btn-primary" id="idMore">-->
+    <!--        more-->
+    <!--    </button>-->
 
     <!-- Modal -->
     <!--    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
@@ -79,9 +79,9 @@
 <script>
     let page = 0;
     $("#showMore").click(function () {
-        page+=1;
+        page += 1;
         $.ajax({
-            url: 'http://localhost:8080/blogs?page='+page,
+            url: 'http://localhost:8080/blogs?page=' + page,
             type: 'GET',
             dateType: 'json',
             success: function (data) {
@@ -91,7 +91,7 @@
 
                         `
                             <tr>
-                              <th scope="row ">${i+page*3 + 1}</th>
+                              <th scope="row ">${i + page * 3 + 1}</th>
                               <td>${data.content[i].name}</td>
                               <td>${data.content[i].contentBlog}</td>
                               <td>${data.content[i].producerBlog}</td>
@@ -114,7 +114,7 @@
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            url: 'http://localhost:8080/blogs/search/'+search,
+            url: 'http://localhost:8080/blogs/search/' + search,
             type: 'GET',
             dataType: 'json',
             success: function (data) {
@@ -141,8 +141,6 @@
     })
 
 
-
-
     $(document).ready(function () {
         function init() {
             $.ajax({
@@ -153,7 +151,6 @@
                     let mytable = "";
                     for (let i = 0; i < data.content.length; i++) {
                         mytable +=
-
                             `
                             <tr>
                               <th scope="row ">${i + 1}</th>

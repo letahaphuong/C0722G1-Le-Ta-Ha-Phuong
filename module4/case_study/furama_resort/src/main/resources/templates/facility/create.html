@@ -104,103 +104,133 @@
                                 <h2>CREATE CUSTOMER</h2>
                             </div>
                             <p th:if="${mess != null}" th:text="${mess}" style="color: blue">
-                            <form th:action="@{/customer/save}" th:object="${customer}" method="post">
-                                <div class="form-content">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div hidden class="form-group">
-                                                <label hidden>Id</label>
-                                                <input hidden class="form-control" name="id" placeholder="CUSTOMER ID *"
-                                                       th:field="*{id}"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="customerType">Customer Type Name</label>
-                                                <select required id="customerType" th:field="*{customerType}" class="form-select"
-                                                        aria-label="Default select example"
-                                                        style="border-radius: 30px">
-                                                    <option th:each="customerType : ${customerTypes}"
-                                                            th:value="${customerType.id}"
-                                                            th:text="${customerType.name}">
-                                                    </option>
-                                                </select>
-                                                <p th:errors = "*{customerType}" class="text-danger"></p>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="name">Name</label>
-                                                <input required id="name" style="border-radius: 30px" class="form-control" type="text"
-                                                       th:field="*{name}"/>
-                                                <p th:errors = "*{name}" class="text-danger"></p>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="dateOfBirth">Date Of Birth</label>
-                                                <input required id="dateOfBirth" style="border-radius: 30px" class="form-control" type="date"
-                                                       th:field="*{dateOfBirth}"/>
-                                                <p th:errors = "*{dateOfBirth}" style="color: red"></p>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="gender">Gender</label>
-                                                <select required id="gender" class="form-control form-select"
-                                                        aria-label="Default select example"
-                                                        style="border-radius: 30px" th:field="*{gender}">
-                                                    <option th:value="0" >Female</option>
-                                                    <option th:value="1" >Male</option>
-                                                </select>
-                                                <p th:errors = "*{gender}" style="color: red"></p>
-
-                                            </div>
-                                            <br>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="idCard">Id Card</label>
-                                                <input required id="idCard" style="border-radius: 30px" class="form-control" type="text"
-                                                       th:field="*{idCard}"/>
-                                                <p th:errors = "*{idCard}" class="text-danger"></p>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="phoneNumber">Phone Number</label>
-                                                <input required id="phoneNumber" style="border-radius: 30px" class="form-control" type="text"
-                                                       th:field="*{phoneNumber}"/>
-                                                <p th:errors = "*{phoneNumber}" class="text-danger"></p>
-
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input required id="email" style="border-radius: 30px" class="form-control" type="email"
-                                                       th:field="*{email}"/>
-                                                <p th:errors = "*{email}" class="text-danger"></p>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <label for="address">Address</label>
-                                                <input required id="address" style="border-radius: 30px" class="form-control" type="text"
-                                                       th:field="*{address}"/>
-                                                <p th:errors = "*{address}" class="text-danger" ></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <button type="submit" class="btn btn-outline-success">Submit</button>
-                                </div>
-                            </form>
+                                <form th:action="@{/facility/save}" th:object="${facility}" method="post">
+                                    <div class="form-content">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div hidden class="form-group">
+                                                    <label hidden>Id</label>
+                                                    <input hidden class="form-control" name="id"
+                                                           placeholder="CUSTOMER ID *"
+                                                           th:field="*{id}"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Facility Name</label>
+                                                    <input required id="name" style="border-radius: 30px"
+                                                           class="form-control" type="text"
+                                                           th:field="*{name}"/>
+                            <p th:errors="*{name}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="are">Are</label>
+                            <input required id="are" style="border-radius: 30px" class="form-control" type="number"
+                                   th:field="*{are}"/>
+                            <p th:errors="*{are}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="cost">Cost</label>
+                            <input required id="cost" style="border-radius: 30px" class="form-control" type="number"
+                                   th:field="*{cost}"/>
+                            <p th:errors="*{cost}" style="color: red"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="maxPeoPel">Max People</label>
+                            <input required id="maxPeoPel" style="border-radius: 30px" class="form-control"
+                                   type="number"
+                                   th:field="*{maxPeoPel}"/>
+                            <p th:errors="*{maxPeoPel}" style="color: red"></p>
 
                         </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="numberOfFloors">Number Of Floors</label>
+                            <input required id="numberOfFloors" style="border-radius: 30px" class="form-control"
+                                   type="number"
+                                   th:field="*{numberOfFloors}"/>
+                            <p th:errors="*{numberOfFloors}" style="color: red"></p>
+
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="facilityFree">Facility Free</label>
+                            <input required id="facilityFree" style="border-radius: 30px" class="form-control"
+                                   type="text"
+                                   th:field="*{facilityFree}"/>
+                            <p th:errors="*{facilityFree}" style="color: red"></p>
+                        </div>
+
                     </div>
-
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="facilityType">Facility Type</label>
+                            <select required id="facilityType" th:field="*{facilityType}" class="form-select"
+                                    aria-label="Default select example"
+                                    style="border-radius: 30px">
+                                <option th:each="fac : ${facilityTypeList}"
+                                        th:value="${fac.id}"
+                                        th:text="${fac.name}">
+                                </option>
+                            </select>
+                            <p th:errors="*{facilityType}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="rentType">Rent Type</label>
+                            <select required id="rentType" th:field="*{rentType}" class="form-select"
+                                    aria-label="Default select example"
+                                    style="border-radius: 30px">
+                                <option th:each="rent : ${rentTypeList}"
+                                        th:value="${rent.id}"
+                                        th:text="${rent.name}">
+                                </option>
+                            </select>
+                            <p th:errors="*{rentType}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="standardRoom">Standard Room</label>
+                            <input required id="standardRoom" style="border-radius: 30px" class="form-control"
+                                   type="text"
+                                   th:field="*{standardRoom}"/>
+                            <p th:errors="*{standardRoom}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="descriptionOtherConvenience">Description Other Convenience</label>
+                            <input required id="descriptionOtherConvenience" style="border-radius: 30px"
+                                   class="form-control" type="text"
+                                   th:field="*{descriptionOtherConvenience}"/>
+                            <p th:errors="*{descriptionOtherConvenience}" class="text-danger"></p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="poolArea">Pool Area</label>
+                            <input required id="poolArea" style="border-radius: 30px" class="form-control" type="text"
+                                   th:field="*{poolArea}"/>
+                            <p th:errors="*{poolArea}" class="text-danger"></p>
+                        </div>
+                    </div>
                 </div>
-
-                <div></div>
-
+                <br>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
             </div>
-            <div class="col-lg-1"></div>
-        </div>
+            </form>
 
+        </div>
     </div>
+
+</div>
+
+<div></div>
+
+</div>
+<div class="col-lg-1"></div>
+</div>
+
+</div>
 </div>
 
 </body>
