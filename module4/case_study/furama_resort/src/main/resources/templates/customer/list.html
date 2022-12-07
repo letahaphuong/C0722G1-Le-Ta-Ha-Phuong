@@ -91,11 +91,30 @@
                             </ul>
                         </li>
                     </ul>
+
                     <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
                         <input class="form-control me-2" name="search" type="search" placeholder="Search"
                                aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+<!--                    <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
+<!--                        <input class="form-control me-2" name="search" type="search" placeholder="Search"-->
+<!--                               aria-label="Search">-->
+<!--                        <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--                    </form>-->
+<!--                    <div class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
+<!--                        <select required id="customerType" th:field="*{search}" name="search" class="form-select"-->
+<!--                                aria-label="Default select example"-->
+<!--                                style="border-radius: 30px">-->
+<!--                            <option th:each="customerType : ${customerTypes}"-->
+<!--                                    th:value="${customerType.id}"-->
+<!--                                    th:text="${customerType.name}">-->
+<!--                            </option>-->
+<!--                        </select>-->
+<!--                        <button class="btn btn-outline-success" type="submit">Search</button>-->
+
+<!--                    </div>-->
+
 
                 </div>
             </div>
@@ -106,10 +125,10 @@
         <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
         <div class="col-lg-4"><h3 class="mb-4">LIST CUSTOMER</h3></div>
         <div class="col-lg-4">
-            <form   class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
-<!--                <button class="btn btn-outline-success" type="button" >-->
-<!--                    + Add-->
-<!--                </button>-->
+            <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+                <!--                <button class="btn btn-outline-success" type="button" >-->
+                <!--                    + Add-->
+                <!--                </button>-->
                 <a th:href="@{/customer/show-list-create }" class="btn bg-success">+ Add</a>
             </form>
 
@@ -125,15 +144,15 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-<!--                        <th scope="col">CUSTOMER TYPE</th>-->
+                        <!--                        <th scope="col">CUSTOMER TYPE</th>-->
                         <th scope="col">NAME</th>
                         <th scope="col">DATE OF BIRTH</th>
                         <th scope="col">GENDER</th>
-<!--                        <th scope="col">ID CARD</th>-->
+                        <!--                        <th scope="col">ID CARD</th>-->
                         <th scope="col">PHONE NUMBER</th>
                         <th scope="col">EMAIL</th>
-<!--                        <th scope="col">EMAIL</th>-->
-<!--                        <th scope="col">ADDRESS</th>-->
+                        <!--                        <th scope="col">EMAIL</th>-->
+                        <!--                        <th scope="col">ADDRESS</th>-->
                         <th scope="col">EDIT</th>
                         <th scope="col">DELETE</th>
                         <th scope="col">DETAIL</th>
@@ -143,25 +162,25 @@
                     <th:block th:each="cus,stt : ${customerList}">
                         <tr>
                             <td th:text="${stt.count} + ${customerList.number} * ${customerList.size}"></td>
-<!--                            <td th:text="${cus.getCustomerType()}"></td>-->
+                            <!--                            <td th:text="${cus.getCustomerType()}"></td>-->
                             <td th:text="${cus.getName()}"></td>
                             <td th:text="${cus.getDateOfBirth()}"></td>
                             <td th:if="${cus.isGender()}" th:text="Nam"></td>
                             <td th:if="${cus.isGender()==false}" th:text="Nữ"></td>
-<!--                            <td th:text="${cus.getIdCard()}"></td>-->
+                            <!--                            <td th:text="${cus.getIdCard()}"></td>-->
                             <td th:text="${cus.getPhoneNumber()}"></td>
                             <td th:text="${cus.getEmail()}"></td>
-<!--                            <td th:text="${cus.getEmail()}"></td>-->
-<!--                            <td th:text="${cus.getAddress()}"></td>-->
+                            <!--                            <td th:text="${cus.getEmail()}"></td>-->
+                            <!--                            <td th:text="${cus.getAddress()}"></td>-->
                             <td><a th:href="@{/customer/edit/__${cus.id}__ }" class="btn bg-primary">EDIT</a></td>
                             <td>
-<!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
-<!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
-<!--                                            class="btn bg-danger" type="button" data-bs-toggle="modal"-->
-<!--                                            data-bs-target="#remove">-->
-<!--                                        DELETE-->
-<!--                                    </button>-->
-<!--                                </form>-->
+                                <!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
+                                <!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
+                                <!--                                            class="btn bg-danger" type="button" data-bs-toggle="modal"-->
+                                <!--                                            data-bs-target="#remove">-->
+                                <!--                                        DELETE-->
+                                <!--                                    </button>-->
+                                <!--                                </form>-->
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
                                     <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__')|"
                                             class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
@@ -386,7 +405,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <form th:action="@{/customer/delete}" method="post">
-                    <input type="text" hidden="hidden"  name="id" id="idInput">
+                    <input type="text" hidden="hidden" name="id" id="idInput">
                     <button class="btn btn-primary">DELETE</button>
                 </form>
             </div>
