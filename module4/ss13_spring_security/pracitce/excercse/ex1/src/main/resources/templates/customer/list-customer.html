@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Create customer</title>
@@ -16,7 +16,9 @@
 
         <input type="button" value="Add Customer"
                onclick="window.location.href='customer/showForm'; return false;"
-               class="btn btn-primary"/> <br/>
+               class="btn btn-primary"/> <br/><input type="button" value="Provinces"
+                                                     onclick="window.location.href='provinces'; return false;"
+                                                     class="btn btn-primary"/><br>
         <br/>
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -31,12 +33,12 @@
                         <th>Province</th>
                         <th>Action</th>
                     </tr>
-                    <tr th:each="cus : ${customers}">
+                    <tr sec:authorize="hasRole('ADMIN')" th:each="cus : ${customers}">
                         <td th:text="${cus.firstName}"></td>
                         <td th:text="${cus.lastName}"></td>
-                        <td th:text="${cus.email}"></td>
+                        <td th:text="${cus.email}"></td>8
                         <td th:text="${cus.province.name}"></td>
-                        <td>
+                        <td >
                             <!-- display the update link -->
                             <a th:href="@{'/customer/update?id=' + ${cus.id}}">Update</a>
                              <a th:href="@{'/customer/delete?id=' + ${cus.id}}"
