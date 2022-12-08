@@ -40,8 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/customer", true).permitAll()
 
-                .and().authorizeHttpRequests().antMatchers("/province/create", "/province/edit/", "/province/list").hasRole("ADMIN")
-                .and().authorizeHttpRequests().antMatchers("/customer/create", "/customer/edit/", "/customer/list").hasRole("USER")
+//                .and().authorizeHttpRequests().antMatchers("/provinces","/customer").hasRole("ADMIN")
+                .and().authorizeHttpRequests().antMatchers( "/customer").hasAnyRole("USER","ADMIN")
+                .and().authorizeHttpRequests().antMatchers( "/provinces").hasRole("ADMIN")
 
 
                 .and()
