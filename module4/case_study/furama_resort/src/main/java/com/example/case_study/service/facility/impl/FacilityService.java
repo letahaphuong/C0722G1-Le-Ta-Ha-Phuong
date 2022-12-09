@@ -1,5 +1,6 @@
 package com.example.case_study.service.facility.impl;
 
+import com.example.case_study.dto.facility.FacilityView;
 import com.example.case_study.model.facility.Facility;
 import com.example.case_study.repository.facility.IFacilityRepository;
 import com.example.case_study.repository.facility.IFacilityTypeRepository;
@@ -38,13 +39,17 @@ public class FacilityService implements IFacilityService {
         facilityRepository.deleteById(id);
     }
 
-    @Override
-    public Page<Facility> searchName(String search, Pageable pageable) {
-        return facilityRepository.searchName(search, search, pageable);
-    }
+
+
 
     @Override
     public void removeFlag(Long id) {
+        facilityRepository.removeFlag(id);
+    }
+
+    @Override
+    public Page<FacilityView> searchView(String name, String facilityType, Pageable pageable) {
+        return facilityRepository.searchView(name, facilityType, pageable);
 
     }
 }

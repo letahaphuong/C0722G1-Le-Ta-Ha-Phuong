@@ -1,6 +1,7 @@
 package com.example.case_study.model.facility;
 
 import com.example.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.CORBA.LongHolder;
 
 import javax.persistence.*;
@@ -31,6 +32,7 @@ public class Facility {
     private RentType rentType;
 
     @OneToMany(mappedBy = "facility")
+    @JsonBackReference
     private Set<Contract> contracts;
 
     private String standardRoom;

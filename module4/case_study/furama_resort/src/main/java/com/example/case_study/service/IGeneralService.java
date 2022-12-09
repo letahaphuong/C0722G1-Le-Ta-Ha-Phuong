@@ -18,7 +18,7 @@ public interface IGeneralService<T>  {
 
     void remove(Long id);
 
-    Page<T> searchName(String search, Pageable pageable);
+//    Page<T> searchName(String searchByName, Pageable pageable);
 
     void removeFlag(Long id);
 

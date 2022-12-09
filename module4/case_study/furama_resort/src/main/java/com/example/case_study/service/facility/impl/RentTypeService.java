@@ -37,10 +37,7 @@ public class RentTypeService implements IRentTypeService {
 
     }
 
-    @Override
-    public Page<RentType> searchName(String search, Pageable pageable) {
-        return null;
-    }
+
 
     @Override
     public void removeFlag(Long id) {

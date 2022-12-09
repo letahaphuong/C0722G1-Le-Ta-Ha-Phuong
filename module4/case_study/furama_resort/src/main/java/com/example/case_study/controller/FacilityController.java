@@ -1,5 +1,6 @@
 package com.example.case_study.controller;
 
+import com.example.case_study.dto.facility.FacilityView;
 import com.example.case_study.model.facility.Facility;
 import com.example.case_study.service.facility.IFacilityService;
 import com.example.case_study.service.facility.IFacilityTypeService;
@@ -10,9 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("facility")
@@ -34,17 +34,56 @@ public class FacilityController {
     }
 
     @GetMapping("")
-    public String showList(@RequestParam(defaultValue = "") String search, Model model, @PageableDefault(page = 0,size = 3)Pageable pageable){
-        Page<Facility> facilities = facilityService.searchName(search, pageable);
-        model.addAttribute("facilityList",facilities);
+    public String showList(@RequestParam(defaultValue = "") String facilityName
+            ,@RequestParam(defaultValue = "") String facilityType
+            , Model model, @PageableDefault(page = 0, size = 3) Pageable pageable) {
+        Page<FacilityView> facilities = facilityService.searchView(facilityName,facilityType, pageable);
+        model.addAttribute("facilityList", facilities);
+        model.addAttribute("facilityTypes",facilityTypeService.findAll());
         return "facility/list";
     }
 
     @GetMapping("/show-list-create")
-    public String showFormCreate( Model model){
-        model.addAttribute("facility",new Facility());
-        model.addAttribute("facilityTypeList",facilityTypeService.findAll());
-        model.addAttribute("rentTypeList",rentTypeService.findAll());
+    public String showFormCreate(Model model) {
+        model.addAttribute("facility", new Facility());
+        model.addAttribute("facilityTypeList", facilityTypeService.findAll());
+        model.addAttribute("rentTypeList", rentTypeService.findAll());
         return "facility/create";
+    }
+
+    @PostMapping("/save")
+    public String saveFacility(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
+        facilityService.save(facility);
+        redirectAttributes.addFlashAttribute("mess", "Thêm mới thành công");
+        return "redirect:/facility";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showFormEdit(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("facility", facilityService.findById(id).get());
+        model.addAttribute("facilityTypeList", facilityTypeService.findAll());
+        model.addAttribute("rentTypeList", rentTypeService.findAll());
+        return "facility/edit";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute Facility facility,RedirectAttributes redirectAttributes){
+        facilityService.save(facility);
+        redirectAttributes.addFlashAttribute("facility","Sửa Thành Công!");
+        return "redirect:/facility";
+    }
+
+    @GetMapping("detail/{id}")
+    public String viewDetail(@PathVariable("id") Long id,Model model){
+        model.addAttribute("facility",facilityService.findById(id).get());
+        model.addAttribute("facilityTypeList", facilityTypeService.findAll());
+        model.addAttribute("rentTypeList", rentTypeService.findAll());
+        return "facility/detail";
+    }
+    @PostMapping("/delete")
+    public String delete(@RequestParam Long id,RedirectAttributes redirectAttributes){
+        facilityService.removeFlag(id);
+        redirectAttributes.addFlashAttribute("mess","Xoá thành công");
+        return "redirect:/facility";
     }
 }

@@ -75,8 +75,17 @@
         src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"></script>
-
+<button type="submit" id="clickMe">Click me!!</button>
 <script>
+
+    // $(".click").click(function () {
+    //     alert("ok clickContract")
+    // })
+    $("#clickMe").click(function() {
+        debugger
+        alert( "Handler for .click() called." )
+    });
+
     let page = 0;
     $("#showMore").click(function () {
         page += 1;

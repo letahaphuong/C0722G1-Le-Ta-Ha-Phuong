@@ -1,6 +1,7 @@
 package com.example.case_study.model.employee;
 
 import com.example.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -40,6 +41,7 @@ public class Employee {
     private Division division;
 
     @OneToMany(mappedBy = "employee")
+    @JsonBackReference
     private Set<Contract> contracts;
 
 }

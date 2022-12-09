@@ -39,18 +39,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Page<Customer> searchName(String search, Pageable pageable) {
-        return customerRepository.searchName(search,pageable);
-    }
-
-    @Override
     public void removeFlag( Long id) {
         customerRepository.removeFlag(id);
     }
 
 
     @Override
-    public Page<CustomerView> searchView(String search,Pageable pageable) {
-        return customerRepository.searchView(search,search,search,pageable);
+    public Page<CustomerView> searchView(String search,String email,String customerTypeId,Pageable pageable) {
+        return customerRepository.searchView(search,email,customerTypeId,pageable);
     }
 }

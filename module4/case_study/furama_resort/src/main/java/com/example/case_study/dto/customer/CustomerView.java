@@ -8,6 +8,8 @@ public interface CustomerView {
 
     CustomerType getCustomerType();
 
+    String getCustomerTypeName();
+
     String getName();
 
     String getDateOfBirth();

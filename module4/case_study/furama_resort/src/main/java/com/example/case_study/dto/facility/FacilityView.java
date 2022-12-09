@@ -10,9 +10,9 @@ public interface FacilityView {
 
     String getName();
 
-    int getAre();
+    String getFacilityTypeNames();
 
-    double getCost();
+    String getRentNames();
 
     int getMaxPeoPel();
 

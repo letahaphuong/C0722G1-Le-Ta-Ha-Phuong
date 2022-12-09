@@ -35,38 +35,50 @@ public class CustomerController {
 //    }
 
     @GetMapping("")
-    public String showViewDto(@RequestParam(defaultValue = "") String search,Model model,@PageableDefault(page = 0,size = 3)Pageable pageable){
-        Page<CustomerView> customerViews = customerService.searchView(search,pageable);
-        model.addAttribute("customerTypes",customerTypeService.findAll());
-        model.addAttribute("customerList",customerViews);
+    public String showViewDto(
+            @RequestParam(defaultValue = "") String searchByName
+            , @RequestParam(defaultValue = "") String email
+            , @RequestParam(defaultValue = "") String customerTypeId
+            , Model model, @PageableDefault(page = 0, size = 3) Pageable pageable) {
+        Page<CustomerView> customerViews = customerService.searchView(searchByName,email,customerTypeId, pageable);
+        model.addAttribute("customerTypes", customerTypeService.findAll());
+        model.addAttribute("customerList", customerViews);
         return "customer/list";
     }
 
+//    @GetMapping("")
+//    public String showViewDto(@RequestParam(defaultValue = "") String search,Model model,@PageableDefault(page = 0,size = 3)Pageable pageable){
+//        Page<CustomerView> customerViews = customerService.searchView(search,pageable);
+//        model.addAttribute("customerTypes",customerTypeService.findAll());
+//        model.addAttribute("customerList",customerViews);
+//        return "customer/list";
+//    }
+
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Long id,Model model){
-        model.addAttribute("customer",customerService.findById(id));
-        model.addAttribute("customerTypes",customerTypeService.findAll());
+    public String showEditForm(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("customer", customerService.findById(id));
+        model.addAttribute("customerTypes", customerTypeService.findAll());
         return "/customer/edit";
     }
 
     @GetMapping("/detail/{id}")
-    public String showDetail(@PathVariable("id") Long id,Model model){
-        model.addAttribute("customer",customerService.findById(id));
-        model.addAttribute("customerTypes",customerTypeService.findAll());
+    public String showDetail(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("customer", customerService.findById(id));
+        model.addAttribute("customerTypes", customerTypeService.findAll());
         return "/customer/detail";
     }
 
     @PostMapping("/update")
-    public String update(@Validated @ModelAttribute("customer") CustomerDto customerDto,BindingResult bindingResult ,RedirectAttributes redirectAttributes,Model model){
-        model.addAttribute("customerTypes",customerTypeService.findAll());
-        new CustomerDto().validate(customerDto,bindingResult);
-        if (bindingResult.hasErrors()){
+    public String update(@Validated @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        model.addAttribute("customerTypes", customerTypeService.findAll());
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
             return "customer/edit";
         }
-        Customer customer=new Customer();
-        BeanUtils.copyProperties(customerDto,customer);
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto, customer);
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("mess","Edit SussesFully");
+        redirectAttributes.addFlashAttribute("mess", "Edit SussesFully");
         return "redirect:/customer";
     }
 
@@ -78,25 +90,25 @@ public class CustomerController {
 //    }
 
     @GetMapping("/show-list-create")
-    public String showFormCreate(Model model){
-        model.addAttribute("customer",new Customer());
-        model.addAttribute("customerTypes",customerTypeService.findAll());
+    public String showFormCreate(Model model) {
+        model.addAttribute("customer", new Customer());
+        model.addAttribute("customerTypes", customerTypeService.findAll());
         return "/customer/create";
     }
 
     @PostMapping("/save")
-    public String save(@Validated @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
-        model.addAttribute("customerTypes",customerTypeService.findAll());
-        new CustomerDto().validate(customerDto,bindingResult);
-        if (bindingResult.hasErrors()){
+    public String save(@Validated @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        model.addAttribute("customerTypes", customerTypeService.findAll());
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
             return "customer/create";
         }
 
-        Customer customer=new Customer();
+        Customer customer = new Customer();
 
-        BeanUtils.copyProperties(customerDto,customer);
+        BeanUtils.copyProperties(customerDto, customer);
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("mess","Create new customer SussesFully");
+        redirectAttributes.addFlashAttribute("mess", "Create new customer SussesFully");
         return "redirect:/customer";
     }
 
@@ -108,9 +120,9 @@ public class CustomerController {
 //    }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam Long id,RedirectAttributes redirectAttributes){
+    public String delete(@RequestParam Long id, RedirectAttributes redirectAttributes) {
         customerService.removeFlag(id);
-        redirectAttributes.addFlashAttribute("mess","Delete is finned");
+        redirectAttributes.addFlashAttribute("mess", "Delete is finned");
         return "redirect:/customer";
     }
 }

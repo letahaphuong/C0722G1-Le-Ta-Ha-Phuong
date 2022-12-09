@@ -101,7 +101,32 @@
             </div>
         </nav>
     </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row justify-content-center ">
+                <form class="d-flex justify-content-center  mt-3" action="">
 
+                    <input style="border-radius: 30px" class="form-control me-2" name="facilityName" type="search"
+                           placeholder="Enter Facility Name"
+                           aria-label="Search">
+
+                    <select name="facilityType" class="form-select"
+                            aria-label="Default select example"
+                            style="border-radius: 30px">
+                        <option VALUE="">--Choose Facility Type--</option>
+                        <option th:each="facility : ${facilityTypes}"
+                                th:value="${facility.id}"
+                                th:text="${facility.name}">
+                        </option>
+                    </select>
+
+                    <button class="btn btn-outline-success m-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
     <div class="row text-center align-items-end" style="height: 10%">
         <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
         <div class="col-lg-4"><h3 class="mb-4">LIST FACILITY</h3></div>
@@ -126,15 +151,15 @@
                     <tr>
                         <th scope="col">STT</th>
                         <th scope="col">NAME</th>
-                        <th scope="col">AREA</th>
-                        <th scope="col">COST</th>
+<!--                        <th scope="col">AREA</th>-->
+<!--                        <th scope="col">COST</th>-->
                         <th scope="col">MAX PEOPLE</th>
                         <th scope="col">RENT TYPE NAME</th>
                         <th scope="col">FACILITY TYPE NAME</th>
                         <th scope="col">STANDARD ROOM</th>
                         <th scope="col">PREDESCRIPTION OTHER CONVENIENCE</th>
-                        <th scope="col">POOL AREA</th>
-                        <th scope="col">NUMBER OF FLOORS</th>
+<!--                        <th scope="col">POOL AREA</th>-->
+<!--                        <th scope="col">NUMBER OF FLOORS</th>-->
                         <th scope="col">FACILITY FREE</th>
                         <th scope="col">EDIT</th>
                         <th scope="col">DELETE</th>
@@ -147,18 +172,19 @@
                             <td th:text="${stt.count} + ${facilityList.number} * ${facilityList.size}"></td>
                             <!--                            <td th:text="${stt.count}"></td>-->
                             <td th:text="${fac.getName()}"></td>
-                            <td th:text="${fac.getAre()}"></td>
-                            <td th:text="${fac.getCost()}"></td>
-                            <td th:text="${fac.rentType.name}"></td>
-                            <td th:text="${fac.facilityType.name}"></td>
+<!--                            <td th:text="${fac.getAre()}"></td>-->
+<!--                            <td th:text="${fac.getCost()}"></td>-->
+                            <td th:text="${fac.getMaxPeoPel()}"></td>
+                            <td th:text="${fac.getRentNames()}"></td>
+                            <td th:text="${fac.getFacilityTypeNames()}"></td>
                             <td th:text="${fac.getStandardRoom()}"></td>
                             <td th:text="${fac.getDescriptionOtherConvenience()}"></td>
-                            <td th:text="${fac.getPoolArea()}"></td>
+<!--                            <td th:text="${fac.getPoolArea()}"></td>-->
                             <!--                            <td th:text="${fac.getNumberOfFloors()}"></td>-->
-                            <td th:if="${fac.getNumberOfFloors()=='null'}" th:text="'0'"></td>
-                            <td th:if="${fac.getNumberOfFloors()!='null'}" th:text="${fac.getNumberOfFloors()}"></td>
+<!--                            <td th:if="${fac.getNumberOfFloors()=='null'}" th:text="'0'"></td>-->
+<!--                            <td th:if="${fac.getNumberOfFloors()!='null'}" th:text="${fac.getNumberOfFloors()}"></td>-->
                             <td th:text="${fac.getFacilityFree()}"></td>
-                            <td><a th:href="@{/facility/edit/__${fac.id}__ }" class="btn bg-primary">EDIT</a></td>
+                            <td><a th:href="@{/facility/edit/__${fac.getId()}__ }" class="btn bg-primary">EDIT</a></td>
                             <td>
                                 <!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
                                 <!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
@@ -184,6 +210,7 @@
                 <a th:href="@{/facility(page=${facilityList.number - 1})}" th:if="${facilityList.hasPrevious()}">Previous</a>
                 <span th:text="${facilityList.number + 1}+'/'+${facilityList.totalPages}"></span>
                 <a th:href="@{/facility(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>
+
             </div>
         </div>
     </div>
@@ -197,185 +224,7 @@
 </footer>
 <!--<div th:insert="~{home::footer}"></div>-->
 </div>
-<!-- ADD -->
-<div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabelAdd" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelAdd">Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>ADD CUSTOMER</h2>
-                            </div>
 
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Id</label>
-                                            <input type="text" class="form-control" placeholder="ID *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Select Customer Type</label>
-                                            <select class="form-select" aria-label="Default select example"
-                                                    style="border-radius: 30px">
-                                                <option selected>SELECT CUSTOMER *</option>
-                                                <option value="1">Diamond</option>
-                                                <option value="2">Platinum</option>
-                                                <option value="3">Gold</option>
-                                                <option value="4">Silver</option>
-                                                <option value="5">Member</option>
-                                            </select>
-                                            <!--                                            <input type="text" class="form-control" placeholder="CUSTOMER TYPE ID *" value=""/>-->
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Name</label>
-                                            <input type="text" class="form-control" placeholder="NAME *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="DATE OF BIRTH *"-->
-                                            <!--                                                   value=""/>-->
-                                            <label for="birtdDateAdd">Birth Day</label>
-                                            <input id="birtdDateAdd" class="form-control" type="date"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Gender</label>
-                                            <input type="text" class="form-control" placeholder="GENDER *" value=""/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Id Card</label>
-                                            <input type="text" class="form-control" placeholder="ID CARD *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Phone Numeber</label>
-                                            <input type="text" class="form-control" placeholder="PHONE NUMBER *"
-                                                   value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">E-mail</label>
-                                            <input type="text" class="form-control" placeholder="EMAIL *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Address</label>
-                                            <input type="text" class="form-control" placeholder="ADDRESS *" value=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Summit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--                        <div class="modal-footer">-->
-            <!--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                            <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--                        </div>-->
-        </div>
-    </div>
-</div>
-<!-- EDIT -->
-<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabelEdit" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelEdit">Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>EDIT CUSTOMER</h2>
-                            </div>
-
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Select Customer</label>
-                                        <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="CUSTOMER TYPE ID *" value=""/>-->
-                                            <select class="form-select" aria-label="Default select example"
-                                                    style="border-radius: 30px">
-                                                <option selected>SELECT CUSTOMER *</option>
-                                                <option value="1">Diamond</option>
-                                                <option value="2">Platinum</option>
-                                                <option value="3">Gold</option>
-                                                <option value="4">Silver</option>
-                                                <option value="5">Member</option>
-                                            </select>
-                                        </div>
-                                        <label>Name</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="NAME *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="DATE OF BIRTH *" value=""/>-->
-                                            <label for="birtdDateEdit">Birth Day</label>
-                                            <input id="birtdDateEdit" class="form-control" type="date"/>
-                                        </div>
-                                        <label>Gender</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="GENDER *" value=""/>
-                                        </div>
-                                        <br>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Id Card</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="ID CARD *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="PHONE NUMBER *"
-                                                   value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>E-mail</label>
-                                            <input type="text" class="form-control" placeholder="EMAIL *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="ADDRESS *" value=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--            </div>-->
-        </div>
-    </div>
-</div>
 <!-- REMOVE -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabelRemove"
      aria-hidden="true">
@@ -390,7 +239,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <form th:action="@{/customer/delete}" method="post">
+                <form th:action="@{/facility/delete}" method="post">
                     <input type="hidden" name="id" id="idInput">
                     <button class="btn btn-primary">DELETE</button>
                 </form>

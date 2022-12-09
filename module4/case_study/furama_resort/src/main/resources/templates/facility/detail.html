@@ -104,13 +104,13 @@
 
     <div class="row text-center align-items-end" style="height: 10%">
         <div class="col-lg-4"><p th:if="${mess}" th:text="${mess}" style="color: blue"></div>
-        <div class="col-lg-4"><h3 class="mb-4">CUSTOMER DETAIL</h3></div>
+        <div class="col-lg-4"><h3 class="mb-4">FACILITY DETAIL</h3></div>
         <div class="col-lg-4">
             <form   class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
 <!--                <button class="btn btn-outline-success" type="button" >-->
 <!--                    + Add-->
 <!--                </button>-->
-                <a th:href="@{/customer }" class="btn bg-success">Trở lại</a>
+                <a th:href="@{/facility }" class="btn bg-success">Trở lại</a>
             </form>
 
         </div>
@@ -121,80 +121,104 @@
         </div>
         <div class="col-lg-8" style="border-top: 2px solid black">
             <div>
-                <form th:object="${customer}">
+                <form th:action="@{/facility/update}" th:object="${facility}" method="post">
                     <div class="form-content">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group" >
-                                    <label>Id</label>
-                                    <input style="border-radius: 30px" readonly class="form-control" name="id" placeholder="CUSTOMER ID *"
+                                <div class="form-group">
+                                    <label hidden>Id</label>
+                                    <input hidden class="form-control" name="id" placeholder="CUSTOMER ID *"
                                            th:field="*{id}"/>
                                 </div>
-                                <br>
                                 <div class="form-group">
-                                    <label>Customer Type Name</label>
-                                    <select disabled="true" th:field="*{customerType}" class="form-select"
+                                    <label for="facilityType">Facility Type</label>
+                                    <select disabled required id="facilityType" th:field="*{facilityType}"
+                                            class="form-select"
                                             aria-label="Default select example"
                                             style="border-radius: 30px">
-                                        <option th:each="customerType : ${customerTypes}"
-                                                th:value="${customerType.id}"
-                                                th:text="${customerType.name}">
+                                        <option value="" selected>Chosce Facility</option>
+                                        <option  th:each="fac : ${facilityTypeList}"
+                                                th:value="${fac.id}"
+                                                th:text="${fac.name}">
                                         </option>
                                     </select>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="text"
+                                    <label for="are">Are</label>
+                                    <input readonly required id="are" style="border-radius: 30px" class="form-control" type="number"
+                                           th:field="*{are}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="cost">Cost</label>
+                                    <input readonly required id="cost" style="border-radius: 30px" class="form-control" type="number"
+                                           th:field="*{cost}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="maxPeoPel">Max People</label>
+                                    <input readonly required id="maxPeoPel" style="border-radius: 30px" class="form-control"
+                                           type="number"
+                                           th:field="*{maxPeoPel}"/>
+                                </div>
+                                <div class="form-group" id="numberOfFloorHide">
+                                    <br>
+                                    <label for="numberOfFloors">Number Of Floors</label>
+                                    <input readonly required id="numberOfFloors" style="border-radius: 30px" class="form-control"
+                                           type="number"
+                                           th:value="0" th:field="*{numberOfFloors}"/>
+                                </div>
+                                <div class="form-group " id="facilityFree">
+                                    <br>
+                                    <label for="facilityFrees">Facility Free</label>
+                                    <input disabled  id="facilityFrees" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:value="0" th:field="*{facilityFree}"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Facility Name</label>
+                                    <input readonly  id="name" style="border-radius: 30px"
+                                           class="form-control" type="text"
                                            th:field="*{name}"/>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <label>Date Of Birth</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="date"
-                                           th:field="*{dateOfBirth}"/>
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label>Gender</label>
-                                    <select disabled="true" name="gender" class="form-control form-select"
+                                    <label for="rentType">Rent Type</label>
+                                    <select disabled  id="rentType" th:field="*{rentType}" class="form-select"
                                             aria-label="Default select example"
-                                            style="border-radius: 30px" th:field="*{gender}">
-                                        <option readonly th:value="0" th:text="Female"></option>
-
-                                        <option readonly th:value="1" th:text="Male"></option>
+                                            style="border-radius: 30px">
+                                        <option readonly th:each="rent : ${rentTypeList}"
+                                                th:value="${rent.id}"
+                                                th:text="${rent.name}">
+                                        </option>
                                     </select>
                                 </div>
                                 <br>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Id Card</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="text"
-                                           th:field="*{idCard}"/>
-
+                                    <label for="standardRoom">Standard Room</label>
+                                    <input readonly required id="standardRoom" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:field="*{standardRoom}"/>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="text"
-                                           th:field="*{phoneNumber}"/>
-
+                                    <label for="descriptionOtherConvenience">Description Other Convenience</label>
+                                    <input readonly required id="descriptionOtherConvenience" style="border-radius: 30px"
+                                           class="form-control" type="text"
+                                           th:field="*{descriptionOtherConvenience}"/>
                                 </div>
-                                <br>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="email"
-                                           th:field="*{email}"/>
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input readonly style="border-radius: 30px" class="form-control" type="text"
-                                           th:field="*{address}"/>
-
+                                <div class="form-group " id="poolAreaHide">
+                                    <br>
+                                    <label for="poolArea">Pool Area</label>
+                                    <input readonly required id="poolArea" style="border-radius: 30px" class="form-control"
+                                           type="text"
+                                           th:value="0" th:field="*{poolArea}"/>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </form>
@@ -215,182 +239,7 @@
 </footer>
 <!--<div th:insert="~{home::footer}"></div>-->
 </div>
-<!-- ADD -->
-<div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabelAdd" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelAdd">Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>ADD CUSTOMER</h2>
-                            </div>
 
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Id</label>
-                                            <input readonly style="border-radius: 30px" type="text" class="form-control" placeholder="ID *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Select Customer Type</label>
-                                                <select style="border-radius: 30px" th:field="*{customerType}" aria-label="Default select example" class="form-select"
-                                                        aria-label="Default select example"
-                                                        style="border-radius: 30px">
-                                                    <option th:each="customerType : ${customerTypes}"
-                                                            th:value="${customerType.id}"
-                                                            th:text="${customerType.name}">
-                                                    </option>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Name</label>
-                                            <input type="text" class="form-control" placeholder="NAME *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                                                                        
-                                            <label for="birtdDateAdd">Birth Day</label>
-                                            <input id="birtdDateAdd" class="form-control" type="date"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Gender</label>
-                                            <input type="text" class="form-control" placeholder="GENDER *" value=""/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Id Card</label>
-                                            <input type="text" class="form-control" placeholder="ID CARD *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Phone Numeber</label>
-                                            <input type="text" class="form-control" placeholder="PHONE NUMBER *"
-                                                   value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">E-mail</label>
-                                            <input type="text" class="form-control" placeholder="EMAIL *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="birtdDateAdd">Address</label>
-                                            <input type="text" class="form-control" placeholder="ADDRESS *" value=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Summit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--                        <div class="modal-footer">-->
-            <!--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                            <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--                        </div>-->
-        </div>
-    </div>
-</div>
-<!-- EDIT -->
-<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabelEdit" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header" style="background: -webkit-linear-gradient(left, #046056, #ffffff)">
-                <h5 class="modal-title text-white" id="exampleModalLabelEdit">Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-5">
-                    <div class="container register-form">
-                        <div class="form">
-                            <div class="note align-items-center d-flex justify-content-center">
-                                <h2>EDIT CUSTOMER</h2>
-                            </div>
-
-                            <div class="form-content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Select Customer</label>
-                                        <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="CUSTOMER TYPE ID *" value=""/>-->
-                                            <select class="form-select" aria-label="Default select example"
-                                                    style="border-radius: 30px">
-                                                <option selected>SELECT CUSTOMER *</option>
-                                                <option value="1">Diamond</option>
-                                                <option value="2">Platinum</option>
-                                                <option value="3">Gold</option>
-                                                <option value="4">Silver</option>
-                                                <option value="5">Member</option>
-                                            </select>
-                                        </div>
-                                        <label>Name</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="NAME *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <!--                                            <input type="text" class="form-control" placeholder="DATE OF BIRTH *" value=""/>-->
-                                            <label for="birtdDateEdit">Birth Day</label>
-                                            <input id="birtdDateEdit" class="form-control" type="date"/>
-                                        </div>
-                                        <label>Gender</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="GENDER *" value=""/>
-                                        </div>
-                                        <br>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Id Card</label>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="ID CARD *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="PHONE NUMBER *"
-                                                   value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>E-mail</label>
-                                            <input type="text" class="form-control" placeholder="EMAIL *" value=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="ADDRESS *" value=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <!--                                <button type="submit" class="btn btn-outline-success">Submit</button>-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                    </button>
-                                    <button type="button" class="btn btn-success">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="button" class="btn btn-success">Save changes</button>-->
-            <!--            </div>-->
-        </div>
-    </div>
-</div>
 <!-- REMOVE -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabelRemove"
      aria-hidden="true">

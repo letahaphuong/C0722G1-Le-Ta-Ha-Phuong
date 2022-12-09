@@ -1,6 +1,7 @@
 package com.example.case_study.model.customer;
 
 import com.example.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -36,6 +37,7 @@ public class Customer {
     private boolean flagDelete;
 
     @OneToMany(mappedBy = "customer")
+    @JsonBackReference
     private Set<Contract>contracts;
 
     public Customer() {

@@ -40,10 +40,7 @@ public class CustomerTypeService implements ICustomerTypeService {
 
     }
 
-    @Override
-    public Page<CustomerType> searchName(String search, Pageable pageable) {
-        return customerTypeRepository.searchName(search,pageable);
-    }
+
 
     @Override
     public void removeFlag(Long id) {
