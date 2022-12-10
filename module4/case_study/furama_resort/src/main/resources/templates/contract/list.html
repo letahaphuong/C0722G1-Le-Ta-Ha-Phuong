@@ -175,7 +175,35 @@
                         <th scope="col">ATTACH FACILITY</th>
                     </tr>
                     </thead>
-                    <tbody id="myTableBody">
+                    <tbody>
+                    <th:block th:each="con,stt : ${contractList}">
+                        <tr>
+                            <td th:text="${stt.count} + ${contractList.number} * ${contractList.size}"></td>
+                            <td th:text="${con.getNameFacility()}"></td>
+                            <td th:text="${con.getNameCustomer()}"></td>
+                            <td id="date2" th:text="${con.getStartDate()}"></td>
+                            <td id="date1" th:text="${con.getEndDate()}"></td>
+                            <td th:text="${con.getDeposit()}"></td>
+
+                            <td></td>
+                            <td class="d-flex">
+                                <!--                                <a th:href="@{/contract/create}" class="btn bg-gradient btn-outline-secondary">+ ADD</a>-->
+                                <form class=" col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                                    <button class="btn btn-outline-secondary " type="button" data-bs-toggle="modal"
+                                            data-bs-target="#">
+                                        +
+                                    </button>
+                                </form>
+                                <form class=" col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
+                                    <button th:onclick="|idRemove('__${con.id}__', '__${con.name}__')|"
+                                            class="btn btn-outline-secondary ms-5" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                        AttachFacility
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </th:block>
                 </table>
                 <a th:href="@{/contract(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
                 <span th:text="${contractList.number + 1}+'/'+${contractList.totalPages}"></span>
@@ -539,43 +567,5 @@
         document.getElementById("ans").innerHTML =
             Math.round(Math.abs(days));
     }
-</script>
-<script>
-
-
-    $(document).ready(function () {
-        $("#clickMe").click(function () {
-            debugger
-            alert(OK)
-            function init() {
-                $.ajax({
-                    url: 'http://localhost:8080/contract',
-                    type: 'GET',
-                    dateType: 'json',
-                    success: function (data) {
-                        let mytable = "";
-                        for (let i = 0; i < data.content.length; i++) {
-                            mytable +=
-                                `
-                            <tr>
-                              <th scope="row ">${i + 1}</th>
-                              <td>${data.content[i].nameFacility}</td>
-                              <td>${data.content[i].nameCustomer}</td>
-                              <td>${data.content[i].startDate}</td>
-                              <td>${data.content[i].dateCreate}</td>
-                              <td>${data.content[i].endDate} </td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       i].category.name}</td>
-                              <td>${data.content[i].deposit} </td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       i].category.name}</td>
-                            </tr>
-                            `
-                        }
-                        debugger
-                        $("#myTableBody").append(mytable);
-                    }
-                })
-            }
-            init();
-        })
-
-    })
 </script>
 </html>
