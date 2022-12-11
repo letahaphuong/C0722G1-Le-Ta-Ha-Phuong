@@ -43,6 +43,9 @@ public class CustomerController {
         Page<CustomerView> customerViews = customerService.searchView(searchByName,email,customerTypeId, pageable);
         model.addAttribute("customerTypes", customerTypeService.findAll());
         model.addAttribute("customerList", customerViews);
+        model.addAttribute("searchByName",searchByName);
+        model.addAttribute("email",email);
+        model.addAttribute("customerTypeId",customerTypeId);
         return "customer/list";
     }
 
