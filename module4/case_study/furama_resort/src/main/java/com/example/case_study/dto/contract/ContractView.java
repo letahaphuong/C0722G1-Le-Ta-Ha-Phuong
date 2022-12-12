@@ -12,4 +12,6 @@ public interface ContractView {
     String getEndDate();
 
     String getDeposit();
+
+    String getTotalValue();
 }

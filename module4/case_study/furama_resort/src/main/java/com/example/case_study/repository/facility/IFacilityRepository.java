@@ -17,13 +17,13 @@ public interface IFacilityRepository extends JpaRepository<Facility,Long> {
 //            ,nativeQuery = true)
 //    Page<Facility> searchName(@Param("name") String name,@Param("facilityType") String facilityType, Pageable pageable);
 
-    @Query(value = "select f.id ,f.name,f.description_other_convenience as descriptionOtherConvenience,f.max_peo_pel as maxPeoPel, f.facility_type_id as facilityType, f.standard_room as standardRoom, f.facility_free as facilityFree,ft.name as facilityTypeNames,rt.name as rentNames  from facility as f join facility_type as ft on ft.id=f.facility_type_id join rent_type as rt on rt.id=f.rent_type_id where f.flag_delete = true and (f.name like concat('%',:name,'%') or f.facility_type_id like concat ('%',:facilityType,'%')) order by f.name",
-            countQuery ="select f.id, f.name,f.description_other_convenience as descriptionOtherConvenience,f.max_peo_pel as maxPeoPel, f.facility_type_id as facilityType, f.standard_room as standardRoom, f.facility_free as facilityFree,ft.name as facilityTypeNames,rt.name as rentNames  from facility as f join facility_type as ft on ft.id=f.facility_type_id join rent_type as rt on rt.id=f.rent_type_id where f.flag_delete = true and (f.name like concat('%',:name,'%') and f.facility_type_id like concat ('%',:facilityType,'%')) order by f.name"
+    @Query(value = "select f.id ,f.name,f.description_other_convenience as descriptionOtherConvenience,f.max_peo_pel as maxPeoPel, f.facility_type_id as facilityType, f.standard_room as standardRoom, f.facility_free as facilityFree,ft.name as facilityTypeNames,rt.name as rentNames  from facility as f join facility_type as ft on ft.id=f.facility_type_id join rent_type as rt on rt.id=f.rent_type_id where f.flag_delete = false and (f.name like concat('%',:name,'%') or f.facility_type_id like concat ('%',:facilityType,'%')) order by f.name",
+            countQuery ="select f.id, f.name,f.description_other_convenience as descriptionOtherConvenience,f.max_peo_pel as maxPeoPel, f.facility_type_id as facilityType, f.standard_room as standardRoom, f.facility_free as facilityFree,ft.name as facilityTypeNames,rt.name as rentNames  from facility as f join facility_type as ft on ft.id=f.facility_type_id join rent_type as rt on rt.id=f.rent_type_id where f.flag_delete = false and (f.name like concat('%',:name,'%') and f.facility_type_id like concat ('%',:facilityType,'%')) order by f.name"
             ,nativeQuery = true)
     Page<FacilityView> searchView(@Param("name") String name, @Param("facilityType") String facilityType, Pageable pageable);
 
     @Transactional
     @Modifying
-    @Query(value = "update facility f set f.flag_delete = false where f.id = :id", nativeQuery = true)
+    @Query(value = "update facility f set f.flag_delete = true where f.id = :id", nativeQuery = true)
     void removeFlag(@Param("id") Long id);
 }

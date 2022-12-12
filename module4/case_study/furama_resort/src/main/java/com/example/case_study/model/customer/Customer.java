@@ -33,7 +33,7 @@ public class Customer {
 
     private String address;
 
-    @Column(columnDefinition = "bit default true")
+    @Column(columnDefinition = "bit default false")
     private boolean flagDelete;
 
     @OneToMany(mappedBy = "customer")

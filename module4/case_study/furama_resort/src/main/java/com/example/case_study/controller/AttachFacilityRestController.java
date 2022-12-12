@@ -22,8 +22,8 @@ public class AttachFacilityRestController {
     IAttachFacilityService attachFacilityService;
 
     @GetMapping("show/{id}")
-    public ResponseEntity<Page<AttachFacilityListView>> getAttachFacilityList(@PathVariable("id") Long id,@PageableDefault(page = 0,size = 3) Pageable pageable){
-        Page<AttachFacilityListView> attachFacilityListViews=attachFacilityService.getAttachFacility(id,pageable);
+    public ResponseEntity<List<AttachFacilityListView>> getAttachFacilityList(@PathVariable("id") Long id){
+        List<AttachFacilityListView> attachFacilityListViews=attachFacilityService.getAttachFacility(id);
         if (attachFacilityListViews.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

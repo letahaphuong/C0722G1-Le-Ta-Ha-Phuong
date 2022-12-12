@@ -1,14 +1,14 @@
 package com.example.case_study.dto.facility;
 
-import com.example.case_study.model.contract.Contract;
+
 import com.example.case_study.model.facility.FacilityType;
 import com.example.case_study.model.facility.RentType;
 
-import javax.persistence.*;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Set;
+
 
 public class FacilityDto {
 

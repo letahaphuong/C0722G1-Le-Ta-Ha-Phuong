@@ -22,86 +22,12 @@
 
 <div class="vh-100 vw-100">
     <div th:insert="~{home::header}"></div>
-    <div class="row sticky-top" style="height: 5%">
-        <nav class="navbar navbar-expand-lg " style="background-color: #046056">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item ">
-                            <a class="nav-link active text-white" aria-current="page" href="#"
-                               style="color: #0000008c ">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarEmployee" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Employee
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarEmployee">
-                                <li><a class="dropdown-item" href="#">Management</a></li>
-                                <li><a class="dropdown-item" href="#">Staff</a></li>
-                                <li><a class="dropdown-item" href="#">Show All</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarCustomer" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Customer
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarCustomer">
-                                <li><a class="dropdown-item" href="#">Diamond</a></li>
-                                <li><a class="dropdown-item" href="#">Platinium</a></li>
-                                <li><a class="dropdown-item" href="#">Gold</a></li>
-                                <li><a class="dropdown-item" href="#">Silver</a></li>
-                                <li><a class="dropdown-item" href="#">Member</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarService" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarService">
-                                <li><a class="dropdown-item" href="#">Villa</a></li>
-                                <li><a class="dropdown-item" href="#">House</a></li>
-                                <li><a class="dropdown-item" href="#">Room</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarContract" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Contract
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarContract">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                        <input class="form-control me-2" type="search" placeholder="Search name and address"
-                               aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-
-                </div>
-            </div>
-        </nav>
-    </div>
+    <div th:insert="~{home::navbar}"></div>
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
             <div class="col-lg-1">
-                <button class="btn btn-outline-primary mt-5" type="submit" onclick="location.href='/customer'">Back
+                <button class="btn btn-outline-success mt-5" type="submit" onclick="location.href='/facility'">Back
                 </button>
             </div>
             <div class="col-lg-10">
@@ -114,7 +40,6 @@
                                 <h2>CREATE FACILITY</h2>
                             </div>
                             <p th:if="${mess != null}" th:text="${mess}" style="color: blue">
-                                <!--                                <form th:action="@{/facility/save}" th:object="${facility}" method="post">-->
                                 <div class="form-content">
                                     <form th:action="@{/facility/save}" th:object="${facility}" method="post">
 
@@ -145,7 +70,8 @@
                         <br>
                         <div class="form-group">
                             <label for="are">Are</label>
-                            <input required id="are" style="border-radius: 30px" class="form-control" type="number"
+                            <input required id="are" style="border-radius: 30px" min="0" class="form-control"
+                                   type="number"
                                    th:field="*{are}"/>
                             <p th:errors="*{are}" class="text-danger"></p>
                         </div>
@@ -160,7 +86,7 @@
                         <div class="form-group">
                             <label for="maxPeoPel">Max People</label>
                             <input required id="maxPeoPel" style="border-radius: 30px" class="form-control"
-                                   type="number"
+                                   type="number" min="0"
                                    th:field="*{maxPeoPel}"/>
                             <p th:errors="*{maxPeoPel}" style="color: red"></p>
 
@@ -170,8 +96,8 @@
                             <br>
                             <label for="numberOfFloors">Number Of Floors</label>
                             <input required id="numberOfFloors" style="border-radius: 30px" class="form-control"
-                                   type="number"
-                                   th:value="0" th:field="*{numberOfFloors}"/>
+                                   type="number" min="0"
+                                   th:field="*{numberOfFloors}"/>
                             <p th:errors="*{numberOfFloors}" style="color: red"></p>
 
                         </div>
@@ -181,10 +107,9 @@
                             <label for="facilityFrees">Facility Free</label>
                             <input required id="facilityFrees" style="border-radius: 30px" class="form-control"
                                    type="text"
-                                   th:value="0" th:field="*{facilityFree}"/>
+                                   th:field="*{facilityFree}"/>
                             <p th:errors="*{facilityFree}" style="color: red"></p>
                         </div>
-
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -228,8 +153,8 @@
                             <br>
                             <label for="poolArea">Pool Area</label>
                             <input required id="poolArea" style="border-radius: 30px" class="form-control"
-                                   type="text"
-                                   th:value="0" th:field="*{poolArea}"/>
+                                   type="number" min="0"
+                                   th:field="*{poolArea}"/>
                             <p th:errors="*{poolArea}" class="text-danger"></p>
                         </div>
                     </div>
@@ -259,7 +184,6 @@
         crossorigin="anonymous"></script>
 <script>
     $('#facilityType').change(function () {
-
         if ($('#facilityType').val() == 1) {
             $('#facilityFree').hide();
             $('#poolAreaHide').show();
@@ -267,19 +191,17 @@
         }
         if ($('#facilityType').val() == 2) {
             $('#poolAreaHide').hide();
-            $('#numberOfFloorHide').hide();
-            $('#facilityFree').show();
+            $('#numberOfFloorHide').show();
+            $('#facilityFree').hide();
 
         }
         if ($('#facilityType').val() == 3) {
             $('#poolAreaHide').hide();
-            $('#facilityFree').hide();
-            $('#numberOfFloorHide').show();
+            $('#facilityFree').show();
+            $('#numberOfFloorHide').hide();
 
         }
-
-        $("#facilityType").return($('facilityType'));
-    })
+    });
 </script>
 <script>
     function idRemove(id) {

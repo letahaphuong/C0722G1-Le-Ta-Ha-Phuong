@@ -27,12 +27,11 @@ public class ContractDetailService implements IContractDetailService {
 
     @Override
     public void save(ContractDetail contractDetail) {
-
+        contractDetailRepository.save(contractDetail);
     }
 
     @Override
     public void remove(Long id) {
-
     }
 
     @Override

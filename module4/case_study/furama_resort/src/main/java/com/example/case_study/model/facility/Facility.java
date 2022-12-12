@@ -46,7 +46,7 @@ public class Facility {
     @Column(columnDefinition = "text")
     private String facilityFree;
 
-    @Column(columnDefinition = "bit default true")
+    @Column(columnDefinition = "bit default false")
     private boolean flagDelete;
 
     public Facility() {

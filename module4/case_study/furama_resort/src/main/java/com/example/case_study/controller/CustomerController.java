@@ -38,14 +38,16 @@ public class CustomerController {
     public String showViewDto(
             @RequestParam(defaultValue = "") String searchByName
             , @RequestParam(defaultValue = "") String email
-            , @RequestParam(defaultValue = "") String customerTypeId
+            , @RequestParam(defaultValue = "") String customerType
             , Model model, @PageableDefault(page = 0, size = 3) Pageable pageable) {
-        Page<CustomerView> customerViews = customerService.searchView(searchByName,email,customerTypeId, pageable);
+        Page<CustomerView> customerViews = customerService.searchView(searchByName,email,customerType, pageable);
         model.addAttribute("customerTypes", customerTypeService.findAll());
         model.addAttribute("customerList", customerViews);
         model.addAttribute("searchByName",searchByName);
         model.addAttribute("email",email);
-        model.addAttribute("customerTypeId",customerTypeId);
+        if (!customerType.isEmpty()){
+            model.addAttribute("customerTypeId",Integer.parseInt(customerType));
+        }
         return "customer/list";
     }
 

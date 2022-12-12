@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Furama-Danh sach facility</title>
     <link rel="stylesheet" href="/static/css/mystyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
@@ -12,86 +13,12 @@
 
 <div class="vh-100 vw-100">
     <div th:insert="~{home::header}"></div>
-    <div class="row sticky-top" style="height: 5%">
-        <nav class="navbar navbar-expand-lg " style="background-color: #046056">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item ">
-                            <a class="nav-link active text-white" aria-current="page" href="#"
-                               style="color: #0000008c ">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarEmployee" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Employee
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarEmployee">
-                                <li><a class="dropdown-item" href="#">Management</a></li>
-                                <li><a class="dropdown-item" href="#">Staff</a></li>
-                                <li><a class="dropdown-item" href="#">Show All</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarCustomer" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Customer
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarCustomer">
-                                <li><a class="dropdown-item" href="#">Diamond</a></li>
-                                <li><a class="dropdown-item" href="#">Platinium</a></li>
-                                <li><a class="dropdown-item" href="#">Gold</a></li>
-                                <li><a class="dropdown-item" href="#">Silver</a></li>
-                                <li><a class="dropdown-item" href="#">Member</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarService" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarService">
-                                <li><a class="dropdown-item" href="#">Villa</a></li>
-                                <li><a class="dropdown-item" href="#">House</a></li>
-                                <li><a class="dropdown-item" href="#">Room</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarContract" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Contract
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarContract">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                        <input class="form-control me-2" type="search" placeholder="Search name and address"
-                               aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-
-                </div>
-            </div>
-        </nav>
-    </div>
+    <div th:insert="~{home::navbar}"></div>
     <div class="row text-center"
          style="height: 75%">
         <div class="row ">
             <div class="col-lg-1">
-                <button class="btn btn-outline-primary mt-5" type="submit" onclick="location.href='/customer'">Back
+                <button class="btn btn-outline-success mt-5" type="submit" onclick="location.href='/facility'">Back
                 </button>
             </div>
             <div class="col-lg-10">
@@ -112,8 +39,8 @@
                                                        th:field="*{id}"/>
                                             </div>
                                             <div class="form-group">
-                                                <label for="facilityType">Facility Type</label>
-                                                <select required id="facilityType" th:field="*{facilityType}"
+                                                <label for="facilityTypeEdit">Facility Type</label>
+                                                <select required id="facilityTypeEdit" th:field="*{facilityType}"
                                                         class="form-select"
                                                         aria-label="Default select example"
                                                         style="border-radius: 30px">
@@ -128,21 +55,24 @@
                                             <br>
                                             <div class="form-group">
                                                 <label for="are">Are</label>
-                                                <input required id="are" style="border-radius: 30px" class="form-control" type="number"
+                                                <input required id="are" style="border-radius: 30px"
+                                                       class="form-control" type="number"
                                                        th:field="*{are}"/>
                                                 <p th:errors="*{are}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label for="cost">Cost</label>
-                                                <input required id="cost" style="border-radius: 30px" class="form-control" type="number"
+                                                <input required id="cost" style="border-radius: 30px"
+                                                       class="form-control" type="number"
                                                        th:field="*{cost}"/>
                                                 <p th:errors="*{cost}" style="color: red"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label for="maxPeoPel">Max People</label>
-                                                <input required id="maxPeoPel" style="border-radius: 30px" class="form-control"
+                                                <input required id="maxPeoPel" style="border-radius: 30px"
+                                                       class="form-control"
                                                        type="number"
                                                        th:field="*{maxPeoPel}"/>
                                                 <p th:errors="*{maxPeoPel}" style="color: red"></p>
@@ -150,20 +80,20 @@
                                             </div>
                                             <div class="form-group" id="numberOfFloorHide">
                                                 <br>
-                                                <label for="numberOfFloors">Number Of Floors</label>
-                                                <input required id="numberOfFloors" style="border-radius: 30px" class="form-control"
+                                                <label th:for="numberOfFloors">Number Of Floors</label>
+                                                <input required style="border-radius: 30px" class="form-control"
                                                        type="number"
                                                        th:value="0" th:field="*{numberOfFloors}"/>
                                                 <p th:errors="*{numberOfFloors}" style="color: red"></p>
 
                                             </div>
-                                            <div class="form-group " id="facilityFree">
+                                            <div class="form-group " id="facilityFreeHide">
                                                 <br>
-                                                <label for="facilityFrees">Facility Free</label>
-                                                <input required id="facilityFrees" style="border-radius: 30px" class="form-control"
-                                                       type="text"
-                                                       th:value="0" th:field="*{facilityFree}"/>
+                                                <label th:for="facilityFree">FacilityFre Free</label>
+                                                <input style="border-radius: 30px" class=" form-control"
+                                                       type="text" th:field="*{facilityFree}"/>
                                                 <p th:errors="*{facilityFree}" style="color: red"></p>
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -177,7 +107,8 @@
                                             <br>
                                             <div class="form-group">
                                                 <label for="rentType">Rent Type</label>
-                                                <select required id="rentType" th:field="*{rentType}" class="form-select"
+                                                <select required id="rentType" th:field="*{rentType}"
+                                                        class="form-select"
                                                         aria-label="Default select example"
                                                         style="border-radius: 30px">
                                                     <option th:each="rent : ${rentTypeList}"
@@ -190,25 +121,27 @@
                                             <br>
                                             <div class="form-group">
                                                 <label for="standardRoom">Standard Room</label>
-                                                <input required id="standardRoom" style="border-radius: 30px" class="form-control"
+                                                <input required id="standardRoom" style="border-radius: 30px"
+                                                       class="form-control"
                                                        type="text"
                                                        th:field="*{standardRoom}"/>
                                                 <p th:errors="*{standardRoom}" class="text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <label for="descriptionOtherConvenience">Description Other Convenience</label>
-                                                <input required id="descriptionOtherConvenience" style="border-radius: 30px"
+                                                <label for="descriptionOtherConvenience">Description Other
+                                                    Convenience</label>
+                                                <input required id="descriptionOtherConvenience"
+                                                       style="border-radius: 30px"
                                                        class="form-control" type="text"
                                                        th:field="*{descriptionOtherConvenience}"/>
                                                 <p th:errors="*{descriptionOtherConvenience}" class="text-danger"></p>
                                             </div>
-                                            <div class="form-group " id="poolAreaHide">
+                                            <div class="form-group poolAreaHide" id="poolAreaHide">
                                                 <br>
-                                                <label for="poolArea">Pool Area</label>
-                                                <input required id="poolArea" style="border-radius: 30px" class="form-control"
-                                                       type="text"
-                                                       th:value="0" th:field="*{poolArea}"/>
+                                                <label th:for="poolArea">Pool Area</label>
+                                                <input required style="border-radius: 30px" class=" form-control"
+                                                       type="text" th:value="0" th:field="*{poolArea}"/>
                                                 <p th:errors="*{poolArea}" class="text-danger"></p>
                                             </div>
                                         </div>
@@ -234,44 +167,61 @@
 </div>
 
 </body>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
-<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
-<!--        crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-<script>var toastTrigger = document.getElementById('liveToastBtn')
-var toastLiveExample = document.getElementById('liveToast')
-if (toastTrigger) {
-    toastTrigger.addEventListener('click', function () {
-        var toast = new bootstrap.Toast(toastLiveExample)
 
-        toast.show()
-    })
-}</script>
 <script>
-    $('#facilityType').change(function () {
+    window.onload = function checkFacilityType() {
+        let facilityType = $("#facilityType").val();
+        if ($('#facilityTypeEdit').val() === '1') {
+            $('#facilityFreeHide').hide();
+            $('#poolAreaHide').show();
+            $('#numberOfFloorHide').show();
+            $('#facilityFree').val("")
+            debugger
+        }
+        if ($('#facilityTypeEdit').val() === '2') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#numberOfFloorHide').show();
+            $('#facilityFreeHide').hide();
+            $('#facilityFree').val("");
+        }
+        if ($('#facilityTypeEdit').val() === '3') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#facilityFreeHide').show();
+            $('#numberOfFloorHide').hide();
+            $('#numberOfFloors').val(0);
 
-        if ($('#facilityType').val() == 1) {
-            $('#facilityFree').hide();
+        }
+    }
+    $('#facilityTypeEdit').change(function () {
+        debugger
+        if ($('#facilityTypeEdit').val() === '1') {
+            $('#facilityFree').val("Không có Dịch Vụ Miễn phí")
+            $('#facilityFreeHide').hide();
             $('#poolAreaHide').show();
             $('#numberOfFloorHide').show();
         }
-        if ($('#facilityType').val() == 2) {
+        if ($('#facilityTypeEdit').val() === '2') {
             $('#poolAreaHide').hide();
-            $('#numberOfFloorHide').hide();
-            $('#facilityFree').show();
-
-        }
-        if ($('#facilityType').val() == 3) {
-            $('#poolAreaHide').hide();
-            $('#facilityFree').hide();
+            $('#poolArea').val(0.0);
             $('#numberOfFloorHide').show();
+            $('#facilityFreeHide').hide();
+            $('#facilityFree').val("Không có Dịch Vụ Miễn phí");
+        }
+        if ($('#facilityTypeEdit').val() === '3') {
+            $('#poolAreaHide').hide();
+            $('#poolArea').val(0.0);
+            $('#facilityFreeHide').show();
+            $('#numberOfFloorHide').hide();
+            $('#numberOfFloors').val(0);
 
         }
+    });
 
-        $("#facilityType").return($('facilityType'));
-    })
     function idRemove(id) {
         document.getElementById("idInput").value = id;
     }

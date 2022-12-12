@@ -1,5 +1,6 @@
 package com.example.case_study.service.contract.impl;
 
+import com.example.case_study.dto.attach_facility_list.AttachFacilityListView;
 import com.example.case_study.dto.contract.ContractView;
 import com.example.case_study.model.contract.Contract;
 import com.example.case_study.repository.contract.IContractRepository;
@@ -47,4 +48,9 @@ public class ContractService implements IContractService {
     public Page<ContractView> showListContract(Pageable pageable) {
         return contractRepository.showListContract(pageable);
     }
+
+//    @Override
+//    public List<AttachFacilityListView> getAttachFacility() {
+//        return contractRepository.getAttachFacility();
+//    }
 }

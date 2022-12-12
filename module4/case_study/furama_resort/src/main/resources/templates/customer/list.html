@@ -28,12 +28,12 @@
                            placeholder="Enter Email"
                            aria-label="Search" th:value="${email}">
 
-                    <select name="customerTypeId" class="form-select"
+                    <select name="customerType" class="form-select"
                             aria-label="Default select example" th:value="${customerTypeId}"
                             style="border-radius: 30px">
                         <option VALUE="">--Choose Customer Type--</option>
-                        <option th:each="customerType : ${customerTypes}"
-                                th:value="${customerType.id}"
+                        <option  th:each="customerType : ${customerTypes}"
+                                th:value="${customerType.id}" th:selected="${customerTypeId==customerType.id}"
                                 th:text="${customerType.name}">
                         </option>
                     </select>
@@ -107,7 +107,7 @@
                                 <!--                                    </button>-->
                                 <!--                                </form>-->
                                 <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">
-                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__')|"
+                                    <button
                                             class="btn btn-outline-danger" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">
                                         Xoá
@@ -121,7 +121,7 @@
                 </table>
                 <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
                 <span class="rounded-circle" th:text="${customerList.number + 1}+'|'+${customerList.totalPages}"></span>
-                <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>
+                <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number + 1},searchByName=${searchByName},email=${email},customerType=${customerTypeId})}" th:if="${customerList.hasNext()}">Next</a>
             </div>
         </div>
     </div>

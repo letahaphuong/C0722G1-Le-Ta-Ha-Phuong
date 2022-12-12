@@ -1,9 +1,12 @@
 package com.example.case_study.service.contract.impl;
 
+import com.example.case_study.dto.attach_facility_list.AttachFacilityListView;
 import com.example.case_study.model.contract.AttachFacility;
 import com.example.case_study.repository.contract.IAttachFacilityRepository;
 import com.example.case_study.service.contract.IAttachFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +30,7 @@ public class AttachFacilityService implements IAttachFacilityService {
 
     @Override
     public void save(AttachFacility attachFacility) {
-
+        attachFacilityRepository.save(attachFacility);
     }
 
     @Override
@@ -38,5 +41,10 @@ public class AttachFacilityService implements IAttachFacilityService {
     @Override
     public void removeFlag(Long id) {
 
+    }
+
+    @Override
+    public List<AttachFacilityListView> getAttachFacility(Long id) {
+        return attachFacilityRepository.getAttachFacility(id);
     }
 }

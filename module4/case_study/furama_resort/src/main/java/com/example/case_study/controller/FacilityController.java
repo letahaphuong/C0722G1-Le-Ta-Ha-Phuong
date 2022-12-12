@@ -45,6 +45,9 @@ public class FacilityController {
         model.addAttribute("facilityList", facilities);
         model.addAttribute("facilityTypes", facilityTypeService.findAll());
         model.addAttribute("facilityName", facilityName);
+        if (!facilityType.isEmpty()){
+            model.addAttribute("facilityTypeIdShow",Integer.parseInt(facilityType));
+        }
         return "facility/list";
     }
 
