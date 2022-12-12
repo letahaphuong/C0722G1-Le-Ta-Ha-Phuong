@@ -119,7 +119,7 @@
                     </th:block>
                     </tbody>
                 </table>
-                <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
+                <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number - 1},searchByName=${searchByName},email=${email},customerType=${customerTypeId})}" th:if="${customerList.hasPrevious()}">Previous</a>
                 <span class="rounded-circle" th:text="${customerList.number + 1}+'|'+${customerList.totalPages}"></span>
                 <a class="btn btn-outline-success" th:href="@{/customer(page=${customerList.number + 1},searchByName=${searchByName},email=${email},customerType=${customerTypeId})}" th:if="${customerList.hasNext()}">Next</a>
             </div>

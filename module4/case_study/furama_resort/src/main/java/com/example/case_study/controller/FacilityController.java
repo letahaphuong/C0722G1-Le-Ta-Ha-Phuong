@@ -39,14 +39,14 @@ public class FacilityController {
 
     @GetMapping("")
     public String showList(@RequestParam(defaultValue = "") String facilityName
-            , @RequestParam(defaultValue = "") String facilityType
+            , @RequestParam(defaultValue = "") String facilityTypes
             , Model model, @PageableDefault(page = 0, size = 3) Pageable pageable) {
-        Page<FacilityView> facilities = facilityService.searchView(facilityName, facilityType, pageable);
+        Page<FacilityView> facilities = facilityService.searchView(facilityName, facilityTypes, pageable);
         model.addAttribute("facilityList", facilities);
         model.addAttribute("facilityTypes", facilityTypeService.findAll());
         model.addAttribute("facilityName", facilityName);
-        if (!facilityType.isEmpty()){
-            model.addAttribute("facilityTypeIdShow",Integer.parseInt(facilityType));
+        if (!facilityTypes.isEmpty()){
+            model.addAttribute("facilityTypeIdShow",Integer.parseInt(facilityTypes));
         }
         return "facility/list";
     }

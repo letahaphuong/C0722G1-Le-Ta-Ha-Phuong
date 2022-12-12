@@ -9,8 +9,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+    private String fullName;
+    private String userName;
+    private String passWord;
 
-    private String name;
+    @Column(columnDefinition = "bit default false")
+    private boolean isEnabled;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

@@ -24,7 +24,7 @@
                            placeholder="Enter Facility Name"
                            aria-label="Search">
 
-                    <select name="facilityType" class="form-select"
+                    <select name="facilityTypes" class="form-select"
                             aria-label="Default select example"
                             style="border-radius: 30px">
                         <option VALUE="">--Choose Facility Type--</option>
@@ -120,9 +120,9 @@
                     </tbody>
                 </table>
 
-                <a class="btn-outline-success btn" th:href="@{/facility(page=${facilityList.number - 1})}" th:if="${facilityList.hasPrevious()}">Previous</a>
+                <a class="btn-outline-success btn" th:href="@{/facility(page=${facilityList.number - 1},facilityName=${facilityName},facilityTypes=${facilityTypeIdShow})}" th:if="${facilityList.hasPrevious()}">Previous</a>
                 <span th:text="${facilityList.number + 1}+'/'+${facilityList.totalPages}"></span>
-                <a class="btn-outline-success btn" th:href="@{/facility(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>
+                <a class="btn-outline-success btn" th:href="@{/facility(page=${facilityList.number + 1},facilityName=${facilityName},facilityTypes=${facilityTypeIdShow})}" th:if="${facilityList.hasNext()}">Next</a>
 
             </div>
         </div>
