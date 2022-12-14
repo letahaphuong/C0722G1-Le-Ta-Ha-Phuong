@@ -4,9 +4,7 @@ public interface AttachFacilityListView {
 
     Long getContractId();
 
-    Long getQuantity();
-
-    Long getQuantityContractDetail();
+    int getQuantity();
 
     String getAttachFacilityName();
 

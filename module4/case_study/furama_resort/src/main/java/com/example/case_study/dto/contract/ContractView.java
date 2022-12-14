@@ -5,6 +5,8 @@ public interface ContractView {
 
     String getNameCustomer();
 
+    String getEmployeeName();
+
     String getNameFacility();
 
     String getStartDate();
