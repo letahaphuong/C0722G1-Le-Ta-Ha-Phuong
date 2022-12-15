@@ -1,4 +1,4 @@
-package com.example.case_study.service.MyUserDetailService;
+package com.example.case_study.service.my_user_detail_service;
 
 
 import com.example.case_study.model.my_user_detail.MyUserDetail;
