@@ -1,6 +1,7 @@
 package com.example.case_study.service.customer.impl;
 
 import com.example.case_study.dto.customer.CustomerView;
+import com.example.case_study.dto.customer.UsedByCustomerView;
 import com.example.case_study.model.customer.Customer;
 import com.example.case_study.repository.customer.ICustomerRepository;
 import com.example.case_study.service.customer.ICustomerService;
@@ -47,5 +48,10 @@ public class CustomerService implements ICustomerService {
     @Override
     public Page<CustomerView> searchView(String search,String email,String customerTypeId,Pageable pageable) {
         return customerRepository.searchView(search,email,customerTypeId,pageable);
+    }
+
+    @Override
+    public Page<UsedByCustomerView> showListUsedByCustomer(String name, String email, String customerTypeId, Pageable pageable) {
+        return customerRepository.showListUsedByCustomer(name,email,customerTypeId,pageable);
     }
 }

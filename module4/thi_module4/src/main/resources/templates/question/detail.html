@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama-Danh sach khach hang</title>
+    <!--    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="customer/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="vh-100 vw-100">
+    <div class="row text-center align-items-end" style="height: 10%">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"><h3 class="mb-4">XEM CHI TIẾT</h3></div>
+        <div class="col-lg-4">
+            <form   class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+                <!--                <button class="btn btn-outline-success" type="button" >-->
+                <!--                    + Add-->
+                <!--                </button>-->
+                <a th:href="@{/question }" class="btn btn-outline-success">Back</a>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="border-top: 2px solid black">
+            <div>
+                <form th:object="${questionContent}">
+                    <div class="form-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group" >
+                                    <label>Id</label>
+                                    <input style="border-radius: 30px" disabled class="form-control" name="id" placeholder="CUSTOMER ID *"
+                                           th:field="*{id}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Tiêu Đề</label>
+                                    <input disabled style="border-radius: 30px" class="form-control" type="text"
+                                           th:field="*{title}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Nội dung</label>
+                                    <input disabled style="border-radius: 30px" class="form-control" type="text"
+                                           th:field="*{content}"/>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Phản hồi</label>
+                                    <input disabled style="border-radius: 30px" class="form-control" type="date"
+                                           th:field="*{answer}"/>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Loại câu hỏi</label>
+<!--                                    <input readonly style="border-radius: 30px" class="form-control" type="text"-->
+<!--                                           th:field="*{questionType}"/>-->
+                                    <select style="border-radius: 30px" disabled th:field="*{questionType}" class="form-select"
+                                            aria-label="Default select example">
+                                        <option th:each="questionType:${questionTypeList}"
+                                                th:value="${questionType.id}"
+                                                th:text="${questionType.questionTypeName}">
+                                        </option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Ngày Đăng</label>
+                                    <input disabled style="border-radius: 30px" class="form-control" type="text"
+                                           th:field="*{dateCreate}"/>
+
+
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Tình trạng</label>
+                                    <input disabled style="border-radius: 30px" class="form-control" type="email"
+                                           th:field="*{status}"/>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</html>

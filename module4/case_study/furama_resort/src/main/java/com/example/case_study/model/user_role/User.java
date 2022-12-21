@@ -9,8 +9,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
-    private String userName;
-    private String passWord;
+    private String username;
+    private String password;
 
     @Column(columnDefinition = "bit default false")
     private boolean isEnabled;
@@ -23,6 +23,17 @@ public class User {
     )
     private Set<Role> roles;
 
+    public User() {
+    }
+
+    public User(Long userId, String username, String password, boolean isEnabled, Set<Role> roles) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.isEnabled = isEnabled;
+        this.roles = roles;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -31,21 +42,20 @@ public class User {
         this.userId = userId;
     }
 
-
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public boolean isEnabled() {

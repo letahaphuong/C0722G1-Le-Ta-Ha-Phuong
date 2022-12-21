@@ -1,6 +1,7 @@
 package com.example.case_study.repository.customer;
 
 import com.example.case_study.dto.customer.CustomerView;
+import com.example.case_study.dto.customer.UsedByCustomerView;
 import com.example.case_study.model.customer.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,4 +34,9 @@ public interface ICustomerRepository extends JpaRepository<Customer, Long> {
     void removeFlag(@Param("id") Long id);
 
 
+
+    @Query(value="select con.id as contractId, c.id, c.customer_type_id as customerTypeId, c.name ,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.email,c.gender,ct.name as customerTypeName from customer as c join customer_type as ct on c.customer_type_id = ct.id join contract as con on c.id = con.customer_id where  c.flag_delete  = false and (c.name like concat('%',:name,'%') and c.email like concat('%',:email,'%') and c.customer_type_id like concat ('%',:customerTypeId,'%') )"
+            ,countQuery="select con.id as contractId, c.id, c.customer_type_id as customerTypeId, c.name ,c.date_of_birth as dateOfBirth,c.phone_number as phoneNumber,c.email,c.gender,ct.name as customerTypeName from customer as c join customer_type as ct on c.customer_type_id = ct.id join contract as con on c.id = con.customer_id where  c.flag_delete  = false and (c.name like concat('%',:name,'%') and c.email like concat('%',:email,'%') and c.customer_type_id like concat ('%',:customerTypeId,'%') )"
+            ,nativeQuery=true)
+    Page<UsedByCustomerView> showListUsedByCustomer(@Param("name") String name, @Param("email") String email, @Param("customerTypeId") String customerTypeId, Pageable pageable);
 }

@@ -6,6 +6,7 @@ import org.springframework.validation.Validator;
 
 ;import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
 
 public class CustomerDto implements Validator {
 
@@ -138,5 +139,15 @@ public class CustomerDto implements Validator {
         if (!customerDto.isGender() == true || false){
             errors.rejectValue("gender","Gender","Chưa vào trang validate messeage");
         }
+
+        String dateOfBirth = customerDto.getDateOfBirth();
+        LocalDate localDate = LocalDate.parse(dateOfBirth);
+        LocalDate now = LocalDate.now();
+        boolean isBefore = localDate.isBefore(now);
+        if(!isBefore){
+            errors.rejectValue("dateOfBirth", "ngayChieu", "Phai sau ngay hien tai");
+        }
+
+
     }
 }

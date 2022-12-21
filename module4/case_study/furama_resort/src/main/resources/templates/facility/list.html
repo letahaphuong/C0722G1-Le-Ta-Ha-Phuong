@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Furama-Danh sach dich vu</title>
@@ -75,7 +75,7 @@
 <!--                        <th scope="col">NUMBER OF FLOORS</th>-->
                         <th scope="col">FACILITY FREE</th>
                         <th scope="col">EDIT</th>
-                        <th scope="col">DELETE</th>
+                        <th  sec:authorize="hasRole('ADMIN')" scope="col">DELETE</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
@@ -98,7 +98,7 @@
 <!--                            <td th:if="${fac.getNumberOfFloors()!='null'}" th:text="${fac.getNumberOfFloors()}"></td>-->
                             <td th:text="${fac.getFacilityFree()}"></td>
                             <td><a th:href="@{/facility/edit/__${fac.getId()}__ }" class="btn btn-outline-success">EDIT</a></td>
-                            <td>
+                            <td sec:authorize="hasRole('ADMIN')">
                                 <!--                                <form class="d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 ">-->
                                 <!--                                    <button th:onclick="|idRemove('__${cus.id}__', '__${cus.name}__'|"-->
                                 <!--                                            class="btn bg-danger" type="button" data-bs-toggle="modal"-->
@@ -110,7 +110,7 @@
                                     <button th:onclick="|idRemove('__${fac.id}__', '__${fac.name}__')|"
                                             class="btn btn-outline-danger" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">
-                                        Xoá
+                                        DELETE
                                     </button>
                                 </form>
                             </td>

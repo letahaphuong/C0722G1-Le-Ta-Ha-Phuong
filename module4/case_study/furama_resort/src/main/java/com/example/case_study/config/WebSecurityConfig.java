@@ -1,6 +1,6 @@
 package com.example.case_study.config;
 
-import com.example.case_study.service.MyUserDetailService.MyUserDetailService;
+import com.example.case_study.service.my_user_detail_service.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,9 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
-
-import java.beans.PersistenceDelegate;
-import java.util.prefs.PreferenceChangeEvent;
 
 @Configuration
 @EnableWebSecurity
@@ -36,15 +33,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeHttpRequests().antMatchers("/*").permitAll().and()
+                .authorizeHttpRequests().antMatchers("/home").permitAll().and()
                 .formLogin()
-//                .loginPage("/")
+                .loginPage("/")
                 .defaultSuccessUrl("/", true).permitAll()
 
-//                .and().authorizeHttpRequests().antMatchers("/provinces","/customer").hasRole("ADMIN")
-                .and().authorizeHttpRequests().antMatchers( "/customer").hasAnyRole("USER","ADMIN")
-                .and().authorizeHttpRequests().antMatchers( "/contract","/facility").hasRole("ADMIN")
-
+                .and().authorizeRequests().antMatchers("/contract","/customer/*","/facility").hasRole("ADMIN")
+                .and().authorizeRequests().antMatchers( "/customer/*").hasAnyRole("USER","ADMIN")
 
                 .and()
                 .authorizeRequests()

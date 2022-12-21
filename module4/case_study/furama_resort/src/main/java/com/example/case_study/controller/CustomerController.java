@@ -34,6 +34,22 @@ public class CustomerController {
 //        return "customer/list";
 //    }
 
+    @GetMapping("/used-by-customers")
+    public String showListUsedByCustomers(@RequestParam(defaultValue = "") String searchByName
+            , @RequestParam(defaultValue = "") String email
+            , @RequestParam(defaultValue = "") String customerType
+            , Model model, @PageableDefault(page = 0, size = 3) Pageable pageable){
+        model.addAttribute("UsedByCustomerList",customerService.showListUsedByCustomer(searchByName,email,customerType,pageable));
+
+        model.addAttribute("customerTypes", customerTypeService.findAll());
+        model.addAttribute("searchByName", searchByName);
+        model.addAttribute("email", email);
+        if (!customerType.isEmpty()) {
+            model.addAttribute("customerTypeId", Integer.parseInt(customerType));
+        }
+        return "customer/used-by-customer";
+    }
+
     @GetMapping("")
     public String showViewDto(
             @RequestParam(defaultValue = "") String searchByName
@@ -108,7 +124,6 @@ public class CustomerController {
         if (bindingResult.hasErrors()) {
             return "customer/create";
         }
-
         Customer customer = new Customer();
 
         BeanUtils.copyProperties(customerDto, customer);

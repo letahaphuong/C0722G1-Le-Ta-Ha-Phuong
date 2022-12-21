@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Furama-Danh sach khach hang</title>
@@ -149,7 +149,7 @@
                                 </select>
                             </div>
                             <br>
-                            <div class="form-group">
+                            <div  sec:authorize="hasRole('ADMIN')" class="form-group">
                                 <label>Add Attach Facility</label>
                                 <span> <button
                                         class="btn btn-outline-danger ms-3" type="button"
