@@ -4,3 +4,5 @@ width =10.5;
 height =20;
 let area : number = width * height;
 console.log(`Diện tích hình chữ nhật là : ${area} `)
+console.log(`Diện tích hình chữ nhật là  `)
+console.log(`Diện tích hình chữ nhật là  `)
