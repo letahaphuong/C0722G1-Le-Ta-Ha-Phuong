@@ -1,0 +1,6 @@
+<p>color-picker works!</p>
+<label>Enter color</label>
+<input #color (input)="changeColor(color.value)" [value]="color.name">
+<!--<input #color (change)="changeColor(color.value)" [value]="color.name">-->
+
+<label [ngStyle]="{color:col.name}" >Change: {{col.result}}</label>
