@@ -1,0 +1,14 @@
+<p>calculator works!</p>
+<p>Number1</p>
+<input [(ngModel)]="cal.num1" >
+<br>
+<select #calculatoin (change)="calResult(calculatoin.value)">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<p>Number2</p>
+<input [(ngModel)]="cal.num2">
+
+<p>Result: {{cal.result}}</p>
