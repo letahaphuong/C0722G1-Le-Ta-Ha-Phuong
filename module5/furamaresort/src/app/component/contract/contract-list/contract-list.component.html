@@ -28,8 +28,8 @@
           <tbody>
           <tr *ngFor="let con of contracts">
             <td>{{con.id}}</td>
-            <td>{{con.employee}}</td>
-            <td>{{con.customer}}</td>
+            <td>{{con.employee.name}}</td>
+            <td>{{con.customer.name}}</td>
             <td>{{con.startDate}}</td>
             <td>{{con.endDate}}</td>
             <td>{{con.deposit}}</td>
