@@ -4,45 +4,48 @@
   </div>
   <div class="col-xl-2"></div>
   <div class="col-xl-8">
-    <div class="card-group">
+    <div class="card-group row" *ngFor="let fac of facilitys">
       <div class="card">
         <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg" class="card-img-top"
              alt="Hollywood Sign on The Hill" style="height: 275px" />
         <div class="card-body">
-          <h5 class="card-title">Villa</h5>
+          <h5 class="card-title">{{fac.facilityType}}</h5>
           <p class="card-text">
-            Diện Tích : m2
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://www.luxurylink.com/images/sho_574f5019/2556_102-1280/image-2556_102.jpg" class="card-img-top"
-             alt="Palm Springs Road" style="height: 275px" />
-        <div class="card-body">
-          <h5 class="card-title">House</h5>
-          <p class="card-text">Diện Tích : m2
+            Diện Tích : {{fac.area}} m2,<br>
+            Số người tối đa: {{fac.maxPeople}} per <br>
+            Số tầng : {{fac.numberOfFloors}} tầng <br>
+            Diện tích hồ bơi: {{fac.poolArea}} m2
           </p>
           <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="https://ak-d.tripcdn.com/images/02253120008rude8s5FB2_R_960_960_R5_D.jpg" class="card-img-top"
-             alt="Los Angeles Skyscrapers" style="height: 275px"/>
-        <div class="card-body">
-          <h5 class="card-title">Room</h5>
-          <p class="card-text">
-            Diện Tích : m2
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
+<!--      <div class="card">-->
+<!--        <img src="https://www.luxurylink.com/images/sho_574f5019/2556_102-1280/image-2556_102.jpg" class="card-img-top"-->
+<!--             alt="Palm Springs Road" style="height: 275px" />-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">House</h5>-->
+<!--          <p class="card-text">Diện Tích : m2-->
+<!--          </p>-->
+<!--          <p class="card-text">-->
+<!--            <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="card">-->
+<!--        <img src="https://ak-d.tripcdn.com/images/02253120008rude8s5FB2_R_960_960_R5_D.jpg" class="card-img-top"-->
+<!--             alt="Los Angeles Skyscrapers" style="height: 275px"/>-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">Room</h5>-->
+<!--          <p class="card-text">-->
+<!--            Diện Tích : m2-->
+<!--          </p>-->
+<!--          <p class="card-text">-->
+<!--            <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
   <div class="col-xl-2"></div>
