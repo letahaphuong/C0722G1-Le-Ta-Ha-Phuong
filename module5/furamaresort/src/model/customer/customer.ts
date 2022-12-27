@@ -2,6 +2,7 @@ import {CustomerType} from "./customer-type";
 
 export interface Customer {
   id:number;
+  customerCode?:string;
   customerTypeId?: CustomerType;
   name?:string;
   dateOfBirth?:string;
@@ -12,3 +13,4 @@ export interface Customer {
   address?:string;
   flagDelete?:boolean;
 }
+

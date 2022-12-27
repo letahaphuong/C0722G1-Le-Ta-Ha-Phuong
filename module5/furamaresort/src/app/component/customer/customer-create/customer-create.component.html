@@ -15,50 +15,73 @@
                 <h2>CREATE CUSTOMER</h2>
               </div>
               <p if="${mess != null}" text="${mess}" style="color: blue">
-              <form action="@{/customer/save}" object="${customer}" method="post">
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
                 <div class="form-content">
                   <div class="row">
                     <div class="col-md-6">
-                      <div hidden class="form-group">
-                        <label hidden>Id</label>
-                        <input hidden class="form-control" name="id"
-                               placeholder="CUSTOMER ID *"
+                      <div class="form-group">
+                        <label for="id">Id</label>
+                        <input style="border-radius:30px" class="form-control" id="id" name="id"
+                               placeholder="CUSTOMER ID *" formControlName="id"
                         />
+                        <br>
                       </div>
                       <div class="form-group">
-                        <label>Customer Type Name</label>
-                        <select name="customerType" class="form-select"
-                                aria-label="Default select example"
-                                value="${customerTypeId}"
+                        <label for="customerType">Customer Type Name</label>
+                        <select id="customerType" name="customerType" class="form-select"
+                                aria-label="Default select example" formControlName="customerType"
                                 style="border-radius: 30px">
-                          <option VALUE="">--Choose Customer Type--</option>
-                          <option value="1">Diamond</option>
-                          <option value="2">Platinum</option>
-                          <option value="3">Gold</option>
-                          <option value="4">Silver</option>
+                          <option *ngFor="let i of customerTypes" value="{{i.id}}">{{i.name}}</option>
                         </select>
                       </div>
                       <br>
                       <div class="form-group">
-                        <label for="name">Name</label>
-                        <input required id="name" style="border-radius: 30px"
+                        <label for="customerCode">Customer Code</label>
+                        <input id="customerCode" style="border-radius: 30px" name="customerCode"
+                               formControlName="customerCode"
                                class="form-control" type="text"
                         />
+                      </div>
+                      <div>
+                        <div *ngIf="contactForm.controls.customerCode.errors?.required && (contactForm.controls.customerCode?.dirty || contactForm.controls.customerCode?.touched)">
+                          <span style="color: red">Customer code is not required</span>
+                        </div>
+                        <div *ngIf="contactForm.controls.customerCode.errors?.pattern">
+                          <span style="color: red">
+                            Customer code is not formater
+                          </span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" style="border-radius: 30px" name="name" formControlName="name"
+                               class="form-control" type="text"
+                        />
+                      </div>
+                      <div>
+                        <div *ngIf="contactForm.controls.name.errors?.required && (contactForm.controls.name?.dirty || contactForm.controls.name?.touched)">
+                          <span style="color: red">Name is not required</span>
+                        </div>
+                        <div *ngIf="contactForm.controls.name.errors?.pattern">
+                          <span style="color: red">
+                            Name is not formater
+                          </span>
+                        </div>
                       </div>
                       <br>
                       <div class="form-group">
                         <label for="dateOfBirth">Date Of Birth</label>
-                        <input required id="dateOfBirth" style="border-radius: 30px"
+                        <input id="dateOfBirth" style="border-radius: 30px"
                                class="form-control"
-                               type="date"
+                               type="date" name="dateOfBirth" formControlName="dateOfBirth"
                         />
-
                       </div>
                       <br>
                       <div class="form-group">
                         <label for="gender">Gender</label>
-                        <select required id="gender" class="form-control form-select"
-                                aria-label="Default select example"
+                        <select id="gender" class="form-control form-select"
+                                aria-label="Default select example" name="gender" formControlName="gender"
                                 style="border-radius: 30px">
                           <option VALUE="">--Choose Gender--</option>
                           <option value="0">Female</option>
@@ -70,47 +93,95 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="idCard">Id Card</label>
-                        <input required id="idCard" style="border-radius: 30px"
-                               class="form-control" type="text"
+                        <input id="idCard" style="border-radius: 30px" name="idCard"
+                               class="form-control" type="text" formControlName="idCard"
                         />
+                      </div>
+                      <div>
+                        <div *ngIf="contactForm.controls.idCard.errors?.required && (contactForm.controls.idCard?.dirty || contactForm.controls.idCard?.touched)">
+                          <span style="color: red">Name is not required</span>
+                        </div>
+                        <div *ngIf="contactForm.controls.idCard.errors?.pattern">
+                          <span style="color: red">
+                            Name is not formater
+                          </span>
+                        </div>
                       </div>
                       <br>
                       <div class="form-group">
                         <label for="phoneNumber">Phone Number</label>
-                        <input required id="phoneNumber" style="border-radius: 30px"
-                               class="form-control"
+                        <input id="phoneNumber" style="border-radius: 30px"
+                               class="form-control" name="phoneNumber" formControlName="phoneNumber"
                                type="text"
                         />
+                      </div>
+                      <div
+                        *ngIf="!contactForm.controls.phoneNumber?.valid && (contactForm.controls.phoneNumber?.valid || contactForm.controls.phoneNumber?.touched)">
+<!--                                                                        <span style="color: red"> phone number code is not valid</span>-->
+                        <div [hidden]="!contactForm.controls.phoneNumber.errors?.required">
+                          <span style="color: red">
+                            Phone number is not required
+                          </span>
+                        </div>
+                        <div [hidden]="!contactForm.controls.phoneNumber.errors?.pattern">
+                          <span style="color: red">
+                            Phone number is not formater
+                          </span>
+                        </div>
                       </div>
                       <br>
                       <div class="form-group">
                         <label for="email">Email</label>
                         <input required id="email" style="border-radius: 30px"
-                               class="form-control" type="email"
+                               class="form-control" type="email" name="email" formControlName="email"
                         />
+                      </div>
+                      <div
+                        *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email?.valid || contactForm.controls.email?.touched)">
+                        <div [hidden]="!contactForm.controls.email.errors?.required">
+                            <span style="color: red">
+                              Email is not required
+                            </span>
+                        </div>
+                        <div [hidden]="!contactForm.controls.email.errors?.pattern">
+                            <span style="color: red">
+                              Email is not formater
+                            </span>
+                        </div>
                       </div>
                       <br>
                       <div class="form-group">
                         <label for="address">Address</label>
-                        <input required id="address" style="border-radius: 30px"
-                               class="form-control" type="text"
+                        <input id="address" style="border-radius: 30px" name="address"
+                               class="form-control" type="text" formControlName="address"
                         />
+                      </div>
+                      <br>
+                      <div formGroupName="customerType">
+                        <div class="form-group">
+                          <label for="idCusType">ID</label>
+                          <input placeholder="Customer Type *" style="border-radius:30px" type="text" id="idCusType"
+                                 class="form-control" name="id" formControlName="id">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label for="nameCusType">Name</label>
+                          <input placeholder="Customer Type *" style="border-radius:30px" type="text" id="nameCusType"
+                                 class="form-control" name="name" formControlName="name">
+                        </div>
                       </div>
                     </div>
                   </div>
                   <br>
-                  <button type="submit" class="btn btn-outline-success">Submit</button>
+                  <button [disabled]="!contactForm.valid" type="submit" class="btn btn-outline-success">Submit</button>
                 </div>
               </form>
-
             </div>
           </div>
-
         </div>
       </div>
       <div class="col-lg-1"></div>
     </div>
-
   </div>
 </div>
 

@@ -19,6 +19,7 @@ import { ContractCreateComponent } from './component/contract/contract-create/co
 import { EmployeeListComponent } from './component/employee/employee-list/employee-list.component';
 import { EmployeeCreateComponent } from './component/employee/employee-create/employee-create.component';
 import { EmployeeEditComponent } from './component/employee/employee-edit/employee-edit.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EmployeeEditComponent } from './component/employee/employee-edit/employ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
