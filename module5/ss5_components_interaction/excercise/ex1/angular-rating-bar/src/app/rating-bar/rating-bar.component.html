@@ -1,0 +1,14 @@
+<h1>Rating Bar</h1>
+<div *ngIf="showRatingValue">
+  Your rated : {{ ratingValue }} / 10
+</div>
+
+
+<span class="rating-bar" (mouseleave)="reset()">
+  <span class="fa fa-star"
+        [class.active]="item.active"
+        *ngFor="let item of ratingUnits; index as i"
+        (click)="select(i)" (mouseenter)="enter(i)">
+<!--    {{item.value}}-->
+  </span>
+</span>
