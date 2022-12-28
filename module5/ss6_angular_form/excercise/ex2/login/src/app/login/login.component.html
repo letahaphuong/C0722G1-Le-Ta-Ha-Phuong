@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="row text-center"><h3>LOGIN PAGE</h3><br><br></div>
+  <div class="col-xl-4"></div>
+  <div class="col-xl-4 container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="email" class="form-control" name="email" formControlName="email"/>
+        <label class="form-label" for="email">Email:</label>
+        <span *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+          <span [hidden]="!email?.errors?.required">
+            <span style="color: red">email không được để trống</span>
+          </span>
+          <span [hidden]="!email?.errors?.pattern">
+            <span style="color: red">email không đúng định dạng</span>
+          </span>
+        </span>
+      </div>
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="password" name="password" class="form-control" formControlName="password"/>
+        <label class="form-label" for="password">Password:</label>
+        <span *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+          <span [hidden]="!password?.errors?.required">
+            <span style="color: red"> password không được để trống</span>
+          </span>
+          <span [hidden]="!password?.errors?.minlength">
+            <span style="color: red"> password có độ dài lớn hơn 6</span>
+          </span>
+        </span>
+      </div>
+      <!-- Submit button -->
+      <button [disabled]="!contactForm.valid" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    </form>
+  </div>
+  <div class="col-xl-4"></div>
+</div>
+
+<button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  class="btn btn-primary"
+  (click)="openPopup()">Show Data
+</button>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">GeeksForGeeks</h4>
+      </div>
+      <div class="modal-body">
+        <p>One Stop Solution for all CS problems</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

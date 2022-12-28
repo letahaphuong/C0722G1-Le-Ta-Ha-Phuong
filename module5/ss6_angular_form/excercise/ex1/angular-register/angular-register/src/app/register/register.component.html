@@ -1,0 +1,124 @@
+<div class="row">
+  <div class="row text-center mt-5"><h2>FORM REGISTER</h2> <br> <br></div>
+  <div class="col-xl-4"></div>
+  <div class="col-xl-4">
+    <div class="container">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label">Email:</label>
+          <span
+            *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email?.dirty || contactForm.controls.email?.touched)">
+            <span [hidden]="!contactForm.controls.email?.errors?.required">
+              <span style="color: red"> email không được để trống</span>
+            </span>
+            <span [hidden]="!contactForm.controls.email?.errors?.pattern">
+              <span style="color: red"> email không đúng định dạng</span>
+            </span>
+          </span>
+
+          <input formControlName="email" type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <span *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+            <span [hidden]="!password?.errors?.required">
+              <span style="color: red"> không được để trống</span>
+            </span>
+            <span [hidden]="!password?.errors?.minlength">
+          <span style="color: red">
+            chiều dài pasword không được nhỏ hơn 6
+          </span>
+            </span>
+          </span>
+          <input formControlName="password" type="text" class="form-control" id="password" name="password">
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password:</label>
+          <span *ngIf="!confirmPassword?.valid && (confirmPassword?.dirty || confirmPassword?.touched)">
+            <span [hidden]="!confirmPassword?.errors?.required">
+              <span style="color: red">không được để trống</span>
+            </span>
+            <span [hidden]="!confirmPassword?.errors?.minlength">
+           <span style="color: red">
+            chiều dài pasword không được nhỏ hơn 6
+            </span>
+            </span>
+          </span>
+          <span *ngIf="confirmPassword?.errors?.confirmedValidator">
+            <span style="color: red"> password bắt buộc phải trùng</span>
+          </span>
+          <input formControlName="confirmPassword" type="text" class="form-control" id="confirmPassword"
+                 name="confirmPassword">
+        </div>
+        <div class="mb-3 ">
+          <label for="country" class="form-label">Country:</label>
+          <select class="form-select" name="country" id="country" formControlName="country">
+            <option [ngValue]="null" [selected]="true">--Choicse country--</option>
+            <option *ngFor="let coun of countrys" [ngValue]="coun">{{coun.name}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age:</label>
+          <span
+            *ngIf="!contactForm.controls.age?.valid && (contactForm.controls.age?.dirty || contactForm.controls.age?.touched)">
+            <span [hidden]="!contactForm.controls.age?.errors?.min">
+              <span style="color: red">Tuổi phải lớn hơn 18</span>
+            </span>
+            <span [hidden]="!contactForm.controls.age?.errors?.required">
+              <span style="color: red">Không được để trống</span>
+            </span>
+          </span>
+          <input formControlName="age" type="text" class="form-control" id="age" name="age">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Gender:</label>
+          <span
+            *ngIf="!contactForm.controls.gender?.valid && (contactForm.controls.gender?.dirty || contactForm.controls.gender?.touched || contactForm.controls.gender?.pristine)">
+            <span [hidden]="!contactForm.controls.gender?.errors?.required">
+           <span style="color: red">
+             gender không được để trống
+           </span>
+            </span>
+          </span>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="true" id="male" name="gender" formControlName="gender">
+            <label class="form-check-label" for="male">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="feMale" name="gender"
+                   formControlName="gender">
+            <label class="form-check-label" for="feMale">
+              Female
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="null" id="other" name="gender" formControlName="gender">
+            <label class="form-check-label" for="other">
+              Other
+            </label>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <span
+            *ngIf="!contactForm.controls.phone?.valid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched)">
+            <span [hidden]="!contactForm.controls.phone?.errors?.required">
+              <span style="color: red">số điện thoại không được để trống</span>
+            </span>
+            <span [hidden]="!contactForm.controls.phone?.errors?.pattern">
+              <span style="color: red">số điện thoại không đúng format</span>
+            </span>
+          </span>
+          <input formControlName="phone" type="text" class="form-control" id="phone" name="phone">
+        </div>
+        <!--        <button [hidden]="!contactForm.valid" type="submit" class="btn btn-primary">Submit</button>-->
+        <button [disabled]="!contactForm.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-xl-4"></div>
+</div>
+
