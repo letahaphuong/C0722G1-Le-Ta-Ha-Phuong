@@ -1,0 +1,173 @@
+<div class="vh-100 vw-100">
+  <div class="row text-center"
+       style="height: 75%">
+    <div class="row ">
+      <div class="col-lg-1">
+        <button class="btn btn-outline-success mt-5" type="submit" onclick="location.href='/customer'">Back
+        </button>
+      </div>
+      <div class="col-lg-10">
+
+        <div class="row m-5">
+          <div class="container register-form">
+            <div class="form">
+              <div class="note align-items-center d-flex justify-content-center">
+                <h2>EDIT CUSTOMER</h2>
+              </div>
+              <p if="${mess != null}" text="${mess}" style="color: blue">
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-content">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="id">Id</label>
+                        <input style="border-radius:30px" class="form-control" id="id" name="id"
+                               placeholder="CUSTOMER ID *" formControlName="id"
+                        />
+                        <br>
+                      </div>
+                      <div class="form-group">
+                        <label for="customerType">Customer Type Name</label>
+                        <select id="customerType" name="customerType" class="form-select"
+                                aria-label="Default select example" formControlName="customerType"
+                                style="border-radius: 30px">
+                          <option VALUE="">--Choose Customer Type--</option>
+                          <option *ngFor="let i of customerTypes" value="{{i.id}}">{{i.name}}</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="customerCode">Customer Code</label>
+                        <input id="customerCode" style="border-radius: 30px" name="customerCode"
+                               formControlName="customerCode"
+                               class="form-control" type="text"
+                        />
+                      </div>
+                      <div *ngIf="!customerCode?.valid && (customerCode?.dirty || customerCode?.touched)">
+                        <div [hidden]="!customerCode?.errors?.required">
+                          <span style="color: red">Customer Code is not required</span>
+                        </div>
+                        <div [hidden]="!customerCode?.errors?.pattern">
+                          <span style="color: red">Customer Code is not format</span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" style="border-radius: 30px" name="name" formControlName="name"
+                               class="form-control" type="text"
+                        />
+                      </div>
+                      <div *ngIf="!name?.valid && (name?.dirty || name?.touched)">
+                        <div [hidden]="!name?.errors?.required">
+                          <span style="color: red">Name is not required</span>
+                        </div>
+                        <div [hidden]="!name?.errors?.pattern">
+                          <span style="color: red">Name is not format</span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="dateOfBirth">Date Of Birth</label>
+                        <input id="dateOfBirth" style="border-radius: 30px"
+                               class="form-control"
+                               type="date" name="dateOfBirth" formControlName="dateOfBirth"
+                        />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" class="form-control form-select"
+                                aria-label="Default select example" name="gender" formControlName="gender"
+                                style="border-radius: 30px">
+                          <option VALUE="">--Choose Gender--</option>
+                          <option value="0">Female</option>
+                          <option value="1">Male</option>
+                        </select>
+                      </div>
+                      <br>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="idCard">Id Card</label>
+                        <input id="idCard" style="border-radius: 30px" name="idCard"
+                               class="form-control" type="text" formControlName="idCard"
+                        />
+                      </div>
+                      <div *ngIf="!idCard?.valid && (idCard?.dirty || idCard?.touched)">
+                        <div [hidden]="!idCard?.errors?.required">
+                          <span style="color: red">Id Card is not required</span>
+                        </div>
+                        <div [hidden]="!idCard?.errors?.pattern">
+                          <span style="color: red">Id Card is not format</span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input id="phoneNumber" style="border-radius: 30px"
+                               class="form-control" name="phoneNumber" formControlName="phoneNumber"
+                               type="text"
+                        />
+                      </div>
+                      <div *ngIf="!phoneNumber?.valid && (phoneNumber?.dirty || phoneNumber?.touched)">
+                        <div [hidden]="!phoneNumber?.errors?.required">
+                          <span style="color: red">Phone Number is not required</span>
+                        </div>
+                        <div [hidden]="!phoneNumber?.errors?.pattern">
+                          <span style="color: red">Phone Number is not format</span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input  id="email" style="border-radius: 30px"
+                                class="form-control" type="email" name="email" formControlName="email"
+                        />
+                      </div>
+                      <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+                        <div [hidden]="!email?.errors?.required">
+                          <span style="color: red">Email is not required</span>
+                        </div>
+                        <div [hidden]="!email?.errors?.pattern">
+                          <span style="color: red">Email is not format</span>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="address">Address</label>
+                        <input id="address" style="border-radius: 30px" name="address"
+                               class="form-control" type="text" formControlName="address"
+                        />
+                      </div>
+                      <br>
+                      <div formGroupName="customerType">
+                        <div class="form-group">
+                          <label for="idCusType">ID</label>
+                          <input placeholder="Customer Type *" style="border-radius:30px" type="text" id="idCusType"
+                                 class="form-control" name="id" formControlName="id">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label for="nameCusType">Name</label>
+                          <input placeholder="Customer Type *" style="border-radius:30px" type="text" id="nameCusType"
+                                 class="form-control" name="name" formControlName="name">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <button [disabled]="!contactForm.valid" type="submit" class="btn btn-outline-success">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</div>
+
+
+

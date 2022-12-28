@@ -1,0 +1,117 @@
+<div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <div class="row justify-content-center ">
+        <form class="d-flex justify-content-center  mt-3" action="">
+
+          <input style="border-radius: 30px" class="form-control me-2" name="searchByName" type="search"
+                 placeholder="Enter Name" value="${searchByName}"
+                 aria-label="Search">
+
+          <input style="border-radius: 30px" class="form-control me-2" name="email" type="search"
+                 placeholder="Enter Email"
+                 aria-label="Search" value="${email}">
+
+          <select name="customerType" class="form-select"
+                  aria-label="Default select example" value="${customerTypeId}"
+                  style="border-radius: 30px">
+            <option VALUE="">--Choose Customer Type--</option>
+            <option value="1">Diamond</option>
+            <option value="2">Platinum</option>
+            <option value="3">Gold</option>
+            <option value="4">Silver</option>
+          </select>
+
+          <button class="btn btn-outline-success m-2" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
+
+
+  </div>
+  <div class="row text-center align-items-end" style="height: 10%">
+    <div class="col-lg-4"><p if="${mess}" text="${mess}" style="color: blue"></div>
+    <div class="col-lg-4"><h3 class="mb-4">LIST CUSTOMER</h3></div>
+    <div class="col-lg-4">
+      <form class="d-flex align-items-start col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 mb-4">
+        <!--                <button class="btn btn-outline-success" type="button" >-->
+        <!--                    + Add-->
+        <!--                </button>-->
+        <a href="@{/customer/show-list-create }" class="btn btn-outline-success">+ Add</a>
+      </form>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8" style="border-top: 2px solid black">
+      <div>
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CUSTOMER TYPE NAME</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DATE OF BIRTH</th>
+            <th scope="col">ID CARD</th>
+            <th scope="col">GENDER</th>
+            <th scope="col">PHONE NUMBER</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">DELETE</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let cus of customers">
+            <td>{{cus.id}}</td>
+            <td>{{cus.customerTypeId?.name}}</td>
+            <td>{{cus.name}}</td>
+            <td>{{cus.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+            <td>{{cus.idCard}}</td>
+            <td>{{cus.gender ? 'Nam':'Nữ'}}</td>
+            <td>{{cus.phoneNumber}}</td>
+            <td>{{cus.email}}</td>
+            <td>{{cus.address}}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="openPopup()">delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">DELETE</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to remove ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
