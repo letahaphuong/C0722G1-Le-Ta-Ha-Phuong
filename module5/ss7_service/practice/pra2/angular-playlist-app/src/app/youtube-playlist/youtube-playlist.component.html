@@ -1,0 +1,7 @@
+<p>youtube-playlist works!</p>
+<ul>
+  <li *ngFor="let i of playlist">
+    <a [routerLink]="['/youtube', i.id]">{{i.name}}</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
