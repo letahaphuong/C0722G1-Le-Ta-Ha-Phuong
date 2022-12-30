@@ -19,6 +19,8 @@ import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.co
 import {HeaderComponent} from './header/header.component';
 import {NavComponent} from './nav/nav.component';
 import {FooterComponent} from './footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HomeComponent} from './home/home.component';
 
 
 @NgModule({
@@ -27,23 +29,19 @@ import {FooterComponent} from './footer/footer.component';
     ContractListComponent,
     ContractCreateComponent,
     ContractEditComponent,
-    CustomerListComponent,
-    CustomerCreateComponent,
-    CustomerEditComponent,
-    FacilityEditComponent,
-    FacilityListComponent,
-    FacilityCreateComponent,
     EmployeeListComponent,
     EmployeeCreateComponent,
     EmployeeEditComponent,
     HeaderComponent,
     NavComponent,
     FooterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

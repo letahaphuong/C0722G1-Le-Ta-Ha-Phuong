@@ -72,16 +72,12 @@
             <td>{{cus.name}}</td>
             <td>{{cus.dateOfBirth | date:"dd/MM/yyyy"}}</td>
             <td>{{cus.idCard}}</td>
-            <td>{{cus.gender ? 'Nam':'Nữ'}}</td>
+            <td>{{cus.gender ? 'Nam' : 'Nữ'}}</td>
             <td>{{cus.phoneNumber}}</td>
             <td>{{cus.email}}</td>
             <td>{{cus.address}}</td>
             <td>
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="openPopup()">delete
-              </button>
+              <button (click)="temp = cus"  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá</button>
             </td>
           </tr>
           </tbody>
@@ -91,27 +87,6 @@
   </div>
   <div class="col-lg-2"></div>
 </div>
+<app-customer-delete [customer]="temp"></app-customer-delete>
 
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">DELETE</h4>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure to remove ?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger"
-                (click)="closePopup()">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
