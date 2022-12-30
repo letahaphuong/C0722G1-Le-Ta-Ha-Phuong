@@ -1,0 +1,15 @@
+<h2 class="text-center">Todo App</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="content" (change)="change()">
+  <table>
+    <thead>
+    <tr (click)="toggleTodo(i)" [class.complete]="todo.complete"
+        *ngFor="let todo of todos; index as i">
+      <th> {{todo.content}}</th>
+      <th><button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button></th>
+      <th><button class="btn btn-success" [routerLink]="['/todo-edit/edit',todo.id]">Edit</button></th>
+    </tr>
+    </thead>
+  </table>
+</div>
+
