@@ -1,0 +1,56 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Điện thoai"
+    },
+    {
+      "id": 2,
+      "name": "Máy tính bản"
+    },
+    {
+      "id": 3,
+      "name": "Máy tính bản"
+    },
+    {
+      "id": 4,
+      "name": "qưeqwe"
+    },
+    {
+      "id": 5,
+      "name": "qưeqweqwe"
+    },
+    {
+      "id": 6,
+      "name": "qưeqweqwe"
+    },
+    {
+      "id": 7,
+      "name": "qưeqweweq"
+    },
+    {
+      "id": 8,
+      "name": "123123123"
+    }
+  ],
+  "product": [
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new"
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%"
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%"
+    }
+  ]
+}

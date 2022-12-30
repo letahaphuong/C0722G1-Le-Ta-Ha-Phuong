@@ -1,0 +1,19 @@
+<form [formGroup]="productFormReact" (ngSubmit)="edit()">
+  <div class="form-control">
+    <label for="id">Mã sản phẩm</label>
+    <input [readOnly]="true" type="text" id="id" name="id" formControlName="id">
+  </div>
+  <div class="form-control">
+    <label for="name">Tên sản phẩm</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div class="form-control">
+    <label for="price">Giá</label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div class="form-control">
+    <label for="description">Mã sản phẩm</label>
+    <input type="text" id="description" formControlName="description">
+  </div>
+  <button class="btn btn-outline-danger">sửa</button>
+</form>

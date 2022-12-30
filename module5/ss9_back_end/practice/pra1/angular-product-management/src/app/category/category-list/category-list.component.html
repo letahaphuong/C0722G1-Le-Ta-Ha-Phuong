@@ -1,0 +1,24 @@
+<h1>Danh sách danh mục sản phẩm</h1>
+<button routerLink="/category/create" class="btn-danger btn">Tạo mới danh mục sản phẩm</button>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <td>STT</td>
+    <td>Tên</td>
+    <td>Sửa</td>
+    <td>Xoá</td>
+  </tr></thead>
+  <tbody>
+  <tr *ngFor="let category of categories; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{category.name}}</td>
+    <td>
+      <button class="btn-danger btn" [routerLink]="['/category/edit',category.id]">Sửa</button>
+    </td>
+    <td>
+      <button (click)="temp = category" class="btn-danger btn" data-bs-toggle="modal" data-bs-target="#exampleModal">xoá</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<!--<app-category-delete [category]="temp"></app-category-delete>-->
