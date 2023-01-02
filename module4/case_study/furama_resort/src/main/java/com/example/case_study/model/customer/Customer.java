@@ -2,6 +2,7 @@ package com.example.case_study.model.customer;
 
 import com.example.case_study.model.contract.Contract;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -15,9 +16,9 @@ public class Customer {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_type_id",referencedColumnName = "id")
+    @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
-
+    private String customerCode;
     private String name;
 
     @Column(columnDefinition = "date")
@@ -38,14 +39,15 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     @JsonBackReference
-    private Set<Contract>contracts;
+    private Set<Contract> contracts;
 
     public Customer() {
     }
 
-    public Customer(Long id, CustomerType customerType, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete, Set<Contract> contracts) {
+    public Customer(Long id, CustomerType customerType, String customerCode, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete, Set<Contract> contracts) {
         this.id = id;
         this.customerType = customerType;
+        this.customerCode = customerCode;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.idCard = idCard;
@@ -57,9 +59,10 @@ public class Customer {
         this.contracts = contracts;
     }
 
-    public Customer(Long id, CustomerType customerType, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete) {
+    public Customer(Long id, CustomerType customerType, String customerCode, String name, String dateOfBirth, String idCard, String phoneNumber, boolean gender, String email, String address, boolean flagDelete) {
         this.id = id;
         this.customerType = customerType;
+        this.customerCode = customerCode;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.idCard = idCard;
@@ -67,14 +70,6 @@ public class Customer {
         this.gender = gender;
         this.email = email;
         this.address = address;
-        this.flagDelete = flagDelete;
-    }
-
-    public boolean isFlagDelete() {
-        return flagDelete;
-    }
-
-    public void setFlagDelete(boolean flagDelete) {
         this.flagDelete = flagDelete;
     }
 
@@ -92,6 +87,14 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public String getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
     }
 
     public String getName() {
@@ -148,6 +151,14 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(boolean flagDelete) {
+        this.flagDelete = flagDelete;
     }
 
     public Set<Contract> getContracts() {

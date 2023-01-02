@@ -14,4 +14,7 @@ public interface ICustomerService extends IGeneralService<Customer> {
 
     Page<UsedByCustomerView> showListUsedByCustomer( String name, String email, String customerTypeId, Pageable pageable);
 
+    void delete(Long id);
+
+    Customer finById(Long id);
 }

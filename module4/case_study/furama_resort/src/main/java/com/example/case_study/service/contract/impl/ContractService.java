@@ -49,6 +49,11 @@ public class ContractService implements IContractService {
         return contractRepository.showListContract(pageable);
     }
 
+    @Override
+    public List<ContractView> showListContracts() {
+        return contractRepository.showListContracts();
+    }
+
 //    @Override
 //    public List<AttachFacilityListView> getAttachFacility() {
 //        return contractRepository.getAttachFacility();

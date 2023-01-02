@@ -54,4 +54,15 @@ public class CustomerService implements ICustomerService {
     public Page<UsedByCustomerView> showListUsedByCustomer(String name, String email, String customerTypeId, Pageable pageable) {
         return customerRepository.showListUsedByCustomer(name,email,customerTypeId,pageable);
     }
+
+    @Override
+    public void delete(Long id) {
+        customerRepository.deleteById(id);
+    }
+
+    @Override
+    public Customer finById(Long id) {
+        return customerRepository.findById(id).orElse(null);
+    }
+
 }

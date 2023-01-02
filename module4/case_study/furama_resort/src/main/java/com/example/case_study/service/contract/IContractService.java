@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface IContractService extends IGeneralService<Contract> {
     Page<ContractView> showListContract(Pageable pageable);
+    List<ContractView> showListContracts();
 
 //    List<AttachFacilityListView> getAttachFacility();
 
