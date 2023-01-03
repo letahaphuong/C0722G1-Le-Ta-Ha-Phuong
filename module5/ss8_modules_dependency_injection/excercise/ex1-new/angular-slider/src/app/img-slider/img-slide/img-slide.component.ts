@@ -8,17 +8,24 @@ import {Img} from '../img';
 })
 export class ImgSlideComponent implements OnInit {
   n = 0;
-  img?: Img[] = [{id: 1, link: 'https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltf756791ff8b8c407/60dec10dcc810807a32d9b94/fe1a7a39fa9940a8ac4ab404780fff0b355c126e.jpg?auto=webp&format=jpg&quality=60&w=1280'},
+  img?: Img[] = [
+    {
+      id: 1,
+      link: 'https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA'
+    },
     {
       id: 2,
-      link: 'https://znews-photo.zingcdn.me/w660/Uploaded/dqmblcvo/2022_07_04/real_madrid_5.jpg'
+      link: 'https://znews-photo.zingcdn.me/w660/Uploaded/mdf_eioxrd/2021_07_06/10.jpg'
     },
-    {id: 3, link: 'https://vtv1.mediacdn.vn/zoom/700_438/2019/1/14/real-madrid--15474231631551617097803.jpg'},
+    {id: 3,
+      link: 'https://cdn.baogiaothong.vn/upload/2-2022/images/2022-05-25/1-1653445668-308-width740height476.jpg'
+    },
     {
       id: 4,
-      link: 'https://i.pinimg.com/originals/12/84/08/1284085ae102c18701c35d329d44f820.jpg'
-    }];
-  size: number = this.img?.length;
+      link: 'https://cdn.baogiaothong.vn/upload/2-2022/images/2022-05-25/4-1653445668-151-width740height377.jpg'
+    }
+  ];
+  size: number | undefined = this.img?.length;
 
   constructor() {
   }
