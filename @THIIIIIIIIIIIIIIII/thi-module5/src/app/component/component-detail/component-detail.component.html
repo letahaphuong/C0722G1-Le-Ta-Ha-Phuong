@@ -1,0 +1,44 @@
+
+<!-- Modal -->
+<div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Thông Tin Chi tiết</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table text-center table-striped">
+          <thead>
+          <tr>
+            <th>Mã Lô Hàng</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá Tiền</th>
+            <th>Đơn Vị</th>
+            <th>Số Lương</th>
+            <th>Ngày Nhập</th>
+            <th>Ngày Sản Xuất</th>
+            <th>Ngày Hết Hạn</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{loHang.maLoHang}}</td>
+            <td>{{loHang.tenSanPham}}</td>
+            <td>{{loHang.giaTien}}</td>
+            <td>{{loHang.donVi}}</td>
+            <td>{{loHang.soLuong}}</td>
+            <td>{{loHang.ngayNhap | date:'dd/MM/yyyy'}}</td>
+            <td>{{loHang.ngaySanXuat| date:'dd/MM/yyyy'}}</td>
+            <td>{{loHang.ngayHetHan| date:'dd/MM/yyyy'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+      </div>
+    </div>
+  </div>
+</div>
+

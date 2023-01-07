@@ -1,0 +1,173 @@
+<div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm mới</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="createForm" (ngSubmit)="createLoHag()">
+        <div class="modal-body">
+          <div class="row m-0 text-center"
+               style="height: 75%">
+            <div class="row ">
+              <div class="col-lg-1">
+              </div>
+              <div class="col-lg-10">
+                <div class="row m-5">
+                  <div class="container">
+                    <div class="form">
+                      <div class="note align-items-center d-flex justify-content-center">
+                        <h2>NHẬP HÀNG</h2>
+                      </div>
+                      <div class="form-content">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div hidden class="form-group">
+                              <label for="id" class="float-start">Id:</label>
+                              <input style="border-radius:30px" class="form-control" id="id" name="id"
+                                     formControlName="id"
+                              />
+                              <br>
+                            </div>
+                            <div class="form-group">
+                              <label for="maLoHang" class="float-start">Mã Lo Hàng: </label>
+                              <span
+                                *ngIf="!createForm.controls.maLoHang?.valid && (createForm.controls.maLoHang?.valid || createForm.controls.maLoHang?.touched)">
+                          <span [hidden]="!createForm.controls.maLoHang.errors?.required">
+                          <span class="float-start" style="color: red">
+                            Mã lô hàng không được để trống!
+                          </span>
+                          </span>
+                          <span [hidden]="!createForm.controls.maLoHang.errors?.pattern">
+                          <span class="float-start" style="color: red">
+                            Mã lô hàng phải đúng định dàng (LH-XXXX) !!!
+                          </span>
+                          </span>
+                        </span>
+                              <input id="maLoHang" style="border-radius: 30px"
+                                     formControlName="maLoHang"
+                                     class="form-control" type="text"
+                              />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="sanPham" class="float-start">Sản Phẩm: </label>
+                              <span
+                                *ngIf="!createForm.controls.sanPham?.valid && (createForm.controls.sanPham?.valid || createForm.controls.sanPham?.touched)">
+                          <span [hidden]="!createForm.controls.sanPham.errors?.required">
+                          <span class="float-start" style="color: red">
+                            Sản phẩm không được để trống !
+                          </span>
+                          </span>
+                        </span>
+                              <select class="form-select" id="sanPham" formControlName="sanPham"
+                                      style="border-radius: 30px">
+                                <option value="" [selected]="true"> -- Chọn tên sản phẩm --</option>
+                                <option *ngFor="let i of sanPhans" [ngValue]="i">{{i.tenSanPham}}</option>
+                              </select>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="soLuong" class="float-start">Số Lương: </label>
+                              <span
+                                *ngIf="!createForm.controls.soLuong?.valid && (createForm.controls.soLuong?.valid || createForm.controls.soLuong?.touched)">
+                          <span [hidden]="!createForm.controls.soLuong.errors?.required">
+                          <span class="float-start" style="color: red">
+                            Sô lượng không được để trống
+                          </span>
+                          </span>
+                          <span [hidden]="!createForm.controls.soLuong.errors?.min">
+                          <span class="float-start" style="color: red">
+                            Số lượng phải lớn hơn 0 !!!
+                          </span>
+                          </span>
+                        </span>
+                              <input id="soLuong" style="border-radius: 30px"
+                                     class="form-control"
+                                     type="number" min="0" formControlName="soLuong"
+                              />
+                            </div>
+                            <br>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="ngayNhap" class="float-start">Ngày Nhập: </label>
+                              <span
+                                *ngIf="!createForm.controls.ngayNhap?.valid && (createForm.controls.ngayNhap?.valid || createForm.controls.ngayNhap?.touched)">
+                          <span [hidden]="!createForm.controls.ngayNhap.errors?.required">
+                          <span class="float-start" style="color: red">
+                            Ngày nhập không được để trống !
+                          </span>
+                          </span>
+                        </span>
+                              <input id="ngayNhap" style="border-radius: 30px"
+                                     class="form-control" type="date" formControlName="ngayNhap"
+                              />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <div class="form-group">
+                                <label for="ngaySanXuat" class="float-start">Ngày Sản Xuất: </label>
+                                <span
+                                  *ngIf="!createForm.controls.ngaySanXuat?.valid && (createForm.controls.ngaySanXuat?.valid || createForm.controls.ngaySanXuat?.touched)">
+                          <span [hidden]="!createForm.controls.ngaySanXuat.errors?.required">
+                          <span class="float-start" style="color: red">
+                            Ngày sản xuất không được để trống !
+                          </span>
+                          </span>
+                        </span>
+                                <input id="ngaySanXuat" style="border-radius: 30px"
+                                       class="form-control" type="date" formControlName="ngaySanXuat"
+                                />
+                              </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="ngayHetHan" class="float-start">Ngày Hết Hạn: </label>
+                              <span>
+                          <span class="float-start" style="color: red"
+                                *ngIf="createForm.controls.ngayHetHan.errors?.required && (createForm.controls.ngayHetHan.dirty || createForm.controls.ngayHetHan.touched)">
+                            Ngày hết hạn không được để trống.
+                          </span>
+                          <span class="float-start" style="color: red"
+                                *ngIf="createForm.controls.ngayHetHan.hasError('endDateAfterStartDate')">
+                          Ngày hết hạn phải lớn hơn ngày sản xuất</span>
+                        </span>
+                              <input id="ngayHetHan" style="border-radius: 30px"
+                                     class="form-control" type="date" formControlName="ngayHetHan"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <button [disabled]="!createForm.valid" type="submit" class="btn btn-outline-success">Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row container">
+
+        <div class="container">
+          <label for="abc" class="float-start">Thêm mới sản phẩm:</label>
+          <button id="abc" data-bs-toggle="modal" data-bs-target="#create-sp" class="btn btn-primary ms-3">+
+          </button>
+          <br>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-component-create-san-pham (eventCreateSp)="reload()"></app-component-create-san-pham>

@@ -1,0 +1,88 @@
+<div class="modal fade" id="create-sp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm mới</h1>
+          <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="createFromSp" (ngSubmit)="createSp()">
+        <div class="modal-body">
+          <div class="row m-0 text-center"
+               style="height: 75%">
+            <div class="row ">
+              <div class="col-lg-1">
+              </div>
+              <div class="col-lg-10">
+                <div class="row m-5">
+                  <div class="container">
+                    <div class="form">
+                      <div class="note align-items-center d-flex justify-content-center">
+                        <h2>NHẬP HÀNG</h2>
+                      </div>
+                      <div class="form-content">
+                        <div class="row">
+                          <div class="col-lg-4"></div>
+                          <div class="col-lg-4">
+                            <div hidden class="form-group">
+                              <label for="id" class="float-start">Id:</label>
+                              <input style="border-radius:30px" class="form-control" id="id" name="id"
+                                     formControlName="id"
+                              />
+                              <br>
+                            </div>
+                            <div class="form-group">
+                              <label for="tenSanPham" class="float-start">Tên Sản Phẩm: </label>
+                              <input id="tenSanPham" style="border-radius: 30px"
+                                     formControlName="tenSanPham"
+                                     class="form-control" type="text"
+                              />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="xuatXu" class="float-start">Xuất Xứ: </label>
+                              <input id="xuatXu" style="border-radius: 30px"
+                                     formControlName="xuatXu"
+                                     class="form-control" type="text"
+                              />
+                            <br>
+                            <div class="form-group">
+                              <label for="giaTien" class="float-start">Số Lương: </label>
+                              <input id="giaTien" style="border-radius: 30px"
+                                     class="form-control"
+                                     type="number" min="0" formControlName="giaTien"
+                              />
+                            </div>
+                              <br>
+                              <div class="form-group">
+                                <label for="donVi" class="float-start">Đơn Vị: </label>
+                                <input id="donVi" style="border-radius: 30px"
+                                       class="form-control"
+                                       type="text" min="0" formControlName="donVi"
+                                />
+                              </div>
+                            <br>
+                          </div>
+                          <div class="col-lg-4"></div>
+                        </div>
+                        <br>
+                        <!--                        <button  type="submit" class="btn btn-outline-success">Submit</button>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#create" class="btn btn-secondary" >Trở lại</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Lưu
+          </button>
+        </div>
+      </div>
+        </form>
+  </div>
+  </div></div>
