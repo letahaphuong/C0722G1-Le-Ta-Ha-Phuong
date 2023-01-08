@@ -31,7 +31,7 @@ public class LoHangService implements ILoHangService {
 
     @Override
     public void save(LoHang loHang) {
-        loHangRepository.save(loHang);
+        loHangRepository.saveLoHang(loHang.getMaLoHang(),loHang.getNgayHetHan(),loHang.getNgayNhap(), loHang.getNgaySanXuat(), loHang.getSoLuong(), loHang.getSanPham());
     }
 
     @Override
@@ -44,8 +44,23 @@ public class LoHangService implements ILoHangService {
         return loHangRepository.getAllView(pageable);
     }
 
+//    @Override
+//    public LoHang finById(Long id) {
+//        return loHangRepository.findById(id).orElse(null);
+//    }
+
     @Override
     public LoHang finById(Long id) {
-        return loHangRepository.findById(id).orElse(null);
+        return loHangRepository.findByIdSQL(id);
+    }
+
+    @Override
+    public void update(LoHang loHang) {
+        loHangRepository.updateLoHang(loHang.getId(),loHang.getMaLoHang(),loHang.getNgayHetHan(),loHang.getNgayNhap(), loHang.getNgaySanXuat(), loHang.getSoLuong(), loHang.getSanPham());
+    }
+
+    @Override
+    public Page<LoHangView> searchForField(String ngay1, String ngay2, String tenSanPham, String ngayHetHan, Pageable pageable) {
+        return loHangRepository.searchForField(ngay1,ngay2,tenSanPham,ngayHetHan,pageable);
     }
 }

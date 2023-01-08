@@ -25,7 +25,7 @@ public class LoHangRestController {
     @Autowired
     ILoHangService loHangService;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<Page<LoHangView>> getAll(@PageableDefault(size = 5)Pageable pageable) {
         Page<LoHangView> loHangViews = loHangService.getAllView(pageable);
         if (loHangViews.isEmpty()) {
@@ -71,7 +71,19 @@ public class LoHangRestController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         loHang.setId(optionalLoHang.get().getId());
-        loHangService.save(loHang);
+        loHangService.update(loHang);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/search/{ngay1}/{ngay2}/{tenSanPham}/{ngayHetHan}")
+    public ResponseEntity<Page<LoHangView>> searchForField(@PathVariable("ngay1") String ngay1,@PathVariable("ngay2") String ngay2,
+                                                     @PathVariable("tenSanPham") String tenSanPham, @PathVariable("ngayHetHan") String ngayHetHan,
+                                                     @PageableDefault(size = 5) Pageable pageable
+                                                     ){
+        Page<LoHangView> loHangViewPage = loHangService.searchForField(ngay1,ngay2,tenSanPham,ngayHetHan,pageable);
+        if (loHangViewPage.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(loHangViewPage,HttpStatus.OK);
     }
 }

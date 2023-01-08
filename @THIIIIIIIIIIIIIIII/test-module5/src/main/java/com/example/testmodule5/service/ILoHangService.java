@@ -13,4 +13,8 @@ public interface ILoHangService extends IGeneralService<LoHang>{
     Page<LoHangView> getAllView (Pageable pageable);
 
     LoHang finById(Long id);
+
+    void update(LoHang loHang);
+
+    Page<LoHangView> searchForField(String ngay1,String ngay2,String tenSanPham,String ngayHetHan, Pageable pageable);
 }
