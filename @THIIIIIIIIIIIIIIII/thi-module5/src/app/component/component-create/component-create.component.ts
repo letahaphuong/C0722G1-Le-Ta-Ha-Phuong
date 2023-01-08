@@ -68,14 +68,15 @@ export class ComponentCreateComponent implements OnInit {
     })
   }
 
-  getAllLoHang() {
-    this.loHangService.getAll().subscribe(data => {
-      console.log(data);
-    })
-  }
+  // getAllLoHang() {
+  //   this.loHangService.getAll().subscribe(data => {
+  //     console.log(data);
+  //   })
+  // }
 
   reload() {
     this.getAllSanPham();
-    this.getAllLoHang();
+    console.log(this.getAllSanPham())
+    // this.getAllLoHang();
   }
 }

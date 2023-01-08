@@ -125,7 +125,7 @@
                             <br>
                             <div class="form-group">
                               <label for="ngayHetHan" class="float-start">Ngày Hết Hạn: </label>
-                              <span>
+                              <span *ngIf="createForm.invalid">
                           <span class="float-start" style="color: red"
                                 *ngIf="createForm.controls.ngayHetHan.errors?.required && (createForm.controls.ngayHetHan.dirty || createForm.controls.ngayHetHan.touched)">
                             Ngày hết hạn không được để trống.
@@ -133,7 +133,7 @@
                           <span class="float-start" style="color: red"
                                 *ngIf="createForm.controls.ngayHetHan.hasError('endDateAfterStartDate')">
                           Ngày hết hạn phải lớn hơn ngày sản xuất</span>
-                        </span>
+                           </span>
                               <input id="ngayHetHan" style="border-radius: 30px"
                                      class="form-control" type="date" formControlName="ngayHetHan"
                               />

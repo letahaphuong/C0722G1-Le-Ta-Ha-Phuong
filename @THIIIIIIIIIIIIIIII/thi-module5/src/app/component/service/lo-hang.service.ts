@@ -15,8 +15,16 @@ export class LoHangService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<any> {
-    return this.http.get<any>(this.API_URL_LO_HANG);
+  // getAll(page: number): Observable<any> {
+  //   return this.http.get<any>(this.API_URL_LO_HANG +'?page=' + page);
+  // }
+
+  getAll(page: number): Observable<any> {
+    return this.http.get<any>(this.API_URL_LO_HANG + '?page=' + page);
+  }
+
+  search(ngay1: string, ngay2: string, tenSanPham: string, ngayHetHan: string, page: number): Observable<any> {
+    return this.http.get<any>(this.API_URL_LO_HANG + '/search/' + ngay1 + '/' + ngay2 + '/' + tenSanPham + '/' + ngayHetHan + '?page=' + page);
   }
 
   getAllSanPham(): Observable<any> {

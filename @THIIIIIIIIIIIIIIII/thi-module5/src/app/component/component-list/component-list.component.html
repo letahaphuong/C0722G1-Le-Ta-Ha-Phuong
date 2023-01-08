@@ -4,21 +4,24 @@
   <div class="col-lg-2"></div>
   <div class="col-lg-5">
     <button style="border-radius: 30px" data-bs-toggle="modal" data-bs-target="#create" class="btn btn-outline-success me-2">Thêm mới</button>
-    <div class="justify-content-center col-md-6 d-flex mt-3">
+    <div class="justify-content-center d-flex mt-3">
 
-<!--      <input style="border-radius: 30px" class="form-control me-2" #name type="search"-->
-<!--             placeholder="Name"-->
-<!--             aria-label="Search">-->
+      <input style="border-radius: 30px" class="form-control me-2" #ngay1 type="date"
+             placeholder="Name"
+             aria-label="Search">
 
-<!--      <input style="border-radius: 30px" class="form-control me-2" #email type="search"-->
-<!--             placeholder="Email"-->
-<!--             aria-label="Search">-->
+      <input style="border-radius: 30px" class="form-control me-2" #ngay2 type="date"
+             placeholder="Email"
+             aria-label="Search">
+      <input style="border-radius: 30px" class="form-control me-2" #tenSanPham type="search"
+             placeholder="Email"
+             aria-label="Search">
+      
+      <input style="border-radius: 30px" class="form-control me-2" #ngayHetHan type="date"
+             placeholder="Email"
+             aria-label="Search">
 
-<!--      <select #customerType class="form-select" aria-label="Default select example" style="border-radius: 30px">-->
-<!--        <option value = '' >&#45;&#45;Customer Type&#45;&#45;</option>-->
-<!--        <option *ngFor="let c of customerTypes" [value]="c.name">{{c.name}}</option>-->
-<!--      </select>-->
-<!--      <button style="border-radius: 30px" class="btn btn-outline-success me-2" (click)="getAllLoHang(name.value)">Search</button>-->
+      <button style="border-radius: 30px" class="btn btn-outline-success me-2" (click)="search(ngay1.value,ngay2.value,tenSanPham.value,ngayHetHan.value)">Search</button>
     </div>
 
   </div>
@@ -47,7 +50,7 @@
       <tbody>
       <tr *ngFor="let loHang of loHangs ;index as i">
 <!--      <tr *ngFor="let loHang of loHangs | paginate: { itemsPerPage: 8, currentPage:p};index as i">-->
-        <td>{{i + 1}}</td>
+        <td>{{i +size *page + 1}} </td>
         <td>{{loHang.maLoHang}}</td>
         <td>{{loHang.tenSanPham}}</td>
         <td>{{loHang.giaTien}}</td>
@@ -72,6 +75,23 @@
   </div>
   <div class="col-lg-2"></div>
 </div>
+
+<!--Phân Trang-->
+<div class="row" style="margin: 0; padding: 0">
+  <div class="col-4"></div>
+  <div class="col-1">
+    <button type="button" class="btn btn-outline-success" (click)="previousPage()" *ngIf="page > 0">Trước</button>
+  </div>
+  <div class="col-2 text-center">
+    <p class="text-success" style="margin-top: 5px">Trang {{page + 1}}/ {{totalPage}} trang</p>
+  </div>
+  <div class="col-1">
+    <button type="button" class="btn btn-outline-success" (click)="nextPage()" *ngIf="page < totalPage - 1">Sau
+    </button>
+  </div>
+  <div class="col-4"></div>
+</div>
+
 <app-component-delete [loHang]="temp" (eventDelete)="reload()"></app-component-delete>
 <app-component-detail [loHang]="temp"></app-component-detail>
 <app-component-create (eventCreate)="reload()"></app-component-create>
